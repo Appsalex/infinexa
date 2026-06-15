@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>infinexa · Una conversación que cambia el chip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --grafito:#1F2A33;--grafito-dk:#0F1720;--petroleo:#1B4D5C;--petroleo-cl:#2E6E80;
+  --cobre:#C8682E;--plata:#C9D2D6;--plata-cl:#EDF1F2;
+  --bg:#0F1720;--bg-dk:#0a1018;
+  --border:rgba(200,104,46,0.15);--border-s:rgba(255,255,255,0.055);
+  --tbody:#C9D2D6;--tmuted:#8AA5BF;
+  --pad:clamp(24px,5vw,60px);--r:clamp(10px,1.2vw,16px);
+}
+html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter','Helvetica Neue',Arial,sans-serif;}
+.shell{width:100%;min-height:100vh;background:linear-gradient(150deg,#0c1219 0%,#14202c 100%);display:flex;justify-content:center;padding:0;}
+.card{background:var(--bg);width:100%;}
+@media(min-width:900px){
+  .shell{padding:32px;}
+  .card{max-width:1200px;border-radius:20px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.5);}
+}
+@media(max-width:899px){.shell{padding:0;}.card{border-radius:0;}}
+@media(min-width:1400px){.shell{padding:40px;}.card{max-width:1320px;}}
+
+/* ── TIPOGRAFÍA BASE ── */
+.sec-label{font-size:clamp(13px,1.1vw,14px);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--plata);margin-bottom:clamp(8px,1.2vw,12px);}
+.sec-title{font-size:clamp(22px,2.4vw,30px);font-weight:700;color:var(--plata-cl);line-height:1.2;margin-bottom:clamp(14px,1.8vw,20px);}
+.sec-title .c{color:#D97B3C;font-weight:700;}
+.body-text{font-size:clamp(17px,1.5vw,19px);color:var(--tbody);line-height:1.85;margin-bottom:clamp(12px,1.5vw,18px);}
+.body-text:last-child{margin-bottom:0;}
+.body-text strong{color:var(--plata-cl);font-weight:600;}
+.body-text em{font-style:italic;color:var(--plata);}
+.pull{background:rgba(200,104,46,0.07);border-left:3px solid var(--cobre);border-radius:0 var(--r) var(--r) 0;padding:clamp(14px,1.8vw,22px) clamp(16px,2vw,26px);margin:clamp(14px,1.8vw,20px) 0;font-size:clamp(17px,1.6vw,20px);color:var(--plata-cl);line-height:1.7;font-style:italic;font-weight:300;}
+
+/* ── HEADER ── */
+.hdr{padding:clamp(28px,4vw,52px) var(--pad) clamp(24px,3.5vw,44px);border-bottom:1px solid var(--border);}
+.ifx-lockup{display:flex;align-items:center;gap:clamp(14px,2vw,22px);margin-bottom:clamp(28px,3.5vw,44px);}
+.ifx-sep-v{width:.6px;height:clamp(36px,5vw,52px);background:var(--petroleo);opacity:.7;flex-shrink:0;}
+.ifx-wm{display:flex;flex-direction:column;gap:4px;}
+.ifx-name{font-size:clamp(18px,2.2vw,26px);font-weight:300;color:var(--plata-cl);letter-spacing:clamp(6px,1.2vw,14px);}
+.ifx-line{width:44px;height:.8px;background:var(--cobre);opacity:.85;margin:3px 0;}
+.ifx-tag{font-size:clamp(10px,.9vw,12px);font-weight:300;color:var(--plata);letter-spacing:clamp(3px,.5vw,5.5px);opacity:.5;}
+.story-label::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--plata-cl);flex-shrink:0;}
+.story-label{display:inline-flex;align-items:center;gap:8px;font-size:clamp(10px,.9vw,12px);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--plata-cl);background:rgba(27,77,92,0.35);border:1px solid rgba(46,110,128,0.5);border-radius:20px;padding:5px clamp(12px,1.5vw,16px);margin-bottom:clamp(14px,2vw,20px);}
+.story-h1{font-size:clamp(28px,3.8vw,52px);font-weight:800;color:var(--plata-cl);line-height:1.1;margin-bottom:clamp(16px,2vw,24px);}
+.story-h1 em{font-style:italic;color:var(--cobre);font-weight:300;}
+.story-p{font-size:clamp(17px,1.5vw,19px);color:var(--tbody);line-height:1.85;margin-bottom:clamp(12px,1.5vw,18px);}
+.story-p strong{color:var(--plata-cl);font-weight:600;}
+.story-p em{font-style:italic;color:var(--plata);}
+
+/* ══════════════════════════════════
+   SISTEMA ACORDEÓN
+══════════════════════════════════ */
+.acord-section{
+  border-bottom:1px solid var(--border-s);
+}
+.acord-trigger{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:clamp(18px,2.5vw,28px) var(--pad);
+  background:none;
+  border:none;
+  cursor:pointer;
+  text-align:left;
+  gap:clamp(12px,1.5vw,20px);
+  transition:background .2s;
+}
+.acord-trigger:hover{
+  background:rgba(200,104,46,0.04);
+}
+.acord-trigger-left{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  flex:1;
+}
+.acord-step{
+  font-size:clamp(11px,1vw,13px);
+  font-weight:600;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:var(--cobre);
+  opacity:.8;
+}
+.acord-title{
+  font-size:clamp(18px,2vw,24px);
+  font-weight:700;
+  color:var(--plata-cl);
+  line-height:1.2;
+}
+.acord-preview{
+  font-size:clamp(14px,1.2vw,16px);
+  color:var(--plata);
+  margin-top:4px;
+  line-height:1.5;
+}
+.acord-icon-wrap{display:flex;flex-direction:column;align-items:center;gap:5px;flex-shrink:0;}
+.acord-icon-label{font-size:clamp(9px,.8vw,10px);font-weight:500;letter-spacing:1.2px;text-transform:uppercase;color:var(--plata);opacity:1;}
+.acord-section.open .acord-icon-label{font-size:clamp(9px,.8vw,10px);font-weight:500;letter-spacing:1.2px;text-transform:uppercase;color:var(--plata);opacity:1;}
+.acord-icon-wrap{display:flex;flex-direction:column;align-items:center;gap:5px;flex-shrink:0;}
+.acord-icon-label{font-size:clamp(9px,.8vw,10px);font-weight:500;letter-spacing:1.2px;text-transform:uppercase;color:var(--plata);opacity:1;}
+.acord-section.open .acord-icon-label{font-size:clamp(9px,.8vw,10px);font-weight:500;letter-spacing:1.2px;text-transform:uppercase;color:var(--plata);opacity:1;}
+.acord-icon{width:clamp(36px,4vw,48px);height:clamp(36px,4vw,48px);border-radius:50%;border:1.5px solid rgba(255,255,255,0.65);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .25s;background:transparent !important;}
+.acord-icon svg{width:clamp(14px,1.4vw,18px);height:clamp(14px,1.4vw,18px);stroke:#fff;fill:none;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s;}
+.acord-section.open .acord-icon-wrap{display:flex;flex-direction:column;align-items:center;gap:5px;flex-shrink:0;}
+.acord-icon-label{font-size:clamp(9px,.8vw,10px);font-weight:500;letter-spacing:1.2px;text-transform:uppercase;color:var(--plata);opacity:1;}
+.acord-section.open .acord-icon-label{font-size:clamp(9px,.8vw,10px);font-weight:500;letter-spacing:1.2px;text-transform:uppercase;color:var(--plata);opacity:1;}
+.acord-icon{
+  background:rgba(200,104,46,0.15);
+  transform:none;
+}
+.acord-section.open .acord-icon svg{width:clamp(14px,1.4vw,18px);height:clamp(14px,1.4vw,18px);stroke:#fff;fill:none;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s;}
+
+/* Panel colapsable */
+.acord-panel{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .45s cubic-bezier(0.4,0,0.2,1);
+}
+.acord-section.open .acord-panel{
+  max-height:4000px;
+}
+.acord-inner{
+  padding:0 var(--pad) clamp(24px,3vw,36px);
+}
+
+/* Dos columnas dentro del panel cuando aplica */
+@media(min-width:900px){
+  .panel-two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    align-items:start;
+  }
+  .panel-col-l{border-right:1px solid var(--border-s);}
+  .panel-col-l,.panel-col-r{padding-right:clamp(20px,2.5vw,36px);}
+  .panel-col-r{padding-left:clamp(20px,2.5vw,36px);padding-right:0;}
+}
+.panel-subsec{margin-bottom:clamp(24px,3vw,36px);}
+.panel-subsec:last-child{margin-bottom:0;}
+
+/* Elementos internos */
+.hist-item{display:flex;gap:clamp(12px,1.5vw,18px);margin-bottom:clamp(12px,1.5vw,18px);align-items:flex-start;}
+.hist-item:last-child{margin-bottom:0;}
+.hist-year{font-size:clamp(12px,1.1vw,14px);font-weight:700;color:var(--cobre);letter-spacing:1px;width:clamp(36px,4vw,48px);flex-shrink:0;padding-top:2px;}
+.hist-body{background:rgba(255,255,255,0.025);border:1px solid var(--border-s);border-radius:var(--r);padding:clamp(12px,1.5vw,18px);flex:1;}
+.hist-who{font-size:clamp(13px,1.1vw,15px);font-weight:600;color:var(--plata-cl);margin-bottom:4px;}
+.hist-said{font-size:clamp(13px,1.2vw,15px);font-style:italic;color:var(--plata);line-height:1.6;margin-bottom:5px;}
+.hist-result{font-size:clamp(13px,1.2vw,15px);color:var(--plata);line-height:1.6;}
+
+.eras-title-label{font-size:clamp(13px,1.1vw,14px);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--plata);margin-bottom:clamp(12px,1.5vw,18px);text-align:center;}
+.eras-table{width:100%;border-collapse:collapse;border-radius:var(--r);overflow:hidden;}
+.eras-table th{font-size:clamp(12px,1vw,13px);font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--plata);padding:clamp(8px,1vw,12px) clamp(10px,1.2vw,16px);background:rgba(255,255,255,0.025);border-bottom:1px solid var(--border-s);text-align:left;}
+.eras-table td{font-size:clamp(14px,1.2vw,16px);color:var(--tbody);padding:clamp(10px,1.2vw,16px);border-bottom:1px solid rgba(255,255,255,0.03);vertical-align:top;line-height:1.6;}
+.eras-table tr:last-child td{border-bottom:none;}
+.eras-table tr.act td{background:rgba(200,104,46,0.07);}
+.eras-table tr.act td:first-child{border-left:3px solid var(--cobre);}
+.era-name{font-weight:700;color:var(--plata-cl);display:block;margin-bottom:2px;}
+.era-years{font-size:clamp(11px,.95vw,13px);color:var(--plata);}
+.era-winner{color:var(--plata-cl);font-weight:500;}
+.era-tag{display:inline-block;font-size:clamp(9px,.85vw,11px);font-weight:700;background:rgba(200,104,46,0.15);color:var(--cobre);border:1px solid rgba(200,104,46,0.3);padding:2px 8px;border-radius:20px;letter-spacing:1px;margin-left:6px;vertical-align:middle;}
+
+.analogia{background:rgba(27,77,92,0.1);border:1px solid rgba(46,110,128,0.2);border-radius:var(--r);padding:clamp(16px,2vw,24px);margin-top:clamp(14px,1.8vw,20px);}
+.analogia-title{font-size:clamp(15px,1.4vw,17px);font-weight:700;color:var(--plata-cl);margin-bottom:clamp(12px,1.5vw,16px);}
+.analogia-row{display:flex;gap:clamp(10px,1.2vw,14px);align-items:flex-start;margin-bottom:clamp(8px,1vw,12px);}
+.analogia-row:last-child{margin-bottom:0;}
+.analogia-era{font-size:clamp(12px,1vw,13px);font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--cobre);width:clamp(52px,5vw,68px);flex-shrink:0;padding-top:2px;}
+.analogia-txt{font-size:clamp(15px,1.3vw,17px);color:var(--tbody);line-height:1.75;}
+.analogia-txt strong{color:var(--plata-cl);font-weight:600;}
+.analogia-divider{height:1px;background:var(--border-s);margin:clamp(8px,1vw,12px) 0;}
+.analogia-concl{font-size:clamp(15px,1.3vw,17px);color:var(--plata-cl);font-weight:600;line-height:1.65;padding-top:clamp(10px,1.2vw,14px);border-top:1px dashed rgba(200,104,46,0.25);margin-top:clamp(10px,1.2vw,14px);}
+
+/* H4H intro */
+.h4h-intro-box{background:rgba(27,77,92,0.12);border:1px solid rgba(46,110,128,0.2);border-radius:var(--r);padding:clamp(16px,2vw,22px);margin-bottom:clamp(14px,1.8vw,20px);}
+.h4h-intro-label{font-size:clamp(13px,1.1vw,14px);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--plata);margin-bottom:clamp(8px,1.2vw,12px);}
+.h4h-intro-text{font-size:clamp(16px,1.4vw,18px);color:var(--tbody);line-height:1.82;}
+.h4h-intro-text strong{color:var(--plata-cl);font-weight:600;}
+
+/* Autofinanciamiento */
+.auto-box{background:rgba(200,104,46,0.05);border:1px solid rgba(200,104,46,0.2);border-radius:var(--r);padding:clamp(18px,2.2vw,28px);margin-bottom:clamp(14px,1.8vw,20px);}
+.auto-headline{font-size:clamp(20px,2.2vw,28px);font-weight:700;color:var(--plata-cl);line-height:1.2;margin-bottom:clamp(10px,1.4vw,16px);}
+.auto-headline em{font-style:italic;color:#D97B3C;font-weight:700;font-weight:300;}
+.auto-sub{font-size:clamp(15px,1.3vw,17px);color:var(--tbody);line-height:1.82;margin-bottom:clamp(16px,2vw,22px);}
+.auto-flow{display:flex;flex-direction:column;align-items:center;gap:0;margin-bottom:clamp(14px,1.8vw,20px);}
+@media(min-width:600px){.auto-flow{flex-direction:row;justify-content:center;align-items:stretch;}}
+.auto-step{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:clamp(8px,1vw,12px);padding:clamp(12px,1.5vw,18px);text-align:center;flex:1;max-width:200px;}
+.auto-step.entry{background:rgba(200,104,46,0.1);border-color:rgba(200,104,46,0.3);}
+.auto-step-label{font-size:clamp(10px,.9vw,11px);font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--plata);margin-bottom:5px;}
+.auto-step.entry .auto-step-label{color:var(--cobre);}
+.auto-step-val{font-size:clamp(18px,2vw,24px);font-weight:800;color:var(--plata-cl);margin-bottom:5px;line-height:1;}
+.auto-step.entry .auto-step-val{color:var(--cobre);}
+.auto-step-desc{font-size:clamp(11px,1vw,12px);color:var(--plata);line-height:1.5;}
+.auto-arrow-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:clamp(6px,.8vw,10px);gap:3px;flex-shrink:0;}
+.auto-arrow{font-size:clamp(16px,1.8vw,22px);color:var(--cobre);opacity:.7;line-height:1;}
+@media(min-width:600px){.auto-arrow{transform:rotate(-90deg);}}
+.auto-arrow-note{font-size:clamp(9px,.8vw,10px);color:var(--tmuted);font-style:italic;text-align:center;max-width:72px;line-height:1.4;opacity:.7;}
+.auto-disclaimer{display:flex;gap:clamp(8px,1vw,12px);align-items:flex-start;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:clamp(6px,.8vw,10px);padding:clamp(10px,1.2vw,14px);}
+.auto-disclaimer-icon{font-size:clamp(13px,1.2vw,15px);flex-shrink:0;margin-top:1px;opacity:.6;}
+.auto-disclaimer-text{font-size:clamp(12px,1vw,13px);color:var(--tmuted);line-height:1.65;opacity:.85;}
+
+/* Pilares valor */
+.valor-grid{display:grid;grid-template-columns:1fr;gap:clamp(10px,1.2vw,14px);margin-bottom:clamp(14px,1.8vw,20px);}
+.valor-card{background:rgba(200,104,46,0.06);border:1px solid var(--border);border-radius:var(--r);padding:clamp(14px,1.8vw,20px);display:flex;gap:clamp(12px,1.5vw,18px);align-items:flex-start;}
+.valor-icon{font-size:clamp(22px,2.2vw,28px);flex-shrink:0;margin-top:2px;}
+.valor-label{font-size:clamp(13px,1.1vw,14px);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--cobre);margin-bottom:5px;}
+.valor-title{font-size:clamp(16px,1.5vw,19px);font-weight:700;color:var(--plata-cl);margin-bottom:6px;line-height:1.3;}
+.valor-desc{font-size:clamp(14px,1.2vw,16px);color:var(--tbody);line-height:1.75;}
+.valor-desc strong{color:var(--plata-cl);font-weight:600;}
+
+/* Wallet — no custodia DESTACADO */
+.custodia-box{
+  background:var(--grafito);
+  border:1px solid rgba(200,104,46,0.25);
+  border-radius:var(--r);
+  padding:clamp(18px,2.2vw,28px);
+  margin-bottom:clamp(14px,1.8vw,20px);
+}
+.custodia-eyebrow{font-size:clamp(13px,1.1vw,14px);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--plata);margin-bottom:clamp(8px,1.2vw,12px);}
+.custodia-h{font-size:clamp(20px,2.2vw,28px);font-weight:800;color:var(--plata-cl);line-height:1.2;margin-bottom:clamp(12px,1.5vw,18px);}
+.custodia-h em{font-style:italic;color:#D97B3C;font-weight:700;font-weight:300;}
+.custodia-contrast{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.2vw,14px);margin-bottom:clamp(14px,1.8vw,20px);}
+.custodia-col{border-radius:clamp(8px,1vw,12px);padding:clamp(12px,1.5vw,18px);}
+.custodia-col.banco{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);}
+.custodia-col.h4h{background:rgba(200,104,46,0.08);border:1px solid rgba(200,104,46,0.22);}
+.custodia-col-label{font-size:clamp(10px,.9vw,12px);font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:8px;}
+.custodia-col.banco .custodia-col-label{color:var(--plata);}
+.custodia-col.h4h .custodia-col-label{color:var(--cobre);}
+.custodia-col-text{font-size:clamp(13px,1.2vw,15px);color:var(--tbody);line-height:1.7;}
+.custodia-remate{font-size:clamp(16px,1.5vw,19px);color:var(--plata-cl);font-weight:600;line-height:1.6;padding-top:clamp(12px,1.5vw,16px);border-top:1px dashed rgba(200,104,46,0.25);}
+.custodia-remate em{font-style:italic;color:#D97B3C;font-weight:700;font-weight:300;}
+.custodia-alerta{font-size:clamp(12px,1vw,13px);color:var(--plata);margin-top:clamp(10px,1.2vw,14px);line-height:1.6;font-style:italic;opacity:.8;}
+
+/* Tech badges */
+.tech{background:rgba(255,255,255,0.025);border:1px solid var(--border-s);border-radius:var(--r);padding:clamp(14px,1.8vw,20px);}
+.tech-row{display:flex;gap:clamp(10px,1.2vw,14px);margin-bottom:clamp(10px,1.2vw,14px);align-items:flex-start;}
+.tech-row:last-child{margin-bottom:0;}
+.tbadge{font-size:clamp(10px,.9vw,12px);font-weight:700;background:rgba(200,104,46,0.12);color:var(--cobre);border:1px solid rgba(200,104,46,0.3);padding:5px 10px;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:2px;}
+.tbadge.b{background:rgba(200,210,214,0.08);color:var(--plata);border-color:rgba(200,210,214,0.2);}
+.ttext{font-size:clamp(14px,1.2vw,16px);color:var(--tbody);line-height:1.75;}
+.ttext strong{color:var(--plata-cl);font-weight:600;}
+.flow{display:flex;align-items:center;justify-content:center;gap:clamp(6px,1vw,12px);margin-top:clamp(12px,1.5vw,18px);flex-wrap:wrap;}
+.fnode{background:rgba(255,255,255,0.04);border:1px solid rgba(200,210,214,0.14);border-radius:8px;padding:clamp(6px,.8vw,9px) clamp(10px,1.2vw,16px);font-size:clamp(13px,1.2vw,15px);font-weight:500;color:var(--plata-cl);}
+.fnode.c{background:rgba(200,104,46,0.1);border-color:var(--border);color:#D97B3C;font-weight:700;}
+.farrow{color:var(--cobre);font-size:clamp(14px,1.6vw,20px);}
+
+/* SÍ/NO */
+.transp{background:rgba(255,255,255,0.025);border:1px solid var(--border-s);border-radius:var(--r);padding:clamp(14px,1.8vw,22px);}
+.t-row{display:flex;gap:clamp(10px,1.2vw,14px);margin-bottom:clamp(8px,1vw,12px);font-size:clamp(15px,1.3vw,17px);line-height:1.6;align-items:center;}
+.t-row:last-child{margin-bottom:0;}
+.si,.no{display:inline-flex;align-items:center;justify-content:center;min-width:clamp(40px,4vw,52px);padding:clamp(4px,.6vw,7px) clamp(8px,1vw,12px);border-radius:6px;font-size:clamp(13px,1.1vw,15px);font-weight:800;flex-shrink:0;letter-spacing:.5px;}
+.si{color:var(--plata-cl);background:rgba(46,110,128,0.25);border:1px solid rgba(46,110,128,0.5);}
+.no{color:var(--plata-cl);background:rgba(200,104,46,0.25);border:1px solid rgba(200,104,46,0.5);}
+
+/* Stat cards */
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px,1.2vw,14px);margin:clamp(14px,1.8vw,20px) 0;}
+@media(max-width:480px){.stat-row{grid-template-columns:1fr 1fr;}.stat-row .stat-card:last-child{grid-column:1/-1;}}
+.stat-card{background:rgba(255,255,255,0.03);border:1px solid var(--border-s);border-radius:var(--r);padding:clamp(12px,1.5vw,18px);text-align:center;}
+.stat-num{font-size:clamp(20px,2.2vw,28px);font-weight:800;color:var(--cobre);margin-bottom:4px;line-height:1;}
+.stat-label{font-size:clamp(11px,1vw,13px);color:var(--plata);line-height:1.5;}
+
+/* GIRO section */
+.giro-sec{background:var(--grafito);border-top:1px solid rgba(200,104,46,0.2);border-bottom:1px solid rgba(200,104,46,0.2);padding:clamp(32px,4vw,52px) var(--pad);}
+.giro-inner{max-width:820px;margin:0 auto;}
+.giro-bloque{padding:clamp(20px,2.5vw,32px) 0;}
+.giro-divider{height:1px;background:rgba(200,104,46,0.15);}
+.giro-label{font-size:clamp(13px,1.1vw,14px);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--plata);margin-bottom:clamp(10px,1.4vw,16px);}
+.giro-h{font-size:clamp(26px,3.5vw,48px);font-weight:800;color:var(--plata-cl);line-height:1.1;margin-bottom:clamp(14px,2vw,22px);}
+.giro-h em{font-style:italic;color:#D97B3C;font-weight:700;font-weight:300;}
+.giro-h2{font-size:clamp(20px,2.5vw,32px);font-weight:700;color:var(--plata-cl);line-height:1.2;margin-bottom:clamp(12px,1.6vw,20px);}
+.giro-h2 em{font-style:italic;color:var(--cobre);font-weight:700;}
+.giro-body{font-size:clamp(17px,1.5vw,19px);color:var(--tbody);line-height:1.85;margin-bottom:clamp(12px,1.5vw,18px);}
+.giro-body:last-child{margin-bottom:0;}
+.giro-body strong{color:var(--plata-cl);font-weight:600;}
+
+/* BRIDGE */
+.bridge{background:rgba(200,104,46,0.05);border-top:2px solid rgba(200,104,46,0.2);border-bottom:1px solid rgba(200,104,46,0.15);padding:clamp(28px,3.5vw,48px) var(--pad);}
+.bridge-title{font-size:clamp(22px,2.6vw,34px);font-weight:700;color:var(--plata-cl);line-height:1.2;margin-bottom:clamp(12px,1.5vw,18px);text-align:center;}
+.bridge-title em{font-style:italic;color:#D97B3C;font-weight:700;font-weight:300;}
+.bridge-body{font-size:clamp(16px,1.4vw,18px);color:var(--tbody);line-height:1.85;text-align:center;max-width:680px;margin:0 auto clamp(20px,2.5vw,32px);}
+.bridge-body strong{color:var(--plata-cl);font-weight:600;}
+.razones{display:grid;grid-template-columns:1fr;gap:clamp(10px,1.2vw,14px);max-width:820px;margin:0 auto;}
+@media(min-width:600px){.razones{grid-template-columns:1fr 1fr;}}
+@media(min-width:900px){.razones{grid-template-columns:1fr 1fr 1fr;}}
+.razon{background:rgba(255,255,255,0.03);border:1px solid rgba(200,104,46,0.15);border-radius:var(--r);padding:clamp(16px,2vw,22px);text-align:center;}
+.razon-num{font-size:clamp(30px,3.2vw,42px);font-weight:800;color:var(--cobre);line-height:1;margin-bottom:8px;}
+.razon-title{font-size:clamp(16px,1.5vw,18px);font-weight:700;color:var(--plata-cl);margin-bottom:6px;line-height:1.3;}
+.razon-desc{font-size:clamp(14px,1.2vw,16px);color:var(--tbody);line-height:1.65;}
+
+/* CTA */
+.cta-sec{background:var(--grafito-dk);padding:clamp(32px,4.5vw,60px) var(--pad);border-top:2px solid var(--cobre);text-align:center;}
+.cta-eyebrow{font-size:clamp(13px,1.1vw,14px);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--plata);margin-bottom:clamp(10px,1.4vw,16px);}
+.cta-h{font-size:clamp(26px,3vw,42px);font-weight:700;color:var(--plata-cl);line-height:1.15;margin-bottom:clamp(10px,1.4vw,16px);}
+.cta-h em{font-style:italic;color:#D97B3C;font-weight:700;font-weight:300;}
+.cta-sub{font-size:clamp(16px,1.4vw,18px);color:var(--tbody);line-height:1.85;max-width:580px;margin:0 auto clamp(22px,2.8vw,36px);}
+.pasos-wrap{max-width:820px;margin:0 auto clamp(24px,3vw,38px);background:rgba(255,255,255,0.03);border:1px solid rgba(200,104,46,0.2);border-radius:var(--r);padding:clamp(18px,2.2vw,28px);text-align:left;}
+.pasos-label{font-size:clamp(13px,1.1vw,14px);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--plata);margin-bottom:clamp(14px,1.8vw,20px);text-align:center;}
+.pasos-grid{display:grid;grid-template-columns:1fr;gap:clamp(10px,1.2vw,14px);}
+@media(min-width:600px){.pasos-grid{grid-template-columns:1fr 1fr;}}
+.paso{display:flex;gap:clamp(10px,1.2vw,14px);align-items:flex-start;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:clamp(8px,1vw,12px);padding:clamp(12px,1.5vw,18px);}
+.paso-num{font-size:clamp(20px,2.2vw,28px);font-weight:800;color:var(--cobre);line-height:1;flex-shrink:0;width:clamp(26px,2.8vw,34px);}
+.paso-title{font-size:clamp(14px,1.3vw,16px);font-weight:700;color:var(--plata-cl);margin-bottom:4px;line-height:1.3;}
+.paso-desc{font-size:clamp(12px,1.1vw,14px);color:var(--tbody);line-height:1.7;}
+.pasos-nota{font-size:clamp(12px,1vw,13px);color:var(--tmuted);text-align:center;margin-top:clamp(12px,1.5vw,16px);font-style:italic;opacity:.8;}
+.wa-btn{display:inline-flex;align-items:center;gap:clamp(10px,1.2vw,14px);background:#25D366;color:#fff;font-size:clamp(16px,1.5vw,18px);font-weight:700;padding:clamp(14px,1.8vw,20px) clamp(28px,3.5vw,44px);border-radius:100px;text-decoration:none;box-shadow:0 8px 32px rgba(37,211,102,0.25);transition:transform .2s,box-shadow .2s;cursor:pointer;border:none;}
+.wa-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(37,211,102,0.35);}
+.wa-icon{width:clamp(20px,2vw,26px);height:clamp(20px,2vw,26px);flex-shrink:0;}
+.wa-note{font-size:clamp(13px,1.1vw,15px);color:var(--plata);margin-top:clamp(10px,1.2vw,16px);font-style:italic;opacity:.7;}
+.firma{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:clamp(22px,2.8vw,32px);padding-top:clamp(18px,2.2vw,26px);border-top:1px solid rgba(200,104,46,0.12);}
+.firma-name{font-size:clamp(14px,1.3vw,17px);font-weight:300;color:var(--plata-cl);letter-spacing:5px;opacity:.75;}
+.firma-tag{font-size:clamp(12px,1vw,13px);color:var(--cobre);letter-spacing:1.2px;opacity:.85;text-transform:uppercase;}
+.disclaimer{font-size:clamp(12px,1vw,13px);color:rgba(200,210,214,.3);line-height:1.7;margin-top:clamp(18px,2.2vw,28px);padding-top:clamp(14px,1.8vw,20px);border-top:1px solid rgba(255,255,255,.05);max-width:820px;margin-left:auto;margin-right:auto;text-align:left;}
+
+/* Texto cobre en cursiva — mayor presencia */
+.giro-h em,.giro-h2 em,.bridge-title em,.cta-h em,
+.auto-headline em,.custodia-h em,.custodia-remate em,
+.story-h1 em,.story-p em,.body-text em,.pull em{
+  color:#D97B3C;
+  font-weight:700;
+  font-style:italic;
+}
+</style>
+</head>
+<body>
+<div class="shell">
+<div class="card">
+
+<!-- ══ HEADER — Carlos ══ -->
+<div class="hdr">
+  <div class="ifx-lockup">
+    <svg width="88" height="44" viewBox="95 52 215 80" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 210 100 C 202 78,172 58,146 60 C 116 62,102 82,104 98 C 106 116,124 126,148 124 C 170 122,196 106,210 100 C 224 94,240 74,260 68 C 282 62,298 76,298 92 C 298 110,282 122,260 122 C 238 122,222 108,210 100" fill="none" stroke="#BDC8CC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 202 93 Q 210 100 202 108" fill="none" stroke="#C8682E" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M 218 93 Q 210 100 218 108" fill="none" stroke="#C8682E" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="210" cy="100" r="2.4" fill="#C8682E"/>
+    </svg>
+    <div class="ifx-sep-v"></div>
+    <div class="ifx-wm">
+      <div class="ifx-name">infinexa</div>
+      <div class="ifx-line"></div>
+      <div class="ifx-tag">connecting value with purpose</div>
+    </div>
+  </div>
+  <div class="story-label">Una historia que quizás ya conoces</div>
+  <div class="story-h1">Carlos hizo todo bien.<br><em>Y aun así, algo no cuadra.</em></div>
+  <div class="story-p">Carlos tiene 42 años. Nunca fue desordenado con el dinero. Trabajó duro, ahorró lo que pudo, pagó sus deudas a tiempo. <strong>Hizo exactamente lo que le enseñaron.</strong></div>
+  <div class="story-p">Pero en los últimos años algo se siente diferente. El dinero alcanza menos. El ahorro no crece como antes. Los precios suben y el saldo se queda igual. <em>No es que Carlos haya fallado — es que las reglas del juego cambiaron y nadie le avisó.</em></div>
+  <div class="story-p">Si algo de esto resuena, sigue leyendo. Esto es para ti.</div>
+</div>
+
+<!-- ══ GIRO + IDENTIDAD + LEGADO ══ -->
+<div class="giro-sec">
+  <div class="giro-inner">
+    <div class="giro-bloque">
+      <div class="giro-label">Una verdad que no depende de tu opinión</div>
+      <div class="giro-h">Lo quieras o no.<br>Lo entiendas o no.<br><em>Ya está pasando.</em></div>
+      <div class="giro-body">La descentralización no necesita convencerte para existir. Ya existe. Lo mismo pasó con internet, con el celular, con las aplicaciones de pago — nadie pidió permiso. Llegaron, cambiaron las reglas, y el mundo simplemente se adaptó. <strong>La pregunta nunca fue si iba a pasar. La pregunta siempre fue: ¿cuándo te ibas a enterar?</strong></div>
+      <div class="giro-body">La diferencia entre las personas que prosperan en cada era y las que no, nunca fue de inteligencia. Fue de <strong>información y criterio</strong>. Los que llegaron primero no eran genios — eran curiosos que se atrevieron a documentarse antes de que fuera obvio.</div>
+    </div>
+    <div class="giro-divider"></div>
+    <div class="giro-bloque">
+      <div class="giro-label">La pregunta que realmente importa</div>
+      <div class="giro-h2">No es <em>"¿esto funciona?"</em><br>Es <em>"¿qué tipo de persona quiero ser en este momento?"</em></div>
+      <div class="giro-body">Documentarse no es comprometerse. Es ejercer el derecho de entender el mundo en el que vives, con la información que hoy está disponible — no con la que tendrás cuando ya sea tarde.</div>
+    </div>
+    <div class="giro-divider"></div>
+    <div class="giro-bloque" style="padding-bottom:0;">
+      <div class="giro-label">Más allá de ti</div>
+      <div class="giro-h2">Cada generación tiene su <em>momento de llegar primero.</em> Este es el nuestro.</div>
+      <div class="giro-body">Quien se documenta hoy se convierte en el punto de referencia de su círculo mañana. No porque haya que convencer a nadie — sino porque cuando algo se vuelve inevitable para todos, los que ya lo entendían se convierten naturalmente en guía. <strong>Eso no se improvisa — se construye con criterio e información correcta.</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ACORDEÓN ══ -->
+
+<!-- ESCALÓN 1: El problema -->
+<div class="acord-section" id="s1">
+  <button class="acord-trigger" onclick="toggle('s1')" aria-expanded="false">
+    <div class="acord-trigger-left">
+      <span class="acord-step">Escalón 1</span>
+      <span class="acord-title">El dinero que duerme, pierde.</span>
+      <span class="acord-preview">La inflación erosiona en silencio lo que construiste.</span>
+    </div>
+    <div class="acord-icon-wrap"><div class="acord-icon">
+      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    </div><span class="acord-icon-label">Ver más</span></div>
+  </button>
+  <div class="acord-panel">
+    <div class="acord-inner">
+      <div class="body-text">No es una opinión. Es matemática. La inflación erosiona de forma sostenida el poder adquisitivo del dinero guardado en cuentas tradicionales. El que ahorra sin estrategia, en realidad está perdiendo en silencio.</div>
+      <div class="pull">"Guardar dinero ya no es suficiente para proteger lo que construiste. El sistema cambió — y el que no lo sabe, lo paga."</div>
+      <div class="body-text">El problema no es tu esfuerzo. El problema es el <strong>vehículo</strong>. El mejor piloto en un auto viejo pierde contra un conductor común en un superdeportivo moderno. No es habilidad — es el vehículo en el que estás montado.</div>
+      <div class="stat-row">
+        <div class="stat-card"><div class="stat-num">−40%</div><div class="stat-label">Poder adquisitivo perdido en MXN en la última década</div></div>
+        <div class="stat-card"><div class="stat-num">3.5%</div><div class="stat-label">Rendimiento promedio cuenta de ahorro bancaria</div></div>
+        <div class="stat-card"><div class="stat-num">7–9%</div><div class="stat-label">Inflación promedio anual reciente en México</div></div>
+      </div>
+      <div style="font-size:clamp(11px,.9vw,12px);color:rgba(200,210,214,0.35);font-style:italic;line-height:1.6;">Referencias históricas de fuentes públicas. No son proyecciones ni garantías.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ESCALÓN 2: El patrón histórico -->
+<div class="acord-section" id="s2">
+  <button class="acord-trigger" onclick="toggle('s2')" aria-expanded="false">
+    <div class="acord-trigger-left">
+      <span class="acord-step">Escalón 2</span>
+      <span class="acord-title">Cada era tuvo sus escépticos.</span>
+      <span class="acord-preview">Todos pagaron el mismo precio.</span>
+    </div>
+    <div class="acord-icon-wrap"><div class="acord-icon">
+      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    </div><span class="acord-icon-label">Ver más</span></div>
+  </button>
+  <div class="acord-panel">
+    <div class="acord-inner">
+      <div class="hist-item">
+        <div class="hist-year">1876</div>
+        <div class="hist-body">
+          <div class="hist-who">Western Union rechazó el teléfono</div>
+          <div class="hist-said">"Este juguete no tiene valor práctico para nosotros."</div>
+          <div class="hist-result">→ Bell fundó AT&T. Western Union dejó pasar el negocio del siglo.</div>
+        </div>
+      </div>
+      <div class="hist-item">
+        <div class="hist-year">1995</div>
+        <div class="hist-body">
+          <div class="hist-who">Newsweek declaró que internet era una moda</div>
+          <div class="hist-said">"El hype sobre internet tiene que terminar pronto."</div>
+          <div class="hist-result">→ Ese mismo año nacieron Amazon y eBay.</div>
+        </div>
+      </div>
+      <div class="hist-item">
+        <div class="hist-year">2010</div>
+        <div class="hist-body">
+          <div class="hist-who">Analistas llamaron fraude a Bitcoin</div>
+          <div class="hist-said">"No vale nada real. Es dinero de fantasía."</div>
+          <div class="hist-result">→ Bitcoin cotizaba centavos de dólar. Hoy es el activo con mayor apreciación documentada de la historia moderna.</div>
+        </div>
+      </div>
+      <div class="pull" style="margin-top:clamp(14px,1.8vw,20px);">El costo de dudar no siempre es perder dinero. A veces es simplemente <em>no estar</em> cuando el momento llegó.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ESCALÓN 3: Las eras -->
+<div class="acord-section" id="s3">
+  <button class="acord-trigger" onclick="toggle('s3')" aria-expanded="false">
+    <div class="acord-trigger-left">
+      <span class="acord-step">Escalón 3</span>
+      <span class="acord-title">Cada era define quién prospera.</span>
+      <span class="acord-preview">¿En cuál estás construyendo hoy?</span>
+    </div>
+    <div class="acord-icon-wrap"><div class="acord-icon">
+      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    </div><span class="acord-icon-label">Ver más</span></div>
+  </button>
+  <div class="acord-panel">
+    <div class="acord-inner">
+      <div class="body-text">La historia tiene un patrón claro: cada gran transformación tecnológica crea una nueva clase de personas que prosperan. No son los más listos — son los que entendieron en qué era estaban viviendo.</div>
+      <div class="eras-title-label" style="margin-top:clamp(16px,2vw,22px);">Las grandes eras económicas de la humanidad</div>
+      <table class="eras-table">
+        <thead><tr><th>Era · Período</th><th>Motor de cambio</th><th>Quién prosperó</th></tr></thead>
+        <tbody>
+          <tr><td><span class="era-name">Agraria</span><span class="era-years">10,000 a.C. – 1760</span></td><td style="color:var(--tmuted);">Agricultura y tierra</td><td class="era-winner">Dueño de tierras</td></tr>
+          <tr><td><span class="era-name">Industrial</span><span class="era-years">1760 – 1970</span></td><td style="color:var(--tmuted);">Máquinas y fábricas</td><td class="era-winner">Dueño de fábricas</td></tr>
+          <tr><td><span class="era-name">Información</span><span class="era-years">1970 – 2010</span></td><td style="color:var(--tmuted);">Computadoras y software</td><td class="era-winner">Profesional especializado</td></tr>
+          <tr><td><span class="era-name">Digital</span><span class="era-years">2010 – hoy</span></td><td style="color:var(--tmuted);">Internet y plataformas</td><td class="era-winner">Emprendedor digital</td></tr>
+          <tr class="act"><td><span class="era-name">Descentralización <span class="era-tag">AHORA</span></span><span class="era-years">2009 – presente</span></td><td style="color:var(--plata);">Blockchain y Web3</td><td class="era-winner" style="color:var(--cobre);font-weight:700;">Constructor de ecosistemas digitales</td></tr>
+        </tbody>
+      </table>
+      <div class="analogia" style="margin-top:clamp(16px,2vw,22px);">
+        <div class="analogia-title">¿Qué tan temprano estamos? Una analogía simple.</div>
+        <div class="analogia-row">
+          <div class="analogia-era">Internet</div>
+          <div class="analogia-txt">En sus primeros años, muy poca gente tenía correo electrónico. Los que pusieron un negocio cuando era "raro" hoy son gigantes. Los que esperaron a que fuera "obvio" llegaron tarde.</div>
+        </div>
+        <div class="analogia-divider"></div>
+        <div class="analogia-row">
+          <div class="analogia-era">Hoy</div>
+          <div class="analogia-txt">La blockchain está en el mismo punto. <strong>La infraestructura existe y funciona. Lo que falta es que más personas la usen.</strong></div>
+        </div>
+        <div class="analogia-concl">La pregunta no es si esta tecnología va a crecer. Es: ¿ya estás construyendo en ella, o vas a esperar a que sea "obvio"?</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ESCALÓN 4: Hand4Hand -->
+<div class="acord-section" id="s4">
+  <button class="acord-trigger" onclick="toggle('s4')" aria-expanded="false">
+    <div class="acord-trigger-left">
+      <span class="acord-step">Escalón 4</span>
+      <span class="acord-title">Hand4Hand — apoyo mutuo en la nueva economía.</span>
+      <span class="acord-preview">Una sola aportación. Todo el sistema.</span>
+    </div>
+    <div class="acord-icon-wrap"><div class="acord-icon">
+      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    </div><span class="acord-icon-label">Ver más</span></div>
+  </button>
+  <div class="acord-panel">
+    <div class="acord-inner">
+
+      <div class="h4h-intro-box">
+        <div class="h4h-intro-label">Qué es exactamente</div>
+        <div class="h4h-intro-text">Una comunidad global de apoyo mutuo en economía colaborativa, donde las personas se apoyan mediante <strong>aportaciones voluntarias wallet-to-wallet</strong> a través del mecanismo Ciclo 2×2, sin intermediarios financieros, verificable en blockchain pública.</div>
+      </div>
+
+      <!-- APORTACIÓN ÚNICA — AUTOFINANCIAMIENTO -->
+      <div class="auto-box">
+        <div class="auto-headline">100 USDT es tu única<br>aportación externa.<br><em>El resto lo construye el modelo.</em></div>
+        <div class="auto-sub">Una sola aportación inicial activa el sistema. Si los ciclos se completan con la participación activa de la comunidad, lo generado se utiliza para abrir los siguientes niveles — sin que necesites aportar capital adicional.</div>
+        <div class="auto-flow">
+          <div class="auto-step entry">
+            <div class="auto-step-label">Tu única aportación externa</div>
+            <div class="auto-step-val">100 USDT</div>
+            <div class="auto-step-desc">Activa Ciclo 10 + Ciclo 25 + Ciclo 50 simultáneamente</div>
+          </div>
+          <div class="auto-arrow-wrap">
+            <div class="auto-arrow">↓</div>
+            <div class="auto-arrow-note">si la comunidad participa</div>
+          </div>
+          <div class="auto-step">
+            <div class="auto-step-label">Lo generado abre</div>
+            <div class="auto-step-val">Ciclo 100</div>
+            <div class="auto-step-desc">Sin aportación externa adicional</div>
+          </div>
+          <div class="auto-arrow-wrap">
+            <div class="auto-arrow">↓</div>
+            <div class="auto-arrow-note">el modelo sigue operando</div>
+          </div>
+          <div class="auto-step">
+            <div class="auto-step-label">Escala hasta</div>
+            <div class="auto-step-val">Ciclo 5,000</div>
+            <div class="auto-step-desc">9 denominaciones · mismo capital inicial</div>
+          </div>
+        </div>
+        <div class="auto-disclaimer">
+          <div class="auto-disclaimer-icon">⚠</div>
+          <div class="auto-disclaimer-text">El escalamiento depende de la participación activa y orgánica de la comunidad en cada ciclo. No es automático ni garantizado. Es el diseño del modelo cuando opera. Las cifras son aritmética del modelo — no son promesas ni rendimientos.</div>
+        </div>
+      </div>
+
+      <!-- 3 PILARES -->
+      <div class="valor-grid">
+        <div class="valor-card">
+          <div class="valor-icon">📚</div>
+          <div>
+            <div class="valor-label">Pilar 1 · Educación</div>
+            <div class="valor-title">Formación real en la nueva economía</div>
+            <div class="valor-desc">Hand4Hand Labs te acompaña paso a paso: blockchain, wallets, economía descentralizada. <strong>No necesitas ser experto para empezar.</strong></div>
+          </div>
+        </div>
+        <div class="valor-card">
+          <div class="valor-icon">🌐</div>
+          <div>
+            <div class="valor-label">Pilar 2 · Comunidad</div>
+            <div class="valor-title">Red global activa con acompañamiento</div>
+            <div class="valor-desc">Sesiones diarias con mentores de múltiples países. Acompañamiento personal 90 días. <strong>No navegas solo.</strong></div>
+          </div>
+        </div>
+        <div class="valor-card">
+          <div class="valor-icon">🔗</div>
+          <div>
+            <div class="valor-label">Pilar 3 · Participación voluntaria</div>
+            <div class="valor-title">Ciclos wallet-to-wallet</div>
+            <div class="valor-desc">Posibilidad voluntaria y <strong>no garantizada</strong> de participar en ciclos de aportaciones. Dependen de la participación activa — no son rendimientos.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NO CUSTODIA — DESTACADO -->
+      <div class="custodia-box">
+        <div class="custodia-eyebrow">La diferencia que más importa</div>
+        <div class="custodia-h">El banco custodia tu dinero.<br><em>Aquí, tú.</em></div>
+        <div class="custodia-contrast">
+          <div class="custodia-col banco">
+            <div class="custodia-col-label">Sistema tradicional</div>
+            <div class="custodia-col-text">Tu dinero está en manos del banco. Ellos deciden cuándo puedes accederlo, a qué velocidad y bajo qué condiciones. Tú no tienes las llaves.</div>
+          </div>
+          <div class="custodia-col h4h">
+            <div class="custodia-col-label">Hand4Hand</div>
+            <div class="custodia-col-text">Tus fondos están en tu wallet no custodial. Solo tú tienes las llaves. Hand4Hand nunca puede moverlos, bloquearlos ni retenerlos.</div>
+          </div>
+        </div>
+        <div class="custodia-remate">Lo que llega a tu wallet, es tuyo. <em>Sin intermediarios. Sin custodia. Sin permisos.</em></div>
+        <div class="custodia-alerta">⚠ Hand4Hand jamás pedirá tu frase semilla. Si alguien lo hace, es fraude. Reporta de inmediato.</div>
+      </div>
+
+      <!-- TECH -->
+      <div class="tech">
+        <div class="tech-row"><span class="tbadge">USDT</span><div class="ttext"><strong>Valor en dólares, sin volatilidad.</strong> 1 USDT = $1 USD siempre.</div></div>
+        <div class="tech-row"><span class="tbadge b">POLYGON</span><div class="ttext"><strong>Blockchain pública verificable.</strong> Transacciones en segundos, comisiones mínimas.</div></div>
+        <div class="tech-row"><span class="tbadge">WALLET</span><div class="ttext"><strong>No custodial.</strong> Hand4Hand nunca toca tus fondos. Va directo de wallet a wallet.</div></div>
+      </div>
+      <div class="flow" style="margin-top:clamp(12px,1.5vw,18px);">
+        <div class="fnode">Tu wallet</div><div class="farrow">→</div>
+        <div class="fnode c">Red Polygon</div><div class="farrow">→</div>
+        <div class="fnode">Wallet receptor</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ESCALÓN 5: Claridad SÍ/NO -->
+<div class="acord-section" id="s5">
+  <button class="acord-trigger" onclick="toggle('s5')" aria-expanded="false">
+    <div class="acord-trigger-left">
+      <span class="acord-step">Escalón 5</span>
+      <span class="acord-title">Lo que es y lo que no es.</span>
+      <span class="acord-preview">Claridad total antes de cualquier decisión.</span>
+    </div>
+    <div class="acord-icon-wrap"><div class="acord-icon">
+      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    </div><span class="acord-icon-label">Ver más</span></div>
+  </button>
+  <div class="acord-panel">
+    <div class="acord-inner">
+      <div class="transp">
+        <div class="t-row"><span class="si">SÍ</span><span style="color:var(--tbody);">Plataforma de aportaciones voluntarias entre personas</span></div>
+        <div class="t-row"><span class="si">SÍ</span><span style="color:var(--tbody);">Verificable en blockchain pública (red Polygon)</span></div>
+        <div class="t-row"><span class="si">SÍ</span><span style="color:var(--tbody);">Fee tecnológico del 10% transparente y documentado</span></div>
+        <div class="t-row"><span class="si">SÍ</span><span style="color:var(--tbody);">Formación real en nueva economía digital (Hand4Hand Labs)</span></div>
+        <div class="t-row"><span class="si">SÍ</span><span style="color:var(--tbody);">Wallet no custodial — tus llaves, tus fondos, siempre</span></div>
+        <div class="t-row" style="margin-top:12px;"><span class="no">NO</span><span style="color:var(--tbody);">es una inversión ni ofrece rendimientos de ningún tipo</span></div>
+        <div class="t-row"><span class="no">NO</span><span style="color:var(--tbody);">garantiza resultados — dependen de la participación activa</span></div>
+        <div class="t-row"><span class="no">NO</span><span style="color:var(--tbody);">custodia fondos ni pedirá jamás tu frase semilla</span></div>
+        <div class="t-row"><span class="no">NO</span><span style="color:var(--tbody);">es banco, fondo, exchange ni intermediario financiero</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ BRIDGE ══ -->
+<div class="bridge">
+  <div class="bridge-title">¿Por qué vale la pena<br><em>dar el siguiente paso?</em></div>
+  <div class="bridge-body">No te pedimos que confíes a ciegas. Te pedimos que tengas <strong>una conversación</strong>. Estas son las tres cosas concretas que obtienes al preguntar:</div>
+  <div class="razones">
+    <div class="razon"><div class="razon-num">01</div><div class="razon-title">Claridad sobre la nueva economía</div><div class="razon-desc">Entiendas o no de tecnología, saldrás con contexto real — sin costo, sin compromiso.</div></div>
+    <div class="razon"><div class="razon-num">02</div><div class="razon-title">Visión honesta del modelo</div><div class="razon-desc">Cómo funciona, qué implica, cuánto se aporta, qué no se garantiza. Sin letra pequeña.</div></div>
+    <div class="razon"><div class="razon-num">03</div><div class="razon-title">Tú decides con información</div><div class="razon-desc">Sin presión ni seguimiento insistente. El objetivo es que decidas con criterio, no con presión.</div></div>
+  </div>
+</div>
+
+<!-- ══ CTA ══ -->
+<div class="cta-sec">
+  <div class="cta-eyebrow">¿Listo para la conversación?</div>
+  <div class="cta-h">Una llamada de 20 minutos.<br><em>Sin presión. Sin compromiso.</em></div>
+  <div class="cta-sub">Escríbeme por WhatsApp y agendamos 20 minutos. Te explico el modelo completo, resolvemos todas tus dudas y tú decides si tiene sentido para ti.</div>
+
+  <div class="pasos-wrap">
+    <div class="pasos-label">Si decides avanzar, así funciona el camino</div>
+    <div class="pasos-grid">
+      <div class="paso"><div class="paso-num">1</div><div><div class="paso-title">Conversación inicial</div><div class="paso-desc">Te explico el modelo completo, resolvemos tus dudas y decides con toda la información.</div></div></div>
+      <div class="paso"><div class="paso-num">2</div><div><div class="paso-title">Tu Génesis</div><div class="paso-desc">Registro · Human Wallet · 100 USDT que activa simultáneamente tus 3 primeros Ciclos 2×2 (Ciclo 10, 25 y 50).</div></div></div>
+      <div class="paso"><div class="paso-num">3</div><div><div class="paso-title">Sprint 72 horas</div><div class="paso-desc">Tu mentor te acompaña. Sesiones diarias L-V, 8am y 8pm hora CDMX, disponibles desde el día 1.</div></div></div>
+      <div class="paso"><div class="paso-num">4</div><div><div class="paso-title">Trayectoria 12 semanas</div><div class="paso-desc">Welcomes, Masterclasses, Builds y tu primer Summit. De Insider a Maker con acompañamiento real.</div></div></div>
+    </div>
+    <div class="pasos-nota">Cada paso es voluntario y a tu ritmo. Sin contratos ni permanencia obligatoria.</div>
+  </div>
+
+  <a class="wa-btn" href="https://wa.me/526461173209?text=Hola%2C%20le%C3%AD%20tu%20carta%20de%20Infinexa%20y%20me%20qued%C3%A9%20con%20curiosidad.%20%C2%BFMe%20puedes%20contar%20m%C3%A1s%20sobre%20Hand4Hand%3F" target="_blank" rel="noopener">
+    <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Quiero saber más
+  </a>
+
+  <div class="wa-note">Se abrirá WhatsApp con un mensaje listo — solo presiona enviar.</div>
+
+  <div class="firma">
+    <svg width="44" height="20" viewBox="95 52 215 80" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 210 100 C 202 78,172 58,146 60 C 116 62,102 82,104 98 C 106 116,124 126,148 124 C 170 122,196 106,210 100 C 224 94,240 74,260 68 C 282 62,298 76,298 92 C 298 110,282 122,260 122 C 238 122,222 108,210 100" fill="none" stroke="#BDC8CC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 202 93 Q 210 100 202 108" fill="none" stroke="#C8682E" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M 218 93 Q 210 100 218 108" fill="none" stroke="#C8682E" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="210" cy="100" r="2.4" fill="#C8682E"/>
+    </svg>
+    <div>
+      <div class="firma-name">infinexa</div>
+      <div class="firma-tag">connecting value with purpose</div>
+    </div>
+  </div>
+
+  <div class="disclaimer">Hand4Hand es una plataforma de aportaciones voluntarias entre personas en blockchain. No es una inversión. No es un banco ni un fondo. No ofrece rendimientos ni garantiza resultados de ningún tipo. Los resultados dependen exclusivamente de la participación activa y orgánica de cada miembro de la comunidad. La participación es una decisión consciente y voluntaria. Los datos estadísticos son referencias históricas de fuentes públicas y no constituyen proyecciones ni garantías. El personaje "Carlos" es ficticio y representativo — no es un testimonio real. Las referencias a activos digitales son información educativa documentada y no son indicativas de rendimiento futuro de Hand4Hand.</div>
+</div>
+
+</div><!-- fin card -->
+</div><!-- fin shell -->
+
+<script>
+function toggle(id) {
+  const sec = document.getElementById(id);
+  const isOpen = sec.classList.contains('open');
+  sec.classList.toggle('open', !isOpen);
+  sec.querySelector('.acord-trigger').setAttribute('aria-expanded', !isOpen);
+}
+</script>
+</body>
+</html>
