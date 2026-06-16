@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>carlo · Una conversación que cambia el chip</title>
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://carlos.infinexa.app/">
+<meta property="og:title" content="carlo · Una conversación que cambia el chip">
+<meta property="og:description" content="Connecting value with purpose. Una forma distinta de ver el dinero, la tecnología y el futuro.">
+<meta property="og:image" content="https://infinexa.app/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --grafito:#1F2A33;--grafito-dk:#0F1720;--petroleo:#1B4D5C;--petroleo-cl:#2E6E80;
+  --cobre:#C8682E;--plata:#C9D2D6;--plata-cl:#EDF1F2;--bg:#0F1720;--bg-dk:#0a1018;
+  --border:rgba(200,104,46,0.15);--border-s:rgba(255,255,255,0.055);
+  --tbody:#C9D2D6;--tmuted:#8AA5BF;--pad:clamp(24px,5vw,60px);--r:clamp(10px,1.2vw,16px);
+}
+html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter','Helvetica Neue',Arial,sans-serif;}
+.hdr{padding:clamp(28px,4vw,52px) var(--pad) clamp(24px,3.5vw,40px);border-bottom:1px solid var(--border);}
+.ifx-lockup{display:flex;align-items:center;gap:clamp(14px,2vw,22px);margin-bottom:clamp(24px,3.5vw,40px);}
+.ifx-sep-v{width:.6px;height:clamp(36px,5vw,52px);background:var(--petroleo);opacity:.7;flex-shrink:0;}
+.ifx-wm{display:flex;flex-direction:column;gap:4px;}
+.ifx-name{font-size:clamp(18px,2.2vw,26px);font-weight:300;color:var(--plata-cl);letter-spacing:clamp(6px,1.2vw,14px);}
+.ifx-line{width:44px;height:.8px;background:var(--cobre);opacity:.85;margin:3px 0;}
+.ifx-tag{font-size:clamp(10px,.9vw,12px);font-weight:300;color:var(--plata);letter-spacing:clamp(3px,.5vw,5.5px);opacity:.5;}
+.builder-badge{display:inline-flex;align-items:center;gap:8px;font-size:clamp(11px,1vw,13px);font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--plata-cl);background:rgba(200,104,46,0.1);border:1px solid rgba(200,104,46,0.3);border-radius:20px;padding:6px clamp(12px,1.5vw,18px);}
+.builder-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--cobre);}
+.builder-name{font-size:clamp(22px,3vw,36px);font-weight:700;color:var(--plata-cl);margin-top:12px;}
+.builder-role{font-size:clamp(14px,1.3vw,17px);color:var(--tmuted);margin-top:4px;}
+
+.story-sec{padding:clamp(40px,6vw,80px) var(--pad);border-bottom:1px solid var(--border-s);}
+.story-label{display:inline-flex;align-items:center;gap:8px;font-size:clamp(10px,.9vw,12px);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--plata-cl);background:rgba(27,77,92,0.35);border:1px solid rgba(46,110,128,0.5);border-radius:20px;padding:5px clamp(12px,1.5vw,16px);margin-bottom:clamp(14px,2vw,20px);}
+.story-label::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--cobre);}
+.story-h1{font-size:clamp(28px,3.8vw,52px);font-weight:800;color:var(--plata-cl);line-height:1.1;margin-bottom:clamp(16px,2vw,24px);}
+.story-h1 em{font-style:italic;color:var(--cobre);font-weight:300;}
+.story-p{font-size:clamp(17px,1.5vw,19px);color:var(--tbody);line-height:1.85;margin-bottom:clamp(12px,1.5vw,18px);}
+.story-p strong{color:var(--plata-cl);font-weight:600;}
+.story-p em{font-style:italic;color:var(--cobre);}
+
+.truth-sec{background:var(--grafito-dk);border-top:1px solid rgba(200,104,46,0.2);border-bottom:1px solid rgba(200,104,46,0.2);padding:clamp(40px,6vw,80px) var(--pad);}
+.truth-inner{max-width:760px;margin:0 auto;text-align:center;}
+.truth-label{font-size:clamp(11px,1vw,13px);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--tmuted);margin-bottom:clamp(16px,2vw,24px);}
+.truth-h{font-size:clamp(24px,3.5vw,48px);font-weight:800;color:var(--plata-cl);line-height:1.2;margin-bottom:12px;}
+.truth-h em{font-style:italic;color:var(--cobre);font-weight:300;}
+.truth-p{font-size:clamp(16px,1.4vw,18px);color:var(--tmuted);line-height:1.82;text-align:left;max-width:680px;margin:0 auto;}
+.truth-p strong{color:var(--plata-cl);font-weight:600;}
+
+.pull{background:rgba(200,104,46,0.07);border-left:3px solid var(--cobre);border-radius:0 var(--r) var(--r) 0;padding:clamp(14px,1.8vw,22px) clamp(16px,2vw,26px);margin:clamp(14px,1.8vw,20px) 0;font-size:clamp(17px,1.6vw,20px);color:var(--plata-cl);line-height:1.7;font-style:italic;font-weight:300;}
+
+.cta-sec{padding:clamp(48px,7vw,96px) var(--pad);text-align:center;}
+.cta-inner{max-width:600px;margin:0 auto;}
+.cta-h{font-size:clamp(26px,3.5vw,48px);font-weight:800;color:var(--plata-cl);line-height:1.2;margin-bottom:clamp(12px,1.5vw,20px);}
+.cta-h em{font-style:italic;color:var(--cobre);font-weight:300;}
+.cta-sub{font-size:clamp(15px,1.3vw,17px);color:var(--tmuted);line-height:1.8;margin-bottom:clamp(24px,3vw,40px);}
+.cta-btn{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;font-family:'Inter',sans-serif;font-size:clamp(14px,1.2vw,16px);font-weight:600;letter-spacing:.5px;text-decoration:none;padding:clamp(14px,1.5vw,18px) clamp(28px,3vw,40px);border-radius:50px;transition:opacity .2s;}
+.cta-btn:hover{opacity:.88;}
+.cta-note{font-size:12px;color:var(--tmuted);margin-top:14px;opacity:.7;}
+
+.nav-sec{background:rgba(255,255,255,0.015);border-top:1px solid var(--border-s);padding:clamp(20px,2.5vw,32px) var(--pad);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.nav-link{font-size:clamp(13px,1.1vw,15px);color:var(--tmuted);text-decoration:none;opacity:.7;transition:opacity .2s;}
+.nav-link:hover{opacity:1;color:var(--cobre);}
+
+.ftr{border-top:1px solid var(--border-s);padding:clamp(28px,3.5vw,44px) var(--pad);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.ftr-brand{display:flex;align-items:center;gap:10px;}
+.ftr-text{font-size:12px;color:var(--tmuted);opacity:.5;}
+.powered{font-size:11px;color:var(--tmuted);opacity:.4;letter-spacing:.5px;}
+.powered a{color:var(--cobre);opacity:.7;text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="ifx-lockup">
+    <a href="https://infinexa.app">
+      <svg width="44" height="44" viewBox="0 0 200 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 96C94 78 70 60 50 62C28 64 18 82 20 96C22 112 38 120 58 118C76 116 92 102 100 96Z" stroke="#BDC8CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M100 96C108 90 120 72 138 68C158 64 172 78 172 94C172 112 158 122 138 120C118 118 106 104 100 96Z" stroke="#BDC8CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M92 88Q100 96 92 104" stroke="#C8682E" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M108 88Q100 96 108 104" stroke="#C8682E" stroke-width="2.6" stroke-linecap="round"/>
+        <circle cx="100" cy="96" r="2.8" fill="#C8682E"/>
+      </svg>
+    </a>
+    <div class="ifx-sep-v"></div>
+    <div class="ifx-wm">
+      <div class="ifx-name">infinexa</div>
+      <div class="ifx-line"></div>
+      <div class="ifx-tag">connecting value with purpose</div>
+    </div>
+  </div>
+  <div class="builder-badge">Builder</div>
+  <div class="builder-name">carlo</div>
+  <div class="builder-role">carlos</div>
+</header>
+
+<section class="story-sec">
+  <div class="story-label">Una historia que quizás ya conoces</div>
+  <h1 class="story-h1">Carlos hizo todo bien.<br><em>Y aun así, algo no cuadra.</em></h1>
+  <p class="story-p">Carlos tiene 42 años. Nunca fue desordenado con el dinero. Trabajó duro, ahorró lo que pudo, pagó sus deudas a tiempo. <strong>Hizo exactamente lo que le enseñaron.</strong></p>
+  <p class="story-p">Pero en los últimos años algo se siente diferente. El dinero alcanza menos. El ahorro no crece como antes. Los precios suben y el saldo se queda igual. <em>No es que Carlos haya fallado — es que las reglas del juego cambiaron y nadie le avisó.</em></p>
+  <p class="story-p">Si algo de esto resuena, sigue leyendo. Esto es para ti.</p>
+</section>
+
+<section class="truth-sec">
+  <div class="truth-inner">
+    <div class="truth-label">Una verdad que no depende de tu opinión</div>
+    <h2 class="truth-h">Lo quieras o no.<br>Lo entiendas o no.<br><em>Ya está pasando.</em></h2>
+    <p class="truth-p">La descentralización no necesita convencerte para existir. Ya existe. Lo mismo pasó con internet, con el celular, con las aplicaciones de pago — nadie pidió permiso. Llegaron, <strong>cambiaron las reglas</strong>, y el mundo simplemente se adaptó.</p>
+    <div class="pull">"La pregunta nunca fue si iba a pasar. La pregunta siempre fue: ¿cuándo te ibas a enterar?"</div>
+    <p class="truth-p">Los que aprendieron antes no eran más inteligentes. Eran más curiosos. Estaban dispuestos a informarse antes de que fuera obvio. <strong>Ese momento es ahora.</strong></p>
+  </div>
+</section>
+
+<section class="cta-sec">
+  <div class="cta-inner">
+    <h2 class="cta-h">¿Quieres entender<br><em>qué está pasando?</em></h2>
+    <p class="cta-sub">Una conversación de 20 minutos puede cambiar cómo ves el dinero, la tecnología y tu futuro. Sin jerga. Sin presión.</p>
+    <a href="https://wa.me/6462429078?text=Hola%20carlo%2C%20vi%20tu%20p%C3%A1gina%20de%20Infinexa%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s" class="cta-btn" target="_blank">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Quiero una llamada de 20 minutos
+    </a>
+    <p class="cta-note">Vía WhatsApp · Sin costo · Sin presión</p>
+  </div>
+</section>
+
+<nav class="nav-sec">
+  <a href="/infografia" class="nav-link">Ver la infografía →</a>
+  <a href="https://infinexa.app" class="nav-link">infinexa.app</a>
+</nav>
+
+<footer class="ftr">
+  <div class="ftr-text">© 2026 carlo · Presentado por infinexa</div>
+  <div class="powered">Powered by <a href="https://infinexa.app/servicios">infinexa</a></div>
+</footer>
+
+</body>
+</html>
