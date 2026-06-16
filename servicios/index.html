@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://infinexa.app/servicios">
 <meta property="og:title" content="infinexa · Presencia digital lista en 48 horas">
-<meta property="og:description" content="De cero a una marca profesional con sitio web, dominio y materiales de prospección. Desde $2,000 USD.">
+<meta property="og:description" content="De cero a una marca profesional con sitio web, dominio y materiales de prospección. Desde $2,000 USDT.">
 <meta property="og:image" content="https://infinexa.app/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,27 +18,16 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --grafito:#1F2A33;
-  --grafito-dk:#0F1720;
-  --petroleo:#1B4D5C;
-  --petroleo-cl:#2E6E80;
-  --cobre:#C8682E;
-  --plata:#C9D2D6;
-  --plata-cl:#EDF1F2;
-  --bg:#0F1720;
-  --bg-dk:#0a1018;
-  --border:rgba(200,104,46,0.15);
-  --border-s:rgba(255,255,255,0.055);
-  --tbody:#C9D2D6;
-  --tmuted:#8AA5BF;
-  --pad:clamp(24px,5vw,60px);
-  --r:clamp(10px,1.2vw,16px);
+  --grafito:#1F2A33;--grafito-dk:#0F1720;--petroleo:#1B4D5C;--petroleo-cl:#2E6E80;
+  --cobre:#C8682E;--plata:#C9D2D6;--plata-cl:#EDF1F2;--bg:#0F1720;--bg-dk:#0a1018;
+  --border:rgba(200,104,46,0.15);--border-s:rgba(255,255,255,0.055);
+  --tbody:#C9D2D6;--tmuted:#8AA5BF;--pad:clamp(24px,5vw,60px);--r:clamp(10px,1.2vw,16px);
 }
 html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter','Helvetica Neue',Arial,sans-serif;}
 
 /* HEADER */
 .hdr{padding:clamp(28px,4vw,52px) var(--pad) clamp(24px,3.5vw,40px);border-bottom:1px solid var(--border);}
-.ifx-lockup{display:flex;align-items:center;gap:clamp(14px,2vw,22px);margin-bottom:clamp(24px,3.5vw,40px);}
+.ifx-lockup{display:flex;align-items:center;gap:clamp(14px,2vw,22px);}
 .ifx-sep-v{width:.6px;height:clamp(36px,5vw,52px);background:var(--petroleo);opacity:.7;flex-shrink:0;}
 .ifx-wm{display:flex;flex-direction:column;gap:4px;}
 .ifx-name{font-size:clamp(18px,2.2vw,26px);font-weight:300;color:var(--plata-cl);letter-spacing:clamp(6px,1.2vw,14px);}
@@ -53,41 +42,60 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
 .story-h1 em{font-style:italic;color:var(--cobre);font-weight:300;}
 .story-p{font-size:clamp(17px,1.5vw,19px);color:var(--tbody);line-height:1.85;margin-bottom:clamp(12px,1.5vw,18px);}
 
-/* QUÉ INCLUYE */
+/* SECCIÓN GENÉRICA */
 .sec{padding:clamp(40px,5vw,72px) var(--pad);}
 .sec-label{font-size:clamp(11px,1vw,13px);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--cobre);margin-bottom:clamp(8px,1vw,12px);opacity:.85;}
 .sec-h{font-size:clamp(26px,3.5vw,48px);font-weight:800;color:var(--plata-cl);line-height:1.15;margin-bottom:clamp(16px,2vw,28px);}
 .sec-h em{font-style:italic;color:var(--cobre);font-weight:300;}
 .sec-sub{font-size:clamp(16px,1.4vw,18px);color:var(--tmuted);line-height:1.8;max-width:640px;margin-bottom:clamp(32px,4vw,56px);}
 
-/* CARDS */
+/* CARDS INCLUYE */
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(12px,1.5vw,20px);margin-bottom:clamp(40px,5vw,64px);}
 .card{background:rgba(255,255,255,0.025);border:1px solid var(--border-s);border-radius:var(--r);padding:clamp(20px,2.5vw,32px);}
 .card-num{font-size:11px;font-weight:600;letter-spacing:2px;color:var(--cobre);opacity:.7;margin-bottom:12px;}
 .card-title{font-size:clamp(16px,1.4vw,20px);font-weight:700;color:var(--plata-cl);margin-bottom:10px;}
-.card-body{font-size:clamp(13px,1.1vw,15px);color:var(--tmuted);line-height:1.75;}
 .card-items{list-style:none;margin-top:14px;}
-.card-items li{font-size:clamp(13px,1.1vw,14px);color:var(--tbody);line-height:1.7;padding-left:16px;position:relative;}
+.card-items li{font-size:clamp(13px,1.1vw,14px);color:var(--tbody);line-height:1.7;padding-left:16px;position:relative;margin-bottom:2px;}
 .card-items li::before{content:'→';position:absolute;left:0;color:var(--cobre);font-size:11px;}
 
-/* PRECIO */
-.precio-sec{background:rgba(200,104,46,0.04);border-top:1px solid rgba(200,104,46,0.2);border-bottom:1px solid rgba(200,104,46,0.2);padding:clamp(40px,5vw,72px) var(--pad);}
-.precio-inner{max-width:720px;}
-.precio-tag{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--cobre);opacity:.8;margin-bottom:16px;}
-.precio-amount{font-size:clamp(52px,7vw,96px);font-weight:800;color:var(--plata-cl);line-height:1;margin-bottom:8px;}
-.precio-amount span{font-size:clamp(20px,2.5vw,32px);font-weight:300;color:var(--tmuted);}
-.precio-note{font-size:clamp(14px,1.2vw,16px);color:var(--tmuted);line-height:1.75;margin-top:16px;max-width:540px;}
-.precio-note strong{color:var(--plata-cl);}
+/* PRECIOS */
+.precios-sec{padding:clamp(40px,5vw,72px) var(--pad);background:rgba(255,255,255,0.01);border-top:1px solid var(--border-s);}
+.precios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(16px,2vw,24px);margin-top:clamp(24px,3vw,40px);}
+.precio-card{border-radius:var(--r);padding:clamp(24px,2.5vw,36px);border:1px solid var(--border-s);position:relative;}
+.precio-card.setup{background:rgba(200,104,46,0.05);border-color:rgba(200,104,46,0.25);}
+.precio-card.mensual{background:rgba(27,77,92,0.08);border-color:rgba(27,77,92,0.3);}
+.precio-card.anual{background:rgba(27,77,92,0.15);border-color:rgba(46,110,128,0.4);overflow:hidden;}
+.precio-badge{position:absolute;top:16px;right:16px;background:var(--cobre);color:#fff;font-size:10px;font-weight:700;letter-spacing:1px;padding:4px 10px;border-radius:20px;text-transform:uppercase;}
+.precio-tag{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--cobre);opacity:.8;margin-bottom:12px;}
+.precio-amount{font-size:clamp(42px,5vw,68px);font-weight:800;color:var(--plata-cl);line-height:1;}
+.precio-amount span{font-size:clamp(16px,1.8vw,22px);font-weight:300;color:var(--tmuted);}
+.precio-period{font-size:13px;color:var(--tmuted);margin-top:6px;margin-bottom:16px;}
+.precio-items{list-style:none;}
+.precio-items li{font-size:clamp(13px,1.1vw,14px);color:var(--tbody);line-height:1.7;padding-left:16px;position:relative;margin-bottom:4px;}
+.precio-items li::before{content:'✓';position:absolute;left:0;color:var(--cobre);font-size:11px;font-weight:700;}
+.precio-ahorro{font-size:13px;color:var(--cobre);margin-top:12px;font-weight:600;}
+
+/* PAGO USDT */
+.pago-sec{padding:clamp(40px,5vw,72px) var(--pad);background:rgba(200,104,46,0.03);border-top:1px solid rgba(200,104,46,0.15);border-bottom:1px solid rgba(200,104,46,0.15);}
+.wallet-box{background:rgba(255,255,255,0.025);border:1px solid var(--border-s);border-radius:var(--r);padding:clamp(20px,2.5vw,28px);margin-top:clamp(20px,2.5vw,28px);max-width:680px;}
+.wallet-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--tmuted);opacity:.7;margin-bottom:10px;}
+.wallet-addr{font-size:clamp(12px,1vw,14px);color:var(--plata-cl);font-family:'Courier New',monospace;word-break:break-all;line-height:1.6;background:rgba(0,0,0,0.25);padding:14px 16px;border-radius:10px;border:1px solid var(--border-s);}
+.wallet-network{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#8247e5;background:rgba(130,71,229,0.1);border:1px solid rgba(130,71,229,0.3);border-radius:20px;padding:5px 12px;margin-top:12px;}
+.wallet-network::before{content:'';width:6px;height:6px;border-radius:50%;background:#8247e5;}
+.copy-btn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid var(--border-s);color:var(--tmuted);font-family:'Inter',sans-serif;font-size:12px;padding:8px 16px;border-radius:8px;cursor:pointer;margin-top:12px;margin-left:10px;transition:all .2s;}
+.copy-btn:hover{border-color:var(--cobre);color:var(--cobre);}
+.copy-ok{font-size:12px;color:var(--cobre);margin-top:8px;display:none;}
+.pago-nota{font-size:13px;color:var(--tmuted);margin-top:20px;line-height:1.75;max-width:640px;opacity:.85;}
 
 /* PROCESO */
 .proceso{padding:clamp(40px,5vw,72px) var(--pad);}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(20px,2.5vw,32px);margin-top:clamp(24px,3vw,40px);}
-.step{position:relative;padding-left:clamp(20px,2.5vw,28px);border-left:2px solid rgba(200,104,46,0.3);}
+.step{padding-left:clamp(18px,2vw,24px);border-left:2px solid rgba(200,104,46,0.3);}
 .step-num{font-size:11px;font-weight:600;letter-spacing:2px;color:var(--cobre);opacity:.7;margin-bottom:8px;}
 .step-title{font-size:clamp(15px,1.3vw,18px);font-weight:700;color:var(--plata-cl);margin-bottom:6px;}
 .step-body{font-size:clamp(13px,1.1vw,14px);color:var(--tmuted);line-height:1.7;}
 
-/* CASO DE ÉXITO */
+/* CASO */
 .caso{background:rgba(27,77,92,0.08);border-top:1px solid rgba(27,77,92,0.3);border-bottom:1px solid rgba(27,77,92,0.3);padding:clamp(40px,5vw,72px) var(--pad);}
 .caso-inner{max-width:760px;}
 .pull{background:rgba(200,104,46,0.07);border-left:3px solid var(--cobre);border-radius:0 var(--r) var(--r) 0;padding:clamp(14px,1.8vw,22px) clamp(16px,2vw,26px);margin:clamp(14px,1.8vw,20px) 0;font-size:clamp(17px,1.6vw,20px);color:var(--plata-cl);line-height:1.7;font-style:italic;font-weight:300;}
@@ -107,9 +115,6 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
 .ftr-links{display:flex;gap:clamp(16px,2vw,28px);}
 .ftr-links a{font-size:13px;color:var(--tmuted);text-decoration:none;opacity:.7;}
 .ftr-links a:hover{opacity:1;}
-
-/* SVG LOGO */
-.ifx-logo svg{width:clamp(36px,4vw,48px);height:auto;}
 </style>
 </head>
 <body>
@@ -117,15 +122,15 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
 <!-- HEADER -->
 <header class="hdr">
   <div class="ifx-lockup">
-    <div class="ifx-logo">
-      <a href="/"><svg viewBox="0 0 200 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <a href="/">
+      <svg width="44" height="44" viewBox="0 0 200 192" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M100 96C94 78 70 60 50 62C28 64 18 82 20 96C22 112 38 120 58 118C76 116 92 102 100 96Z" stroke="#BDC8CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M100 96C108 90 120 72 138 68C158 64 172 78 172 94C172 112 158 122 138 120C118 118 106 104 100 96Z" stroke="#BDC8CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M92 88Q100 96 92 104" stroke="#C8682E" stroke-width="2.6" stroke-linecap="round"/>
         <path d="M108 88Q100 96 108 104" stroke="#C8682E" stroke-width="2.6" stroke-linecap="round"/>
         <circle cx="100" cy="96" r="2.8" fill="#C8682E"/>
-      </svg></a>
-    </div>
+      </svg>
+    </a>
     <div class="ifx-sep-v"></div>
     <div class="ifx-wm">
       <div class="ifx-name">infinexa</div>
@@ -140,7 +145,7 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
   <div class="story-label">Servicios digitales</div>
   <h1 class="story-h1">Tu marca profesional,<br><em>lista en 48 horas.</em></h1>
   <p class="story-p">La mayoría de los emprendedores tienen una idea poderosa pero una presencia digital que no la refleja. Nosotros cambiamos eso — de cero a una identidad completa, sitio web publicado y materiales de prospección listos para usar.</p>
-  <p class="story-p">Sin agencias. Sin semanas de espera. Sin precios inflados.</p>
+  <p class="story-p">Sin agencias. Sin semanas de espera. Sin precios inflados. Y todo con pago en USDT — directo, trazable y sin intermediarios.</p>
 </section>
 
 <!-- QUÉ INCLUYE -->
@@ -148,12 +153,10 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
   <div class="sec-label">Lo que incluye</div>
   <h2 class="sec-h">Todo lo que necesitas<br><em>para empezar a prospectar.</em></h2>
   <p class="sec-sub">Un paquete completo que normalmente tarda 4-6 semanas con una agencia. Nosotros lo entregamos en 48 horas.</p>
-
   <div class="cards">
     <div class="card">
       <div class="card-num">01</div>
       <div class="card-title">Identidad de marca</div>
-      <div class="card-body">Tu marca con criterio, no con plantillas.</div>
       <ul class="card-items">
         <li>Logo en SVG con símbolo único</li>
         <li>Paleta de color con significado</li>
@@ -164,7 +167,6 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
     <div class="card">
       <div class="card-num">02</div>
       <div class="card-title">Presencia digital</div>
-      <div class="card-body">Un sitio web que convierte visitas en conversaciones.</div>
       <ul class="card-items">
         <li>Dominio propio (.app, .com, .io)</li>
         <li>Hosting y SSL gratuito</li>
@@ -175,7 +177,6 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
     <div class="card">
       <div class="card-num">03</div>
       <div class="card-title">Materiales de prospección</div>
-      <div class="card-body">Listos para enviar el mismo día de entrega.</div>
       <ul class="card-items">
         <li>Imagen para estado de WhatsApp</li>
         <li>Imagen para mensaje directo</li>
@@ -186,24 +187,76 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
     <div class="card">
       <div class="card-num">04</div>
       <div class="card-title">Capacitación incluida</div>
-      <div class="card-body">Aprendes a actualizar tu sitio sin depender de nadie.</div>
       <ul class="card-items">
         <li>Sesión de entrega en vivo</li>
         <li>Claude Code instalado y configurado</li>
         <li>Flujo de actualización en 3 comandos</li>
-        <li>Soporte por 7 días post-entrega</li>
+        <li>7 días de soporte post-entrega</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- PRECIO -->
-<section class="precio-sec">
-  <div class="precio-inner">
-    <div class="precio-tag">Inversión</div>
-    <div class="precio-amount">$2,000 <span>USD</span></div>
-    <p class="precio-note">Pago único. Sin mensualidades. Sin sorpresas.<br><strong>Todo incluido:</strong> marca, dominio, sitio web, materiales y capacitación.</p>
+<!-- PRECIOS -->
+<section class="precios-sec">
+  <div class="sec-label">Inversión</div>
+  <h2 class="sec-h">Un modelo transparente.<br><em>Sin sorpresas.</em></h2>
+  <p class="sec-sub">Pago único de setup más una mensualidad accesible que mantiene todo activo, actualizado y con soporte continuo.</p>
+  <div class="precios-grid">
+    <div class="precio-card setup">
+      <div class="precio-tag">Setup inicial</div>
+      <div class="precio-amount">$2,000 <span>USDT</span></div>
+      <div class="precio-period">Pago único · Una sola vez</div>
+      <ul class="precio-items">
+        <li>Marca completa + sitio web</li>
+        <li>Dominio configurado</li>
+        <li>Materiales de prospección</li>
+        <li>Capacitación en vivo</li>
+        <li>7 días de soporte post-entrega</li>
+      </ul>
+    </div>
+    <div class="precio-card mensual">
+      <div class="precio-tag">Mantenimiento mensual</div>
+      <div class="precio-amount">$97 <span>USDT</span></div>
+      <div class="precio-period">Por mes · Cancela cuando quieras</div>
+      <ul class="precio-items">
+        <li>Hosting y dominio activos</li>
+        <li>Hasta 2 actualizaciones de contenido</li>
+        <li>Soporte técnico por WhatsApp</li>
+        <li>Imagen de prospección trimestral</li>
+      </ul>
+    </div>
+    <div class="precio-card anual">
+      <div class="precio-badge">Mejor valor</div>
+      <div class="precio-tag">Plan anual</div>
+      <div class="precio-amount">$797 <span>USDT</span></div>
+      <div class="precio-period">Por año · Equivale a $66/mes</div>
+      <ul class="precio-items">
+        <li>Todo lo del plan mensual</li>
+        <li>Actualizaciones ilimitadas</li>
+        <li>4 imágenes de prospección al año</li>
+        <li>Prioridad en soporte</li>
+      </ul>
+      <div class="precio-ahorro">Ahorro de $367 USDT vs mensual</div>
+    </div>
   </div>
+</section>
+
+<!-- PAGO USDT -->
+<section class="pago-sec">
+  <div class="sec-label">Método de pago</div>
+  <h2 class="sec-h">USDT · Red Polygon.<br><em>Wallet-to-wallet.</em></h2>
+  <p class="story-p" style="max-width:640px;margin-top:16px;">Sin bancos. Sin intermediarios. Directo a nuestra wallet en la red Polygon — transparente, verificable y con comisiones de centavos.</p>
+  <div class="wallet-box">
+    <div class="wallet-label">Dirección de wallet · USDT Polygon</div>
+    <div class="wallet-addr" id="waddr">0xb20f9ed762b3d11c6c293d6271b7024cfd888951</div>
+    <div style="display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:12px;">
+      <div class="wallet-network">Polygon (MATIC)</div>
+      <button class="copy-btn" onclick="copyW()">⧉ Copiar dirección</button>
+    </div>
+    <div class="copy-ok" id="copy-ok">✓ Dirección copiada</div>
+  </div>
+  <p class="pago-nota">Una vez realizado el pago, envía el hash de la transacción por WhatsApp para iniciar el proceso de inmediato.</p>
 </section>
 
 <!-- PROCESO -->
@@ -227,9 +280,9 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
       <div class="step-body">Creamos tus materiales de prospección y hacemos la entrega en vivo con capacitación incluida.</div>
     </div>
     <div class="step">
-      <div class="step-num">DÍA 3-9</div>
+      <div class="step-num">DÍA 3–9</div>
       <div class="step-title">Soporte post-entrega</div>
-      <div class="step-body">7 días de acompañamiento para asegurar que todo funciona y resolvemos cualquier duda.</div>
+      <div class="step-body">7 días de acompañamiento para asegurar que todo funciona y resolver cualquier duda.</div>
     </div>
   </div>
 </section>
@@ -240,7 +293,7 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
     <div class="sec-label">Caso real</div>
     <h2 class="sec-h">Lo construimos<br><em>para nosotros primero.</em></h2>
     <p class="story-p">Infinexa es el resultado de aplicar exactamente este proceso. En menos de 24 horas pasamos de cero a una marca completa con dominio propio, dos páginas publicadas, favicon, Open Graph para WhatsApp y materiales de prospección listos.</p>
-    <div class="pull">"Lo que normalmente le toma 4-6 semanas a una agencia y cuesta entre $3,000 y $8,000 — lo tienes listo en 48 horas."</div>
+    <div class="pull">"Lo que normalmente le toma 4–6 semanas a una agencia y cuesta entre $3,000 y $8,000 — lo tienes listo en 48 horas."</div>
     <p class="story-p">Visita <a href="/" style="color:var(--cobre);">infinexa.app</a> e <a href="/infografia" style="color:var(--cobre);">infinexa.app/infografia</a> — son ejemplos reales de lo que entregaremos para tu proyecto.</p>
   </div>
 </section>
@@ -250,7 +303,7 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
   <div class="cta-inner">
     <h2 class="cta-h">¿Listo para tener<br><em>tu presencia lista?</em></h2>
     <p class="cta-sub">Una conversación de 20 minutos es suficiente para saber si podemos ayudarte. Sin compromiso.</p>
-    <a href="https://wa.me/521TUNUMERO?text=Hola,%20me%20interesa%20el%20servicio%20de%20presencia%20digital%20de%20Infinexa" class="cta-btn" target="_blank">
+    <a href="https://wa.me/526461173209?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20presencia%20digital%20de%20Infinexa" class="cta-btn" target="_blank">
       Quiero una llamada de 20 minutos
     </a>
     <p class="cta-note">Vía WhatsApp · Sin costo · Sin presión</p>
@@ -266,5 +319,14 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
   </div>
 </footer>
 
+<script>
+function copyW(){
+  navigator.clipboard.writeText("0xb20f9ed762b3d11c6c293d6271b7024cfd888951").then(function(){
+    var el=document.getElementById('copy-ok');
+    el.style.display='block';
+    setTimeout(function(){el.style.display='none';},2000);
+  });
+}
+</script>
 </body>
 </html>
