@@ -29,18 +29,61 @@ Infinexa es una marca digital que conecta personas con conceptos de finanzas des
 
 ## 3. Marca e identidad visual
 
-- **Símbolo:** lemniscata (∞)
-- **Slogan:** "connecting value with purpose"
-- **Colores:**
-  - Grafito: `#1F2A33`
-  - Grafito oscuro: `#0F1720`
-  - Petróleo: `#1B4D5C`
-  - Petróleo claro: `#2E6E80`
-  - Cobre (único acento cálido, nunca fondo): `#C8682E`
-  - Plata: `#C9D2D6`
-  - Plata clara: `#EDF1F2`
-- **Tipografía:** Inter (300 light para wordmark con tracking amplio, 400 cuerpo, 500 subtítulos, 800 titulares), cargada desde Google Fonts
-- **Archivos de marca:** infinexa-icono.svg, infinexa-logo-horizontal.svg, infinexa-logo-negativo.svg, infinexa-logo-positivo.svg, infinexa-portada-linkedin.svg, infinexa-brand-brief.docx
+### 3.1 Historia y significado del nombre
+
+Infinexa nace de la fusión de dos raíces: **Infinite** (expansión sin límites, escalabilidad, visión de largo plazo) + **Nexus** (conexión, punto de encuentro, nodo de unión). Se descartaron alternativas como InfinityWealth (demasiado financiero), InfinityAccess (demasiado descriptivo) e InfinityAlliance (demasiado comunitario) por quedar atrapadas en una sola categoría.
+
+**Significado oficial:** *"Infinexa es el punto de conexión donde las posibilidades infinitas se transforman en valor con propósito."*
+
+**Por qué trasciende el tiempo:** no promete riqueza, no depende de blockchain ni de ninguna moda tecnológica, funciona igual en español e inglés, y puede seguir vigente dentro de 20 años — no describe lo que hace hoy, representa la visión de lo que puede llegar a ser mañana.
+
+### 3.2 Sistema de símbolo
+
+- **Símbolo:** lemniscata (∞) orgánica, trazada como un único gesto continuo (no dos loops cerrados). Asimetría intencional: loop izquierdo más horizontal y abierto (comunidad, amplitud), loop derecho más vertical y tenso (precisión, arquitectura digital).
+- **Acento cobre — "el nexo":** dos micro-arcos en cobre que abrazan un punto central exactamente en el cruce del símbolo. Representa literalmente el momento donde dos mundos se tocan — no es decoración, es significado.
+
+### 3.3 Wordmark
+
+- **Texto:** `infinexa` en minúsculas (decisión deliberada — más humano y accesible sin perder autoridad, siguiendo el patrón de marcas globales como Apple o Spotify)
+- **Tipografía:** Inter, peso 300 (Light), letter-spacing amplio (18px en canvas de referencia 800×480)
+- **Tagline:** `connecting value with purpose` en minúsculas, opacidad 50%, casi imperceptible — "el lujo no se anuncia, se descubre"
+
+### 3.4 Paleta de color
+
+| Color | Hex | Uso |
+|---|---|---|
+| Grafito oscuro | `#0F1720` | Fondo principal negativo |
+| Grafito | `#1F2A33` | Fondo alterno, stroke en positivo |
+| Petróleo | `#1B4D5C` | Subtítulos, separadores, tagline en positivo |
+| Petróleo claro | `#2E6E80` | Labels secundarios, detalles |
+| Cobre (acento) | `#C8682E` | Único acento cálido — nunca como fondo |
+| Plata | `#C9D2D6` | Stroke del símbolo en negativo |
+| Plata clara | `#EDF1F2` | Wordmark en negativo |
+| Blanco marca | `#F8F8F6` | Fondo positivo |
+
+**Colores de conexión (solo al presentar Hand4Hand):** Navy `#0D1B3E`, Naranja `#E8450A` — nunca como colores propios de Infinexa.
+
+### 3.5 Sistema de lockups
+
+- **Vertical** (principal): símbolo arriba centrado, aire generoso, wordmark, separador cobre, tagline. Uso: redes sociales, presentaciones, hero web.
+- **Horizontal:** símbolo izquierda, separador vertical en petróleo, wordmark + tagline apilados a la derecha. Uso: firmas de correo, headers, banners.
+- **Solo símbolo:** favicon, avatar, marca de agua.
+- **Solo wordmark:** espacios mínimos donde el símbolo no renderiza bien.
+
+**Zona de exclusión:** equivalente a la altura de la "i" del wordmark en todos los lados. **Tamaño mínimo digital:** 32px de alto para el lockup vertical completo.
+
+### 3.6 Archivos de marca entregados
+
+| Archivo | Formato | Contenido |
+|---|---|---|
+| `infinexa-logo-negativo.svg` | SVG | Logo vertical completo sobre fondo oscuro — master |
+| `infinexa-logo-positivo.svg` | SVG | Logo vertical completo sobre fondo claro — master |
+| `infinexa-logo-horizontal.svg` | SVG | Lockup horizontal — firmas, headers |
+| `infinexa-icono.svg` | SVG | Solo símbolo — favicon, avatar |
+| `infinexa-portada-linkedin.svg` | SVG | Banner LinkedIn/Twitter, 1584×396px |
+| `infinexa-brand-brief.docx` | DOCX | Brief técnico completo: historia del nombre, especificaciones del símbolo (paths SVG, propiedades de trazo), paleta con muestras, tipografía, lockups, zonas de exclusión, usos incorrectos, tabla de entregables |
+
+**Pendiente:** importar los SVG a Figma/Illustrator y convertir textos a outlines; exportar PNG en 1x/2x/3x; instalar Inter como fuente del sistema; aplicar el símbolo actualizado al sitio web en vivo (actualmente el sitio puede tener la versión visual anterior).
 
 ---
 
@@ -124,8 +167,10 @@ Infinexa es una marca digital que conecta personas con conceptos de finanzas des
 
 1. Generar HTML completo de `carta.html` e `infografia.html` para el sistema de builders (templates con variables)
 2. Terminar de personalizar y publicar el builder de prueba `carlos`
-3. Decidir si se generan los 4 textos de prospección semanal para grupos de WhatsApp
-4. Evaluar primer cliente real para el servicio completo o para Builder Edition
+3. Aplicar el nuevo logo al sitio web en vivo (`infinexa.app`)
+4. Importar los SVG de marca a Figma/Illustrator y generar exportaciones PNG
+5. Decidir si se generan los 4 textos de prospección semanal para grupos de WhatsApp
+6. Evaluar primer cliente real para el servicio completo o para Builder Edition
 
 ---
 
@@ -137,6 +182,7 @@ Infinexa es una marca digital que conecta personas con conceptos de finanzas des
 - **WhatsApp Alejandro:** +52 646 117 3209
 - **Carpeta local:** `~/Downloads/infinexa-repo`
 - **Worker Cloudflare:** `infinexa-builders`
+- **Significado del nombre:** Infinite + Nexus = Infinexa — "el punto de conexión donde las posibilidades infinitas se transforman en valor con propósito"
 
 ---
 
