@@ -2,7 +2,7 @@
 
 > Este archivo es la fuente única de verdad del proyecto. Se actualiza después de cada sesión de trabajo, sin importar en qué conversación de Claude se realizó. No se crean archivos nuevos por conversación — siempre se edita este mismo documento.
 
-**Última actualización:** 17 de junio, 2026
+**Última actualización:** 17 de junio, 2026 (sesión: construcción y publicación de Diversifica)
 
 ---
 
@@ -94,10 +94,37 @@ Infinexa nace de la fusión de dos raíces: **Infinite** (expansión sin límite
 | La carta | `infinexa.app` | ✅ Publicada |
 | La infografía | `infinexa.app/infografia` | ✅ Publicada — gradiente corregido hasta DeFi, tipografía igualada con la carta |
 | Servicios | `infinexa.app/servicios` | ✅ Publicada — con precios USDT y wallet (sin QR) |
+| Diversifica | `infinexa.app/diversifica` | ✅ Publicada — ver detalles abajo |
 
 **Detalles técnicos resueltos en la infografía:**
 - Gradiente de la barra histórica corregido para terminar exactamente en el marcador "DeFi"
 - Cursivas y texto de cuerpo corregidos de `--plata` a `--cobre`/`--plata-cl` para igualar el brillo de la carta
+
+### 4.1 Diversifica — narrativa y decisiones de diseño
+
+**Propósito:** página educativa sobre diversificación de ingresos, con enfoque progresivo hacia la economía descentralizada como terreno de oportunidad temprana (no como producto a vender directamente).
+
+**Estructura narrativa final (10 bloques de contenido):**
+1. Apertura — "cada generación ha tenido que reaprender cómo generar ingresos"
+2. Línea de tiempo de crisis históricas (1929, 1994, 2008, 2020) — en acordeón
+3. Automatización dentro de las profesiones (ejemplos supermercado/contador) — en acordeón
+4. Panorama completo: IA + automatización + descentralización convergiendo — en acordeón
+5. El giro — "¿quiero seguir creciendo desde donde estoy hoy?" (visible siempre, fondo grafito)
+6. Diversificar no es abandonar — introduce la distinción ingreso (depende del tiempo) vs. activo (genera valor sin presencia directa) (visible siempre)
+7. Tendencia, no moda — analogías históricas (trueque→dinero, discos duros→nube) para argumentar que la descentralización es tendencia irreversible, no moda pasajera — en acordeón
+8. Línea divisoria — sistema tradicional vs. descentralizado, con el matiz de "terreno apenas en construcción" y ventana de oportunidad temprana — en acordeón
+9. El legado — "a veces alguien tiene que dar el primer paso" (visible siempre, fondo grafito)
+10. Cierre/CTA — "Conoce. Explora. Empieza a construir." + botón WhatsApp con mensaje prellenado
+
+**Decisión de formato — de carrusel a scroll:** la primera versión se construyó como carrusel de pantalla completa (un slide por pantalla, navegación por swipe/flechas). Se abandonó por completo porque en móvil bloqueaba el zoom nativo del navegador (el gesto de pinch-zoom hacía avanzar al siguiente slide en vez de ampliar el texto), y los tamaños de fuente quedaban forzadamente pequeños para que todo el contenido cupiera en una sola pantalla. Se reconstruyó como página de scroll vertical normal, replicando el mismo sistema visual de la infografía (`card` centrada con `box-shadow`, header con lockup horizontal, badge superior, tipografía en clamps generosos, secciones con fondo `--grafito` para los momentos de mayor peso narrativo).
+
+**Sistema de acordeones:** 5 de los 10 bloques de contenido (los más largos/expositivos) están colapsados por defecto, replicando el patrón ya usado en la infografía (`acord-section`, `acord-trigger`, `acord-panel` con `max-height` animado). Los bloques de mayor peso emocional/persuasivo (apertura, "el giro", "diversificar no es abandonar", "el legado", cierre) se dejaron siempre visibles sin acordeón.
+
+**Open Graph corregido:** se agregó el set completo de meta tags (`og:title`, `og:description`, `og:image`, `og:url`, Twitter Card) apuntando a los assets oficiales en `infinexa-assets/files/og-image.png` y `favicon.png`/`favicon.svg` — la primera versión no tenía ningún tag Open Graph, por lo que no se generaba vista previa al compartir en WhatsApp.
+
+**Bug de CSS resuelto (relevante para futuras páginas):** en la versión carrusel, un media query de `max-width:720px` estaba posicionado *antes* de las reglas base de tipografía en el archivo. En CSS, con igual especificidad, la regla que aparece después en el código gana — así que las reglas base (más abajo) sobreescribían silenciosamente todas las correcciones de móvil, sin importar el ancho de pantalla real. Lección para futuras páginas: los media queries siempre deben ir *al final* del bloque `<style>`, después de todas las reglas base que pretenden sobreescribir.
+
+**Pendiente:** verificar en Meta Debugger (`developers.facebook.com/tools/debug/`) que la advertencia de `og:image` faltante ya no aparezca con la versión final desplegada (la última verificación fue con una versión anterior a la corrección de Open Graph).
 
 ---
 
@@ -165,12 +192,14 @@ Infinexa nace de la fusión de dos raíces: **Infinite** (expansión sin límite
 
 ## 8. Próximos pasos inmediatos
 
-1. Generar HTML completo de `carta.html` e `infografia.html` para el sistema de builders (templates con variables)
-2. Terminar de personalizar y publicar el builder de prueba `carlos`
-3. Aplicar el nuevo logo al sitio web en vivo (`infinexa.app`)
-4. Importar los SVG de marca a Figma/Illustrator y generar exportaciones PNG
-5. Decidir si se generan los 4 textos de prospección semanal para grupos de WhatsApp
-6. Evaluar primer cliente real para el servicio completo o para Builder Edition
+1. Verificar en Meta Debugger que `infinexa.app/diversifica` ya muestra correctamente el `og:image` sin advertencias (forzar "Volver a extraer")
+2. Generar HTML completo de `carta.html` e `infografia.html` para el sistema de builders (templates con variables)
+3. Terminar de personalizar y publicar el builder de prueba `carlos`
+4. Aplicar el nuevo logo al sitio web en vivo (`infinexa.app`)
+5. Importar los SVG de marca a Figma/Illustrator y generar exportaciones PNG
+6. Decidir si se generan los 4 textos de prospección semanal para grupos de WhatsApp
+7. Evaluar primer cliente real para el servicio completo o para Builder Edition
+8. Considerar agregar Diversifica al pipeline de prospección por WhatsApp (mensaje + link, mismo patrón que la infografía)
 
 ---
 
