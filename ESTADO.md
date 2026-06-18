@@ -2,7 +2,7 @@
 
 > Este archivo es la fuente única de verdad del proyecto. Se actualiza después de cada sesión de trabajo, sin importar en qué conversación de Claude se realizó. No se crean archivos nuevos por conversación — siempre se edita este mismo documento.
 
-**Última actualización:** 17 de junio, 2026 (sesión: construcción y publicación de Diversifica)
+**Última actualización:** 17 de junio, 2026 (sesión: SEO — sitemap, robots.txt, verificación e indexación en Google Search Console)
 
 ---
 
@@ -124,7 +124,22 @@ Infinexa nace de la fusión de dos raíces: **Infinite** (expansión sin límite
 
 **Bug de CSS resuelto (relevante para futuras páginas):** en la versión carrusel, un media query de `max-width:720px` estaba posicionado *antes* de las reglas base de tipografía en el archivo. En CSS, con igual especificidad, la regla que aparece después en el código gana — así que las reglas base (más abajo) sobreescribían silenciosamente todas las correcciones de móvil, sin importar el ancho de pantalla real. Lección para futuras páginas: los media queries siempre deben ir *al final* del bloque `<style>`, después de todas las reglas base que pretenden sobreescribir.
 
-**Pendiente:** verificar en Meta Debugger (`developers.facebook.com/tools/debug/`) que la advertencia de `og:image` faltante ya no aparezca con la versión final desplegada (la última verificación fue con una versión anterior a la corrección de Open Graph).
+**Pendiente:** ~~verificar en Meta Debugger que `og:image` ya no muestra advertencias~~ — ✅ **Resuelto.** Vista previa funcionando correctamente en Meta Debugger (logo, título y descripción se muestran bien). Queda una advertencia menor no bloqueante: "Faltan las siguientes propiedades obligatorias: fb:app_id" — solo es necesaria para integraciones avanzadas (login con Facebook, analíticas nativas de Facebook), no afecta la vista previa al compartir por WhatsApp/redes. Se decidió no agregarla por ahora.
+
+### 4.2 SEO e indexación en buscadores
+
+**Archivos técnicos agregados en la raíz del repo:**
+- `sitemap.xml` — lista las 4 páginas del sitio (carta, infografía, diversifica, servicios) con prioridad y frecuencia de cambio
+- `robots.txt` — permite el rastreo completo del sitio y apunta a `sitemap.xml`
+- Archivo de verificación de Google (`google4faf14065532c62d.html`) — no eliminar, mantiene la verificación de propiedad activa en Search Console
+
+**Google Search Console:**
+- ✅ Propiedad `infinexa.app` verificada (método: archivo HTML)
+- ✅ Sitemap enviado
+- ✅ Indexación solicitada y confirmada para: la carta (`infinexa.app`), la infografía (`infinexa.app/infografia`), Diversifica (`infinexa.app/diversifica`)
+- ⏸️ Servicios (`infinexa.app/servicios`) — indexación pendiente, en pausa por decisión propia (la página aún no está lista para recibir tráfico de búsqueda directa)
+
+**Flujo para indexar páginas nuevas a futuro:** Search Console → Inspección de URLs → pegar la URL nueva → "Solicitar indexación". No es necesario repetir la verificación del dominio, ya quedó configurada una sola vez para todo `infinexa.app`. Recordar también agregar cada página nueva a `sitemap.xml` cuando se publique.
 
 ---
 
@@ -192,14 +207,15 @@ Infinexa nace de la fusión de dos raíces: **Infinite** (expansión sin límite
 
 ## 8. Próximos pasos inmediatos
 
-1. Verificar en Meta Debugger que `infinexa.app/diversifica` ya muestra correctamente el `og:image` sin advertencias (forzar "Volver a extraer")
-2. Generar HTML completo de `carta.html` e `infografia.html` para el sistema de builders (templates con variables)
-3. Terminar de personalizar y publicar el builder de prueba `carlos`
-4. Aplicar el nuevo logo al sitio web en vivo (`infinexa.app`)
-5. Importar los SVG de marca a Figma/Illustrator y generar exportaciones PNG
-6. Decidir si se generan los 4 textos de prospección semanal para grupos de WhatsApp
-7. Evaluar primer cliente real para el servicio completo o para Builder Edition
-8. Considerar agregar Diversifica al pipeline de prospección por WhatsApp (mensaje + link, mismo patrón que la infografía)
+1. Generar HTML completo de `carta.html` e `infografia.html` para el sistema de builders (templates con variables)
+2. Terminar de personalizar y publicar el builder de prueba `carlos`
+3. Aplicar el nuevo logo al sitio web en vivo (`infinexa.app`)
+4. Importar los SVG de marca a Figma/Illustrator y generar exportaciones PNG
+5. Decidir si se generan los 4 textos de prospección semanal para grupos de WhatsApp
+6. Evaluar primer cliente real para el servicio completo o para Builder Edition
+7. Considerar agregar Diversifica al pipeline de prospección por WhatsApp (mensaje + link, mismo patrón que la infografía)
+8. Cuando la página de Servicios esté lista para tráfico de búsqueda directa, solicitar su indexación en Google Search Console (mismo proceso ya usado para las otras 3 páginas)
+9. Agregar cada página nueva que se publique a futuro tanto al `sitemap.xml` como a la solicitud de indexación en Search Console
 
 ---
 
