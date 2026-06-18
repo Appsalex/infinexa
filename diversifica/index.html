@@ -83,8 +83,29 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
 .sect-h{font-size:clamp(24px,3.2vw,40px);font-weight:800;color:var(--plata-cl);line-height:1.15;margin-bottom:clamp(14px,1.8vw,20px);}
 .sect-h em{font-style:italic;color:var(--cobre);font-weight:700;}
 
+/* ── ACORDEÓN ── */
+.acord-section{border-bottom:1px solid var(--border-s);}
+.acord-trigger{width:100%;display:flex;align-items:center;justify-content:space-between;padding:clamp(18px,2.5vw,28px) var(--pad);background:none;border:none;cursor:pointer;text-align:left;gap:clamp(12px,1.5vw,20px);transition:background .2s;}
+.acord-trigger:hover{background:rgba(200,104,46,0.04);}
+.acord-trigger-left{display:flex;flex-direction:column;gap:4px;flex:1;}
+.acord-step{font-size:clamp(11px,1vw,13px);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--cobre);opacity:.8;}
+.acord-title{font-size:clamp(18px,2.2vw,26px);font-weight:700;color:var(--plata-cl);line-height:1.2;}
+.acord-title em{font-style:italic;color:var(--cobre);font-weight:700;}
+.acord-preview{font-size:clamp(14px,1.2vw,16px);color:var(--plata-cl);margin-top:4px;line-height:1.5;opacity:.85;}
+.acord-icon-wrap{display:flex;flex-direction:column;align-items:center;gap:5px;flex-shrink:0;}
+.acord-icon{width:clamp(36px,4vw,48px);height:clamp(36px,4vw,48px);border-radius:50%;border:1.5px solid rgba(255,255,255,0.65);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .25s;background:transparent !important;}
+.acord-icon svg{width:clamp(14px,1.4vw,18px);height:clamp(14px,1.4vw,18px);stroke:#fff;fill:none;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s;}
+.acord-icon-label{font-size:clamp(9px,.8vw,10px);font-weight:500;letter-spacing:1.2px;text-transform:uppercase;color:var(--plata-cl);opacity:1;}
+.acord-section.open .acord-icon{background:transparent !important;border-color:rgba(255,255,255,0.4);}
+.acord-section.open .acord-icon svg{transform:rotate(180deg);}
+.acord-panel{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(0.4,0,0.2,1);}
+.acord-section.open .acord-panel{max-height:5000px;}
+.acord-inner{padding:0 var(--pad) clamp(24px,3vw,40px);}
+.acord-inner.wide{max-width:none;}
+
 /* ── TIMELINE (crisis históricas) ── */
 .tl-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.5vw,18px);margin-top:clamp(18px,2.2vw,26px);}
+@media(min-width:800px){.tl-grid{grid-template-columns:1fr 1fr 1fr 1fr;}}
 @media(max-width:600px){.tl-grid{grid-template-columns:1fr;}}
 .tl-card{background:rgba(255,255,255,0.03);border:1px solid var(--border-s);border-radius:var(--r);padding:clamp(16px,2vw,24px);}
 .tl-year{font-size:clamp(22px,2.4vw,30px);font-weight:800;color:var(--cobre);margin-bottom:4px;}
@@ -172,69 +193,93 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
   <div class="hero-sub" style="margin-top:12px;">No es la primera vez que el mundo cambia las reglas de cómo se gana dinero. Y probablemente no será la última. Lo interesante no es que el cambio ocurra — es lo que cada persona decide hacer cuando lo nota a tiempo.</div>
 </div>
 
-<!-- ══ SLIDE 2 — Línea de tiempo ══ -->
-<div class="sect center">
-  <div class="sect-inner">
-    <div class="sec-label">Historia reciente</div>
-    <div class="sect-h">Cuatro momentos que cambiaron las reglas</div>
-    <div class="tl-grid">
-      <div class="tl-card">
-        <div class="tl-year">1929</div>
-        <div class="tl-title">Gran Depresión</div>
-        <div class="tl-desc">Millones dependían de un solo ingreso. Cuando desapareció, no había nada más detrás.</div>
-      </div>
-      <div class="tl-card">
-        <div class="tl-year">1994</div>
-        <div class="tl-title">Crisis del Peso</div>
-        <div class="tl-desc">Ahorrar en una sola moneda, en un solo lugar, dejó de ser tan seguro como parecía.</div>
-      </div>
-      <div class="tl-card">
-        <div class="tl-year">2008</div>
-        <div class="tl-title">Crisis financiera global</div>
-        <div class="tl-desc">Empleo y vivienda cayeron juntos. Quien tenía más de una fuente, amortiguó el golpe.</div>
-      </div>
-      <div class="tl-card">
-        <div class="tl-year">2020</div>
-        <div class="tl-title">Pandemia</div>
-        <div class="tl-desc">Negocios con un solo canal cerraron. Quien ya había diversificado, encontró cómo seguir.</div>
-      </div>
+<!-- ══ ACORDEÓN 1 — Línea de tiempo ══ -->
+<div class="acord-section" id="a1">
+  <button class="acord-trigger" onclick="toggle('a1')" aria-expanded="false">
+    <div class="acord-trigger-left">
+      <span class="acord-step">Historia reciente</span>
+      <span class="acord-title">Cuatro momentos que cambiaron las reglas</span>
+      <span class="acord-preview">1929, 1994, 2008, 2020 — el mismo patrón, una y otra vez.</span>
     </div>
-    <div class="body-text" style="margin-top:clamp(18px,2.2vw,26px);">El patrón se repite. Y cada vez, la misma pregunta: ¿qué hubiera cambiado si lo hubiera sabido antes?</div>
+    <div class="acord-icon-wrap"><div class="acord-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div><span class="acord-icon-label">Ver más</span></div>
+  </button>
+  <div class="acord-panel">
+    <div class="acord-inner">
+      <div class="tl-grid">
+        <div class="tl-card">
+          <div class="tl-year">1929</div>
+          <div class="tl-title">Gran Depresión</div>
+          <div class="tl-desc">Millones dependían de un solo ingreso. Cuando desapareció, no había nada más detrás.</div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-year">1994</div>
+          <div class="tl-title">Crisis del Peso</div>
+          <div class="tl-desc">Ahorrar en una sola moneda, en un solo lugar, dejó de ser tan seguro como parecía.</div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-year">2008</div>
+          <div class="tl-title">Crisis financiera global</div>
+          <div class="tl-desc">Empleo y vivienda cayeron juntos. Quien tenía más de una fuente, amortiguó el golpe.</div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-year">2020</div>
+          <div class="tl-title">Pandemia</div>
+          <div class="tl-desc">Negocios con un solo canal cerraron. Quien ya había diversificado, encontró cómo seguir.</div>
+        </div>
+      </div>
+      <div class="pull" style="margin-top:clamp(18px,2.2vw,26px);">El patrón se repite. Y cada vez, la misma pregunta: ¿qué hubiera cambiado si lo hubiera sabido antes?</div>
+    </div>
   </div>
 </div>
 
-<!-- ══ SLIDE 3 — La nueva variable ══ -->
-<div class="sect">
-  <div class="sect-inner">
-    <div class="sec-label">Lo que es distinto hoy</div>
-    <div class="sect-h">Hoy el cambio no viene de afuera — viene de <em>dentro</em> de tu propia profesión</div>
-    <div class="body-text">Antes, una crisis golpeaba desde fuera. Hoy, la automatización transforma las profesiones desde dentro, sin que la profesión desaparezca.</div>
-    <div class="two-cards">
-      <div class="ex-card">
-        <div class="ex-title">El supermercado</div>
-        <div class="ex-text">Una venta hoy se procesa casi sola: el inventario se actualiza, el cobro se registra, los impuestos se calculan, la contabilidad se concilia. Cada paso, antes, era el trabajo de una persona.</div>
-      </div>
-      <div class="ex-card">
-        <div class="ex-title">El contador</div>
-        <div class="ex-text">La profesión no desaparece. Pero buena parte de las tareas que antes ocupaban su tiempo, hoy ya se automatizan. Quien se actualiza, avanza con la herramienta.</div>
-      </div>
+<!-- ══ ACORDEÓN 2 — La nueva variable ══ -->
+<div class="acord-section" id="a2">
+  <button class="acord-trigger" onclick="toggle('a2')" aria-expanded="false">
+    <div class="acord-trigger-left">
+      <span class="acord-step">Lo que es distinto hoy</span>
+      <span class="acord-title">Hoy el cambio no viene de afuera — viene de <em>dentro</em> de tu propia profesión</span>
+      <span class="acord-preview">El supermercado, el contador, y lo que la automatización ya está cambiando.</span>
     </div>
-    <div class="pull">No es una amenaza. Es información — y la información, a tiempo, permite decidir con calma en lugar de reaccionar con prisa.</div>
+    <div class="acord-icon-wrap"><div class="acord-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div><span class="acord-icon-label">Ver más</span></div>
+  </button>
+  <div class="acord-panel">
+    <div class="acord-inner">
+      <div class="body-text">Antes, una crisis golpeaba desde fuera. Hoy, la automatización transforma las profesiones desde dentro, sin que la profesión desaparezca.</div>
+      <div class="two-cards">
+        <div class="ex-card">
+          <div class="ex-title">El supermercado</div>
+          <div class="ex-text">Una venta hoy se procesa casi sola: el inventario se actualiza, el cobro se registra, los impuestos se calculan, la contabilidad se concilia. Cada paso, antes, era el trabajo de una persona.</div>
+        </div>
+        <div class="ex-card">
+          <div class="ex-title">El contador</div>
+          <div class="ex-text">La profesión no desaparece. Pero buena parte de las tareas que antes ocupaban su tiempo, hoy ya se automatizan. Quien se actualiza, avanza con la herramienta.</div>
+        </div>
+      </div>
+      <div class="pull">No es una amenaza. Es información — y la información, a tiempo, permite decidir con calma en lugar de reaccionar con prisa.</div>
+    </div>
   </div>
 </div>
 
-<!-- ══ SLIDE 4 — Panorama completo ══ -->
-<div class="sect">
-  <div class="sect-inner">
-    <div class="sec-label">El contexto completo</div>
-    <div class="sect-h">No es un solo cambio. Son <em>varios</em>, al mismo tiempo</div>
-    <div class="body-text">Inteligencia artificial, automatización, robótica, sistemas en la nube y sistemas financieros descentralizados — todos avanzando en paralelo. Lo que tienen en común: cada uno mueve el control de unas pocas manos hacia muchas.</div>
-    <div class="point-list">
-      <div class="point-item"><div class="point-dot"></div><div class="point-text"><strong>La inteligencia artificial</strong> pone herramientas antes exclusivas de expertos, al alcance de cualquiera.</div></div>
-      <div class="point-item"><div class="point-dot"></div><div class="point-text"><strong>La automatización</strong> libera tiempo humano de tareas repetitivas.</div></div>
-      <div class="point-item"><div class="point-dot"></div><div class="point-text"><strong>Los sistemas descentralizados</strong> ponen el control del propio dinero en manos de su dueño, y abren la puerta a nuevas formas de generar ingresos antes inexistentes.</div></div>
+<!-- ══ ACORDEÓN 3 — Panorama completo ══ -->
+<div class="acord-section" id="a3">
+  <button class="acord-trigger" onclick="toggle('a3')" aria-expanded="false">
+    <div class="acord-trigger-left">
+      <span class="acord-step">El contexto completo</span>
+      <span class="acord-title">No es un solo cambio. Son <em>varios</em>, al mismo tiempo</span>
+      <span class="acord-preview">IA, automatización y descentralización — todas avanzando en paralelo.</span>
     </div>
-    <div class="pull">Cada una de estas olas, vista de cerca, no es una amenaza. Es una puerta que antes no existía.</div>
+    <div class="acord-icon-wrap"><div class="acord-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div><span class="acord-icon-label">Ver más</span></div>
+  </button>
+  <div class="acord-panel">
+    <div class="acord-inner">
+      <div class="body-text">Inteligencia artificial, automatización, robótica, sistemas en la nube y sistemas financieros descentralizados — todos avanzando en paralelo. Lo que tienen en común: cada uno mueve el control de unas pocas manos hacia muchas.</div>
+      <div class="point-list">
+        <div class="point-item"><div class="point-dot"></div><div class="point-text"><strong>La inteligencia artificial</strong> pone herramientas antes exclusivas de expertos, al alcance de cualquiera.</div></div>
+        <div class="point-item"><div class="point-dot"></div><div class="point-text"><strong>La automatización</strong> libera tiempo humano de tareas repetitivas.</div></div>
+        <div class="point-item"><div class="point-dot"></div><div class="point-text"><strong>Los sistemas descentralizados</strong> ponen el control del propio dinero en manos de su dueño, y abren la puerta a nuevas formas de generar ingresos antes inexistentes.</div></div>
+      </div>
+      <div class="pull">Cada una de estas olas, vista de cerca, no es una amenaza. Es una puerta que antes no existía.</div>
+    </div>
   </div>
 </div>
 
@@ -259,43 +304,59 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
   </div>
 </div>
 
-<!-- ══ SLIDE 7 — Tendencia, no moda ══ -->
-<div class="sect">
-  <div class="sect-inner">
-    <div class="sec-label">No es una moda, es una tendencia</div>
-    <div class="sect-h">Algunos cambios <em>van y vienen.</em> Otros, <em>no tienen reversa.</em></div>
-    <div class="body-text">El efectivo no eliminó el trueque de un día para otro, pero el mundo nunca volvió atrás de usar dinero. La nube no eliminó los discos duros de inmediato, pero hoy casi nadie depende solo de uno. Cuando una tecnología mueve el control de pocas manos hacia muchas, esa dirección no se revierte — solo se vuelve más común con el tiempo.</div>
-    <div class="bar-block">
-      <div class="bar-label">Eso es lo que está pasando con los sistemas financieros descentralizados</div>
-      <div class="bar-track"><div class="bar-fill"></div></div>
-      <div class="bar-markers">
-        <span class="bar-m">Trueque</span>
-        <span class="bar-m">Dinero</span>
-        <span class="bar-m">Discos duros</span>
-        <span class="bar-m">Nube</span>
-        <span class="bar-m act">DeFi ▶</span>
-      </div>
+<!-- ══ ACORDEÓN 4 — Tendencia, no moda ══ -->
+<div class="acord-section" id="a4">
+  <button class="acord-trigger" onclick="toggle('a4')" aria-expanded="false">
+    <div class="acord-trigger-left">
+      <span class="acord-step">No es una moda, es una tendencia</span>
+      <span class="acord-title">Algunos cambios <em>van y vienen.</em> Otros, <em>no tienen reversa.</em></span>
+      <span class="acord-preview">Del trueque al dinero, de los discos duros a la nube — el mismo patrón irreversible.</span>
     </div>
-    <div class="body-text" style="margin-top:clamp(16px,2vw,22px); opacity:.85; font-size:clamp(14px,1.2vw,16px);">No se trata de una ola pasajera, sino de hacia dónde se está moviendo, poco a poco, todo el sistema financiero global.</div>
+    <div class="acord-icon-wrap"><div class="acord-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div><span class="acord-icon-label">Ver más</span></div>
+  </button>
+  <div class="acord-panel">
+    <div class="acord-inner">
+      <div class="body-text">El efectivo no eliminó el trueque de un día para otro, pero el mundo nunca volvió atrás de usar dinero. La nube no eliminó los discos duros de inmediato, pero hoy casi nadie depende solo de uno. Cuando una tecnología mueve el control de pocas manos hacia muchas, esa dirección no se revierte — solo se vuelve más común con el tiempo.</div>
+      <div class="bar-block">
+        <div class="bar-label">Eso es lo que está pasando con los sistemas financieros descentralizados</div>
+        <div class="bar-track"><div class="bar-fill"></div></div>
+        <div class="bar-markers">
+          <span class="bar-m">Trueque</span>
+          <span class="bar-m">Dinero</span>
+          <span class="bar-m">Discos duros</span>
+          <span class="bar-m">Nube</span>
+          <span class="bar-m act">DeFi ▶</span>
+        </div>
+      </div>
+      <div class="body-text" style="margin-top:clamp(16px,2vw,22px); opacity:.85; font-size:clamp(14px,1.2vw,16px);">No se trata de una ola pasajera, sino de hacia dónde se está moviendo, poco a poco, todo el sistema financiero global.</div>
+    </div>
   </div>
 </div>
 
-<!-- ══ SLIDE 8 — Línea divisoria ══ -->
-<div class="sect center">
-  <div class="sect-inner" style="max-width:880px;">
-    <div class="sec-label">Dos sistemas, una nueva posibilidad</div>
-    <div class="sect-h">La línea divisoria invisible</div>
-    <div class="split">
-      <div class="split-half trad">
-        <div class="split-label trad-label">Sistema tradicional</div>
-        <div class="split-text">Sigue siendo válido, necesario, y cada día más tecnológico. Pero su naturaleza es centralizada: bancos, intermediarios y regulaciones deciden buena parte de lo que puedes o no hacer con tu propio dinero.</div>
-      </div>
-      <div class="split-half descentral">
-        <div class="split-label descentral-label">Sistema descentralizado</div>
-        <div class="split-text">Ofrece algo distinto: control directo sobre tu propio patrimonio, y también un terreno apenas en construcción donde hoy se están abriendo nuevas formas de generar ingresos y crear activos digitales — oportunidades que estarán más desarrolladas en pocos años, pero que hoy todavía están al alcance de quien se prepara a tiempo.</div>
-      </div>
+<!-- ══ ACORDEÓN 5 — Línea divisoria ══ -->
+<div class="acord-section" id="a5">
+  <button class="acord-trigger" onclick="toggle('a5')" aria-expanded="false">
+    <div class="acord-trigger-left">
+      <span class="acord-step">Dos sistemas, una nueva posibilidad</span>
+      <span class="acord-title">La línea divisoria invisible</span>
+      <span class="acord-preview">Sistema tradicional vs. descentralizado — no se trata de elegir uno y abandonar el otro.</span>
     </div>
-    <div class="body-text" style="margin-top:clamp(18px,2.2vw,26px); opacity:.85; font-size:clamp(14px,1.2vw,16px);">No se trata de elegir uno y abandonar el otro. Se trata de saber que ahora existe una alternativa real — y que entenderla, antes de decidir, es lo único que se necesita para empezar.</div>
+    <div class="acord-icon-wrap"><div class="acord-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div><span class="acord-icon-label">Ver más</span></div>
+  </button>
+  <div class="acord-panel">
+    <div class="acord-inner wide">
+      <div class="split">
+        <div class="split-half trad">
+          <div class="split-label trad-label">Sistema tradicional</div>
+          <div class="split-text">Sigue siendo válido, necesario, y cada día más tecnológico. Pero su naturaleza es centralizada: bancos, intermediarios y regulaciones deciden buena parte de lo que puedes o no hacer con tu propio dinero.</div>
+        </div>
+        <div class="split-half descentral">
+          <div class="split-label descentral-label">Sistema descentralizado</div>
+          <div class="split-text">Ofrece algo distinto: control directo sobre tu propio patrimonio, y también un terreno apenas en construcción donde hoy se están abriendo nuevas formas de generar ingresos y crear activos digitales — oportunidades que estarán más desarrolladas en pocos años, pero que hoy todavía están al alcance de quien se prepara a tiempo.</div>
+        </div>
+      </div>
+      <div class="body-text" style="margin-top:clamp(18px,2.2vw,26px); opacity:.85; font-size:clamp(14px,1.2vw,16px); text-align:center;">No se trata de elegir uno y abandonar el otro. Se trata de saber que ahora existe una alternativa real — y que entenderla, antes de decidir, es lo único que se necesita para empezar.</div>
+    </div>
   </div>
 </div>
 
@@ -346,5 +407,14 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
 
 </div>
 </div>
+
+<script>
+function toggle(id){
+  const s=document.getElementById(id);
+  const open=s.classList.contains('open');
+  s.classList.toggle('open',!open);
+  s.querySelector('.acord-trigger').setAttribute('aria-expanded',!open);
+}
+</script>
 </body>
 </html>
