@@ -2,7 +2,7 @@
 
 > Este archivo es la fuente única de verdad del proyecto. Se actualiza después de cada sesión de trabajo, sin importar en qué conversación de Claude se realizó. No se crean archivos nuevos por conversación — siempre se edita este mismo documento.
 
-**Última actualización:** 17 de junio, 2026 (sesión: SEO — sitemap, robots.txt, verificación e indexación en Google Search Console)
+**Última actualización:** 19 de junio, 2026 (sesión: refinamiento de copy de Diversifica, infografía WhatsApp, corrección de assets duplicados, sistema de RECETAS/BITÁCORA)
 
 ---
 
@@ -126,6 +126,13 @@ Infinexa nace de la fusión de dos raíces: **Infinite** (expansión sin límite
 
 **Pendiente:** ~~verificar en Meta Debugger que `og:image` ya no muestra advertencias~~ — ✅ **Resuelto.** Vista previa funcionando correctamente en Meta Debugger (logo, título y descripción se muestran bien). Queda una advertencia menor no bloqueante: "Faltan las siguientes propiedades obligatorias: fb:app_id" — solo es necesaria para integraciones avanzadas (login con Facebook, analíticas nativas de Facebook), no afecta la vista previa al compartir por WhatsApp/redes. Se decidió no agregarla por ahora.
 
+**Refinamiento de copy (19 jun 2026):** se ajustó toda la página para alinear el mensaje con un dato estadístico verificado y con un enfoque más explícito hacia la economía descentralizada como vehículo concreto:
+- **Dato central verificado:** 65% de quienes alcanzaron libertad financiera tenían al menos 3 fuentes de ingreso (se descartó el rumor sin respaldo de "5 a 7 fuentes recomendadas"; se usó "libertad financiera" en vez de "millonarios" para sonar más alcanzable al avatar).
+- **Badge superior y pregunta de cierre** cambiados de "una conversación honesta sobre el dinero" (genérico) a "una conversación sobre tu siguiente fuente de ingreso" / "¿Cuál es tu siguiente fuente?" — mismo lenguaje usado en la infografía de WhatsApp, creando hilo narrativo entre ambas piezas.
+- **Las tres tarjetas de progresión** (1ª/2ª/3ª fuente) ahora nombran explícitamente el destino: la 2ª fuente se llama "Descentralizada" (un negocio en la nueva economía digital) y la 3ª "Activo digital" — antes eran genéricas ("Construye", "Activo") sin decir dónde encontrar esa fuente.
+- **Agregado el argumento de velocidad/ventana de oportunidad temprana:** la economía descentralizada se presenta como un terreno en etapas tempranas (analogía con internet "antes de que todo el mundo tuviera correo electrónico"), donde quien entra hoy lo hace antes de que el terreno "se llene" — sin caer en presión de ventas agresiva.
+- **Auditoría completa de claridad de copy:** se revisaron las 9 frases más abstractas o ambiguas de toda la página (ej. "el efectivo no eliminó el trueque... pero el mundo nunca volvió atrás" generaba confusión lógica) y se reescribieron para que sean entendibles a la primera lectura, sin perder profundidad.
+
 ### 4.2 SEO e indexación en buscadores
 
 **Archivos técnicos agregados en la raíz del repo:**
@@ -140,6 +147,25 @@ Infinexa nace de la fusión de dos raíces: **Infinite** (expansión sin límite
 - ⏸️ Servicios (`infinexa.app/servicios`) — indexación pendiente, en pausa por decisión propia (la página aún no está lista para recibir tráfico de búsqueda directa)
 
 **Flujo para indexar páginas nuevas a futuro:** Search Console → Inspección de URLs → pegar la URL nueva → "Solicitar indexación". No es necesario repetir la verificación del dominio, ya quedó configurada una sola vez para todo `infinexa.app`. Recordar también agregar cada página nueva a `sitemap.xml` cuando se publique.
+
+### 4.3 Corrección de assets duplicados e íconos (19 jun 2026)
+
+**Síntoma reportado:** Diversifica se veía distorsionada al anclar a pantalla de inicio en iPhone (logo pixelado/deformado), mientras que las demás páginas se veían nítidas. La vista previa de Open Graph al compartir por WhatsApp, en cambio, sí se veía bien en todas.
+
+**Causa raíz real (no era solo transparencia):** existían dos carpetas de assets paralelas en el repo:
+- `assets/` — la carpeta real y activa, usada por la carta, infografía, servicios y el builder `carlos`
+- `infinexa-assets/files/` — carpeta huérfana, creada por error en una sesión anterior, sin ninguna referencia real en ninguna página
+
+Diversifica apuntaba a la carpeta huérfana, que tenía una versión vieja del `apple-touch-icon.png` con canal alfa (RGBA/transparencia) — formato que iOS no renderiza bien para este uso específico, causando la distorsión visual.
+
+**Resolución:**
+1. Regenerados `favicon.png` (32×32), `apple-touch-icon.png` (180×180, esquinas cuadradas sin redondear — iOS las redondea automáticamente) y `og-image.png` (1200×630) directamente desde el SVG vectorial fuente, confirmando modo RGB sin transparencia en los tres.
+2. Verificado con `grep -rn "assets" --include="*.html" .` qué carpeta usaba cada página antes de tocar nada.
+3. Reemplazados los tres archivos en `assets/` (la carpeta correcta) para las páginas existentes.
+4. Corregidas las rutas de `diversifica/index.html` para usar `/assets/` en lugar de `infinexa-assets/files/`, dejando las 5 páginas/builders consistentes.
+5. Eliminada por completo la carpeta `infinexa-assets/` tras confirmar que ninguna página la referenciaba.
+
+**Lección para futuras sesiones:** antes de crear cualquier carpeta nueva de assets/imágenes de marca, verificar primero con `grep -rn "assets" --include="*.html" .` desde la raíz del repo si ya existe una convención establecida — evita crear carpetas duplicadas que generan inconsistencias silenciosas entre páginas.
 
 ---
 
@@ -213,7 +239,7 @@ Infinexa nace de la fusión de dos raíces: **Infinite** (expansión sin límite
 4. Importar los SVG de marca a Figma/Illustrator y generar exportaciones PNG
 5. Decidir si se generan los 4 textos de prospección semanal para grupos de WhatsApp
 6. Evaluar primer cliente real para el servicio completo o para Builder Edition
-7. Considerar agregar Diversifica al pipeline de prospección por WhatsApp (mensaje + link, mismo patrón que la infografía)
+7. Compartir la infografía de WhatsApp ya generada ("¿Cuántas fuentes de ingreso tienes tú?", con el dato del 65%) en estados/grupos, enlazando a Diversifica
 8. Cuando la página de Servicios esté lista para tráfico de búsqueda directa, solicitar su indexación en Google Search Console (mismo proceso ya usado para las otras 3 páginas)
 9. Agregar cada página nueva que se publique a futuro tanto al `sitemap.xml` como a la solicitud de indexación en Search Console
 
@@ -228,6 +254,17 @@ Infinexa nace de la fusión de dos raíces: **Infinite** (expansión sin límite
 - **Carpeta local:** `~/Downloads/infinexa-repo`
 - **Worker Cloudflare:** `infinexa-builders`
 - **Significado del nombre:** Infinite + Nexus = Infinexa — "el punto de conexión donde las posibilidades infinitas se transforman en valor con propósito"
+
+---
+
+## 10. Sistema de gestión de trabajo (nuevo, 19 jun 2026)
+
+Para complementar este archivo (que documenta el *estado* del proyecto), se crearon dos archivos adicionales en `_gestion/` dentro del mismo repo:
+
+- **`_gestion/RECETAS.md`** — prompts e instrucciones reutilizables por tipo de actividad (páginas web, infografías para WhatsApp, generación de favicons, investigación de datos, auditoría de copy, flujo de git, SEO, Meta Debugger). Se consulta cuando se quiere repetir algo que ya funcionó antes, sin tener que redactar el prompt desde cero.
+- **`_gestion/BITACORA.md`** — registro cronológico append-only (solo se agrega, nunca se reescribe lo viejo) de qué se hizo en cada sesión y cuándo. Sirve para reconstruir el hilo de decisiones sin tener que leer transcripciones completas.
+
+**Cuándo actualizar cada uno:** al cierre de una sesión, pedir a Claude "agrega esto a la bitácora" o "guarda este prompt en recetas" — igual que se hace con este `ESTADO.md`.
 
 ---
 
