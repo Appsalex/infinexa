@@ -1,0 +1,43 @@
+# BITÁCORA · INFINEXA
+
+> Registro cronológico de sesiones de trabajo. Solo se agrega, nunca se borra ni se reescribe lo ya registrado — así siempre puedes reconstruir el orden exacto de lo que pasó. Las entradas más recientes van arriba.
+>
+> Para una visión del estado actual del proyecto (no histórico), ver `ESTADO.md`. Para prompts reutilizables, ver `RECETAS.md`. Este archivo es solo el "qué pasó y cuándo".
+
+---
+
+## 2026-06-19
+
+- Diagnosticado y corregido bug del `apple-touch-icon` de Diversifica: el archivo tenía canal alfa (RGBA/transparencia), lo que causaba distorsión visual al anclar la página a la pantalla de inicio en iOS (aunque la imagen de Open Graph, que sí era RGB sin transparencia, se veía perfecta).
+- Regenerados desde cero los tres archivos de íconos de marca (`favicon.png` 32×32, `apple-touch-icon.png` 180×180, `og-image.png` 1200×630) directamente desde el SVG vectorial fuente (`infinexa-icono.svg` / `infinexa-logo-negativo.svg`), confirmando en cada uno modo RGB sin transparencia antes de subirlos.
+- **Descubierta la causa raíz real:** existían dos carpetas paralelas de assets — `assets/` (la que de verdad usan la carta, infografía, servicios y el builder `carlos`) y `infinexa-assets/files/` (carpeta huérfana, sin ninguna referencia real, creada por error en una sesión anterior). Diversifica apuntaba a la carpeta huérfana, que tenía una versión vieja con transparencia — por eso se veía mal mientras las demás páginas (que ya usaban `assets/`, correcto desde antes) se veían bien.
+- Verificado con `grep -rn "infinexa-assets" --include="*.html" .` que ninguna página dependía de la carpeta huérfana antes de eliminarla.
+- Corregidas las rutas de `diversifica/index.html` para usar `/assets/` (consistente con el resto del sitio) en lugar de `infinexa-assets/files/`.
+- Eliminada por completo la carpeta `infinexa-assets/` (8 archivos, incluyendo `.DS_Store` y el script `aplicar-og.sh` que ya no se usaba). Commit `872c0c0`.
+- **Lección para futuras sesiones:** antes de crear una carpeta nueva de assets, verificar primero con `grep -rn "assets" --include="*.html" .` si ya existe una convención establecida en el repo — evita duplicar carpetas con el mismo propósito.
+- Confirmado con captura de WhatsApp que la vista previa de Diversifica ya se ve idéntica en calidad a la de la carta principal, y confirmado por el usuario que el ancla a pantalla de inicio en iPhone ya se ve nítida.
+- Iniciada esta bitácora y `RECETAS.md` como sistema de organización para futuras sesiones.
+
+## 2026-06-17 (sesión larga — Diversifica completa)
+
+- Construida página Diversifica desde cero: 10 bloques narrativos sobre diversificación de ingresos, con enfoque progresivo hacia la economía descentralizada.
+- Primera versión en formato carrusel de pantalla completa — **abandonada por completo** tras detectar que bloqueaba el zoom nativo del navegador en móvil (el gesto de pinch-zoom avanzaba al siguiente slide en vez de ampliar texto).
+- Reconstruida completa en formato scroll vertical normal, replicando el sistema visual ya validado de la infografía (header con lockup, badge superior, acordeones, tipografía en clamps).
+- Resuelto bug de CSS: un media query de `max-width:720px` estaba posicionado *antes* de las reglas base de tipografía — en la cascada CSS, eso hacía que las reglas base (más abajo) sobreescribieran silenciosamente las correcciones de móvil. **Lección permanente: los media queries siempre van al final del bloque `<style>`.**
+- Agregado el set completo de Open Graph y Twitter Card (la primera versión no tenía ninguno, por lo que no se generaba vista previa al compartir).
+- Auditoría completa de copy para claridad: 9 frases identificadas como confusas o ambiguas, todas reescritas (incluyendo la frase del trueque/efectivo que generó la auditoría completa).
+- Investigado y verificado el dato de "fuentes de ingreso de millonarios": 65% de millonarios hechos a sí mismos tienen al menos 3 fuentes de ingreso (no el rumor de "5 a 7 fuentes" que no tenía buen respaldo). Usado en la página y en la infografía de WhatsApp, con el término "libertad financiera" en vez de "millonarios" para sonar más alcanzable.
+- Reforzado en tres puntos de la página el enfoque específico hacia la economía descentralizada como el terreno concreto donde se construye la "siguiente fuente de ingreso" — incluyendo la idea de velocidad/ventana de oportunidad temprana.
+- Página publicada en `infinexa.app/diversifica`.
+- Agregados `sitemap.xml` y `robots.txt` en la raíz del repo; verificado dominio en Google Search Console (método archivo HTML); indexadas la carta, la infografía y Diversifica (servicios quedó pendiente por decisión propia).
+- Confirmado en Meta Debugger que la vista previa de Diversifica funciona correctamente (advertencia menor no bloqueante de `fb:app_id`, decidido no resolver).
+- Generada infografía para WhatsApp ("¿Cuántas fuentes de ingreso tienes tú?") con el dato del 65%, exportada a PNG vía Playwright (62.8 KB).
+- `ESTADO.md` actualizado dos veces durante la sesión (sección 4.1 Diversifica, sección 4.2 SEO e indexación), verificando contra la versión real del repo antes de cada actualización para no perder ediciones manuales.
+
+---
+
+## Cómo seguir esta bitácora
+
+- Cada sesión de trabajo nueva, pide a Claude: "agrega una entrada a la bitácora de hoy" al final de la conversación.
+- Si una sesión se extiende por varios días, usa la fecha de inicio como encabezado y ve agregando viñetas conforme avanza.
+- No reescribas entradas viejas — si algo cambió después, se documenta como una entrada nueva que referencia a la anterior (ej. "corregido el bug de X que se reportó el [fecha]").
