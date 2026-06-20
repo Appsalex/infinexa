@@ -12,16 +12,16 @@
 
 **Prompt:**
 ```
-Quiero crear una página nueva llamada [NOMBRE] en infinexa.app/[ruta]. 
-Sigue exactamente el mismo sistema visual que ya usamos: fondo grafito 
-(#0F1720 a #1F2A33), acento cobre (#C8682E), texto en plata clara 
-(#EDF1F2), tipografía Inter, formato de scroll vertical normal (NO 
-carrusel de pantalla completa — eso ya lo intentamos y falla en móvil 
+Quiero crear una página nueva llamada [NOMBRE] en infinexa.app/[ruta].
+Sigue exactamente el mismo sistema visual que ya usamos: fondo grafito
+(#0F1720 a #1F2A33), acento cobre (#C8682E), texto en plata clara
+(#EDF1F2), tipografía Inter, formato de scroll vertical normal (NO
+carrusel de pantalla completa — eso ya lo intentamos y falla en móvil
 porque bloquea el zoom nativo).
 
-Estructura: header con logo lockup horizontal + badge superior + 
-titular grande, luego secciones de contenido alternando fondo grafito 
-para los momentos de mayor peso narrativo, acordeones para el 
+Estructura: header con logo lockup horizontal + badge superior +
+titular grande, luego secciones de contenido alternando fondo grafito
+para los momentos de mayor peso narrativo, acordeones para el
 contenido más largo/expositivo, y cierre con botón de WhatsApp.
 
 El tema de la página es: [DESCRIBE EL TEMA Y MENSAJE CENTRAL]
@@ -40,27 +40,27 @@ El tema de la página es: [DESCRIBE EL TEMA Y MENSAJE CENTRAL]
 
 **Prompt:**
 ```
-Necesito una infografía de WhatsApp sobre [TEMA]. Formato vertical 
-(proporción aproximada 420x860 o 1080x1920 para estado). 
+Necesito una infografía de WhatsApp sobre [TEMA]. Formato vertical
+(proporción aproximada 420x860 o 1080x1920 para estado).
 
-Estructura: eyebrow pequeño arriba, titular grande de impacto, una 
-tarjeta destacada con un dato estadístico verificado como gancho 
-principal, 3 tarjetas comparativas o de progresión, una sección de 
-barras de datos si aplica, pregunta de cierre directa, y logo de 
+Estructura: eyebrow pequeño arriba, titular grande de impacto, una
+tarjeta destacada con un dato estadístico verificado como gancho
+principal, 3 tarjetas comparativas o de progresión, una sección de
+barras de datos si aplica, pregunta de cierre directa, y logo de
 Infinexa al pie.
 
-Paleta: fondo grafito (#0F1720/#1F2A33), acento cobre (#C8682E), 
+Paleta: fondo grafito (#0F1720/#1F2A33), acento cobre (#C8682E),
 texto en plata clara (#EDF1F2). Tipografía Inter.
 
-IMPORTANTE: si el dato estadístico que voy a usar no está verificado, 
+IMPORTANTE: si el dato estadístico que voy a usar no está verificado,
 investígalo primero con fuentes reales antes de usarlo.
 ```
 
 **Cómo exportar a PNG con bajo peso (ya resuelto, usar este método):**
 ```
-Genera el HTML/CSS de la infografía con Playwright (sync_playwright), 
-viewport del tamaño exacto de la pieza, screenshot del elemento 
-específico (no de toda la página), formato PNG. Esto da archivos de 
+Genera el HTML/CSS de la infografía con Playwright (sync_playwright),
+viewport del tamaño exacto de la pieza, screenshot del elemento
+específico (no de toda la página), formato PNG. Esto da archivos de
 ~60KB, ideal para WhatsApp sin pérdida de calidad.
 ```
 
@@ -76,18 +76,18 @@ específico (no de toda la página), formato PNG. Esto da archivos de
 ```
 Necesito generar/verificar los íconos de marca para [PÁGINA]:
 - favicon.png (32x32px, para la pestaña del navegador)
-- apple-touch-icon.png (180x180px, esquinas CUADRADAS sin redondear 
-  — iOS las redondea automáticamente, así que si el archivo ya viene 
+- apple-touch-icon.png (180x180px, esquinas CUADRADAS sin redondear
+  — iOS las redondea automáticamente, así que si el archivo ya viene
   redondeado se ve doble-recortado)
 - og-image.png (1200x630px, para vista previa al compartir)
 
-CRÍTICO: ninguno de los tres debe tener canal alfa/transparencia 
-(modo RGBA). Deben ser RGB puro con fondo sólido real, porque iOS 
-renderiza mal la transparencia en el apple-touch-icon (queda 
+CRÍTICO: ninguno de los tres debe tener canal alfa/transparencia
+(modo RGBA). Deben ser RGB puro con fondo sólido real, porque iOS
+renderiza mal la transparencia en el apple-touch-icon (queda
 distorsionado al anclar a pantalla de inicio).
 
-Genera todos desde el SVG vectorial fuente (infinexa-icono.svg o 
-infinexa-logo-negativo.svg), no desde un PNG ya exportado, para 
+Genera todos desde el SVG vectorial fuente (infinexa-icono.svg o
+infinexa-logo-negativo.svg), no desde un PNG ya exportado, para
 garantizar nitidez perfecta.
 ```
 
@@ -110,9 +110,9 @@ print(img.mode)  # Si dice "RGBA" tiene transparencia — ese es el problema
 
 **Prompt:**
 ```
-Antes de usar este dato en una pieza de marketing, investiga si tiene 
-respaldo real: "[EL DATO QUE QUIERES VERIFICAR]". Quiero saber: 
-¿de dónde viene?, ¿qué estudio o fuente lo respalda?, ¿hay matices 
+Antes de usar este dato en una pieza de marketing, investiga si tiene
+respaldo real: "[EL DATO QUE QUIERES VERIFICAR]". Quiero saber:
+¿de dónde viene?, ¿qué estudio o fuente lo respalda?, ¿hay matices
 importantes que deba conocer antes de usarlo?
 ```
 
@@ -126,14 +126,14 @@ importantes que deba conocer antes de usarlo?
 
 **Prompt:**
 ```
-Lee toda la página/pieza completa con ojo crítico de claridad. Para 
-cada frase que sea ambigua, abstracta, o requiera esfuerzo extra para 
-entenderse, dame: (1) la frase original, (2) por qué es confusa, 
-(3) una propuesta de reemplazo más simple y directa. El objetivo es 
-que cualquier persona, sin esfuerzo, entienda la idea a la primera 
+Lee toda la página/pieza completa con ojo crítico de claridad. Para
+cada frase que sea ambigua, abstracta, o requiera esfuerzo extra para
+entenderse, dame: (1) la frase original, (2) por qué es confusa,
+(3) una propuesta de reemplazo más simple y directa. El objetivo es
+que cualquier persona, sin esfuerzo, entienda la idea a la primera
 lectura — sin ser infantil, solo claro.
 
-No cambies nada todavía — primero dame el informe completo para que 
+No cambies nada todavía — primero dame el informe completo para que
 yo apruebe los cambios.
 ```
 
@@ -181,3 +181,49 @@ git push
 3. Clic en "Depurar"
 4. Si la imagen sale vieja o no aparece, clic en "Volver a extraer" para forzar que Facebook vuelva a leer el HTML
 5. La advertencia de "Faltan las siguientes propiedades obligatorias: fb:app_id" es normal y no bloqueante — no afecta la vista previa real, solo es necesaria para integraciones avanzadas de Facebook que no usamos
+
+---
+
+## 9. Auditoría y optimización de documentos de marca en dos capas
+
+**Cuándo usar:** cuando tengas dos o más documentos de marca (ej. un manual de tono/estrategia y un brief técnico/visual) y quieras saber si se solapan, si deben fusionarse, o si conviene mantenerlos separados pero mejor conectados entre sí.
+
+**Prompt:**
+```
+Tengo estos documentos de marca: [LISTA LOS ARCHIVOS]. Quiero saber:
+¿cuál es la diferencia real entre ellos?, ¿hay contenido duplicado?,
+¿deberían fusionarse en uno solo o mantenerse separados? Si conviene
+mantenerlos separados, optimízalos para que:
+
+1. Cada uno tenga una sección breve al inicio ("cómo usar este
+   sistema de documentos") que explique cuándo consultar cuál.
+2. Se elimine cualquier duplicación de contenido técnico (paleta de
+   color, tipografía, especificaciones) — que viva en un solo lugar
+   y el otro documento solo lo referencie.
+3. Se agreguen cajas de referencia cruzada en los puntos exactos
+   donde un documento necesita información del otro.
+4. Queden numerados como "Documento X de Y del sistema de marca".
+
+No fusiones los documentos salvo que la duplicación sea tan grande
+que ya no se justifique mantenerlos separados.
+```
+
+**Cómo agregar una sección nueva a un documento de marca ya existente (ej. políticas de cumplimiento, lineamientos legales):**
+```
+Antes de escribir nada, investiga la información vigente y actual
+sobre [TEMA — ej. políticas de anuncios de Meta/Google para
+contenido financiero o cripto, políticas de WhatsApp Business contra
+spam, regulación local relevante]. No uses solo tu conocimiento
+general — las políticas de estas plataformas cambian seguido.
+
+Una vez investigado, agrega una sección nueva al documento [NOMBRE],
+manteniendo la numeración consecutiva de las secciones existentes
+(si insertas en medio, renumera lo que sigue). Incluye una nota
+aclarando que esto no sustituye asesoría legal y que las políticas
+deben verificarse en la fuente oficial antes de cualquier campaña
+pagada.
+```
+
+**Ejemplo ya resuelto (19 jun 2026):** se comparó el `Manual de Marca` (PDF v1.0, capa estratégica/verbal) contra el `Brand Identity Brief` (DOCX, capa técnica/visual). Se determinó que no debían fusionarse — cubren audiencias distintas (quien escribe un post vs. quien produce un logo) — pero sí debían optimizarse: se eliminó la duplicación de la paleta de color, se agregaron referencias cruzadas, y se renumeraron como "Documento 1 de 2" / "Documento 2 de 2". Después se agregó al Manual una sección nueva de cumplimiento de políticas de plataforma (Meta Ads, Google Ads, WhatsApp Business, contexto regulatorio CONDUSEF/CNBV en México), investigada con búsqueda web antes de escribirse. Ambos quedaron en formato DOCX (`Infinexa_Manual_de_Marca.docx`, `Infinexa_Brand_Identity_Brief.docx`), versión 1.1.
+
+**Nota técnica (si generas los documentos con la librería `docx` de Node.js):** al usar bordes de párrafo en los cuatro lados (`top`/`left`/`bottom`/`right`), la librería puede emitir el XML en un orden que no pasa la validación OOXML estricta, sin importar el orden en que se declaren las propiedades en el código. Si la validación falla con un error de tipo "Element left/right not expected", hay que desempacar el `.docx`, corregir manualmente el orden de las etiquetas (`top`, `left`, `bottom`, `right`, en ese orden exacto) en `word/document.xml`, y volver a empacar.

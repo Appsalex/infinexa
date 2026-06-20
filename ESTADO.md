@@ -2,7 +2,7 @@
 
 > Este archivo es la fuente única de verdad del proyecto. Se actualiza después de cada sesión de trabajo, sin importar en qué conversación de Claude se realizó. No se crean archivos nuevos por conversación — siempre se edita este mismo documento.
 
-**Última actualización:** 19 de junio, 2026 (sesión: refinamiento de copy de Diversifica, infografía WhatsApp, corrección de assets duplicados, sistema de RECETAS/BITÁCORA)
+**Última actualización:** 19 de junio, 2026 (sesión: refinamiento de copy de Diversifica, infografía WhatsApp, corrección de assets duplicados, sistema de RECETAS/BITÁCORA, optimización de documentos de marca con sección de cumplimiento de plataformas)
 
 ---
 
@@ -81,9 +81,12 @@ Infinexa nace de la fusión de dos raíces: **Infinite** (expansión sin límite
 | `infinexa-logo-horizontal.svg` | SVG | Lockup horizontal — firmas, headers |
 | `infinexa-icono.svg` | SVG | Solo símbolo — favicon, avatar |
 | `infinexa-portada-linkedin.svg` | SVG | Banner LinkedIn/Twitter, 1584×396px |
-| `infinexa-brand-brief.docx` | DOCX | Brief técnico completo: historia del nombre, especificaciones del símbolo (paths SVG, propiedades de trazo), paleta con muestras, tipografía, lockups, zonas de exclusión, usos incorrectos, tabla de entregables |
+| `Infinexa_Manual_de_Marca.docx` (v1.1) | DOCX | Documento 1 de 2 del sistema de marca. Estrategia, posicionamiento, tono de voz, bios, sección de cumplimiento de políticas de plataformas (Meta Ads, Google Ads, WhatsApp Business, contexto regulatorio CONDUSEF/CNBV en México), checklist de coherencia. Reemplaza el PDF "Manual de Marca v1.0" anterior. |
+| `Infinexa_Brand_Identity_Brief.docx` (v1.1) | DOCX | Documento 2 de 2 del sistema de marca. Especificaciones técnicas: historia del nombre, símbolo (paths SVG), wordmark, paleta completa de 8 colores, tipografía, lockups, zonas de exclusión, usos incorrectos. Reemplaza la versión `infinexa-brand-brief.docx` anterior. |
 
-**Pendiente:** importar los SVG a Figma/Illustrator y convertir textos a outlines; exportar PNG en 1x/2x/3x; instalar Inter como fuente del sistema; aplicar el símbolo actualizado al sitio web en vivo (actualmente el sitio puede tener la versión visual anterior).
+Ambos documentos quedaron optimizados como un sistema de dos capas con referencias cruzadas entre sí (estrategia/voz vs. especificación técnica/visual), evitando duplicar contenido entre ellos.
+
+**Pendiente:** importar los SVG a Figma/Illustrator y convertir textos a outlines; exportar PNG en 1x/2x/3x; instalar Inter como fuente del sistema; aplicar el símbolo actualizado al sitio web en vivo (actualmente el sitio puede tener la versión visual anterior); subir ambos docx nuevos al repositorio y eliminar las versiones anteriores (PDF del Manual y `infinexa-brand-brief.docx` viejo) una vez confirmado que el contenido fue migrado completo.
 
 ---
 
@@ -242,6 +245,7 @@ Diversifica apuntaba a la carpeta huérfana, que tenía una versión vieja del `
 7. Compartir la infografía de WhatsApp ya generada ("¿Cuántas fuentes de ingreso tienes tú?", con el dato del 65%) en estados/grupos, enlazando a Diversifica
 8. Cuando la página de Servicios esté lista para tráfico de búsqueda directa, solicitar su indexación en Google Search Console (mismo proceso ya usado para las otras 3 páginas)
 9. Agregar cada página nueva que se publique a futuro tanto al `sitemap.xml` como a la solicitud de indexación en Search Console
+10. Subir los dos documentos de marca actualizados (`Infinexa_Manual_de_Marca.docx`, `Infinexa_Brand_Identity_Brief.docx`) al repositorio, y eliminar las versiones anteriores (PDF del Manual y `infinexa-brand-brief.docx` viejo) una vez confirmado que el contenido fue migrado completo
 
 ---
 
@@ -261,7 +265,7 @@ Diversifica apuntaba a la carpeta huérfana, que tenía una versión vieja del `
 
 Para complementar este archivo (que documenta el *estado* del proyecto), se crearon dos archivos adicionales en `_gestion/` dentro del mismo repo:
 
-- **`_gestion/RECETAS.md`** — prompts e instrucciones reutilizables por tipo de actividad (páginas web, infografías para WhatsApp, generación de favicons, investigación de datos, auditoría de copy, flujo de git, SEO, Meta Debugger). Se consulta cuando se quiere repetir algo que ya funcionó antes, sin tener que redactar el prompt desde cero.
+- **`_gestion/RECETAS.md`** — prompts e instrucciones reutilizables por tipo de actividad (páginas web, infografías para WhatsApp, generación de favicons, investigación de datos, auditoría de copy, flujo de git, SEO, Meta Debugger, auditoría de documentos de marca). Se consulta cuando se quiere repetir algo que ya funcionó antes, sin tener que redactar el prompt desde cero.
 - **`_gestion/BITACORA.md`** — registro cronológico append-only (solo se agrega, nunca se reescribe lo viejo) de qué se hizo en cada sesión y cuándo. Sirve para reconstruir el hilo de decisiones sin tener que leer transcripciones completas.
 
 **Cuándo actualizar cada uno:** al cierre de una sesión, pedir a Claude "agrega esto a la bitácora" o "guarda este prompt en recetas" — igual que se hace con este `ESTADO.md`.
