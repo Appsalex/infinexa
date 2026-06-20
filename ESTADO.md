@@ -2,7 +2,7 @@
 
 > Este archivo es la fuente única de verdad del proyecto. Se actualiza después de cada sesión de trabajo, sin importar en qué conversación de Claude se realizó. No se crean archivos nuevos por conversación — siempre se edita este mismo documento.
 
-**Última actualización:** 19 de junio, 2026 (sesión: refinamiento de copy de Diversifica, infografía WhatsApp, corrección de assets duplicados, sistema de RECETAS/BITÁCORA, optimización de documentos de marca con sección de cumplimiento de plataformas)
+**Última actualización:** 19 de junio, 2026 (sesión: refinamiento de copy de Diversifica, infografía WhatsApp, corrección de assets duplicados, sistema de RECETAS/BITÁCORA, optimización de documentos de marca con sección de cumplimiento de plataformas, plan de marketing orgánico para Facebook)
 
 ---
 
@@ -232,6 +232,8 @@ Diversifica apuntaba a la carpeta huérfana, que tenía una versión vieja del `
 
 **Pendiente:** generar los 4 textos de las 4 semanas de rotación de contenido (ofrecido, no confirmado aún por el usuario)
 
+**Plan de contenido orgánico para Facebook (19 jun 2026, sesión Claude.ai):** ver `_marketing/PLAN-ORGANICO.md` para el plan de contenido orgánico de 4 semanas en Facebook (12 publicaciones completas, listo para usar). Dirigido a la red personal de Alejandro (2,000+ contactos, audiencia tibia, sin contenido previo publicado). Sigue una escalera de convicción de 4 fases — Despertar → Educación → Revelación → Conversión — donde Hand4Hand no se menciona hasta la semana 3. El plan completo, sus reglas de cumplimiento y las imágenes de apoyo viven en la carpeta `_marketing/`, separada de `_gestion/` porque es contenido de marketing (cambia seguido, es desechable) y no estado técnico del proyecto.
+
 ---
 
 ## 8. Próximos pasos inmediatos
@@ -246,6 +248,7 @@ Diversifica apuntaba a la carpeta huérfana, que tenía una versión vieja del `
 8. Cuando la página de Servicios esté lista para tráfico de búsqueda directa, solicitar su indexación en Google Search Console (mismo proceso ya usado para las otras 3 páginas)
 9. Agregar cada página nueva que se publique a futuro tanto al `sitemap.xml` como a la solicitud de indexación en Search Console
 10. Subir los dos documentos de marca actualizados (`Infinexa_Manual_de_Marca.docx`, `Infinexa_Brand_Identity_Brief.docx`) al repositorio, y eliminar las versiones anteriores (PDF del Manual y `infinexa-brand-brief.docx` viejo) una vez confirmado que el contenido fue migrado completo
+11. Ejecutar la semana 1 del plan de contenido orgánico en Facebook (`_marketing/PLAN-ORGANICO.md`) y registrar resultados reales (DMs recibidos, llamadas agendadas) en `BITACORA.md` para ajustar las semanas siguientes con datos, no con intuición
 
 ---
 
@@ -263,10 +266,11 @@ Diversifica apuntaba a la carpeta huérfana, que tenía una versión vieja del `
 
 ## 10. Sistema de gestión de trabajo (nuevo, 19 jun 2026)
 
-Para complementar este archivo (que documenta el *estado* del proyecto), se crearon dos archivos adicionales en `_gestion/` dentro del mismo repo:
+Para complementar este archivo (que documenta el *estado* del proyecto), se crearon archivos adicionales en `_gestion/` y `_marketing/` dentro del mismo repo:
 
-- **`_gestion/RECETAS.md`** — prompts e instrucciones reutilizables por tipo de actividad (páginas web, infografías para WhatsApp, generación de favicons, investigación de datos, auditoría de copy, flujo de git, SEO, Meta Debugger, auditoría de documentos de marca). Se consulta cuando se quiere repetir algo que ya funcionó antes, sin tener que redactar el prompt desde cero.
+- **`_gestion/RECETAS.md`** — prompts e instrucciones reutilizables por tipo de actividad (páginas web, infografías para WhatsApp, generación de favicons, investigación de datos, auditoría de copy, flujo de git, SEO, Meta Debugger, auditoría de documentos de marca, planes de contenido orgánico). Se consulta cuando se quiere repetir algo que ya funcionó antes, sin tener que redactar el prompt desde cero.
 - **`_gestion/BITACORA.md`** — registro cronológico append-only (solo se agrega, nunca se reescribe lo viejo) de qué se hizo en cada sesión y cuándo. Sirve para reconstruir el hilo de decisiones sin tener que leer transcripciones completas.
+- **`_marketing/`** — contenido de marketing de atracción (planes de publicación, copys, imágenes de campaña). Separado de `_gestion/` porque este contenido es desechable/rotativo, a diferencia de los prompts reutilizables y el registro histórico.
 
 **Cuándo actualizar cada uno:** al cierre de una sesión, pedir a Claude "agrega esto a la bitácora" o "guarda este prompt en recetas" — igual que se hace con este `ESTADO.md`.
 

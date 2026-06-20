@@ -6,6 +6,18 @@
 
 ---
 
+## 2026-06-19 (sesión separada, Claude.ai — plan de marketing orgánico)
+
+- Verificado, mediante el HTML real de `index.html` e `infografia/index.html`, que los tres ajustes de contraste de color (borde blanco transparente en íconos de acordeón `rgba(255,255,255,0.65)`, fondo petróleo denso en badges `rgba(27,77,92,0.35)`, cobre brillante en cursivas `#D97B3C`) ya estaban aplicados en producción — no se trataba de un pendiente real, solo de una duda a resolver. Confirmado: sin acción necesaria.
+- Creada carpeta `_marketing/` en el repo, separada de `_gestion/`, para contenido de marketing de atracción (planes de contenido, copys de publicación) — distinto del estado técnico (`ESTADO.md`) y los prompts reutilizables (`RECETAS.md`).
+- Generado `_marketing/PLAN-ORGANICO.md`: plan de 4 semanas / 12 publicaciones para Facebook, dirigido a la red personal de Alejandro (2,000+ contactos, audiencia tibia, sin contenido previo publicado sobre economía digital o Hand4Hand).
+- Estructura del plan en escalera de convicción de 4 fases: Despertar (semana 1, sin mencionar H4H) → Educación (semana 2, sigue sin vender) → Revelación (semana 3, primera mención de H4H + primer CTA suave) → Conversión (semana 4, experiencia propia + CTA directo).
+- Copiadas a `_marketing/assets/` las 4 imágenes generadas para WhatsApp en la conversación de Claude.ai: `arte_infinexa_wa.png`, `arte_infinexa_estado.jpg`, `infinexa_whatsapp.png`, `infinexa_estado.jpg`.
+- Agregada receta nueva (sección 10) a `RECETAS.md`: patrón reutilizable de "plan de contenido orgánico por escalera de convicción", aplicable a cualquier red social a futuro, no solo Facebook.
+- Agregado enlace desde `ESTADO.md` §7 (Estrategia de prospección) hacia `_marketing/PLAN-ORGANICO.md`, sin modificar el resto de esa sección.
+- Subido a GitHub en el commit `f1046dc`: `_marketing/PLAN-ORGANICO.md`, las 4 imágenes en `_marketing/assets/`, y el addendum de `RECETAS.md`.
+- **Nota de proceso:** esta sesión se trabajó en una conversación distinta (Claude.ai, no Claude Code), por lo que se siguió un protocolo de verificación antes de escribir: se pidió el contenido real de `ESTADO.md`, `RECETAS.md`, `BITACORA.md` y el HTML en vivo de ambas páginas antes de asumir qué información era nueva, cuál ya existía, y cuál podía contradecir decisiones más recientes tomadas en otras sesiones (Claude Code).
+
 ## 2026-06-19
 
 - Diagnosticado y corregido bug del `apple-touch-icon` de Diversifica: el archivo tenía canal alfa (RGBA/transparencia), lo que causaba distorsión visual al anclar la página a la pantalla de inicio en iOS (aunque la imagen de Open Graph, que sí era RGB sin transparencia, se veía perfecta).
