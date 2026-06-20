@@ -266,3 +266,115 @@ privado (DM/llamada) — nunca en comentarios públicos.
 **Métricas que importan en este tipo de plan:** nunca medir por likes/alcance. Medir por mensajes privados recibidos y llamadas agendadas — son las únicas señales que predicen conversión real.
 
 **Ejemplo ya resuelto (19 jun 2026):** plan de 4 semanas / 12 publicaciones para Facebook (2,000+ contactos, audiencia tibia, sin contenido previo publicado). Ver `_marketing/PLAN-ORGANICO.md`.
+
+---
+
+## 11. Qué hacer con cada archivo que Claude te entrega (guía por tipo)
+
+**Cuándo usar:** cada vez que Claude te entregue uno o varios archivos para descargar, antes de hacer nada revisa primero a qué TIPO pertenece cada uno. No todos se manejan igual — esta receta evita que repitas pasos innecesarios o que te equivoques de procedimiento.
+
+**Cómo pedirle a Claude que clasifique los archivos:**
+```
+Antes de darme el paso a paso, dime de cada archivo que me vas a
+entregar: ¿es Tipo A, B, C o D? (según la guía de RECETAS.md sección 11)
+```
+
+---
+
+### TIPO A — Imagen o archivo que solo se mueve de lugar
+**Ejemplos:** `.png`, `.jpg`, `.svg`, `.pdf`, `.docx`
+
+**Qué hacer:** nada de TextEdit. Solo mover el archivo con un comando en la Terminal.
+
+```bash
+mv ~/Downloads/NOMBRE-DEL-ARCHIVO.png _marketing/assets/
+```
+(Cambia el nombre del archivo y la carpeta destino según lo que Claude te indique en ese momento.)
+
+✅ No requiere abrir nada más. Un solo comando y listo.
+
+---
+
+### TIPO B — Archivo nuevo que se agrega completo a una carpeta
+**Ejemplos:** un `.md` nuevo que no existía antes (como `PLAN-ORGANICO.md` la primera vez)
+
+**Qué hacer:** mover el archivo a su carpeta destino, igual que el Tipo A.
+
+```bash
+mv ~/Downloads/NOMBRE-DEL-ARCHIVO.md _marketing/
+```
+
+✅ Tampoco requiere TextEdit — es un archivo nuevo, no estás reemplazando nada existente.
+
+---
+
+### TIPO C — Texto que se agrega AL FINAL de un archivo que ya existe
+**Ejemplos:** una receta nueva para añadir a `RECETAS.md` (como un "addendum")
+
+**Qué hacer:** usar un comando que agrega texto al final sin necesidad de abrir TextEdit.
+
+```bash
+cat ~/Downloads/NOMBRE-DEL-ADDENDUM.md >> _gestion/RECETAS.md
+```
+☝️ Importante: son **dos signos de mayor que** (`>>`), no uno. Un solo signo (`>`) borraría todo el archivo y lo reemplazaría solo con el addendum — dos signos lo agregan al final sin tocar lo que ya había.
+
+✅ Tampoco requiere TextEdit.
+
+---
+
+### TIPO D — Archivo completo que reemplaza el contenido de uno que ya existe
+**Ejemplos:** `ESTADO_completo.md`, `BITACORA_completo.md` — cuando Claude te da la versión entera ya actualizada y necesitas que sustituya lo que hay en el archivo real.
+
+**Qué hacer:** este es el único tipo que sí requiere TextEdit, paso a paso completo:
+
+1. Abre la Terminal (Ghostty).
+2. Escribe y presiona `Enter`:
+   ```bash
+   cd ~/Downloads/infinexa-repo
+   ```
+3. Escribe y presiona `Enter` (cambia por el nombre real del archivo a actualizar):
+   ```bash
+   open -e NOMBRE_DEL_ARCHIVO_REAL.md
+   ```
+4. Haz clic dentro de esa ventana de TextEdit.
+5. Presiona `Cmd` + `A` (selecciona todo).
+6. Presiona `Delete` (borra todo).
+7. Ve a Descargas y abre el archivo nuevo que Claude te dio (ej. `ESTADO_completo.md`).
+8. En esa ventana nueva, presiona `Cmd` + `A`.
+9. Presiona `Cmd` + `C` (copia).
+10. Cierra esa ventana del archivo nuevo.
+11. Regresa a la ventana en blanco del paso 6. Haz clic dentro.
+12. Presiona `Cmd` + `V` (pega).
+13. Presiona `Cmd` + `S` (guarda). Si pregunta el formato, elige el que no diga "Word".
+14. Cierra la ventana.
+
+---
+
+### Después de cualquier tipo (A, B, C o D) — siempre los mismos 3 pasos finales
+
+```bash
+git add .
+git commit -m "Descripción corta de qué cambió"
+git push
+```
+
+**Para verificar antes del commit que todo se guardó bien (opcional pero recomendado):**
+```bash
+git status
+```
+Busca que aparezcan listados los archivos que esperabas ver modificados/nuevos. ⚠️ Esto solo es para **leer** — nunca copies las líneas que aparecen ahí (como `modified: archivo.md`) y las pegues como si fueran un comando nuevo.
+
+---
+
+**Tabla resumen rápida:**
+
+| Tipo | Ejemplo | TextEdit? | Comando |
+|---|---|---|---|
+| A | imagen, PDF, DOCX | No | `mv archivo carpeta/` |
+| B | .md nuevo | No | `mv archivo carpeta/` |
+| C | addendum a un .md existente | No | `cat addendum >> archivo` |
+| D | reemplazo completo de un .md existente | **Sí** | abrir, borrar, pegar, guardar |
+
+**Ejemplo ya resuelto (19 jun 2026):** en la sesión del plan de marketing orgánico se usaron los 4 tipos: Tipo A (las 4 imágenes), Tipo B (`PLAN-ORGANICO.md` la primera vez), Tipo C (el addendum de `RECETAS.md`), y Tipo D (`ESTADO.md` y `BITACORA.md` completos).
+
+**Nota para cuando ya domines el proceso:** una vez que esto se sienta repetitivo, puedes pedir directamente desde una sesión de Claude Code (terminal con IA integrada) que edite los archivos por ti, sin pasar por TextEdit en ningún caso. Esta receta es el modo manual de aprendizaje.
