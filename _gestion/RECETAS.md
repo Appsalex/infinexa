@@ -227,3 +227,42 @@ pagada.
 **Ejemplo ya resuelto (19 jun 2026):** se comparó el `Manual de Marca` (PDF v1.0, capa estratégica/verbal) contra el `Brand Identity Brief` (DOCX, capa técnica/visual). Se determinó que no debían fusionarse — cubren audiencias distintas (quien escribe un post vs. quien produce un logo) — pero sí debían optimizarse: se eliminó la duplicación de la paleta de color, se agregaron referencias cruzadas, y se renumeraron como "Documento 1 de 2" / "Documento 2 de 2". Después se agregó al Manual una sección nueva de cumplimiento de políticas de plataforma (Meta Ads, Google Ads, WhatsApp Business, contexto regulatorio CONDUSEF/CNBV en México), investigada con búsqueda web antes de escribirse. Ambos quedaron en formato DOCX (`Infinexa_Manual_de_Marca.docx`, `Infinexa_Brand_Identity_Brief.docx`), versión 1.1.
 
 **Nota técnica (si generas los documentos con la librería `docx` de Node.js):** al usar bordes de párrafo en los cuatro lados (`top`/`left`/`bottom`/`right`), la librería puede emitir el XML en un orden que no pasa la validación OOXML estricta, sin importar el orden en que se declaren las propiedades en el código. Si la validación falla con un error de tipo "Element left/right not expected", hay que desempacar el `.docx`, corregir manualmente el orden de las etiquetas (`top`, `left`, `bottom`, `right`, en ese orden exacto) en `word/document.xml`, y volver a empacar.
+
+---
+
+## 10. Plan de contenido orgánico por escalera de convicción
+
+**Cuándo usar:** cuando quieras diseñar un plan de publicaciones (Facebook, Instagram, cualquier red) que lleve a una audiencia tibia desde "no sabe nada de esto" hasta "agenda una llamada", sin sonar a venta agresiva desde el primer post.
+
+**Prompt:**
+```
+Quiero un plan de contenido orgánico de [N semanas] para [RED SOCIAL],
+dirigido a mi audiencia de [DESCRIBE: tamaño, qué tan tibia/fría es,
+qué saben de mí].
+
+Estructura en 4 fases (escalera de convicción), NO mencionar
+Hand4Hand/el producto hasta la fase 3:
+
+1. Despertar — contexto histórico y reflexión personal, cero mención
+   del producto.
+2. Educación — sigues sin vender, solo comparte lo que aprendes.
+3. Revelación — primera mención del producto, presentado como
+   descubrimiento propio, no como anuncio. Primer CTA suave al final
+   de esta fase.
+4. Conversión — tu experiencia real + CTA directo.
+
+Para cada publicación dame: el texto completo listo para copiar y
+pegar, si necesita imagen adjunta (y cuál), y el día/momento
+recomendado.
+
+Reglas de cumplimiento: 80% valor / 20% invitación, nunca publicar
+cifras de "cuánto se puede recibir", documentar la experiencia propia
+en vez de prometer resultados a otros, todo el modelo se explica en
+privado (DM/llamada) — nunca en comentarios públicos.
+```
+
+**Dónde se guarda el resultado:** en `_marketing/[NOMBRE-PLAN].md` — no en `ESTADO.md` directamente. `ESTADO.md` solo enlaza a la carpeta `_marketing/` desde la sección de estrategia de prospección, para no mezclar contenido de marketing (que cambia seguido y es desechable) con el estado técnico del proyecto (que es más permanente).
+
+**Métricas que importan en este tipo de plan:** nunca medir por likes/alcance. Medir por mensajes privados recibidos y llamadas agendadas — son las únicas señales que predicen conversión real.
+
+**Ejemplo ya resuelto (19 jun 2026):** plan de 4 semanas / 12 publicaciones para Facebook (2,000+ contactos, audiencia tibia, sin contenido previo publicado). Ver `_marketing/PLAN-ORGANICO.md`.
