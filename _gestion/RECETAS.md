@@ -12,16 +12,16 @@
 
 **Prompt:**
 ```
-Quiero crear una página nueva llamada [NOMBRE] en infinexa.app/[ruta].
-Sigue exactamente el mismo sistema visual que ya usamos: fondo grafito
-(#0F1720 a #1F2A33), acento cobre (#C8682E), texto en plata clara
-(#EDF1F2), tipografía Inter, formato de scroll vertical normal (NO
-carrusel de pantalla completa — eso ya lo intentamos y falla en móvil
+Quiero crear una página nueva llamada [NOMBRE] en infinexa.app/[ruta]. 
+Sigue exactamente el mismo sistema visual que ya usamos: fondo grafito 
+(#0F1720 a #1F2A33), acento cobre (#C8682E), texto en plata clara 
+(#EDF1F2), tipografía Inter, formato de scroll vertical normal (NO 
+carrusel de pantalla completa — eso ya lo intentamos y falla en móvil 
 porque bloquea el zoom nativo).
 
-Estructura: header con logo lockup horizontal + badge superior +
-titular grande, luego secciones de contenido alternando fondo grafito
-para los momentos de mayor peso narrativo, acordeones para el
+Estructura: header con logo lockup horizontal + badge superior + 
+titular grande, luego secciones de contenido alternando fondo grafito 
+para los momentos de mayor peso narrativo, acordeones para el 
 contenido más largo/expositivo, y cierre con botón de WhatsApp.
 
 El tema de la página es: [DESCRIBE EL TEMA Y MENSAJE CENTRAL]
@@ -40,27 +40,27 @@ El tema de la página es: [DESCRIBE EL TEMA Y MENSAJE CENTRAL]
 
 **Prompt:**
 ```
-Necesito una infografía de WhatsApp sobre [TEMA]. Formato vertical
-(proporción aproximada 420x860 o 1080x1920 para estado).
+Necesito una infografía de WhatsApp sobre [TEMA]. Formato vertical 
+(proporción aproximada 420x860 o 1080x1920 para estado). 
 
-Estructura: eyebrow pequeño arriba, titular grande de impacto, una
-tarjeta destacada con un dato estadístico verificado como gancho
-principal, 3 tarjetas comparativas o de progresión, una sección de
-barras de datos si aplica, pregunta de cierre directa, y logo de
+Estructura: eyebrow pequeño arriba, titular grande de impacto, una 
+tarjeta destacada con un dato estadístico verificado como gancho 
+principal, 3 tarjetas comparativas o de progresión, una sección de 
+barras de datos si aplica, pregunta de cierre directa, y logo de 
 Infinexa al pie.
 
-Paleta: fondo grafito (#0F1720/#1F2A33), acento cobre (#C8682E),
+Paleta: fondo grafito (#0F1720/#1F2A33), acento cobre (#C8682E), 
 texto en plata clara (#EDF1F2). Tipografía Inter.
 
-IMPORTANTE: si el dato estadístico que voy a usar no está verificado,
+IMPORTANTE: si el dato estadístico que voy a usar no está verificado, 
 investígalo primero con fuentes reales antes de usarlo.
 ```
 
 **Cómo exportar a PNG con bajo peso (ya resuelto, usar este método):**
 ```
-Genera el HTML/CSS de la infografía con Playwright (sync_playwright),
-viewport del tamaño exacto de la pieza, screenshot del elemento
-específico (no de toda la página), formato PNG. Esto da archivos de
+Genera el HTML/CSS de la infografía con Playwright (sync_playwright), 
+viewport del tamaño exacto de la pieza, screenshot del elemento 
+específico (no de toda la página), formato PNG. Esto da archivos de 
 ~60KB, ideal para WhatsApp sin pérdida de calidad.
 ```
 
@@ -76,18 +76,18 @@ específico (no de toda la página), formato PNG. Esto da archivos de
 ```
 Necesito generar/verificar los íconos de marca para [PÁGINA]:
 - favicon.png (32x32px, para la pestaña del navegador)
-- apple-touch-icon.png (180x180px, esquinas CUADRADAS sin redondear
-  — iOS las redondea automáticamente, así que si el archivo ya viene
+- apple-touch-icon.png (180x180px, esquinas CUADRADAS sin redondear 
+  — iOS las redondea automáticamente, así que si el archivo ya viene 
   redondeado se ve doble-recortado)
 - og-image.png (1200x630px, para vista previa al compartir)
 
-CRÍTICO: ninguno de los tres debe tener canal alfa/transparencia
-(modo RGBA). Deben ser RGB puro con fondo sólido real, porque iOS
-renderiza mal la transparencia en el apple-touch-icon (queda
+CRÍTICO: ninguno de los tres debe tener canal alfa/transparencia 
+(modo RGBA). Deben ser RGB puro con fondo sólido real, porque iOS 
+renderiza mal la transparencia en el apple-touch-icon (queda 
 distorsionado al anclar a pantalla de inicio).
 
-Genera todos desde el SVG vectorial fuente (infinexa-icono.svg o
-infinexa-logo-negativo.svg), no desde un PNG ya exportado, para
+Genera todos desde el SVG vectorial fuente (infinexa-icono.svg o 
+infinexa-logo-negativo.svg), no desde un PNG ya exportado, para 
 garantizar nitidez perfecta.
 ```
 
@@ -110,9 +110,9 @@ print(img.mode)  # Si dice "RGBA" tiene transparencia — ese es el problema
 
 **Prompt:**
 ```
-Antes de usar este dato en una pieza de marketing, investiga si tiene
-respaldo real: "[EL DATO QUE QUIERES VERIFICAR]". Quiero saber:
-¿de dónde viene?, ¿qué estudio o fuente lo respalda?, ¿hay matices
+Antes de usar este dato en una pieza de marketing, investiga si tiene 
+respaldo real: "[EL DATO QUE QUIERES VERIFICAR]". Quiero saber: 
+¿de dónde viene?, ¿qué estudio o fuente lo respalda?, ¿hay matices 
 importantes que deba conocer antes de usarlo?
 ```
 
@@ -126,14 +126,14 @@ importantes que deba conocer antes de usarlo?
 
 **Prompt:**
 ```
-Lee toda la página/pieza completa con ojo crítico de claridad. Para
-cada frase que sea ambigua, abstracta, o requiera esfuerzo extra para
-entenderse, dame: (1) la frase original, (2) por qué es confusa,
-(3) una propuesta de reemplazo más simple y directa. El objetivo es
-que cualquier persona, sin esfuerzo, entienda la idea a la primera
+Lee toda la página/pieza completa con ojo crítico de claridad. Para 
+cada frase que sea ambigua, abstracta, o requiera esfuerzo extra para 
+entenderse, dame: (1) la frase original, (2) por qué es confusa, 
+(3) una propuesta de reemplazo más simple y directa. El objetivo es 
+que cualquier persona, sin esfuerzo, entienda la idea a la primera 
 lectura — sin ser infantil, solo claro.
 
-No cambies nada todavía — primero dame el informe completo para que
+No cambies nada todavía — primero dame el informe completo para que 
 yo apruebe los cambios.
 ```
 
@@ -184,197 +184,211 @@ git push
 
 ---
 
-## 9. Auditoría y optimización de documentos de marca en dos capas
+## 9. Sincronizar conversaciones viejas con ESTADO/RECETAS/BITÁCORA (19 jun 2026)
 
-**Cuándo usar:** cuando tengas dos o más documentos de marca (ej. un manual de tono/estrategia y un brief técnico/visual) y quieras saber si se solapan, si deben fusionarse, o si conviene mantenerlos separados pero mejor conectados entre sí.
+**Cuándo usar:** cuando tengas conversaciones distintas y separadas sobre Infinexa (por ejemplo, porque una ya llegó a su límite de longitud y abriste una nueva) y quieras rescatar de ahí solo lo que realmente aporte valor — sin duplicar lo que ya está documentado, y sin reintroducir por accidente algo que ya se descartó o corrigió después.
 
-**Prompt:**
+**Por qué importa este proceso y no uno más simple:** una conversación vieja puede tener decisiones que después cambiaron. Si se le pide a Claude que "agregue todo lo que encuentre" sin comparar primero contra los archivos reales y vigentes, el riesgo no es solo duplicar — es deshacer correcciones sin darte cuenta.
+
+**Prompt (pegar completo en la conversación vieja antes de pedir cualquier actualización):**
 ```
-Tengo estos documentos de marca: [LISTA LOS ARCHIVOS]. Quiero saber:
-¿cuál es la diferencia real entre ellos?, ¿hay contenido duplicado?,
-¿deberían fusionarse en uno solo o mantenerse separados? Si conviene
-mantenerlos separados, optimízalos para que:
+Estoy trabajando en el proyecto Infinexa (infinexa.app), documentado en tres 
+archivos en mi repositorio de GitHub (github.com/Appsalex/infinexa): 
+ESTADO.md, _gestion/RECETAS.md y _gestion/BITACORA.md.
 
-1. Cada uno tenga una sección breve al inicio ("cómo usar este
-   sistema de documentos") que explique cuándo consultar cuál.
-2. Se elimine cualquier duplicación de contenido técnico (paleta de
-   color, tipografía, especificaciones) — que viva en un solo lugar
-   y el otro documento solo lo referencie.
-3. Se agreguen cajas de referencia cruzada en los puntos exactos
-   donde un documento necesita información del otro.
-4. Queden numerados como "Documento X de Y del sistema de marca".
+Esta conversación en la que te estoy hablando ahora puede contener 
+información VIEJA — decisiones que después cambiaron, ideas que se 
+descartaron, o pasos que ya se completaron de otra forma en otra 
+conversación distinta. Por eso, antes de actualizar cualquiera de los tres 
+archivos con algo de esta conversación, necesito que actúes como un FILTRO 
+DE CALIDAD, no solo como alguien que agrega información. Sigue este proceso 
+exacto, sin excepción:
 
-No fusiones los documentos salvo que la duplicación sea tan grande
-que ya no se justifique mantenerlos separados.
+PASO 1 — Pide la versión real antes de asumir nada.
+No uses tu memoria de esta conversación como fuente de verdad. Pídeme que 
+te comparta el contenido actual y real de los archivos desde GitHub:
+cat ~/Downloads/infinexa-repo/ESTADO.md
+cat ~/Downloads/infinexa-repo/_gestion/RECETAS.md
+cat ~/Downloads/infinexa-repo/_gestion/BITACORA.md
+
+PASO 2 — Compara, no asumas.
+Revisa todo lo que se discutió en esta conversación contra lo que ya existe 
+en los archivos reales. Para cada elemento de esta conversación, clasifícalo 
+en una de tres categorías:
+  (a) YA ESTÁ documentado en los archivos reales → ignóralo, no lo dupliques.
+  (b) CONTRADICE algo que ya está documentado y es más reciente → ignóralo, 
+      y dime explícitamente qué contradicción encontraste, por si quiero 
+      revisarlo yo mismo antes de descartarlo del todo.
+  (c) Es información NUEVA, real, y no está en ningún archivo → esto es lo 
+      único que se agrega.
+
+PASO 3 — Dame un resumen ANTES de tocar nada.
+Antes de escribir cualquier cambio, dame una lista corta de qué vas a 
+agregar (solo la categoría c) y qué vas a descartar (categorías a y b, con 
+el motivo). Espera mi confirmación antes de generar el archivo actualizado.
+
+PASO 4 — Solo entonces, actualiza.
+Una vez que confirme, edita el archivo correspondiente integrando solo lo 
+aprobado. Para BITACORA.md: nunca reescribas entradas viejas, solo agrega 
+una entrada nueva. Para ESTADO.md y RECETAS.md: si una sección existente 
+quedó desactualizada, corrígela en su lugar — no crees una sección 
+duplicada diciendo lo mismo de otra forma.
+
+PASO 5 — Valida antes de entregar.
+Confirma que la numeración de secciones sigue consecutiva y que no quedó 
+ningún encabezado roto o duplicado por la edición.
+
+Confirma que entendiste este proceso de 5 pasos antes de que te pida 
+cualquier actualización.
 ```
 
-**Cómo agregar una sección nueva a un documento de marca ya existente (ej. políticas de cumplimiento, lineamientos legales):**
-```
-Antes de escribir nada, investiga la información vigente y actual
-sobre [TEMA — ej. políticas de anuncios de Meta/Google para
-contenido financiero o cripto, políticas de WhatsApp Business contra
-spam, regulación local relevante]. No uses solo tu conocimiento
-general — las políticas de estas plataformas cambian seguido.
-
-Una vez investigado, agrega una sección nueva al documento [NOMBRE],
-manteniendo la numeración consecutiva de las secciones existentes
-(si insertas en medio, renumera lo que sigue). Incluye una nota
-aclarando que esto no sustituye asesoría legal y que las políticas
-deben verificarse en la fuente oficial antes de cualquier campaña
-pagada.
-```
-
-**Ejemplo ya resuelto (19 jun 2026):** se comparó el `Manual de Marca` (PDF v1.0, capa estratégica/verbal) contra el `Brand Identity Brief` (DOCX, capa técnica/visual). Se determinó que no debían fusionarse — cubren audiencias distintas (quien escribe un post vs. quien produce un logo) — pero sí debían optimizarse: se eliminó la duplicación de la paleta de color, se agregaron referencias cruzadas, y se renumeraron como "Documento 1 de 2" / "Documento 2 de 2". Después se agregó al Manual una sección nueva de cumplimiento de políticas de plataforma (Meta Ads, Google Ads, WhatsApp Business, contexto regulatorio CONDUSEF/CNBV en México), investigada con búsqueda web antes de escribirse. Ambos quedaron en formato DOCX (`Infinexa_Manual_de_Marca.docx`, `Infinexa_Brand_Identity_Brief.docx`), versión 1.1.
-
-**Nota técnica (si generas los documentos con la librería `docx` de Node.js):** al usar bordes de párrafo en los cuatro lados (`top`/`left`/`bottom`/`right`), la librería puede emitir el XML en un orden que no pasa la validación OOXML estricta, sin importar el orden en que se declaren las propiedades en el código. Si la validación falla con un error de tipo "Element left/right not expected", hay que desempacar el `.docx`, corregir manualmente el orden de las etiquetas (`top`, `left`, `bottom`, `right`, en ese orden exacto) en `word/document.xml`, y volver a empacar.
+**Cómo usarlo paso a paso:**
+1. Ábrelo en cualquier conversación vieja sobre Infinexa.
+2. Pega el prompt completo y espera la confirmación de Claude.
+3. Pide: "revisa toda esta conversación y dime qué valdría la pena llevar a ESTADO.md / RECETAS.md / BITACORA.md".
+4. Comparte el `cat` de los tres archivos reales cuando Claude lo pida.
+5. **Espera el resumen antes de aprobar nada** — revisa con calma qué se agregaría y qué se descartaría, y corrige a Claude si algo no te parece correcto.
+6. Solo después de tu confirmación, sube el archivo final con el flujo de siempre.
 
 ---
 
-## 10. Plan de contenido orgánico por escalera de convicción
+## 10. Prompts de apertura para conversaciones especializadas por tema (19 jun 2026)
 
-**Cuándo usar:** cuando quieras diseñar un plan de publicaciones (Facebook, Instagram, cualquier red) que lleve a una audiencia tibia desde "no sabe nada de esto" hasta "agenda una llamada", sin sonar a venta agresiva desde el primer post.
+**Cuándo usar:** cuando el proyecto crece y conviene separar el trabajo en conversaciones distintas por área, en vez de seguir todo en una sola conversación gigante. Categorías recomendadas: páginas web, marketing de atracción/contenido, identidad de marca, infraestructura técnica, negocio/builders, y SEO (orgánico y pagado).
 
-**Prompt:**
+**Por qué separar por tema:** cada conversación se mantiene enfocada, tarda más en llegar a su límite de longitud, y es más fácil retomarla después sabiendo exactamente de qué trata. El riesgo de dispersión que esto podría generar se controla con el mismo proceso de verificación de la sección 9 — nunca asumir, siempre comparar contra los archivos reales antes de editar.
+
+**Regla práctica para evitar conflictos:** evitar tener dos conversaciones actualizando los archivos de control (`ESTADO.md`, `RECETAS.md`, `BITACORA.md`) el mismo día al mismo tiempo — cerrar y subir los cambios de una antes de empezar a actualizar desde otra.
+
+### 1. Páginas web (construcción y código)
 ```
-Quiero un plan de contenido orgánico de [N semanas] para [RED SOCIAL],
-dirigido a mi audiencia de [DESCRIBE: tamaño, qué tan tibia/fría es,
-qué saben de mí].
+Estoy trabajando en el proyecto Infinexa (infinexa.app). Esta conversación 
+es específicamente para construir y modificar páginas web del sitio 
+(estructura HTML/CSS, nuevas páginas, ajustes de diseño).
 
-Estructura en 4 fases (escalera de convicción), NO mencionar
-Hand4Hand/el producto hasta la fase 3:
+Antes de cualquier cosa, voy a compartirte el ESTADO.md actual del proyecto 
+para que tengas contexto. Si en algún momento necesitas actualizar 
+ESTADO.md, _gestion/RECETAS.md o _gestion/BITACORA.md con algo de esta 
+conversación, sigue este proceso: (1) pídeme el contenido real y actual de 
+esos archivos vía 'cat' antes de asumir nada, (2) compara contra lo que se 
+habló aquí, (3) dame un resumen de qué agregarías y qué descartarías ANTES 
+de tocar nada, (4) solo edita después de mi confirmación.
 
-1. Despertar — contexto histórico y reflexión personal, cero mención
-   del producto.
-2. Educación — sigues sin vender, solo comparte lo que aprendes.
-3. Revelación — primera mención del producto, presentado como
-   descubrimiento propio, no como anuncio. Primer CTA suave al final
-   de esta fase.
-4. Conversión — tu experiencia real + CTA directo.
-
-Para cada publicación dame: el texto completo listo para copiar y
-pegar, si necesita imagen adjunta (y cuál), y el día/momento
-recomendado.
-
-Reglas de cumplimiento: 80% valor / 20% invitación, nunca publicar
-cifras de "cuánto se puede recibir", documentar la experiencia propia
-en vez de prometer resultados a otros, todo el modelo se explica en
-privado (DM/llamada) — nunca en comentarios públicos.
+También revisa si en _plantillas/ ya existe una pieza similar a lo que 
+vamos a construir — ahí guardo las versiones finales ya probadas, para 
+partir de eso en vez de empezar de cero. Lee también _plantillas/README.md 
+si necesitas saber qué hay disponible.
 ```
 
-**Dónde se guarda el resultado:** en `_marketing/[NOMBRE-PLAN].md` — no en `ESTADO.md` directamente. `ESTADO.md` solo enlaza a la carpeta `_marketing/` desde la sección de estrategia de prospección, para no mezclar contenido de marketing (que cambia seguido y es desechable) con el estado técnico del proyecto (que es más permanente).
-
-**Métricas que importan en este tipo de plan:** nunca medir por likes/alcance. Medir por mensajes privados recibidos y llamadas agendadas — son las únicas señales que predicen conversión real.
-
-**Ejemplo ya resuelto (19 jun 2026):** plan de 4 semanas / 12 publicaciones para Facebook (2,000+ contactos, audiencia tibia, sin contenido previo publicado). Ver `_marketing/PLAN-ORGANICO.md`.
-
----
-
-## 11. Qué hacer con cada archivo que Claude te entrega (guía por tipo)
-
-**Cuándo usar:** cada vez que Claude te entregue uno o varios archivos para descargar, antes de hacer nada revisa primero a qué TIPO pertenece cada uno. No todos se manejan igual — esta receta evita que repitas pasos innecesarios o que te equivoques de procedimiento.
-
-**Cómo pedirle a Claude que clasifique los archivos:**
+### 2. Marketing de atracción / contenido
 ```
-Antes de darme el paso a paso, dime de cada archivo que me vas a
-entregar: ¿es Tipo A, B, C o D? (según la guía de RECETAS.md sección 11)
-```
+Estoy trabajando en el proyecto Infinexa (infinexa.app). Esta conversación 
+es específicamente para marketing de atracción: copy persuasivo, 
+infografías para WhatsApp, estrategia de prospección, textos para redes 
+sociales y grupos.
 
----
+Tono de marca que SIEMPRE debe respetarse: sobrio, educativo, sin promesas 
+de rendimiento ni lenguaje de "ciclo alcista" o "multiplica tus ahorros". 
+La diferenciación de Infinexa frente a la competencia del espacio DeFi es 
+precisamente NO sonar como venta agresiva — presentar datos verificados, 
+nunca rumores, y dar opciones, nunca presionar.
 
-### TIPO A — Imagen o archivo que solo se mueve de lugar
-**Ejemplos:** `.png`, `.jpg`, `.svg`, `.pdf`, `.docx`
-
-**Qué hacer:** nada de TextEdit. Solo mover el archivo con un comando en la Terminal.
-
-```bash
-mv ~/Downloads/NOMBRE-DEL-ARCHIVO.png _marketing/assets/
-```
-(Cambia el nombre del archivo y la carpeta destino según lo que Claude te indique en ese momento.)
-
-✅ No requiere abrir nada más. Un solo comando y listo.
-
----
-
-### TIPO B — Archivo nuevo que se agrega completo a una carpeta
-**Ejemplos:** un `.md` nuevo que no existía antes (como `PLAN-ORGANICO.md` la primera vez)
-
-**Qué hacer:** mover el archivo a su carpeta destino, igual que el Tipo A.
-
-```bash
-mv ~/Downloads/NOMBRE-DEL-ARCHIVO.md _marketing/
+Antes de cualquier cosa, voy a compartirte el ESTADO.md actual para que 
+tengas contexto. Si necesitas actualizar ESTADO.md, _gestion/RECETAS.md o 
+_gestion/BITACORA.md, sigue el proceso de verificación de siempre: pide el 
+contenido real vía 'cat', compara, dame un resumen antes de tocar nada, 
+edita solo después de mi confirmación.
 ```
 
-✅ Tampoco requiere TextEdit — es un archivo nuevo, no estás reemplazando nada existente.
-
----
-
-### TIPO C — Texto que se agrega AL FINAL de un archivo que ya existe
-**Ejemplos:** una receta nueva para añadir a `RECETAS.md` (como un "addendum")
-
-**Qué hacer:** usar un comando que agrega texto al final sin necesidad de abrir TextEdit.
-
-```bash
-cat ~/Downloads/NOMBRE-DEL-ADDENDUM.md >> _gestion/RECETAS.md
+### 3. Identidad de marca
 ```
-☝️ Importante: son **dos signos de mayor que** (`>>`), no uno. Un solo signo (`>`) borraría todo el archivo y lo reemplazaría solo con el addendum — dos signos lo agregan al final sin tocar lo que ya había.
+Estoy trabajando en el proyecto Infinexa (infinexa.app). Esta conversación 
+es específicamente para identidad visual: logo, manual de marca, paleta de 
+colores, tipografía, exportación de assets (SVG, PNG, favicons).
 
-✅ Tampoco requiere TextEdit.
+Antes de cualquier cosa, voy a compartirte el ESTADO.md actual (sección 3, 
+Marca e identidad visual) para que tengas contexto completo: historia del 
+nombre, sistema del símbolo, paleta exacta, lockups, archivos ya entregados.
 
----
+Si necesitas actualizar ESTADO.md, _gestion/RECETAS.md o _gestion/BITACORA.md, 
+sigue el proceso de verificación de siempre: pide el contenido real vía 
+'cat', compara, dame un resumen antes de tocar nada, edita solo después de 
+mi confirmación.
 
-### TIPO D — Archivo completo que reemplaza el contenido de uno que ya existe
-**Ejemplos:** `ESTADO_completo.md`, `BITACORA_completo.md` — cuando Claude te da la versión entera ya actualizada y necesitas que sustituya lo que hay en el archivo real.
-
-**Qué hacer:** este es el único tipo que sí requiere TextEdit, paso a paso completo:
-
-1. Abre la Terminal (Ghostty).
-2. Escribe y presiona `Enter`:
-   ```bash
-   cd ~/Downloads/infinexa-repo
-   ```
-3. Escribe y presiona `Enter` (cambia por el nombre real del archivo a actualizar):
-   ```bash
-   open -e NOMBRE_DEL_ARCHIVO_REAL.md
-   ```
-4. Haz clic dentro de esa ventana de TextEdit.
-5. Presiona `Cmd` + `A` (selecciona todo).
-6. Presiona `Delete` (borra todo).
-7. Ve a Descargas y abre el archivo nuevo que Claude te dio (ej. `ESTADO_completo.md`).
-8. En esa ventana nueva, presiona `Cmd` + `A`.
-9. Presiona `Cmd` + `C` (copia).
-10. Cierra esa ventana del archivo nuevo.
-11. Regresa a la ventana en blanco del paso 6. Haz clic dentro.
-12. Presiona `Cmd` + `V` (pega).
-13. Presiona `Cmd` + `S` (guarda). Si pregunta el formato, elige el que no diga "Word".
-14. Cierra la ventana.
-
----
-
-### Después de cualquier tipo (A, B, C o D) — siempre los mismos 3 pasos finales
-
-```bash
-git add .
-git commit -m "Descripción corta de qué cambió"
-git push
+Revisa también si en _plantillas/ ya existe algo reutilizable (por ejemplo, 
+el sistema de generación de favicons sin transparencia, ya resuelto y 
+documentado ahí).
 ```
 
-**Para verificar antes del commit que todo se guardó bien (opcional pero recomendado):**
-```bash
-git status
+### 4. Infraestructura técnica
 ```
-Busca que aparezcan listados los archivos que esperabas ver modificados/nuevos. ⚠️ Esto solo es para **leer** — nunca copies las líneas que aparecen ahí (como `modified: archivo.md`) y las pegues como si fueran un comando nuevo.
+Estoy trabajando en el proyecto Infinexa (infinexa.app). Esta conversación 
+es específicamente para infraestructura técnica: Cloudflare, DNS, GitHub 
+Pages, Workers, configuración del dominio, bugs técnicos de despliegue.
 
----
+Antes de cualquier cosa, voy a compartirte el ESTADO.md actual (sección 2, 
+Infraestructura técnica) para que tengas contexto completo del setup actual.
 
-**Tabla resumen rápida:**
+Si necesitas actualizar ESTADO.md, _gestion/RECETAS.md o _gestion/BITACORA.md, 
+sigue el proceso de verificación de siempre: pide el contenido real vía 
+'cat', compara, dame un resumen antes de tocar nada, edita solo después de 
+mi confirmación.
 
-| Tipo | Ejemplo | TextEdit? | Comando |
-|---|---|---|---|
-| A | imagen, PDF, DOCX | No | `mv archivo carpeta/` |
-| B | .md nuevo | No | `mv archivo carpeta/` |
-| C | addendum a un .md existente | No | `cat addendum >> archivo` |
-| D | reemplazo completo de un .md existente | **Sí** | abrir, borrar, pegar, guardar |
+Nota importante: en este proyecto ya existe una sola carpeta de assets 
+real, llamada `assets/` en la raíz del repo (no crear ninguna carpeta 
+nueva con el mismo propósito — esto ya causó un bug confirmado y resuelto, 
+documentado en RECETAS.md sección 9 / BITACORA.md 19 jun 2026).
+```
 
-**Ejemplo ya resuelto (19 jun 2026):** en la sesión del plan de marketing orgánico se usaron los 4 tipos: Tipo A (las 4 imágenes), Tipo B (`PLAN-ORGANICO.md` la primera vez), Tipo C (el addendum de `RECETAS.md`), y Tipo D (`ESTADO.md` y `BITACORA.md` completos).
+### 5. Negocio / builders
+```
+Estoy trabajando en el proyecto Infinexa (infinexa.app). Esta conversación 
+es específicamente para el modelo de negocio: precios, sistema de builders 
+("Builder Edition"), prospección de clientes, evaluación de oportunidades.
 
-**Nota para cuando ya domines el proceso:** una vez que esto se sienta repetitivo, puedes pedir directamente desde una sesión de Claude Code (terminal con IA integrada) que edite los archivos por ti, sin pasar por TextEdit en ningún caso. Esta receta es el modo manual de aprendizaje.
+Antes de cualquier cosa, voy a compartirte el ESTADO.md actual (secciones 
+5, 6 y 7: Servicios y precios, Sistema de builders, Estrategia de 
+prospección) para que tengas contexto completo.
+
+Si necesitas actualizar ESTADO.md, _gestion/RECETAS.md o _gestion/BITACORA.md, 
+sigue el proceso de verificación de siempre: pide el contenido real vía 
+'cat', compara, dame un resumen antes de tocar nada, edita solo después de 
+mi confirmación.
+```
+
+### 6. SEO — orgánico y pagado
+```
+Estoy trabajando en el proyecto Infinexa (infinexa.app). Esta conversación 
+es específicamente para SEO: posicionamiento orgánico en buscadores 
+(prioridad actual) y, más adelante, estrategias de SEO pagado. Incluye 
+investigación de palabras clave, optimización de metadatos, estructura de 
+contenido para buscadores, Google Search Console, y cumplimiento de 
+políticas de publicidad relevantes (Google Ads / Meta Ads tienen 
+restricciones específicas para contenido financiero/cripto que hay que 
+respetar siempre).
+
+Contexto ya investigado (sesión del 19 jun 2026, sin acceso directo a 
+Google Trends — investigación cualitativa por búsqueda web):
+- Términos de alto interés en el espacio: "diversificar ingresos", 
+  "ingresos pasivos", "finanzas descentralizadas", "libertad financiera" 
+  (este último ya se usa en el copy actual de Diversifica).
+- Riesgo identificado: competidores del espacio DeFi se posicionan con 
+  lenguaje de "ciclo alcista" y "multiplica tus ahorros" — Infinexa se 
+  diferencia deliberadamente NO usando ese tono, lo cual también ayuda a 
+  cumplir políticas de publicidad más estrictas para este tipo de contenido.
+- Pendiente real: entrar directamente a trends.google.com y comparar 
+  volumen de búsqueda real de los términos candidatos antes de priorizar 
+  cuáles trabajar en contenido — la búsqueda web no sustituye los datos 
+  reales de Trends.
+
+Estado actual de SEO ya resuelto (ver ESTADO.md sección 4.2): sitemap.xml 
+y robots.txt en la raíz del repo, dominio verificado en Search Console, 
+3 de 4 páginas ya indexadas (servicios pendiente por decisión propia).
+
+Antes de cualquier cosa, voy a compartirte el ESTADO.md actual completo. 
+Si necesitas actualizarlo (o RECETAS.md / BITACORA.md), sigue el proceso 
+de verificación de siempre: pide el contenido real vía 'cat', compara, 
+dame un resumen antes de tocar nada, edita solo después de mi confirmación.
+```
+
+
