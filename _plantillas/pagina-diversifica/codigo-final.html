@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diversifica · Infinexa — Connecting Value with Purpose</title>
+<meta name="description" content="No dependas de una sola fuente de ingresos. Conoce por qué diversificar es la decisión más inteligente en la nueva economía.">
+
+<!-- Open Graph / Facebook / WhatsApp -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://infinexa.app/diversifica/">
+<meta property="og:title" content="Diversifica · Infinexa — Connecting Value with Purpose">
+<meta property="og:description" content="No dependas de una sola fuente de ingresos. Conoce por qué diversificar es la decisión más inteligente en la nueva economía.">
+<meta property="og:image" content="https://infinexa.app/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Infinexa">
+<meta property="og:locale" content="es_MX">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Diversifica · Infinexa — Connecting Value with Purpose">
+<meta name="twitter:description" content="No dependas de una sola fuente de ingresos. Conoce por qué diversificar es la decisión más inteligente en la nueva economía.">
+<meta name="twitter:image" content="https://infinexa.app/assets/og-image.png">
+
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="shortcut icon" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --grafito:#1F2A33;--grafito-dk:#0F1720;--petroleo:#1B4D5C;--petroleo-cl:#2E6E80;
+  --cobre:#C8682E;--plata:#C9D2D6;--plata-cl:#EDF1F2;
+  --bg:#0F1720;--bg-dk:#0a1018;
+  --border:rgba(200,104,46,0.15);--border-s:rgba(255,255,255,0.055);
+  --pad:clamp(24px,5vw,60px);--r:clamp(10px,1.2vw,16px);
+}
+html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter','Helvetica Neue',Arial,sans-serif;}
+.shell{width:100%;min-height:100vh;background:linear-gradient(150deg,#0c1219 0%,#14202c 100%);display:flex;justify-content:center;padding:0;}
+.card{background:var(--bg);width:100%;}
+@media(min-width:900px){
+  .shell{padding:32px;}
+  .card{max-width:1100px;border-radius:20px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.5);}
+}
+@media(max-width:899px){.shell{padding:0;}.card{border-radius:0;}}
+@media(min-width:1400px){.shell{padding:40px;}.card{max-width:1200px;}}
+
+/* ── TIPOGRAFÍA ── */
+.sec-label{font-size:clamp(13px,1.1vw,14px);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--plata-cl);margin-bottom:clamp(10px,1.4vw,16px);}
+.body-text{font-size:clamp(17px,1.5vw,19px);color:var(--plata-cl);line-height:1.85;margin-bottom:clamp(12px,1.5vw,18px);}
+.body-text:last-child{margin-bottom:0;}
+.body-text strong{color:var(--plata-cl);font-weight:600;}
+.body-text em{font-style:italic;color:var(--cobre);font-weight:600;}
+.pull{background:rgba(200,104,46,0.07);border-left:3px solid var(--cobre);border-radius:0 var(--r) var(--r) 0;padding:clamp(14px,1.8vw,22px) clamp(16px,2vw,26px);margin:clamp(14px,1.8vw,20px) 0;font-size:clamp(17px,1.6vw,20px);color:var(--plata-cl);line-height:1.7;font-style:italic;font-weight:300;}
+
+/* ── HEADER ── */
+.hdr{padding:clamp(28px,4vw,52px) var(--pad) clamp(24px,3.5vw,40px);border-bottom:1px solid var(--border);}
+.ifx-lockup{display:flex;align-items:center;gap:clamp(14px,2vw,22px);margin-bottom:clamp(24px,3.5vw,40px);}
+.ifx-sep-v{width:.6px;height:clamp(36px,5vw,52px);background:var(--petroleo);opacity:.7;flex-shrink:0;}
+.ifx-wm{display:flex;flex-direction:column;gap:4px;}
+.ifx-name{font-size:clamp(18px,2.2vw,26px);font-weight:300;color:var(--plata-cl);letter-spacing:clamp(6px,1.2vw,14px);}
+.ifx-line{width:44px;height:.8px;background:var(--cobre);opacity:.85;margin:3px 0;}
+.ifx-tag{font-size:clamp(10px,.9vw,12px);font-weight:300;color:var(--plata-cl);letter-spacing:clamp(3px,.5vw,5.5px);opacity:.5;}
+.edu-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(27,77,92,0.35);border:1px solid rgba(46,110,128,0.5);border-radius:20px;padding:5px clamp(12px,1.5vw,16px);margin-bottom:clamp(14px,2vw,20px);}
+.edu-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--plata-cl);}
+.edu-badge-text{font-size:clamp(10px,.9vw,12px);font-weight:600;color:var(--plata-cl);letter-spacing:1.5px;text-transform:uppercase;}
+.hero-h1{font-size:clamp(28px,4vw,52px);font-weight:800;color:var(--plata-cl);line-height:1.1;margin-bottom:clamp(12px,1.5vw,18px);}
+.hero-h1 em{font-style:italic;color:var(--cobre);font-weight:600;}
+.hero-sub{font-size:clamp(17px,1.5vw,19px);color:var(--plata-cl);line-height:1.85;max-width:680px;}
+
+/* ── GIRO (secciones de transición con fondo grafito) ── */
+.giro-sec{background:var(--grafito);border-top:1px solid rgba(200,104,46,0.2);border-bottom:1px solid rgba(200,104,46,0.2);padding:clamp(28px,4vw,48px) var(--pad);}
+.giro-inner{max-width:760px;margin:0 auto;text-align:center;}
+.giro-label{font-size:clamp(13px,1.1vw,14px);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--plata-cl);margin-bottom:clamp(12px,1.6vw,18px);}
+.giro-h{font-size:clamp(22px,3vw,38px);font-weight:800;color:var(--plata-cl);line-height:1.15;margin-bottom:clamp(12px,1.6vw,20px);}
+.giro-h em{font-style:italic;color:var(--cobre);font-weight:300;}
+.giro-body{font-size:clamp(16px,1.4vw,18px);color:var(--plata-cl);line-height:1.85;}
+.giro-body strong{color:var(--plata-cl);font-weight:600;}
+
+/* ── SECCIÓN ESTÁNDAR (sin fondo, contenido directo) ── */
+.sect{padding:clamp(28px,4vw,52px) var(--pad);border-bottom:1px solid var(--border-s);}
+.sect-inner{max-width:780px;}
+.sect.center .sect-inner{margin:0 auto;text-align:center;}
+.sect-h{font-size:clamp(24px,3.2vw,40px);font-weight:800;color:var(--plata-cl);line-height:1.15;margin-bottom:clamp(14px,1.8vw,20px);}
+.sect-h em{font-style:italic;color:var(--cobre);font-weight:700;}
+
+/* ── ACORDEÓN ── */
+.acord-section{border-bottom:1px solid var(--border-s);}
+.acord-trigger{width:100%;display:flex;align-items:center;justify-content:space-between;padding:clamp(18px,2.5vw,28px) var(--pad);background:none;border:none;cursor:pointer;text-align:left;gap:clamp(12px,1.5vw,20px);transition:background .2s;}
+.acord-trigger:hover{background:rgba(200,104,46,0.04);}
+.acord-trigger-left{display:flex;flex-direction:column;gap:4px;flex:1;}
+.acord-step{font-size:clamp(11px,1vw,13px);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--cobre);opacity:.8;}
+.acord-title{font-size:clamp(18px,2.2vw,26px);font-weight:700;color:var(--plata-cl);line-height:1.2;}
+.acord-title em{font-style:italic;color:var(--cobre);font-weight:700;}
+.acord-preview{font-size:clamp(14px,1.2vw,16px);color:var(--plata-cl);margin-top:4px;line-height:1.5;opacity:.85;}
+.acord-icon-wrap{display:flex;flex-direction:column;align-items:center;gap:5px;flex-shrink:0;}
+.acord-icon{width:clamp(36px,4vw,48px);height:clamp(36px,4vw,48px);border-radius:50%;border:1.5px solid rgba(255,255,255,0.65);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .25s;background:transparent !important;}
+.acord-icon svg{width:clamp(14px,1.4vw,18px);height:clamp(14px,1.4vw,18px);stroke:#fff;fill:none;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s;}
+.acord-icon-label{font-size:clamp(9px,.8vw,10px);font-weight:500;letter-spacing:1.2px;text-transform:uppercase;color:var(--plata-cl);opacity:1;}
+.acord-section.open .acord-icon{background:transparent !important;border-color:rgba(255,255,255,0.4);}
+.acord-section.open .acord-icon svg{transform:rotate(180deg);}
+.acord-panel{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(0.4,0,0.2,1);}
+.acord-section.open .acord-panel{max-height:5000px;}
+.acord-inner{padding:0 var(--pad) clamp(24px,3vw,40px);}
+.acord-inner.wide{max-width:none;}
+
+/* ── TIMELINE (crisis históricas) ── */
+.tl-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.5vw,18px);margin-top:clamp(18px,2.2vw,26px);}
+@media(min-width:800px){.tl-grid{grid-template-columns:1fr 1fr 1fr 1fr;}}
+@media(max-width:600px){.tl-grid{grid-template-columns:1fr;}}
+.tl-card{background:rgba(255,255,255,0.03);border:1px solid var(--border-s);border-radius:var(--r);padding:clamp(16px,2vw,24px);}
+.tl-year{font-size:clamp(22px,2.4vw,30px);font-weight:800;color:var(--cobre);margin-bottom:4px;}
+.tl-title{font-size:clamp(16px,1.5vw,19px);font-weight:700;color:var(--plata-cl);margin-bottom:8px;line-height:1.3;}
+.tl-desc{font-size:clamp(14px,1.2vw,16px);color:var(--plata-cl);line-height:1.65;}
+
+/* ── PUNTOS CON ICONO/DOT ── */
+.point-list{display:flex;flex-direction:column;gap:clamp(12px,1.5vw,18px);margin-top:clamp(16px,2vw,22px);}
+.point-item{display:flex;gap:clamp(12px,1.5vw,16px);align-items:flex-start;}
+.point-dot{width:9px;height:9px;border-radius:50%;background:var(--cobre);margin-top:9px;flex-shrink:0;}
+.point-text{font-size:clamp(15px,1.3vw,17px);color:var(--plata-cl);line-height:1.7;}
+.point-text strong{color:var(--plata-cl);font-weight:700;}
+
+/* ── TARJETAS DE 2 COLUMNAS (ejemplos) ── */
+.two-cards{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.5vw,18px);margin-top:clamp(16px,2vw,22px);}
+@media(max-width:600px){.two-cards{grid-template-columns:1fr;}}
+.ex-card{background:rgba(255,255,255,0.03);border:1px solid var(--border-s);border-radius:var(--r);padding:clamp(16px,2vw,24px);}
+.ex-title{font-size:clamp(16px,1.5vw,19px);font-weight:700;color:var(--plata-cl);margin-bottom:8px;}
+.ex-text{font-size:clamp(14px,1.2vw,16px);color:var(--plata-cl);line-height:1.7;}
+
+/* ── SPLIT TRADICIONAL / DESCENTRALIZADO ── */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border-s);border-radius:var(--r);overflow:hidden;margin-top:clamp(18px,2.2vw,26px);}
+@media(max-width:650px){.split{grid-template-columns:1fr;}}
+.split-half{padding:clamp(20px,2.6vw,32px);}
+.split-half.trad{background:rgba(255,255,255,0.02);}
+.split-half.descentral{background:rgba(200,104,46,0.06);}
+.split-label{font-size:clamp(13px,1.1vw,14px);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:clamp(10px,1.3vw,14px);}
+.split-label.trad-label{color:var(--plata-cl);}
+.split-label.descentral-label{color:var(--cobre);}
+.split-text{font-size:clamp(15px,1.3vw,17px);color:var(--plata-cl);line-height:1.75;}
+
+/* ── TENDENCIA / TIMELINE HORIZONTAL ── */
+.bar-block{background:rgba(255,255,255,0.025);border:1px solid var(--border-s);border-radius:var(--r);padding:clamp(16px,2vw,24px);margin-top:clamp(18px,2.2vw,26px);}
+.bar-label{font-size:clamp(15px,1.3vw,17px);color:var(--plata-cl);margin-bottom:12px;font-weight:600;}
+.bar-track{height:8px;background:rgba(200,210,214,0.08);border-radius:20px;overflow:hidden;}
+.bar-fill{height:100%;background:linear-gradient(90deg,var(--petroleo),var(--cobre));border-radius:20px;width:78%;}
+.bar-markers{display:flex;justify-content:space-between;margin-top:8px;flex-wrap:wrap;gap:4px;}
+.bar-m{font-size:clamp(10px,.9vw,12px);color:var(--plata);}
+.bar-m.act{color:var(--cobre);font-weight:700;}
+
+/* ── CÍRCULOS GENERACIONALES ── */
+.gen-row{display:flex;justify-content:center;align-items:center;gap:clamp(8px,1.5vw,18px);margin-top:clamp(22px,2.8vw,32px);flex-wrap:wrap;}
+.gen-circle{width:clamp(70px,9vw,100px);height:clamp(70px,9vw,100px);border-radius:50%;border:1.5px solid var(--border-s);display:flex;align-items:center;justify-content:center;font-size:clamp(11px,1vw,13px);color:var(--plata);text-align:center;padding:8px;}
+.gen-circle.mid{border-color:var(--cobre);color:var(--cobre);font-weight:700;width:clamp(90px,11vw,120px);height:clamp(90px,11vw,120px);}
+.gen-arrow{color:var(--plata);opacity:.5;font-size:18px;}
+
+/* ── CIERRE ── */
+.cierre{padding:clamp(28px,4vw,52px) var(--pad);background:var(--bg-dk);border-top:2px solid var(--cobre);text-align:center;}
+.cierre-label{font-size:clamp(13px,1.1vw,14px);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--cobre);margin-bottom:clamp(12px,1.5vw,18px);}
+.cierre-h{font-size:clamp(24px,3vw,40px);font-weight:700;color:var(--plata-cl);line-height:1.2;margin-bottom:clamp(10px,1.4vw,16px);}
+.cierre-h em{font-style:italic;color:var(--cobre);font-weight:700;}
+.cierre-body{font-size:clamp(16px,1.4vw,18px);color:var(--plata-cl);line-height:1.82;max-width:620px;margin:0 auto clamp(22px,3vw,36px);}
+.wa-btn{display:inline-flex;align-items:center;gap:clamp(10px,1.2vw,14px);background:#25D366;color:#fff;font-size:clamp(16px,1.5vw,18px);font-weight:700;padding:clamp(14px,1.8vw,20px) clamp(28px,3.5vw,44px);border-radius:100px;text-decoration:none;box-shadow:0 8px 32px rgba(37,211,102,0.25);transition:transform .2s,box-shadow .2s;cursor:pointer;border:none;}
+.wa-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(37,211,102,0.35);}
+.wa-icon{width:clamp(20px,2vw,26px);height:clamp(20px,2vw,26px);flex-shrink:0;}
+.wa-note{font-size:clamp(13px,1.1vw,15px);color:var(--plata-cl);margin-top:clamp(10px,1.2vw,16px);font-style:italic;opacity:.7;}
+.firma{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:clamp(22px,2.8vw,32px);padding-top:clamp(18px,2.2vw,26px);border-top:1px solid rgba(200,104,46,0.12);}
+.firma-name{font-size:clamp(14px,1.3vw,17px);font-weight:300;color:var(--plata-cl);letter-spacing:5px;opacity:.75;}
+.firma-tag{font-size:clamp(12px,1vw,13px);color:var(--cobre);letter-spacing:1.2px;opacity:.85;text-transform:uppercase;}
+.edu-disclaimer{font-size:clamp(12px,1vw,13px);color:rgba(200,210,214,.3);text-align:center;padding:clamp(14px,2vw,20px) var(--pad);line-height:1.65;border-top:1px solid var(--border-s);}
+</style>
+</head>
+<body>
+<div class="shell">
+<div class="card">
+
+<!-- ══ HEADER / SLIDE 1 ══ -->
+<div class="hdr">
+  <div class="ifx-lockup">
+    <svg width="88" height="44" viewBox="95 52 215 80" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 210 100 C 202 78,172 58,146 60 C 116 62,102 82,104 98 C 106 116,124 126,148 124 C 170 122,196 106,210 100 C 224 94,240 74,260 68 C 282 62,298 76,298 92 C 298 110,282 122,260 122 C 238 122,222 108,210 100" fill="none" stroke="#BDC8CC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 202 93 Q 210 100 202 108" fill="none" stroke="#C8682E" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M 218 93 Q 210 100 218 108" fill="none" stroke="#C8682E" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="210" cy="100" r="2.4" fill="#C8682E"/>
+    </svg>
+    <div class="ifx-sep-v"></div>
+    <div class="ifx-wm">
+      <div class="ifx-name">infinexa</div>
+      <div class="ifx-line"></div>
+      <div class="ifx-tag">connecting value with purpose</div>
+    </div>
+  </div>
+  <div class="edu-badge"><div class="edu-badge-dot"></div><div class="edu-badge-text">Una conversación sobre tu siguiente fuente de ingreso</div></div>
+  <div class="hero-h1">¿Y si <em>una sola</em> fuente de ingreso ya no es suficiente?</div>
+  <div class="hero-sub" style="margin-top:12px;">No es que lo que ya tienes esté mal. Es que el mundo cambió — y quienes lo notaron a tiempo no dejaron lo que tenían: simplemente dejaron de depender únicamente de ello.</div>
+</div>
+
+<!-- ══ ACORDEÓN 1 — Línea de tiempo ══ -->
+<div class="acord-section" id="a1">
+  <button class="acord-trigger" onclick="toggle('a1')" aria-expanded="false">
+    <div class="acord-trigger-left">
+      <span class="acord-step">Historia reciente</span>
+      <span class="acord-title">Cuatro momentos que cambiaron las reglas</span>
+      <span class="acord-preview">1929, 1994, 2008, 2020 — el mismo patrón, una y otra vez.</span>
+    </div>
+    <div class="acord-icon-wrap"><div class="acord-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div><span class="acord-icon-label">Ver más</span></div>
+  </button>
+  <div class="acord-panel">
+    <div class="acord-inner">
+      <div class="tl-grid">
+        <div class="tl-card">
+          <div class="tl-year">1929</div>
+          <div class="tl-title">Gran Depresión</div>
+          <div class="tl-desc">Millones dependían de un solo ingreso. Cuando desapareció, no había nada más detrás.</div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-year">1994</div>
+          <div class="tl-title">Crisis del Peso</div>
+          <div class="tl-desc">Ahorrar en una sola moneda, en un solo lugar, dejó de ser tan seguro como parecía.</div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-year">2008</div>
+          <div class="tl-title">Crisis financiera global</div>
+          <div class="tl-desc">Empleo y vivienda cayeron juntos. Quien tenía más de una fuente, amortiguó el golpe.</div>
+        </div>
+        <div class="tl-card">
+          <div class="tl-year">2020</div>
+          <div class="tl-title">Pandemia</div>
+          <div class="tl-desc">Negocios con un solo canal cerraron. Quien ya había diversificado, encontró cómo seguir.</div>
+        </div>
+      </div>
+      <div class="pull" style="margin-top:clamp(18px,2.2vw,26px);">El patrón se repite. Y cada vez, la misma pregunta: ¿qué hubiera cambiado si lo hubiera sabido antes?</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ACORDEÓN 2 — La nueva variable ══ -->
+<div class="acord-section" id="a2">
+  <button class="acord-trigger" onclick="toggle('a2')" aria-expanded="false">
+    <div class="acord-trigger-left">
+      <span class="acord-step">Lo que es distinto hoy</span>
+      <span class="acord-title">Hoy el cambio no golpea desde afuera — transforma tu trabajo desde <em>adentro</em></span>
+      <span class="acord-preview">El supermercado, el contador, y lo que la automatización ya está cambiando.</span>
+    </div>
+    <div class="acord-icon-wrap"><div class="acord-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div><span class="acord-icon-label">Ver más</span></div>
+  </button>
+  <div class="acord-panel">
+    <div class="acord-inner">
+      <div class="body-text">Antes, una crisis golpeaba desde fuera. Hoy, la automatización transforma las profesiones desde dentro, sin que la profesión desaparezca.</div>
+      <div class="two-cards">
+        <div class="ex-card">
+          <div class="ex-title">El supermercado</div>
+          <div class="ex-text">Una venta hoy se procesa casi sola: el inventario se actualiza, el cobro se registra, los impuestos se calculan, la contabilidad se concilia. Cada paso, antes, era el trabajo de una persona.</div>
+        </div>
+        <div class="ex-card">
+          <div class="ex-title">El contador</div>
+          <div class="ex-text">La profesión no desaparece. Pero buena parte de las tareas que antes ocupaban su tiempo, hoy ya se automatizan. Quien se adapta, la usa a su favor. Quien no, compite contra ella.</div>
+        </div>
+      </div>
+      <div class="pull">No es una amenaza. Es información — y la información, a tiempo, permite decidir con calma en lugar de reaccionar con prisa.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ACORDEÓN 3 — Panorama completo ══ -->
+<div class="acord-section" id="a3">
+  <button class="acord-trigger" onclick="toggle('a3')" aria-expanded="false">
+    <div class="acord-trigger-left">
+      <span class="acord-step">El contexto completo</span>
+      <span class="acord-title">No es un solo cambio. Son <em>varios</em>, al mismo tiempo</span>
+      <span class="acord-preview">IA, automatización y descentralización — todas avanzando en paralelo.</span>
+    </div>
+    <div class="acord-icon-wrap"><div class="acord-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div><span class="acord-icon-label">Ver más</span></div>
+  </button>
+  <div class="acord-panel">
+    <div class="acord-inner">
+      <div class="body-text">Inteligencia artificial, automatización, robótica, sistemas en la nube y sistemas financieros descentralizados — todos avanzando al mismo tiempo. Lo que tienen en común: cada uno le devuelve el control a la persona — menos dependencia de intermediarios, más poder en tus manos.</div>
+      <div class="point-list">
+        <div class="point-item"><div class="point-dot"></div><div class="point-text"><strong>La inteligencia artificial</strong> le da a cualquier persona herramientas que antes solo tenían los expertos.</div></div>
+        <div class="point-item"><div class="point-dot"></div><div class="point-text"><strong>La automatización</strong> libera tiempo humano de tareas repetitivas.</div></div>
+        <div class="point-item"><div class="point-dot"></div><div class="point-text"><strong>Los sistemas descentralizados</strong> te permiten manejar tu dinero directamente, sin bancos ni intermediarios — y abren posibilidades de ingreso que antes simplemente no existían.</div></div>
+      </div>
+      <div class="pull">Cada una de estas olas, vista de cerca, no es una amenaza. Es una puerta que antes no existía.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 5 — El giro ══ -->
+<div class="giro-sec">
+  <div class="giro-inner">
+    <div class="giro-label">La pregunta que cambia todo</div>
+    <div class="giro-h">No se trata de dejar lo que tienes.<br><em>Se trata de no depender solo de eso.</em></div>
+    <div class="giro-body">El 65% de quienes alcanzaron libertad financiera tenían al menos 3 fuentes de ingreso. Ninguna empezó con todas — cada una se construyó sobre la anterior, una a la vez.</div>
+    <div class="giro-h" style="margin-top:clamp(18px,2.2vw,26px); font-size:clamp(20px,2.6vw,30px);"><em>¿Cuál es tu siguiente fuente?</em></div>
+    <div class="giro-body" style="margin-top:clamp(14px,1.8vw,20px);">Para muchas personas hoy, esa siguiente fuente está en la economía descentralizada — un terreno que hoy está donde estaba internet cuando apenas empezaba a usarse en los hogares, antes de que todo el mundo tuviera correo electrónico y antes de que las compras en línea fueran normales. Quien entró en esa etapa temprana no lo hizo porque tuviera más dinero o más tiempo: lo hizo porque tuvo información antes que los demás.</div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 6 — Diversificar no es abandonar ══ -->
+<div class="sect">
+  <div class="sect-inner">
+    <div class="sec-label">Diversificar no es abandonar</div>
+    <div class="sect-h">Cuida lo que ya construiste. Y date <em>permiso</em> de explorar algo más</div>
+    <div class="body-text">Esto no es dejar tu empleo ni tu negocio actual. Es seguir invirtiendo en lo que ya tienes, mientras te das la oportunidad de conocer otras formas de generar ingresos — para que, si algún día una de tus fuentes se ve afectada, no dependas únicamente de ella.</div>
+    <div class="pull">Hay una diferencia importante entre tener más ingresos y construir un activo: un ingreso depende de tu tiempo; un activo sigue generando valor incluso cuando tú no estás ahí.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(10px,1.5vw,16px);margin-top:clamp(18px,2.2vw,26px);">
+      <div style="background:rgba(200,104,46,0.06);border:1px solid rgba(200,104,46,0.2);border-radius:12px;padding:clamp(14px,2vw,20px) clamp(12px,1.6vw,18px);text-align:center;">
+        <div style="font-size:clamp(26px,3.5vw,38px);font-weight:800;color:#C8682E;line-height:1;margin-bottom:6px;">1ª</div>
+        <div style="font-size:clamp(12px,1.1vw,14px);font-weight:700;color:#EDF1F2;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Activa</div>
+        <div style="font-size:clamp(12px,1vw,14px);color:#C9D2D6;line-height:1.5;">Tu trabajo o negocio actual. Sigue ahí, sigue siendo tuyo.</div>
+      </div>
+      <div style="background:rgba(200,104,46,0.12);border:1px solid #C8682E;border-radius:12px;padding:clamp(14px,2vw,20px) clamp(12px,1.6vw,18px);text-align:center;">
+        <div style="font-size:clamp(26px,3.5vw,38px);font-weight:800;color:#C8682E;line-height:1;margin-bottom:6px;">2ª</div>
+        <div style="font-size:clamp(12px,1.1vw,14px);font-weight:700;color:#EDF1F2;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Descentralizada</div>
+        <div style="font-size:clamp(12px,1vw,14px);color:#EDF1F2;line-height:1.5;">Un negocio en la nueva economía digital. Empieza a construirse hoy.</div>
+      </div>
+      <div style="background:rgba(200,104,46,0.06);border:1px solid rgba(200,104,46,0.2);border-radius:12px;padding:clamp(14px,2vw,20px) clamp(12px,1.6vw,18px);text-align:center;">
+        <div style="font-size:clamp(26px,3.5vw,38px);font-weight:800;color:#C8682E;line-height:1;margin-bottom:6px;">3ª</div>
+        <div style="font-size:clamp(12px,1.1vw,14px);font-weight:700;color:#EDF1F2;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Activo digital</div>
+        <div style="font-size:clamp(12px,1vw,14px);color:#C9D2D6;line-height:1.5;">Genera valor aunque tú no estés. El dinero trabaja por ti.</div>
+      </div>
+    </div>
+    <div class="pull" style="margin-top:clamp(18px,2.2vw,26px);">La economía descentralizada no reemplaza lo que ya tienes — te da la posibilidad de construir esa 2ª y 3ª fuente en un terreno que todavía está en sus primeras etapas. Quien entra hoy no lo hace porque tiene más recursos — lo hace porque tiene información antes.</div>
+  </div>
+</div>
+
+<!-- ══ ACORDEÓN 4 — Tendencia, no moda ══ -->
+<div class="acord-section" id="a4">
+  <button class="acord-trigger" onclick="toggle('a4')" aria-expanded="false">
+    <div class="acord-trigger-left">
+      <span class="acord-step">No es una moda, es una tendencia</span>
+      <span class="acord-title">Algunos cambios <em>van y vienen.</em> Otros, <em>no tienen reversa.</em></span>
+      <span class="acord-preview">Del trueque al dinero, de los discos duros a la nube — el mismo patrón irreversible.</span>
+    </div>
+    <div class="acord-icon-wrap"><div class="acord-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div><span class="acord-icon-label">Ver más</span></div>
+  </button>
+  <div class="acord-panel">
+    <div class="acord-inner">
+      <div class="body-text">El trueque no desapareció de un día para otro — pero nadie volvió a él cuando tuvo dinero en la mano. Lo mismo pasó con los discos duros, con el fax, con el efectivo. Cuando algo mejor llega, el mundo avanza. Y no regresa.</div>
+      <div class="bar-block">
+        <div class="bar-label">Eso es lo que está pasando con los sistemas financieros descentralizados</div>
+        <div class="bar-track"><div class="bar-fill"></div></div>
+        <div class="bar-markers">
+          <span class="bar-m">Trueque</span>
+          <span class="bar-m">Dinero</span>
+          <span class="bar-m">Discos duros</span>
+          <span class="bar-m">Nube</span>
+          <span class="bar-m act">DeFi ▶</span>
+        </div>
+      </div>
+      <div class="body-text" style="margin-top:clamp(16px,2vw,22px); opacity:.85; font-size:clamp(14px,1.2vw,16px);">No se trata de una ola pasajera, sino de hacia dónde se está moviendo, poco a poco, todo el sistema financiero global.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ACORDEÓN 5 — Línea divisoria ══ -->
+<div class="acord-section" id="a5">
+  <button class="acord-trigger" onclick="toggle('a5')" aria-expanded="false">
+    <div class="acord-trigger-left">
+      <span class="acord-step">Dos sistemas, una nueva posibilidad</span>
+      <span class="acord-title">La línea divisoria invisible</span>
+      <span class="acord-preview">Sistema tradicional vs. descentralizado — no se trata de elegir uno y abandonar el otro.</span>
+    </div>
+    <div class="acord-icon-wrap"><div class="acord-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div><span class="acord-icon-label">Ver más</span></div>
+  </button>
+  <div class="acord-panel">
+    <div class="acord-inner wide">
+      <div class="split">
+        <div class="split-half trad">
+          <div class="split-label trad-label">Sistema tradicional</div>
+          <div class="split-text">Sigue siendo válido, necesario, y cada día más tecnológico. Pero su naturaleza es centralizada: bancos, intermediarios y regulaciones deciden buena parte de lo que puedes o no hacer con tu propio dinero.</div>
+        </div>
+        <div class="split-half descentral">
+          <div class="split-label descentral-label">Sistema descentralizado</div>
+          <div class="split-text">Ofrece algo distinto: manejas tu dinero directamente, sin que nadie más decida por ti. Y además es un terreno que todavía está en sus primeras etapas — lo que significa que quien entra hoy, entra antes de que se llene. Esa ventana existe ahora.</div>
+        </div>
+      </div>
+      <div class="body-text" style="margin-top:clamp(18px,2.2vw,26px); opacity:.85; font-size:clamp(14px,1.2vw,16px); text-align:center;">No se trata de elegir uno y abandonar el otro. Se trata de conocer que existe una alternativa — y decidir desde la información, no desde el desconocimiento.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 9 — El legado ══ -->
+<div class="giro-sec">
+  <div class="giro-inner">
+    <div class="giro-label">Más allá de ti</div>
+    <div class="giro-h">A veces, alguien tiene que dar el <em>primer paso.</em></div>
+    <div class="giro-body">Lo que aprendas hoy no se queda solo en ti. Puede ser la puerta que le abras a tu pareja, a tus padres, o a las próximas generaciones. No porque ellos no puedan aprenderlo solos — sino porque a veces, alguien cercano que ya lo entendió, hace toda la diferencia.</div>
+    <div class="gen-row">
+      <div class="gen-circle">Tú</div>
+      <span class="gen-arrow">→</span>
+      <div class="gen-circle mid">Tu círculo cercano</div>
+      <span class="gen-arrow">→</span>
+      <div class="gen-circle">Las próximas generaciones</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CIERRE ══ -->
+<div class="cierre">
+  <div class="cierre-label">Infinexa</div>
+  <div class="cierre-h">Conoce. Explora.<br><em>Empieza a construir.</em></div>
+  <div class="cierre-body">El 65% de quienes alcanzaron libertad financiera tenían al menos 3 fuentes de ingreso. La primera ya la tienes. La economía descentralizada puede ser la segunda — y en este momento, ese terreno todavía está en una etapa temprana donde los negocios pueden crecer a una velocidad que el sistema tradicional difícilmente ofrece. Esa ventana no estará abierta para siempre. Pero hoy, todavía está ahí.</div>
+
+  <a class="wa-btn" href="https://wa.me/526461173209?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Infinexa%20sobre%20diversificar%20ingresos%20y%20quiero%20saber%20m%C3%A1s" target="_blank" rel="noopener">
+    <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Quiero diversificar mis ingresos
+  </a>
+
+  <div class="wa-note">Se abrirá WhatsApp con un mensaje listo — solo presiona enviar.</div>
+
+  <div class="firma">
+    <svg width="44" height="20" viewBox="95 52 215 80" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 210 100 C 202 78,172 58,146 60 C 116 62,102 82,104 98 C 106 116,124 126,148 124 C 170 122,196 106,210 100 C 224 94,240 74,260 68 C 282 62,298 76,298 92 C 298 110,282 122,260 122 C 238 122,222 108,210 100" fill="none" stroke="#BDC8CC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 202 93 Q 210 100 202 108" fill="none" stroke="#C8682E" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M 218 93 Q 210 100 218 108" fill="none" stroke="#C8682E" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="210" cy="100" r="2.4" fill="#C8682E"/>
+    </svg>
+    <div>
+      <div class="firma-name">infinexa</div>
+      <div class="firma-tag">connecting value with purpose</div>
+    </div>
+  </div>
+</div>
+
+<div class="edu-disclaimer">Material educativo sobre economía y nuevas formas de generar ingresos. No es asesoría financiera ni publicidad de productos financieros.</div>
+
+</div>
+</div>
+
+<script>
+function toggle(id){
+  const s=document.getElementById(id);
+  const open=s.classList.contains('open');
+  s.classList.toggle('open',!open);
+  s.querySelector('.acord-trigger').setAttribute('aria-expanded',!open);
+}
+</script>
+</body>
+</html>
