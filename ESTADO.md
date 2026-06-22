@@ -2,7 +2,7 @@
 
 > Este archivo es la fuente única de verdad del proyecto. Se actualiza después de cada sesión de trabajo, sin importar en qué conversación de Claude se realizó. No se crean archivos nuevos por conversación — siempre se edita este mismo documento.
 
-**Última actualización:** 19 de junio, 2026 (sesión: refinamiento de copy de Diversifica, infografía WhatsApp, corrección de assets duplicados, sistema de RECETAS/BITÁCORA, optimización de documentos de marca con sección de cumplimiento de plataformas, plan de marketing orgánico para Facebook)
+**Última actualización:** 21 de junio, 2026 (sesión: ajuste de balance narrativo en Diversifica — fuentes de ingreso como activos, tradicionales o descentralizados)
 
 ---
 
@@ -115,7 +115,7 @@ Ambos documentos quedaron optimizados como un sistema de dos capas con referenci
 5. El giro — "¿quiero seguir creciendo desde donde estoy hoy?" (visible siempre, fondo grafito)
 6. Diversificar no es abandonar — introduce la distinción ingreso (depende del tiempo) vs. activo (genera valor sin presencia directa) (visible siempre)
 7. Tendencia, no moda — analogías históricas (trueque→dinero, discos duros→nube) para argumentar que la descentralización es tendencia irreversible, no moda pasajera — en acordeón
-8. Línea divisoria — sistema tradicional vs. descentralizado, con el matiz de "terreno apenas en construcción" y ventana de oportunidad temprana — en acordeón
+8. Lo nuevo no reemplaza lo de siempre — lo amplía (antes "Línea divisoria") — sistema tradicional vs. descentralizado, con el matiz de segmentación natural de mercado y "terreno apenas en construcción" — en acordeón
 9. El legado — "a veces alguien tiene que dar el primer paso" (visible siempre, fondo grafito)
 10. Cierre/CTA — "Conoce. Explora. Empieza a construir." + botón WhatsApp con mensaje prellenado
 
@@ -135,6 +135,15 @@ Ambos documentos quedaron optimizados como un sistema de dos capas con referenci
 - **Las tres tarjetas de progresión** (1ª/2ª/3ª fuente) ahora nombran explícitamente el destino: la 2ª fuente se llama "Descentralizada" (un negocio en la nueva economía digital) y la 3ª "Activo digital" — antes eran genéricas ("Construye", "Activo") sin decir dónde encontrar esa fuente.
 - **Agregado el argumento de velocidad/ventana de oportunidad temprana:** la economía descentralizada se presenta como un terreno en etapas tempranas (analogía con internet "antes de que todo el mundo tuviera correo electrónico"), donde quien entra hoy lo hace antes de que el terreno "se llene" — sin caer en presión de ventas agresiva.
 - **Auditoría completa de claridad de copy:** se revisaron las 9 frases más abstractas o ambiguas de toda la página (ej. "el efectivo no eliminó el trueque... pero el mundo nunca volvió atrás" generaba confusión lógica) y se reescribieron para que sean entendibles a la primera lectura, sin perder profundidad.
+
+**Ajuste de balance narrativo (21 jun 2026):** se detectó que la página presentaba el "activo final" como exclusivamente digital/descentralizado, lo cual estrechaba el mensaje. Se corrigió para que la idea central sea: toda fuente de ingreso bien trabajada termina convirtiéndose en un activo — tradicional o descentralizado — sin restarle protagonismo a la economía descentralizada como la puerta nueva que la página invita a explorar. Se incorporó también el argumento de segmentación natural de mercado (la tecnología no inventa la actividad, se monta sobre algo que ya existía; quien prefiere lo de siempre y quien prefiere lo nuevo conviven, sin que uno elimine al otro), evitando que el mensaje suene fatalista hacia lo tradicional.
+
+Tres bloques se reescribieron con este balance:
+- **"Diversificar no es abandonar":** el párrafo de apertura ahora nombra la economía descentralizada como "presente y futuro de las finanzas"; la 3ª tarjeta de progresión cambió de "Activo digital" a solo "Activo", aclarando que puede ser tradicional o descentralizado.
+- **Acordeón 5** (antes "Línea divisoria", ahora **"Lo nuevo no reemplaza lo de siempre — lo amplía"**): se agregó un párrafo de apertura con la analogía de transporte (sin marcas) para introducir la segmentación natural; el lado "descentralizado" del split ahora dice explícitamente que no reemplaza lo de siempre, es la nueva opción dentro de la misma necesidad.
+- **Cierre/CTA:** se agregó la frase "Toda fuente bien trabajada termina convirtiéndose en un activo — tradicional o descentralizado" para que el CTA cierre con la idea central completa.
+
+✅ Publicado en `infinexa.app/diversifica` (commit `121f741`).
 
 ### 4.2 SEO e indexación en buscadores
 
@@ -249,6 +258,7 @@ Diversifica apuntaba a la carpeta huérfana, que tenía una versión vieja del `
 9. Agregar cada página nueva que se publique a futuro tanto al `sitemap.xml` como a la solicitud de indexación en Search Console
 10. Subir los dos documentos de marca actualizados (`Infinexa_Manual_de_Marca.docx`, `Infinexa_Brand_Identity_Brief.docx`) al repositorio, y eliminar las versiones anteriores (PDF del Manual y `infinexa-brand-brief.docx` viejo) una vez confirmado que el contenido fue migrado completo
 11. Ejecutar la semana 1 del plan de contenido orgánico en Facebook (`_marketing/PLAN-ORGANICO.md`) y registrar resultados reales (DMs recibidos, llamadas agendadas) en `BITACORA.md` para ajustar las semanas siguientes con datos, no con intuición
+12. Revisar si la infografía de WhatsApp ("¿Cuántas fuentes de ingreso tienes tú?") tiene el mismo desbalance detectado en Diversifica (activo presentado como solo digital) y aplicar el mismo ajuste de balance tradicional/descentralizado — en discusión en la conversación de marketing de atracción
 
 ---
 
