@@ -2,7 +2,7 @@
 
 > Este archivo es la fuente única de verdad del proyecto. Se actualiza después de cada sesión de trabajo, sin importar en qué conversación de Claude se realizó. No se crean archivos nuevos por conversación — siempre se edita este mismo documento.
 
-**Última actualización:** 21 de junio, 2026 (sesión: ajuste de balance narrativo en Diversifica — fuentes de ingreso como activos, tradicionales o descentralizados)
+**Última actualización:** 22 de junio, 2026 (sesión: refuerzo del hilo de Carlos en la carta, optimización de El Patrón/infografía con gancho y bridge, resolución de duplicación de contenido entre ambas páginas)
 
 ---
 
@@ -103,6 +103,27 @@ Ambos documentos quedaron optimizados como un sistema de dos capas con referenci
 - Gradiente de la barra histórica corregido para terminar exactamente en el marcador "DeFi"
 - Cursivas y texto de cuerpo corregidos de `--plata` a `--cobre`/`--plata-cl` para igualar el brillo de la carta
 
+### 4.0 La carta — refuerzo del hilo de Carlos y resolución de duplicación (22 jun 2026)
+
+**Refuerzo del hilo narrativo (22 jun 2026):** se detectó que Carlos (el personaje del hook inicial) desaparecía después del header y no volvía a aparecer en el resto de la página, perdiendo la calidez emocional abierta al inicio. Se agregaron tres apariciones breves de Carlos en puntos clave:
+- **Escalón 3** (eras económicas): pull-quote al final — "Carlos está justo en ese punto ahora mismo..."
+- **Escalón 4** (Hand4Hand): línea en cursiva al inicio del panel — "Carlos no decidió en automático..."
+- **Bridge** (antes de las 3 razones): línea agregada después del bridge-body — "Carlos hizo exactamente esta pregunta antes de decidir..."
+
+✅ Publicado (commit `51ccee0`).
+
+**Resolución de duplicación de contenido con "El Patrón"/infografía (22 jun 2026):** se identificó que el Escalón 3 de la carta (tabla completa de 5 eras económicas + analogía de internet) repetía, casi palabra por palabra, contenido que también vive en la infografía (`/infografia`, nombre de trabajo "El Patrón"). Se decidió que **cada página profundiza en un ángulo distinto sin repetirse**, mismo principio que ya rige los assets compartidos: solo una página mantiene la versión completa de un tema, las demás resumen y enlazan hacia ella.
+
+Se aligeró el Escalón 3 de la carta:
+- La tabla se redujo de 5 eras a solo 2 (Digital vs. Descentralización — el contraste inmediato relevante)
+- Se eliminó la analogía completa de internet (ya cubierta con más profundidad en El Patrón)
+- Se agregó un enlace explícito: *"Esto es solo el panorama general. Si quieres ver los 200 años de este patrón completo... revisa El Patrón →"* apuntando a `/infografia`
+- El Escalón 2 (escépticos históricos, 3 ejemplos) se dejó intacto — es suficiente para el propósito de la carta y no se consideró duplicación relevante
+
+✅ Publicado (commit `a258cef`).
+
+**Lección para futuras páginas:** cuando dos piezas cubren el mismo tema histórico/educativo, decidir desde el inicio cuál es la versión "autorizada" y completa, y cuál resume con enlace — evita inconsistencias futuras si se actualiza un dato en una sola página y no en la otra (mismo riesgo ya identificado con los assets duplicados de Diversifica, sección 4.3).
+
 ### 4.1 Diversifica — narrativa y decisiones de diseño
 
 **Propósito:** página educativa sobre diversificación de ingresos, con enfoque progresivo hacia la economía descentralizada como terreno de oportunidad temprana (no como producto a vender directamente).
@@ -144,6 +165,22 @@ Tres bloques se reescribieron con este balance:
 - **Cierre/CTA:** se agregó la frase "Toda fuente bien trabajada termina convirtiéndose en un activo — tradicional o descentralizado" para que el CTA cierre con la idea central completa.
 
 ✅ Publicado en `infinexa.app/diversifica` (commit `121f741`).
+
+### 4.1b La infografía / "El Patrón" — optimización de hilo conductor (22 jun 2026)
+
+**Nota de nombres:** la página vive en `/infografia` en el repo; durante esta sesión se usó el nombre de trabajo "El Patrón" (referencia a su tesis central: el patrón histórico de Ignoran → Ridiculizan → Adoptan repetido en 6 revoluciones tecnológicas, 1837–hoy).
+
+Se revisó el hilo de storyselling y se identificaron 3 ajustes, todos aplicados:
+
+1. **Gancho de apertura:** la página entraba directo a la tesis sin ningún gancho emocional o de curiosidad antes de los datos. Se agregó un párrafo breve después del logo, antes del badge educativo: *"Quizás te ha pasado: alguien te habla de algo nuevo, y tu primera reacción es dudar..."* — apela a la experiencia del lector sin nombrar a Carlos (tono más documental/analítico que la carta, decisión intencional para esta pieza).
+
+2. **Bridge antes del CTA:** el cierre inspiracional saltaba directo al botón de WhatsApp sin explicar qué obtiene la persona al escribir. Se agregó una línea entre el cierre y el botón: *"Si esto resuena, no te pedimos que decidas nada todavía. Te pedimos una conversación..."*
+
+3. **CTA más abierto:** el botón decía "Quiero la llamada de 20 minutos" — presuponía el mismo formato que usa la carta para Hand4Hand, cuando esta página es más temprana en el embudo y no presupone si la persona terminará como builder o en otro tipo de colaboración. Cambiado a **"Quiero la conversación"**.
+
+✅ Publicado (commit `e515b12`).
+
+Ver sección 4.0 para la resolución de duplicación de contenido con esta página (tabla de eras económicas, antes repetida completa en la carta).
 
 ### 4.2 SEO e indexación en buscadores
 
@@ -258,7 +295,7 @@ Diversifica apuntaba a la carpeta huérfana, que tenía una versión vieja del `
 9. Agregar cada página nueva que se publique a futuro tanto al `sitemap.xml` como a la solicitud de indexación en Search Console
 10. Subir los dos documentos de marca actualizados (`Infinexa_Manual_de_Marca.docx`, `Infinexa_Brand_Identity_Brief.docx`) al repositorio, y eliminar las versiones anteriores (PDF del Manual y `infinexa-brand-brief.docx` viejo) una vez confirmado que el contenido fue migrado completo
 11. Ejecutar la semana 1 del plan de contenido orgánico en Facebook (`_marketing/PLAN-ORGANICO.md`) y registrar resultados reales (DMs recibidos, llamadas agendadas) en `BITACORA.md` para ajustar las semanas siguientes con datos, no con intuición
-12. Revisar si la infografía de WhatsApp ("¿Cuántas fuentes de ingreso tienes tú?") tiene el mismo desbalance detectado en Diversifica (activo presentado como solo digital) y aplicar el mismo ajuste de balance tradicional/descentralizado — en discusión en la conversación de marketing de atracción
+12. ~~Revisar si la infografía de WhatsApp tiene el mismo desbalance detectado en Diversifica~~ — ✅ **Resuelto.** Revisión completa hecha en sesión del 22 jun 2026: no se encontró el mismo desbalance de "activo digital", pero sí se identificaron y corrigieron 3 oportunidades de optimización del hilo narrativo (ver sección 4.1b).
 
 ---
 
