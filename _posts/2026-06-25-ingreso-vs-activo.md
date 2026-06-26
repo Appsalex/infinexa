@@ -78,20 +78,20 @@ Esto no es una regla rígida ni una fórmula de "a tal edad debes tener tal cosa
 
 Ya platicamos en [Diversifica](/diversifica) sobre un dato verificado interesante respecto a cuántas fuentes de ingreso suele tener una persona que alcanza estabilidad financiera duradera, con la fuente citada — no lo vamos a repetir aquí para no decir dos veces lo mismo. Si no lo has leído, vale la pena revisarlo después de este post, porque conecta directamente con esta idea: cada fuente nueva que se construye, en algún momento, se convierte en la base para decidir si se queda como ingreso o se transforma en activo.
 
-## La pregunta que sí te toca responder a ti — y la que no
+## Lo que ya es tuyo, y lo que sigue siendo tuyo por decidir
 
-Aquí es donde quiero ser honesto sobre los límites de este texto.
+Quiero ser honesto contigo sobre algo.
 
-Lo que acabamos de platicar — la diferencia entre ingreso y activo, por qué importa, cómo se ve en ejemplos cotidianos — es el **qué**. Es información completa, verificable, y útil por sí misma, sin que tengas que dar ningún paso más después de leerla.
+Todo lo que acabamos de platicar — la diferencia entre ingreso y activo, por qué importa, cómo se ve en lo cotidiano — ya es completamente tuyo. No necesitas hacer nada más para que te sirva: ya puedes mirar tu propia vida un poco distinto, solo con haberlo leído con calma.
 
-Lo que no vamos a resolver aquí es el **cómo** específico para tu situación particular. Y no es porque sea un secreto que se esté guardando como gancho — es porque, honestamente, el cómo depende de variables que solo tú conoces: cuánto tiempo tienes disponible, qué herramientas ya conoces, qué nivel de riesgo te hace sentido, en qué etapa de la vida estás. Ese tipo de conversación no se puede dar bien en un texto genérico — se da mejor platicando.
+Lo que no te voy a decir aquí es qué deberías hacer exactamente con tu dinero, ni cuándo. No porque me lo esté guardando — sino porque eso depende de cosas que solo tú sabes: cuánto tiempo tienes disponible, qué tan cómodo te sientes con cada opción, en qué momento de tu vida estás. Pretender que puedo resolverte eso en un texto sería, de mi parte, no tomarte en serio a ti ni a tu situación. Eso se platica mejor mirándonos a los ojos, o al menos en una conversación real — pero la distinción que ya tienes entre ingreso y activo es tuya desde ahora, y puede cambiar cómo ves cada decisión de dinero que tomes de aquí en adelante. Si conoces a alguien que también la necesita, vale la pena pasársela.
 
-## Para cerrar: tres caminos, sin presión
+## ¿Y ahora qué?
 
-Si esta idea te dejó pensando, hay más de un camino — elige el que te haga sentido, o ninguno, sin problema:
+Si esta idea te dejó pensando, aquí tienes algunas formas de seguir — sin que ninguna sea la "correcta":
 
 1. **Sigue leyendo** — en Diversifica está el dato verificado sobre fuentes de ingreso y libertad financiera que mencionamos arriba, con la fuente citada.
-2. **Reflexiónalo solo por un momento** — quizás el ejercicio más simple es revisar, de lo que ya tienes hoy, qué parte es ingreso y qué parte ya empezó a convertirse en activo. A veces esa sola pregunta cambia cómo se ve el resto.
-3. **Platicarlo** — si te interesa pensar en voz alta cómo se vería esto aplicado a tu situación, sin compromiso, sabes dónde encontrarme.
+2. **Date un momento para reflexionarlo** — quizás el ejercicio más simple es revisar, de lo que ya tienes hoy, qué parte es ingreso y qué parte ya empezó a convertirse en activo. A veces esa sola pregunta cambia cómo se ve el resto.
+3. **Platicarlo conmigo** — si te interesa pensar en voz alta cómo se vería esto aplicado a tu situación, sabes dónde encontrarme.
 
 Como Carlos, no se trata de tener la respuesta perfecta desde el primer día — se trata de empezar a hacerse la pregunta antes de los cuarenta, no después.
