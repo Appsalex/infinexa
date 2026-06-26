@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% if page.title %}{{ page.title }} · Infinexa{% else %}Infinexa{% endif %}</title>
+<meta name="description" content="{{ page.description | default: site.description }}">
+
+<!-- Open Graph / Facebook / WhatsApp -->
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:title" content="{{ page.title | default: site.title }} · Infinexa">
+<meta property="og:description" content="{{ page.description | default: site.description }}">
+<meta property="og:image" content="{{ page.image | default: '/assets/og-image.png' | absolute_url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Infinexa">
+<meta property="og:locale" content="es_MX">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title | default: site.title }} · Infinexa">
+<meta name="twitter:description" content="{{ page.description | default: site.description }}">
+<meta name="twitter:image" content="{{ page.image | default: '/assets/og-image.png' | absolute_url }}">
+
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="shortcut icon" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+{% feed_meta %}
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --grafito:#1F2A33;--grafito-dk:#0F1720;--petroleo:#1B4D5C;--petroleo-cl:#2E6E80;
+  --cobre:#C8682E;--plata:#C9D2D6;--plata-cl:#EDF1F2;
+  --bg:#0F1720;--bg-dk:#0a1018;
+  --border:rgba(200,104,46,0.15);--border-s:rgba(255,255,255,0.055);
+  --pad:clamp(24px,5vw,60px);--r:clamp(10px,1.2vw,16px);
+}
+html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter','Helvetica Neue',Arial,sans-serif;}
+.shell{width:100%;min-height:100vh;background:linear-gradient(150deg,#0c1219 0%,#14202c 100%);display:flex;justify-content:center;padding:0;}
+.card{background:var(--bg);width:100%;}
+@media(min-width:900px){.shell{padding:32px;}.card{max-width:1100px;border-radius:20px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.5);}}
+@media(max-width:899px){.shell{padding:0;}.card{border-radius:0;}}
+@media(min-width:1400px){.shell{padding:40px;}.card{max-width:1200px;}}
+
+/* ── NAV / LOCKUP COMPACTO (todas las páginas del blog) ── */
+.blog-nav{padding:clamp(22px,3vw,34px) var(--pad);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:14px;}
+.ifx-lockup-sm{display:flex;align-items:center;gap:clamp(10px,1.5vw,16px);text-decoration:none;}
+.ifx-lockup-sm svg{flex-shrink:0;}
+.ifx-wm-sm{display:flex;flex-direction:column;gap:3px;}
+.ifx-name-sm{font-size:clamp(15px,1.6vw,18px);font-weight:300;color:var(--plata-cl);letter-spacing:clamp(4px,.8vw,8px);}
+.ifx-tag-sm{font-size:clamp(9px,.8vw,10px);font-weight:300;color:var(--plata-cl);letter-spacing:2.5px;opacity:.5;}
+.blog-nav-links{display:flex;gap:clamp(16px,2vw,26px);}
+.blog-nav-links a{font-size:clamp(13px,1.1vw,14px);font-weight:500;color:var(--plata-cl);text-decoration:none;opacity:.75;letter-spacing:.3px;}
+.blog-nav-links a:hover{opacity:1;color:var(--cobre);}
+.blog-nav-links a.active{opacity:1;color:var(--cobre);}
+
+/* ── FOOTER (idéntico al resto del sitio) ── */
+.cierre{padding:clamp(28px,4vw,52px) var(--pad);background:var(--bg-dk);border-top:2px solid var(--cobre);text-align:center;}
+.firma{display:flex;align-items:center;justify-content:center;gap:14px;}
+.firma-name{font-size:clamp(14px,1.3vw,17px);font-weight:300;color:var(--plata-cl);letter-spacing:5px;opacity:.75;}
+.firma-tag{font-size:clamp(12px,1vw,13px);color:var(--cobre);letter-spacing:1.2px;opacity:.85;text-transform:uppercase;}
+.edu-disclaimer{font-size:clamp(12px,1vw,13px);color:rgba(200,210,214,.3);text-align:center;padding:clamp(14px,2vw,20px) var(--pad);line-height:1.65;border-top:1px solid var(--border-s);}
+</style>
+</head>
+<body>
+<div class="shell">
+<div class="card">
+
+  <div class="blog-nav">
+    <a href="/" class="ifx-lockup-sm">
+      <svg width="64" height="32" viewBox="95 52 215 80" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 210 100 C 202 78,172 58,146 60 C 116 62,102 82,104 98 C 106 116,124 126,148 124 C 170 122,196 106,210 100 C 224 94,240 74,260 68 C 282 62,298 76,298 92 C 298 110,282 122,260 122 C 238 122,222 108,210 100" fill="none" stroke="#BDC8CC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 202 93 Q 210 100 202 108" fill="none" stroke="#C8682E" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M 218 93 Q 210 100 218 108" fill="none" stroke="#C8682E" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="210" cy="100" r="2.4" fill="#C8682E"/>
+      </svg>
+      <div class="ifx-wm-sm">
+        <div class="ifx-name-sm">infinexa</div>
+        <div class="ifx-tag-sm">connecting value with purpose</div>
+      </div>
+    </a>
+    <div class="blog-nav-links">
+      <a href="/">Inicio</a>
+      <a href="/diversifica/">Diversifica</a>
+      <a href="/infografia/">El Patrón</a>
+      <a href="/blog/" class="{% if page.url == '/blog/' %}active{% endif %}">Blog</a>
+    </div>
+  </div>
+
+  {{ content }}
+
+  <div class="cierre">
+    <div class="firma">
+      <svg width="44" height="20" viewBox="95 52 215 80" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 210 100 C 202 78,172 58,146 60 C 116 62,102 82,104 98 C 106 116,124 126,148 124 C 170 122,196 106,210 100 C 224 94,240 74,260 68 C 282 62,298 76,298 92 C 298 110,282 122,260 122 C 238 122,222 108,210 100" fill="none" stroke="#BDC8CC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 202 93 Q 210 100 202 108" fill="none" stroke="#C8682E" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M 218 93 Q 210 100 218 108" fill="none" stroke="#C8682E" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="210" cy="100" r="2.4" fill="#C8682E"/>
+      </svg>
+      <div>
+        <div class="firma-name">infinexa</div>
+        <div class="firma-tag">connecting value with purpose</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="edu-disclaimer">Material educativo sobre economía y nuevas formas de generar ingresos. No es asesoría financiera ni publicidad de productos financieros.</div>
+
+</div>
+</div>
+</body>
+</html>

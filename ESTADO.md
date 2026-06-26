@@ -2,7 +2,7 @@
 
 > Este archivo es la fuente única de verdad del proyecto. Se actualiza después de cada sesión de trabajo, sin importar en qué conversación de Claude se realizó. No se crean archivos nuevos por conversación — siempre se edita este mismo documento.
 
-**Última actualización:** 22 de junio, 2026 (sesión: refuerzo del hilo de Carlos en la carta, optimización de El Patrón/infografía con gancho y bridge, resolución de duplicación de contenido entre ambas páginas)
+**Última actualización:** 23 de junio, 2026 (sesión: nuevo pipeline de render con Playwright/Chromium para piezas de marketing, infografía de Diversifica actualizada con datos verificados y atribuidos, guía consolidada de cumplimiento Meta/WhatsApp agregada a RECETAS.md, detección de riesgo de cumplimiento en la mecánica de Ciclos 2×2 de la carta — pendiente de ejecutar)
 
 ---
 
@@ -88,13 +88,29 @@ Ambos documentos quedaron optimizados como un sistema de dos capas con referenci
 
 **Pendiente:** importar los SVG a Figma/Illustrator y convertir textos a outlines; exportar PNG en 1x/2x/3x; instalar Inter como fuente del sistema; aplicar el símbolo actualizado al sitio web en vivo (actualmente el sitio puede tener la versión visual anterior); subir ambos docx nuevos al repositorio y eliminar las versiones anteriores (PDF del Manual y `infinexa-brand-brief.docx` viejo) una vez confirmado que el contenido fue migrado completo.
 
+### 3.7 Pipeline de generación de imágenes de marketing (nuevo, 23 jun 2026)
+
+**Problema detectado:** las piezas generadas con `wkhtmltoimage` (motor basado en WebKit antiguo) mostraban artefactos visibles en curvas finas del logo — específicamente, el cruce central de la lemniscata se veía "cortado"/discontinuo, especialmente al aplicar después un filtro de nitidez (unsharp mask), que exageraba el defecto en vez de corregirlo.
+
+**Solución adoptada — nuevo estándar:** renderizar con **Playwright + Chromium nativo** en vez de `wkhtmltoimage`.
+
+- Chromium real disponible en el entorno de Claude vía `playwright` (`from playwright.sync_api import sync_playwright`)
+- Proceso: HTML/CSS con el **path SVG real** del logo embebido directamente (extraído de `infinexa-icono.svg` / `infinexa-logo-negativo.svg`, nunca aproximado a mano)
+- Captura con `device_scale_factor=2` (supersampling nativo — 2x resolución real, no un escalado falso)
+- Reescalar el resultado a la mitad con Lanczos (`PIL.Image.LANCZOS`) para nitidez final sin artefactos
+- Recortar al contenido real (`full_page` o crop manual) antes de entregar
+
+**Resultado:** líneas continuas y limpias en el cruce del símbolo, sin necesidad de parches de nitidez posteriores que antes degradaban la calidad.
+
+**Lección para futuras piezas:** siempre usar el path SVG real de los archivos de marca entregados (sección 3.6), nunca redibujar el símbolo a mano — y usar Chromium/Playwright como motor de render por defecto para cualquier infografía o pieza visual nueva.
+
 ---
 
 ## 4. Páginas publicadas
 
 | Página | URL | Estado |
 |---|---|---|
-| La carta | `infinexa.app` | ✅ Publicada |
+| La carta | `infinexa.app` | ✅ Publicada — ⚠️ ver sección 4.0, hallazgo de cumplimiento pendiente de ejecutar |
 | La infografía | `infinexa.app/infografia` | ✅ Publicada — gradiente corregido hasta DeFi, tipografía igualada con la carta |
 | Servicios | `infinexa.app/servicios` | ✅ Publicada — con precios USDT y wallet (sin QR) |
 | Diversifica | `infinexa.app/diversifica` | ✅ Publicada — ver detalles abajo |
@@ -103,7 +119,7 @@ Ambos documentos quedaron optimizados como un sistema de dos capas con referenci
 - Gradiente de la barra histórica corregido para terminar exactamente en el marcador "DeFi"
 - Cursivas y texto de cuerpo corregidos de `--plata` a `--cobre`/`--plata-cl` para igualar el brillo de la carta
 
-### 4.0 La carta — refuerzo del hilo de Carlos y resolución de duplicación (22 jun 2026)
+### 4.0 La carta — refuerzo del hilo de Carlos, resolución de duplicación, y hallazgo de cumplimiento (22-23 jun 2026)
 
 **Refuerzo del hilo narrativo (22 jun 2026):** se detectó que Carlos (el personaje del hook inicial) desaparecía después del header y no volvía a aparecer en el resto de la página, perdiendo la calidez emocional abierta al inicio. Se agregaron tres apariciones breves de Carlos en puntos clave:
 - **Escalón 3** (eras económicas): pull-quote al final — "Carlos está justo en ese punto ahora mismo..."
@@ -123,6 +139,16 @@ Se aligeró el Escalón 3 de la carta:
 ✅ Publicado (commit `a258cef`).
 
 **Lección para futuras páginas:** cuando dos piezas cubren el mismo tema histórico/educativo, decidir desde el inicio cuál es la versión "autorizada" y completa, y cuál resume con enlace — evita inconsistencias futuras si se actualiza un dato en una sola página y no en la otra (mismo riesgo ya identificado con los assets duplicados de Diversifica, sección 4.3).
+
+**⚠️ Hallazgo de cumplimiento — mecánica de Ciclos 2×2 (23 jun 2026, sesión Claude.ai, conversación de marketing):**
+
+Al revisar el contenido completo de la carta en el contexto de una guía de cumplimiento Meta/WhatsApp (ver sección 10 / RECETAS.md), se detectó que el **Escalón 4 (Hand4Hand)** describe la mecánica de "Ciclo 2×2" con cifras específicas de activación y escalamiento: una aportación de 100 USDT que activa simultáneamente "Ciclo 10 + Ciclo 25 + Ciclo 50", escalando — según participación de la comunidad — hasta "Ciclo 5,000" sin aportación externa adicional. Incluye también un diagrama visual de ese flujo de escalamiento.
+
+**Por qué es un riesgo:** independientemente de la legitimidad real del modelo y de los disclaimers ya presentes en la página ("no es una inversión", "no garantiza resultados"), esta estructura — una aportación fija que se multiplica en función de que se sumen más participantes, sin generar valor de un producto/servicio independiente — es **estructuralmente el mismo patrón que los esquemas Ponzi/piramidales**. Los sistemas automáticos de detección de Meta y WhatsApp evalúan patrón estructural, no solo intención ni disclaimers, así que este tipo de contenido es de alto riesgo de cumplimiento — más que cualquier frase-gatillo de copy.
+
+**Decisión tomada:** eliminar de la página pública toda la mecánica numérica de ciclos (el "cómo" se activa y escala el sistema), reservando esa explicación exclusivamente para conversación 1:1 (llamada/WhatsApp), donde sí hay contexto y diálogo real. Se conserva intacto el resto de la página: historia de Carlos, Escalones 1-3, los 3 pilares (Educación/Comunidad/Participación voluntaria, reescribiendo el Pilar 3 sin cifras), el bloque de transparencia "Qué es/no es" (en lo que describe tecnología — USDT, Polygon, wallet no custodial — no mecánica de ciclos), y el cierre invitando a la conversación de 20 minutos.
+
+**Estado: 🔧 Pendiente de ejecutar.** Se generó un prompt completo con el detalle de qué eliminar, qué conservar, y una propuesta de reescritura del Escalón 4, destinado a llevarse a la conversación de Claude dedicada a páginas web (esta sesión se mantuvo enfocada en marketing). El cambio NO se ha aplicado todavía al archivo real `index.html`.
 
 ### 4.1 Diversifica — narrativa y decisiones de diseño
 
@@ -165,6 +191,14 @@ Tres bloques se reescribieron con este balance:
 - **Cierre/CTA:** se agregó la frase "Toda fuente bien trabajada termina convirtiéndose en un activo — tradicional o descentralizado" para que el CTA cierre con la idea central completa.
 
 ✅ Publicado en `infinexa.app/diversifica` (commit `121f741`).
+
+**Infografía de WhatsApp actualizada (23 jun 2026, sesión Claude.ai):** se regeneró la pieza visual de Diversifica para WhatsApp (gancho "¿Y si una sola fuente de ingreso ya no es suficiente?") con tres ajustes:
+- **Datos verificados y atribuidos:** las tres cifras (65% / 45% / 29% de quienes alcanzaron libertad financiera, por número de fuentes de ingreso) fueron confirmadas vía investigación web — provienen del estudio de **Tom Corley, "Rich Habits"**. Se corrigió un dato impreciso de una versión anterior de la pieza (decía 30% en vez de 29% para "5 o más fuentes"). Se agregó atribución explícita de la fuente en la pieza, reforzando la regla de marca de "nunca rumores, solo datos verificados".
+- **Nombres de las 3 tarjetas de progresión alineados con el copy actual de la página:** 1ª Activa / 2ª **Descentralizada** (antes decía "Construye" en la versión vieja de la infografía) / 3ª Activo.
+- **Gancho de 3 segundos + storytelling:** se rediseñó para que lo primero visible sea la pregunta de apertura de la página (no el logo), se agregó una banda compacta con los años de crisis históricas (1929·1994·2008·2020) como guiño narrativo, y el cierre usa pregunta abierta + dos opciones suaves ("Conoce"/"Explora") en vez de un CTA de presión.
+- Generada con el nuevo pipeline de render (sección 3.7) — logo real, sin artefactos.
+
+Archivo: `infinexa-diversifica-actualizada.png`.
 
 ### 4.1b La infografía / "El Patrón" — optimización de hilo conductor (22 jun 2026)
 
@@ -259,6 +293,8 @@ Diversifica apuntaba a la carpeta huérfana, que tenía una versión vieja del `
 3. `git add`, `git commit`, `git push`
 4. El subdominio queda vivo automáticamente en 1–2 minutos
 
+**Nota de cumplimiento (23 jun 2026):** dado que el hallazgo de la sección 4.0 (mecánica de Ciclos 2×2) afecta a la carta que usan los builders, una vez se ejecute la corrección en la página principal, replicar el mismo cambio en los templates de builders para mantener consistencia.
+
 ---
 
 ## 7. Estrategia de prospección
@@ -267,6 +303,8 @@ Diversifica apuntaba a la carpeta huérfana, que tenía una versión vieja del `
 - Imagen para estado de WhatsApp ("¿En cuál etapa estás tú?") diseñada en Claude Design — calidad superior a generación por código
 - Imagen alternativa sin CTA "Escríbeme" para envío directo
 - Mensajes de WhatsApp redactados (enfoque "cercano y directo" y "profesional y considerado")
+- **Infografía de Diversifica actualizada** (23 jun 2026) — ver sección 4.1, datos verificados 65%/45%/29% con fuente citada (Tom Corley)
+- **Pieza de Día del Padre** (23 jun 2026) — ejercicio de buena voluntad de marca, no prospección directa, con logo real y nuevo pipeline de render
 
 **Estrategia para grupos abiertos de WhatsApp:**
 1. Enviar la imagen sola primero (sin texto)
@@ -280,22 +318,26 @@ Diversifica apuntaba a la carpeta huérfana, que tenía una versión vieja del `
 
 **Plan de contenido orgánico para Facebook (19 jun 2026, sesión Claude.ai):** ver `_marketing/PLAN-ORGANICO.md` para el plan de contenido orgánico de 4 semanas en Facebook (12 publicaciones completas, listo para usar). Dirigido a la red personal de Alejandro (2,000+ contactos, audiencia tibia, sin contenido previo publicado). Sigue una escalera de convicción de 4 fases — Despertar → Educación → Revelación → Conversión — donde Hand4Hand no se menciona hasta la semana 3. El plan completo, sus reglas de cumplimiento y las imágenes de apoyo viven en la carpeta `_marketing/`, separada de `_gestion/` porque es contenido de marketing (cambia seguido, es desechable) y no estado técnico del proyecto.
 
+**Incidente de cuenta de WhatsApp Business y guía de cumplimiento (23 jun 2026):** la cuenta de WhatsApp Business de Alejandro tuvo una restricción temporal (bloqueo, luego envío lento al reactivarse). Se investigó la causa probable y se generó una guía completa de cumplimiento — ver sección 10 para dónde vive (`_gestion/RECETAS.md`). Resumen: no es solo el texto lo que dispara restricciones, sino también el patrón de envío (mensajes idénticos masivos, hashes repetidos, reputación del dominio compartido). Mensaje ajustado se envió sin problema tras aplicar la guía.
+
 ---
 
 ## 8. Próximos pasos inmediatos
 
-1. Generar HTML completo de `carta.html` e `infografia.html` para el sistema de builders (templates con variables)
-2. Terminar de personalizar y publicar el builder de prueba `carlos`
-3. Aplicar el nuevo logo al sitio web en vivo (`infinexa.app`)
-4. Importar los SVG de marca a Figma/Illustrator y generar exportaciones PNG
-5. Decidir si se generan los 4 textos de prospección semanal para grupos de WhatsApp
-6. Evaluar primer cliente real para el servicio completo o para Builder Edition
-7. Compartir la infografía de WhatsApp ya generada ("¿Cuántas fuentes de ingreso tienes tú?", con el dato del 65%) en estados/grupos, enlazando a Diversifica
-8. Cuando la página de Servicios esté lista para tráfico de búsqueda directa, solicitar su indexación en Google Search Console (mismo proceso ya usado para las otras 3 páginas)
-9. Agregar cada página nueva que se publique a futuro tanto al `sitemap.xml` como a la solicitud de indexación en Search Console
-10. Subir los dos documentos de marca actualizados (`Infinexa_Manual_de_Marca.docx`, `Infinexa_Brand_Identity_Brief.docx`) al repositorio, y eliminar las versiones anteriores (PDF del Manual y `infinexa-brand-brief.docx` viejo) una vez confirmado que el contenido fue migrado completo
-11. Ejecutar la semana 1 del plan de contenido orgánico en Facebook (`_marketing/PLAN-ORGANICO.md`) y registrar resultados reales (DMs recibidos, llamadas agendadas) en `BITACORA.md` para ajustar las semanas siguientes con datos, no con intuición
-12. ~~Revisar si la infografía de WhatsApp tiene el mismo desbalance detectado en Diversifica~~ — ✅ **Resuelto.** Revisión completa hecha en sesión del 22 jun 2026: no se encontró el mismo desbalance de "activo digital", pero sí se identificaron y corrigieron 3 oportunidades de optimización del hilo narrativo (ver sección 4.1b).
+1. **🔴 Prioritario — Ejecutar la eliminación de la mecánica de Ciclos 2×2 del Escalón 4 de la carta** (riesgo de cumplimiento — ver sección 4.0). Prompt ya generado, pendiente de llevarse a la conversación de páginas web y aplicarse al `index.html` real.
+2. Generar HTML completo de `carta.html` e `infografia.html` para el sistema de builders (templates con variables) — al hacerlo, incorporar ya la versión corregida sin la mecánica de ciclos
+3. Terminar de personalizar y publicar el builder de prueba `carlos`
+4. Aplicar el nuevo logo al sitio web en vivo (`infinexa.app`)
+5. Importar los SVG de marca a Figma/Illustrator y generar exportaciones PNG
+6. Decidir si se generan los 4 textos de prospección semanal para grupos de WhatsApp
+7. Evaluar primer cliente real para el servicio completo o para Builder Edition
+8. Compartir la infografía de Diversifica actualizada (65%/45%/29%, fuente Tom Corley) en estados/grupos, enlazando a `infinexa.app/diversifica/`
+9. Cuando la página de Servicios esté lista para tráfico de búsqueda directa, solicitar su indexación en Google Search Console (mismo proceso ya usado para las otras 3 páginas)
+10. Agregar cada página nueva que se publique a futuro tanto al `sitemap.xml` como a la solicitud de indexación en Search Console
+11. Subir los dos documentos de marca actualizados (`Infinexa_Manual_de_Marca.docx`, `Infinexa_Brand_Identity_Brief.docx`) al repositorio, y eliminar las versiones anteriores (PDF del Manual y `infinexa-brand-brief.docx` viejo) una vez confirmado que el contenido fue migrado completo
+12. Ejecutar la semana 1 del plan de contenido orgánico en Facebook (`_marketing/PLAN-ORGANICO.md`) y registrar resultados reales (DMs recibidos, llamadas agendadas) en `BITACORA.md` para ajustar las semanas siguientes con datos, no con intuición
+13. ~~Revisar si la infografía de WhatsApp tiene el mismo desbalance detectado en Diversifica~~ — ✅ **Resuelto.** Revisión completa hecha en sesión del 22 jun 2026 (ver sección 4.1b).
+14. Aplicar la guía de cumplimiento Meta/WhatsApp (sección 10 / RECETAS.md) a futuras revisiones de copy en todas las páginas, especialmente antes de correr cualquier campaña de Meta Ads o Google Ads
 
 ---
 
@@ -311,11 +353,11 @@ Diversifica apuntaba a la carpeta huérfana, que tenía una versión vieja del `
 
 ---
 
-## 10. Sistema de gestión de trabajo (nuevo, 19 jun 2026)
+## 10. Sistema de gestión de trabajo
 
 Para complementar este archivo (que documenta el *estado* del proyecto), se crearon archivos adicionales en `_gestion/` y `_marketing/` dentro del mismo repo:
 
-- **`_gestion/RECETAS.md`** — prompts e instrucciones reutilizables por tipo de actividad (páginas web, infografías para WhatsApp, generación de favicons, investigación de datos, auditoría de copy, flujo de git, SEO, Meta Debugger, auditoría de documentos de marca, planes de contenido orgánico). Se consulta cuando se quiere repetir algo que ya funcionó antes, sin tener que redactar el prompt desde cero.
+- **`_gestion/RECETAS.md`** — prompts e instrucciones reutilizables por tipo de actividad (páginas web, infografías para WhatsApp, generación de favicons, investigación de datos, auditoría de copy, flujo de git, SEO, Meta Debugger, auditoría de documentos de marca, planes de contenido orgánico). Se consulta cuando se quiere repetir algo que ya funcionó antes, sin tener que redactar el prompt desde cero. **Actualizado 23 jun 2026:** se agregó la sección "Cumplimiento de envío y diseño — WhatsApp/Meta" — guía consolidada sobre cómo WhatsApp detecta spam sin leer el contenido cifrado (metadatos, hash del mensaje, reportes, reputación de dominio), checklist de qué sí/qué no hacer en envíos, y extensión de los mismos principios a páginas web y diseños (confirmado: una sola copia en el archivo, sin duplicados).
 - **`_gestion/BITACORA.md`** — registro cronológico append-only (solo se agrega, nunca se reescribe lo viejo) de qué se hizo en cada sesión y cuándo. Sirve para reconstruir el hilo de decisiones sin tener que leer transcripciones completas.
 - **`_marketing/`** — contenido de marketing de atracción (planes de publicación, copys, imágenes de campaña). Separado de `_gestion/` porque este contenido es desechable/rotativo, a diferencia de los prompts reutilizables y el registro histórico.
 

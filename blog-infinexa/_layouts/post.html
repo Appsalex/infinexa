@@ -1,0 +1,55 @@
+---
+layout: default
+---
+<div class="hdr-post">
+  <div class="sec-label-post">{{ page.category | default: "Infinexa" }}</div>
+  <div class="hero-h1-post">{{ page.title }}</div>
+  <div class="post-byline">Por {{ page.author | default: "Infinexa" }}</div>
+
+  {% if page.image %}
+  <img class="post-featured-img" src="{{ page.image | relative_url }}" alt="{{ page.image_alt }}" width="1200" height="630" loading="eager" fetchpriority="high">
+  {% endif %}
+</div>
+
+<article class="post-body">
+  {{ content }}
+</article>
+
+{% if page.pillar %}
+<div class="pillar-cta">
+  <div class="pillar-cta-label">Sigue explorando</div>
+  <div class="pillar-cta-text">Este tema conecta directamente con una de nuestras páginas principales.</div>
+  <a class="pillar-cta-btn" href="{{ page.pillar | relative_url }}">Ver Diversifica →</a>
+</div>
+{% endif %}
+
+<style>
+/* ── HEADER DEL POST ── */
+.hdr-post{padding:clamp(28px,4vw,48px) var(--pad) clamp(20px,3vw,32px);}
+.sec-label-post{font-size:clamp(13px,1.1vw,14px);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--cobre);margin-bottom:clamp(10px,1.4vw,16px);}
+.hero-h1-post{font-size:clamp(26px,3.6vw,46px);font-weight:800;color:var(--plata-cl);line-height:1.15;margin-bottom:clamp(10px,1.3vw,16px);}
+.post-byline{font-size:clamp(13px,1.1vw,15px);color:var(--plata);opacity:.7;margin-bottom:clamp(20px,2.6vw,30px);}
+.post-featured-img{width:100%;height:auto;border-radius:var(--r);display:block;border:1px solid var(--border-s);}
+
+/* ── CUERPO DEL POST (lo que genera el Markdown) ── */
+.post-body{padding:0 var(--pad) clamp(20px,3vw,30px);max-width:780px;}
+.post-body h2{font-size:clamp(22px,2.8vw,32px);font-weight:800;color:var(--plata-cl);line-height:1.2;margin:clamp(28px,3.6vw,42px) 0 clamp(14px,1.8vw,18px);}
+.post-body h2:first-child{margin-top:0;}
+.post-body h3{font-size:clamp(18px,2.2vw,24px);font-weight:700;color:var(--plata-cl);margin:clamp(20px,2.6vw,28px) 0 clamp(10px,1.4vw,14px);}
+.post-body p{font-size:clamp(17px,1.5vw,19px);color:var(--plata-cl);line-height:1.85;margin-bottom:clamp(14px,1.8vw,20px);}
+.post-body strong{color:var(--plata-cl);font-weight:600;}
+.post-body em{font-style:italic;color:var(--cobre);font-weight:500;}
+.post-body a{color:var(--cobre);text-decoration:underline;text-decoration-color:rgba(200,104,46,0.4);}
+.post-body ul,.post-body ol{margin:0 0 clamp(14px,1.8vw,20px) 0;padding-left:1.3em;}
+.post-body li{font-size:clamp(16px,1.4vw,18px);color:var(--plata-cl);line-height:1.7;margin-bottom:8px;}
+.post-body blockquote{background:rgba(200,104,46,0.07);border-left:3px solid var(--cobre);border-radius:0 var(--r) var(--r) 0;padding:clamp(14px,1.8vw,22px) clamp(16px,2vw,26px);margin:clamp(18px,2.2vw,26px) 0;}
+.post-body blockquote p{font-size:clamp(17px,1.6vw,20px);color:var(--plata-cl);line-height:1.7;font-style:italic;font-weight:300;margin-bottom:0;}
+.post-body img{width:100%;height:auto;border-radius:var(--r);margin:clamp(20px,2.6vw,30px) 0;border:1px solid var(--border-s);loading:lazy;}
+.post-body hr{border:none;border-top:1px solid var(--border-s);margin:clamp(24px,3vw,36px) 0;}
+
+/* ── CTA HACIA LA PÁGINA PILAR ── */
+.pillar-cta{margin:0 var(--pad) clamp(28px,4vw,44px);padding:clamp(22px,3vw,32px);background:var(--grafito);border:1px solid var(--border);border-radius:var(--r);text-align:center;}
+.pillar-cta-label{font-size:clamp(12px,1vw,13px);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--cobre);margin-bottom:8px;}
+.pillar-cta-text{font-size:clamp(15px,1.3vw,17px);color:var(--plata-cl);margin-bottom:clamp(14px,1.8vw,18px);}
+.pillar-cta-btn{display:inline-block;font-size:clamp(14px,1.2vw,16px);font-weight:600;color:var(--grafito-dk);background:var(--cobre);padding:10px 24px;border-radius:100px;text-decoration:none;}
+</style>

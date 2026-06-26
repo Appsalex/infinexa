@@ -1,0 +1,40 @@
+title: Infinexa
+description: "Educación y prospección en la nueva economía digital."
+url: "https://infinexa.app"
+baseurl: ""
+lang: es_MX
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Permalink sin fecha en la URL — el blog es "biblioteca", no "publicación".
+# La fecha en el nombre del archivo (_posts/AAAA-MM-DD-titulo.md) sigue
+# siendo obligatoria para que Jekyll ordene los posts, pero no aparece
+# en la URL pública ni en el diseño.
+permalink: /blog/:title/
+
+collections:
+  posts:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+plugins:
+  - jekyll-feed
+
+feed:
+  path: feed.xml
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - _gestion
+  - _marketing

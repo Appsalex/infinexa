@@ -392,3 +392,51 @@ dame un resumen antes de tocar nada, edita solo después de mi confirmación.
 ```
 
 
+
+---
+
+## Cumplimiento de envío y diseño — WhatsApp / Meta (lección 23 jun 2026)
+
+### Por qué funciona esto (base técnica)
+
+WhatsApp cifra el **contenido** de los mensajes de extremo a extremo — nadie puede leerlos en tránsito. Pero detecta spam SIN necesidad de leer el contenido, usando:
+- **Metadatos:** a cuántos contactos distintos escribes, frecuencia, horario, si son contactos nuevos o existentes.
+- **Hash del mensaje:** huella digital matemática del texto. Mensajes idénticos enviados a muchas personas generan el mismo hash — detectable sin descifrar nada.
+- **Reportes de usuarios:** quien te bloquea o reporta le envía a Meta una copia legible del mensaje (porque es destinataria). Solo ahí Meta "ve" contenido — y solo lo reportado.
+- **Comportamiento de cuenta:** velocidad de envío, tasa de bloqueo, chats nuevos abiertos.
+- **Reputación de URL/dominio:** Meta también evalúa el link que compartes (infinexa.app) contra listas de reputación. Si el mismo dominio se reporta mucho, el link puede quedar marcado como sospechoso independientemente del número que lo envíe — esto afecta a TODOS los builders que comparten subdominios de infinexa.app, no solo a quien envía.
+
+**Conclusión:** no te marcan por lo que dices en el sentido de que alguien lo lea — te marcan por cómo lo dices y lo repites. El texto y el patrón de envío pesan igual.
+
+### ✅ Qué SÍ hacer
+
+1. Anclar cifras a una fuente con nombre ("según el estudio de Tom Corley...") en vez de presentarlas como promesa de resultado
+2. Variar el saludo o una frase entre contacto y contacto — nunca copy-paste idéntico a muchos números
+3. Espaciar los envíos a lo largo del día, nunca en ráfaga
+4. Priorizar contactos con conversación previa sobre contactos en frío
+5. Mantener tono educativo, sin urgencia artificial
+6. Acompañar siempre el link con contexto/storytelling, nunca un link "pelón"
+
+### ❌ Qué NO hacer
+
+1. Usar frases-gatillo de spam financiero: "libertad financiera", "ingresos pasivos", "oportunidad única", "no te lo pierdas"
+2. Enviar el mismo mensaje exacto a muchos contactos consecutivos en poco tiempo
+3. Mandar mensajes en frío a números sin contacto previo, en volumen
+4. Presionar o crear urgencia artificial
+5. Enviar solo un link sin texto que lo sustente
+
+### Extensión a páginas web y diseños (no solo WhatsApp)
+
+- Evitar las mismas frases-gatillo también en el copy de las páginas (carta, diversifica, servicios) — si en algún momento se corren Meta Ads o Google Ads hacia estas páginas, la categoría "servicios financieros" recibe revisión extra, y el mismo lenguaje que dispara spam en WhatsApp dispara rechazo de anuncios.
+- El dominio infinexa.app es un activo compartido (carta, builders, subdominios) — su reputación afecta a todos. Mantenerlo siempre con lenguaje sobrio protege la entregabilidad de TODO el ecosistema, no solo de un mensaje individual.
+- Los meta tags (og:title, og:description) y cualquier texto que se previsualice al compartir un link también deben evitar las mismas frases-gatillo, porque son lo primero que un sistema automático escanea antes de que alguien abra el link.
+- Más allá del lenguaje: cuidado especial con cualquier sección que describa mecánica de aportaciones/ciclos con cifras específicas de cómo se activa o escala un sistema — esto pattern-matchea con esquemas piramidales independientemente del lenguaje usado alrededor, y es un riesgo de cumplimiento mayor que cualquier frase-gatillo individual. Ese tipo de "cómo" se reserva para conversación 1:1, nunca para la página pública.
+
+**Nota honesta:** esto es la mejor práctica defensiva derivada de cómo se comportó la cuenta + investigación general de políticas de Meta — no es la lista oficial exhaustiva del algoritmo (Meta no la publica), reduce el riesgo, no lo elimina por completo.
+
+---
+
+## Blog de Infinexa — Prompt Maestro (guardado 24 jun 2026)
+
+### Cuándo usar
+Pegar este prompt completo al iniciar cualquier conversación de Claude dedicada al blog de Infinexa — ya sea para validar un tema nuevo, escribir un post, o revisar uno existente.
