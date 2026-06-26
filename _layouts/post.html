@@ -19,7 +19,7 @@ layout: default
 <div class="pillar-cta">
   <div class="pillar-cta-label">Sigue explorando</div>
   <div class="pillar-cta-text">Este tema conecta directamente con una de nuestras páginas principales.</div>
-  <a class="pillar-cta-btn" href="{{ page.pillar | relative_url }}">Ver Diversifica →</a>
+  <a class="pillar-cta-btn" href="{{ page.pillar | relative_url }}">{{ page.pillar_label | default: "Ver más" }} →</a>
 </div>
 {% endif %}
 

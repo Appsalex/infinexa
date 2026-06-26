@@ -3,6 +3,7 @@ title: "¿Por qué rechazamos lo nuevo antes de entenderlo?"
 author: "Alejandro García, MBA"
 category: "historia y tecnología"
 pillar: "/infografia"
+pillar_label: "Ver El Patrón"
 keywords: ["por qué la gente rechaza la tecnología nueva", "por qué tenemos miedo a lo nuevo", "psicología del cambio tecnológico", "por qué nos cuesta adaptarnos a la tecnología", "resistencia al cambio tecnológico"]
 description: "No es que la gente sea necia. Hay razones psicológicas concretas, bien documentadas, por las que rechazamos lo nuevo antes de entenderlo — y reconocerlas es el primer paso para no quedarse atrapado en ellas."
 image: "/assets/blog/por-que-rechazamos-lo-nuevo.webp"
@@ -70,6 +71,6 @@ No voy a decirte qué hacer con la próxima cosa nueva que te genere rechazo —
 
 Esa pregunta ya es tuya, útil hoy y en cualquier decisión futura, dentro o fuera de la tecnología — y decirte exactamente cómo aplicarla a lo que estás viviendo ahora sería adivinar, no ayudarte, porque no conozco los detalles de tu situación.
 
-¿Por dónde seguir? Puedes ir al catálogo histórico completo en El Patrón, donde están las seis revoluciones que siguieron este mismo patrón desde 1837. Puedes quedarte simplemente con la pregunta y probarla la próxima vez que algo nuevo te incomode. O, si ya tienes algo concreto dándote vueltas en la cabeza, podemos platicarlo.
+¿Por dónde seguir? Puedes ir al catálogo histórico completo en [El Patrón](/infografia), donde están las seis revoluciones que siguieron este mismo patrón desde 1837. Puedes quedarte simplemente con la pregunta y probarla la próxima vez que algo nuevo te incomode. O, si ya tienes algo concreto dándote vueltas en la cabeza, podemos platicarlo.
 
 Carlos no se equivocó por falta de inteligencia. Se equivocó por hacerse la pregunta tarde. Tú ya te la puedes hacer a tiempo.

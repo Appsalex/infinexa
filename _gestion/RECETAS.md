@@ -440,3 +440,53 @@ WhatsApp cifra el **contenido** de los mensajes de extremo a extremo — nadie p
 
 ### Cuándo usar
 Pegar este prompt completo al iniciar cualquier conversación de Claude dedicada al blog de Infinexa — ya sea para validar un tema nuevo, escribir un post, o revisar uno existente.
+
+---
+
+## Unicidad de cada post del blog (revisado 26 jun 2026)
+
+Principio rector: información informa, conocimiento forma, pero solo la 
+sabiduría transforma. Cada post de Infinexa debe apuntar a lo tercero — 
+el lector debe sentir que se le ayudó a pensar distinto, no solo que se 
+le entregaron datos.
+
+REGLA GENERAL: cada post del blog debe ser una pieza única de principio 
+a fin — no solo distinta en el tema que trata, sino distinta en cómo 
+está escrita: su gancho, su metáfora, su forma de presentar el panorama, 
+y su cierre. Que dos posts compartan la misma estructura narrativa base 
+(ya definida en el Prompt Maestro) está bien y es intencional — lo que 
+NO está bien es que compartan las mismas palabras, los mismos 
+encabezados, o la misma forma exacta de construir cada sección.
+
+Reglas concretas:
+
+1. Nunca etiquetar visiblemente la estructura "qué/cómo" (ej. "esto es 
+   el qué, esto es el cómo"). El concepto sigue aplicando — información 
+   completa primero, lo personalizado se reserva para conversación real 
+   — pero debe sentirse en el tono, no anunciarse como fórmula.
+
+2. Nunca describir el propio artículo como "genérico", "básico" o 
+   similar — resta valor justo en el momento donde el lector se queda 
+   con la sensación final.
+
+3. PROHIBIDO repetir, palabra por palabra, cualquier encabezado o frase 
+   entre posts distintos — no solo en el cierre, en cualquier parte del 
+   post (el gancho inicial, las transiciones, los nombres de sección). 
+   Esto incluye (sin limitarse a) "Para cerrar: tres caminos, sin 
+   presión" y "Lo que ya es tuyo, y lo que sigue siendo tuyo por 
+   decidir". Antes de dar por terminado un post nuevo, comparar TODOS 
+   sus encabezados contra los de todos los posts ya publicados — si 
+   alguno coincide o se parece demasiado, reescribir.
+
+4. Variar activamente, de post a post: el encabezado de cierre, si las 
+   opciones van en lista numerada o en prosa corrida, cuántas opciones 
+   se ofrecen (2 o 3), en qué parte del post aparece el callback al 
+   personaje recurrente (Carlos) — al inicio, en medio, o al final — y 
+   el tipo de gancho inicial (pregunta directa, anécdota, dato 
+   sorprendente).
+
+5. El objetivo de fondo: que el lector sienta que cada pieza fue escrita 
+   para él específicamente en ese momento — no que reconozca un molde 
+   reciclado. Eso es lo que hace que alguien regrese, comparta, y trate 
+   el blog como una fuente de consulta real — una biblioteca, no 
+   contenido desechable.

@@ -3,6 +3,7 @@ title: "Ingreso vs. activo: la diferencia que cambia cómo ves tu dinero"
 author: "Alejandro García, MBA"
 category: "diversificación"
 pillar: "/diversifica"
+pillar_label: "Ver Diversifica"
 keywords: ["diferencia entre ingreso y activo", "ingreso vs activo Kiyosaki", "cómo saber si algo es un ingreso o un activo", "ejemplos de activos que generan dinero sin estar presente", "cómo construir mi primer activo financiero"]
 description: "La diferencia entre ingreso y activo explica por qué dos personas con el mismo sueldo durante veinte años pueden terminar en lugares completamente distintos — y no depende de cuánto ganan."
 image: "/assets/blog/ingreso-vs-activo.webp"
@@ -84,7 +85,7 @@ Todo lo que acabamos de platicar — la diferencia entre ingreso y activo, por q
 
 No te voy a fingir que tengo la fórmula exacta para tu caso particular — eso sería tan poco honesto como decirte que con leer esto ya quedó todo resuelto. Lo que sí va a cambiar, desde ahora, es que la próxima vez que veas entrar dinero a tu cuenta, te va a costar menos notar si eso es solamente ingreso, o si ya empezó a comportarse como un activo. Esa costumbre, sostenida un par de años, cambia más de lo que parece hoy.
 
-Si quieres seguir el hilo, en Diversifica está el dato del 65% con su fuente citada. Si prefieres simplemente dejar que esta idea repose unos días, también está bien — algunas cosas rinden más cuando no se persiguen. Y si en algún momento quieres ponerle nombre y apellido a tu propio caso, sabes dónde estoy.
+Si quieres seguir el hilo, en [Diversifica](/diversifica) está el dato del 65% con su fuente citada. Si prefieres simplemente dejar que esta idea repose unos días, también está bien — algunas cosas rinden más cuando no se persiguen. Y si en algún momento quieres ponerle nombre y apellido a tu propio caso, sabes dónde estoy.
 
 Carlos tampoco lo resolvió en una tarde. Lo que cambió fue que dejó de posponer la pregunta.
 

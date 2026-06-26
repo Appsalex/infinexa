@@ -3,6 +3,7 @@ title: "¿Por qué una wallet no custodial no tiene botón de \"olvidé mi contr
 author: "Alejandro García, MBA"
 category: "economía descentralizada"
 pillar: "/"
+pillar_label: "Ver la carta"
 keywords: ["por qué una wallet no custodial no tiene soporte técnico", "qué pasa si pierdo la frase semilla", "wallet no custodial sin recuperación de contraseña", "qué significa tener tus propias llaves cripto", "diferencia entre wallet custodial y no custodial"]
 description: "Casi todas las apps que usas tienen un botón de \"olvidé mi contraseña\". Una wallet no custodial, por diseño, no lo tiene — y entender por qué es la mejor forma de entender qué significa de verdad tener tus propias llaves."
 image: "/assets/blog/wallet-no-custodial.webp"
@@ -73,6 +74,6 @@ La próxima vez que alguien te diga "se me perdió el acceso a mi wallet, ¿no h
 
 Esto no es una recomendación de qué wallet bajar ni de cuánto cripto comprar — sería absurdo de mi parte fingir que lo sé sin conocer tu caso. Lo que sí cambia, desde ahora, es que ya no vas a confundir "sin soporte técnico" con "inseguro": vas a saber que es una decisión de diseño, no un descuido.
 
-¿Qué hacer con esto? Lo que tú quieras. Puedes pasar por la carta de Infinexa si te interesa el panorama completo. Puedes simplemente quedarte con esta idea por un tiempo, sin apurarte a nada más. O, si te queda dando vueltas cuál de las dos opciones —custodial o no custodial— te haría más sentido a ti, podemos platicarlo cuando quieras.
+¿Qué hacer con esto? Lo que tú quieras. Puedes pasar por [la carta de Infinexa](/) si te interesa el panorama completo. Puedes simplemente quedarte con esta idea por un tiempo, sin apurarte a nada más. O, si te queda dando vueltas cuál de las dos opciones —custodial o no custodial— te haría más sentido a ti, podemos platicarlo cuando quieras.
 
 A Carlos, al final, no le tocó nunca usar ese botón que no existe. Tampoco lo necesitó.
