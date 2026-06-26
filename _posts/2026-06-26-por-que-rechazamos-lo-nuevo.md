@@ -64,16 +64,12 @@ La próxima vez que algo nuevo te genere un rechazo inmediato, antes de entender
 
 No es la misma respuesta siempre — a veces el rechazo inicial está bien fundado, y hay que confiar en eso. Pero distinguir entre las dos razones es, por sí mismo, un ejercicio que vale la pena hacer con cada cosa nueva que aparece.
 
-## Lo que ya es tuyo, y lo que sigue siendo tuyo por decidir
+## La pregunta que te dejo, no la respuesta
 
-Lo que acabamos de repasar —por qué rechazamos lo nuevo, las tres razones documentadas, la pregunta que vale la pena hacerse— ya es completamente tuyo, y no solo para temas de tecnología o economía: la próxima vez que algo nuevo te incomode, en cualquier área de tu vida, vas a poder notar qué está pasando realmente.
+No voy a decirte qué hacer con la próxima cosa nueva que te genere rechazo — ni siquiera sé cuál vaya a ser. Pero la próxima vez que sientas esa reacción inmediata, vas a tener disponible una pregunta que antes no tenías: ¿esto es escepticismo informado, o es solo lo desconocido incomodando?
 
-Lo que no resuelvo aquí es **cómo aplicar esto a la decisión específica que tengas enfrente hoy** — eso depende de qué tan informado estás ya, qué tanto sentido te hace lo que estás evaluando, y qué tan cómodo te sientes con el riesgo que implica. Decirte qué decidir sin conocer tu situación no sería ayudarte, sería adivinar. Eso se platica mejor en una conversación real — pero las tres razones que ya conoces son una herramienta que puedes usar hoy mismo, con cualquier decisión, y vale la pena pasársela a alguien que esté atorado entre rechazar algo nuevo o entenderlo primero.
+Esa pregunta ya es tuya, útil hoy y en cualquier decisión futura, dentro o fuera de la tecnología — y decirte exactamente cómo aplicarla a lo que estás viviendo ahora sería adivinar, no ayudarte, porque no conozco los detalles de tu situación.
 
-## Lo que puedes hacer con esto
+¿Por dónde seguir? Puedes ir al catálogo histórico completo en El Patrón, donde están las seis revoluciones que siguieron este mismo patrón desde 1837. Puedes quedarte simplemente con la pregunta y probarla la próxima vez que algo nuevo te incomode. O, si ya tienes algo concreto dándote vueltas en la cabeza, podemos platicarlo.
 
-1. **Revisa el catálogo histórico completo** — en [El Patrón](/infografia) están las seis revoluciones tecnológicas que siguieron este mismo patrón desde 1837.
-2. **Haz el ejercicio contigo mismo** — piensa en algo que rechazaste hace tiempo y que hoy usas sin pensarlo. ¿Qué cambió: la tecnología, o tu forma de verla?
-3. **Platicarlo conmigo** — si hay algo nuevo que te genera dudas y quieres pensarlo en voz alta, sabes dónde encontrarme.
-
-Carlos no se equivocó por no saber de tecnología. Se equivocó por no hacerse, a tiempo, la pregunta que sí se hizo después.
+Carlos no se equivocó por falta de inteligencia. Se equivocó por hacerse la pregunta tarde. Tú ya te la puedes hacer a tiempo.

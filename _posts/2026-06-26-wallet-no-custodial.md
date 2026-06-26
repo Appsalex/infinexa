@@ -67,16 +67,12 @@ Vale la pena notar algo: esta tensión entre control total y respaldo de un terc
 
 Lo que cambia con una wallet no custodial es que, por primera vez, esa opción de "control total" está disponible para cualquier persona con un teléfono, sin necesidad de bóvedas físicas ni guardias de seguridad — y eso es, en buena parte, lo que hace interesante a esta tecnología.
 
-## Lo que ya es tuyo, y lo que sigue siendo tuyo por decidir
+## Con las llaves ya en tu bolsillo
 
-Lo que acabamos de repasar —por qué no existe el botón de recuperación, qué es una frase semilla, la diferencia entre custodial y no custodial— ya es completamente tuyo. La próxima vez que alguien te diga "se me perdió el acceso a mi wallet, ¿no hay a quién llamar?", vas a entender exactamente por qué no, y vas a poder explicarlo mejor que la mayoría.
+La próxima vez que alguien te diga "se me perdió el acceso a mi wallet, ¿no hay a quién llamar?", vas a entender exactamente por qué no — y vas a poder explicarlo mejor que la mayoría de las personas a tu alrededor.
 
-Lo que no te voy a decir aquí es **cuál de las dos opciones te conviene a ti**, ni **cómo proteger tu frase semilla de la forma más práctica para tu caso**. No porque sea un secreto guardado — sino porque depende de cuánta experiencia tienes, qué tan cómodo te sientes con la responsabilidad, y para qué planeas usarla. Decirte "haz esto" sin conocer tu situación sería más fácil para mí, pero menos honesto contigo. Eso se platica mejor con calma, mirando tu caso — pero ya entiendes algo que mucha gente usa sin comprender del todo: por qué no existe ese botón, y qué significa de verdad tener tus propias llaves. Eso ya es tuyo, y si conoces a alguien que está empezando en esto, vale la pena compartírselo.
+Esto no es una recomendación de qué wallet bajar ni de cuánto cripto comprar — sería absurdo de mi parte fingir que lo sé sin conocer tu caso. Lo que sí cambia, desde ahora, es que ya no vas a confundir "sin soporte técnico" con "inseguro": vas a saber que es una decisión de diseño, no un descuido.
 
-## Lo que puedes hacer con esto
+¿Qué hacer con esto? Lo que tú quieras. Puedes pasar por la carta de Infinexa si te interesa el panorama completo. Puedes simplemente quedarte con esta idea por un tiempo, sin apurarte a nada más. O, si te queda dando vueltas cuál de las dos opciones —custodial o no custodial— te haría más sentido a ti, podemos platicarlo cuando quieras.
 
-1. **Sigue explorando** — en la carta de Infinexa platicamos del panorama completo de hacia dónde se está moviendo la economía digital.
-2. **Reflexiónalo solo** — piensa en cuál de las dos preguntas te incomoda más: perder el control, o perder el respaldo. A veces esa simple reflexión ya aclara mucho.
-3. **Platicarlo conmigo** — si quieres pensar en voz alta qué tanto sentido te hace cada opción para tu caso particular, sabes dónde encontrarme.
-
-Carlos, por cierto, terminó escribiendo sus doce palabras en papel, guardándolas en dos lugares distintos, y borrando la captura de pantalla. No porque alguien lo presionara — porque entendió, por fin, qué era lo que realmente estaba protegiendo.
+A Carlos, al final, no le tocó nunca usar ese botón que no existe. Tampoco lo necesitó.

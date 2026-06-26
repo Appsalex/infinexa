@@ -78,20 +78,14 @@ Esto no es una regla rígida ni una fórmula de "a tal edad debes tener tal cosa
 
 Ya platicamos en [Diversifica](/diversifica) sobre un dato verificado interesante respecto a cuántas fuentes de ingreso suele tener una persona que alcanza estabilidad financiera duradera, con la fuente citada — no lo vamos a repetir aquí para no decir dos veces lo mismo. Si no lo has leído, vale la pena revisarlo después de este post, porque conecta directamente con esta idea: cada fuente nueva que se construye, en algún momento, se convierte en la base para decidir si se queda como ingreso o se transforma en activo.
 
-## Lo que ya es tuyo, y lo que sigue siendo tuyo por decidir
-
-Quiero ser honesto contigo sobre algo.
+## Antes de que sigas con tu día
 
 Todo lo que acabamos de platicar — la diferencia entre ingreso y activo, por qué importa, cómo se ve en lo cotidiano — ya es completamente tuyo. No necesitas hacer nada más para que te sirva: ya puedes mirar tu propia vida un poco distinto, solo con haberlo leído con calma.
 
-Lo que no te voy a decir aquí es qué deberías hacer exactamente con tu dinero, ni cuándo. No porque me lo esté guardando — sino porque eso depende de cosas que solo tú sabes: cuánto tiempo tienes disponible, qué tan cómodo te sientes con cada opción, en qué momento de tu vida estás. Pretender que puedo resolverte eso en un texto sería, de mi parte, no tomarte en serio a ti ni a tu situación. Eso se platica mejor mirándonos a los ojos, o al menos en una conversación real — pero la distinción que ya tienes entre ingreso y activo es tuya desde ahora, y puede cambiar cómo ves cada decisión de dinero que tomes de aquí en adelante. Si conoces a alguien que también la necesita, vale la pena pasársela.
+No te voy a fingir que tengo la fórmula exacta para tu caso particular — eso sería tan poco honesto como decirte que con leer esto ya quedó todo resuelto. Lo que sí va a cambiar, desde ahora, es que la próxima vez que veas entrar dinero a tu cuenta, te va a costar menos notar si eso es solamente ingreso, o si ya empezó a comportarse como un activo. Esa costumbre, sostenida un par de años, cambia más de lo que parece hoy.
 
-## ¿Y ahora qué?
+Si quieres seguir el hilo, en Diversifica está el dato del 65% con su fuente citada. Si prefieres simplemente dejar que esta idea repose unos días, también está bien — algunas cosas rinden más cuando no se persiguen. Y si en algún momento quieres ponerle nombre y apellido a tu propio caso, sabes dónde estoy.
 
-Si esta idea te dejó pensando, aquí tienes algunas formas de seguir — sin que ninguna sea la "correcta":
-
-1. **Sigue leyendo** — en Diversifica está el dato verificado sobre fuentes de ingreso y libertad financiera que mencionamos arriba, con la fuente citada.
-2. **Date un momento para reflexionarlo** — quizás el ejercicio más simple es revisar, de lo que ya tienes hoy, qué parte es ingreso y qué parte ya empezó a convertirse en activo. A veces esa sola pregunta cambia cómo se ve el resto.
-3. **Platicarlo conmigo** — si te interesa pensar en voz alta cómo se vería esto aplicado a tu situación, sabes dónde encontrarme.
+Carlos tampoco lo resolvió en una tarde. Lo que cambió fue que dejó de posponer la pregunta.
 
 Como Carlos, no se trata de tener la respuesta perfecta desde el primer día — se trata de empezar a hacerse la pregunta antes de los cuarenta, no después.
