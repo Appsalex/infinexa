@@ -1,4 +1,4 @@
-# RECETAS · INFINEXA
+nano ~/Downloads/infinexa-repo/_gestion/RECETAS.mdnano ~/Downloads/infinexa-repo/_gestion/RECETAS.md# RECETAS · INFINEXA
 
 > Prompts e instrucciones reutilizables, organizados por tipo de actividad. Cuando necesites repetir algo que ya funcionó antes, copia el prompt de aquí y ajusta lo que esté entre [corchetes].
 >
@@ -490,75 +490,3 @@ Reglas concretas:
    reciclado. Eso es lo que hace que alguien regrese, comparta, y trate 
    el blog como una fuente de consulta real — una biblioteca, no 
    contenido desechable.
-
-
----
-
-## Ampliación al Prompt Maestro y a la regla de Unicidad (26 jun 2026)
-
-Esto enmienda las secciones "Blog de Infinexa — Prompt Maestro" y "Unicidad 
-de cada post del blog" ya existentes arriba — no las sustituye, las amplía 
-en 3 puntos concretos, evaluados y filtrados contra un prompt externo que 
-se analizó en sesión.
-
-### 1. Principio rector — ampliado con el sello editorial
-
-El principio rector ya documentado ("información informa, conocimiento 
-forma, pero solo la sabiduría transforma") se amplía así:
-
-Cada post debe ayudar al lector a incrementar alguno de sus activos más 
-importantes: su conocimiento, su criterio, su carácter, sus relaciones, 
-o su capacidad para generar valor. Si un post no contribuye de forma 
-tangible al crecimiento de alguno de estos, se revisa hasta lograrlo.
-
-Nota: se excluyó deliberadamente "patrimonio" de la lista de activos — 
-enmarcar el valor del blog como "hace crecer tu patrimonio" es el tipo de 
-promesa de resultado financiero que la guía de cumplimiento Meta/WhatsApp 
-ya identificó como riesgo real, no solo de tono.
-
-### 2. Nuevo paso 5 en el proceso obligatorio antes de escribir
-
-Se agrega después del Paso 4 (Definir el cluster) ya documentado:
-
-PASO 5 — Verificar la idea central. Antes de dar por terminado el post, 
-resumir su mensaje en una sola frase clara y específica. Si no se puede 
-resumir así, es señal de que el post tiene varios mensajes débiles en 
-vez de uno fuerte — hay que enfocarlo antes de publicar.
-
-### 3. Matiz al punto 1 de la estructura narrativa (gancho de pregunta)
-
-El punto 1 ya documentado ("Gancho de pregunta — algo que el lector ya se 
-preguntó") se matiza así:
-
-La pregunta debe formularse de forma que provoque, no que sea obvia o 
-retórica. Evitar preguntas genéricas tipo "¿sabías que el dinero está 
-cambiando?" (cualquiera respondería que sí) — buscar la versión específica 
-que incomoda un poco porque toca algo real (ej. "¿por qué dos personas con 
-el mismo sueldo durante veinte años terminan en lugares tan distintos?").
-
-### Lo que se evaluó y se descartó explícitamente, con motivo
-
-Se revisó un prompt externo de estilo "editor de pensamiento/mentor 
-transformacional" y se descartaron estos elementos, para que no se vuelvan 
-a proponer sin recordar por qué:
-
-- Las "9 secciones de análisis" (Principios universales, Aplicación 
-  práctica, Errores, Beneficios, etc.) como subtítulos visibles fijos en 
-  cada post — violaría directamente la regla de Unicidad ya documentada; 
-  el lector reconocería el molde en 3-4 posts.
-- "Explicar el cómo" / "proponer acciones concretas paso a paso" — va 
-  contra la regla central de dar el qué completo y reservar el cómo 
-  personalizado para conversación 1:1, porque aplicar cualquier idea 
-  financiera a un caso real depende de variables que un artículo no puede 
-  conocer.
-- Lenguaje de "mejora tus finanzas/tu patrimonio" como beneficio prometido 
-  — riesgo de cumplimiento real (ver guía Meta/WhatsApp), no solo de tono.
-- Tono de "mentor con todas las respuestas" — choca con la voz ya 
-  construida (Carlos, Epiphany Bridge), que parte de la duda compartida, 
-  no de la autoridad absoluta.
-
-
-
-
-
-
