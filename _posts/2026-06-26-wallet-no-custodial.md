@@ -10,11 +10,11 @@ image: "/assets/blog/wallet-no-custodial.webp"
 image_alt: "Comparación entre una app tradicional con botón de recuperar contraseña y una wallet no custodial sin esa opción"
 ---
 
-¿Alguna vez te has preguntado por qué casi cualquier aplicación que usas — tu correo, tu banco, tus redes sociales — tiene un botón de "olvidé mi contraseña", pero una wallet no custodial de criptomonedas no lo tiene?
+Tu correo tiene botón de "olvidé mi contraseña". Tu banco también. Tus redes sociales también. Una wallet no custodial de criptomonedas, no — y nunca lo va a tener.
 
 No es un descuido de quien la diseñó. Es, literalmente, la característica central de cómo funciona — y entender por qué no existe ese botón es la forma más clara de entender qué significa, en la práctica, tener tus propias llaves.
 
-## La pregunta que le hizo Carlos a su primo
+## Doce palabras, una captura de pantalla, y la respuesta de su primo
 
 Carlos llevaba un par de semanas leyendo sobre economía descentralizada cuando le tocó configurar su primera wallet. En algún punto del proceso, la aplicación le mostró doce palabras en una pantalla y le dijo, en términos muy serios, que las anotara en papel y no las perdiera nunca.
 
@@ -62,7 +62,7 @@ Ninguna de las dos opciones elimina el riesgo por completo — simplemente cambi
 
 
 
-## Esto no es exclusivo de las criptomonedas — es un patrón más antiguo
+## La misma decisión, antes de que existiera blockchain
 
 Vale la pena notar algo: esta tensión entre control total y respaldo de un tercero no la inventó la tecnología blockchain. Es la misma decisión que ya existía, en otra forma, mucho antes: guardar dinero en efectivo en casa (control total, sin respaldo si te lo roban) frente a guardarlo en un banco (respaldo institucional, pero el banco decide ciertas reglas sobre cómo y cuándo puedes moverlo).
 
@@ -74,6 +74,9 @@ La próxima vez que alguien te diga "se me perdió el acceso a mi wallet, ¿no h
 
 Esto no es una recomendación de qué wallet bajar ni de cuánto cripto comprar — sería absurdo de mi parte fingir que lo sé sin conocer tu caso. Lo que sí cambia, desde ahora, es que ya no vas a confundir "sin soporte técnico" con "inseguro": vas a saber que es una decisión de diseño, no un descuido.
 
-¿Qué hacer con esto? Lo que tú quieras. Puedes pasar por [la carta de Infinexa](/) si te interesa el panorama completo. Puedes simplemente quedarte con esta idea por un tiempo, sin apurarte a nada más. O, si te queda dando vueltas cuál de las dos opciones —custodial o no custodial— te haría más sentido a ti, podemos platicarlo cuando quieras.
+Si te quedó dando vueltas algo de todo esto, hay dos puertas abiertas:
 
-A Carlos, al final, no le tocó nunca usar ese botón que no existe. Tampoco lo necesitó.
+1. [La carta de Infinexa](/), si te interesa el panorama completo.
+2. Platicarlo directamente, si quieres ver cuál de las dos opciones —custodial o no custodial— te haría más sentido a ti.
+
+A Carlos, al final, nunca le tocó usar ese botón que no existe. Tampoco lo necesitó.

@@ -14,7 +14,7 @@ image_alt: "Ilustración conceptual de una persona dudando frente a algo nuevo y
 
 No te lo pregunto para hacerte sentir mal — te lo pregunto porque, si lo piensas con honestidad, la respuesta casi siempre es sí. A todos nos ha pasado. Y la buena noticia es que no es un defecto de carácter — es un patrón psicológico bien documentado, con nombre y explicación, que vale la pena conocer.
 
-## La pregunta que Carlos se hizo demasiado tarde
+## Cuando a Carlos le dio risa su propia reacción
 
 Carlos recordaba con claridad el día que un amigo le habló por primera vez de comprar boletos de avión por internet. Su reacción fue inmediata: "eso no puede ser seguro, yo prefiero ir a la agencia de viajes." No lo dijo por mala fe ni por falta de inteligencia — lo dijo porque, en ese momento, lo desconocido le generaba más desconfianza que comodidad.
 
@@ -67,10 +67,8 @@ No es la misma respuesta siempre — a veces el rechazo inicial está bien funda
 
 ## La pregunta que te dejo, no la respuesta
 
-No voy a decirte qué hacer con la próxima cosa nueva que te genere rechazo — ni siquiera sé cuál vaya a ser. Pero la próxima vez que sientas esa reacción inmediata, vas a tener disponible una pregunta que antes no tenías: ¿esto es escepticismo informado, o es solo lo desconocido incomodando?
+Carlos no se equivocó por falta de inteligencia aquella vez con los boletos de avión. Se equivocó por hacerse esta pregunta demasiado tarde. Tú ya te la puedes hacer a tiempo: ¿esto es escepticismo informado, o es solo lo desconocido incomodando?
 
-Esa pregunta ya es tuya, útil hoy y en cualquier decisión futura, dentro o fuera de la tecnología — y decirte exactamente cómo aplicarla a lo que estás viviendo ahora sería adivinar, no ayudarte, porque no conozco los detalles de tu situación.
+No voy a decirte qué hacer con la próxima cosa nueva que te genere rechazo — ni siquiera sé cuál vaya a ser. Esa pregunta ya es tuya, útil hoy y en cualquier decisión futura, dentro o fuera de la tecnología — y decirte exactamente cómo aplicarla a lo que estás viviendo ahora sería adivinar, no ayudarte, porque no conozco los detalles de tu situación.
 
-¿Por dónde seguir? Puedes ir al catálogo histórico completo en [El Patrón](/infografia), donde están las seis revoluciones que siguieron este mismo patrón desde 1837. Puedes quedarte simplemente con la pregunta y probarla la próxima vez que algo nuevo te incomode. O, si ya tienes algo concreto dándote vueltas en la cabeza, podemos platicarlo.
-
-Carlos no se equivocó por falta de inteligencia. Se equivocó por hacerse la pregunta tarde. Tú ya te la puedes hacer a tiempo.
+Dos caminos desde aquí, igual de válidos: revisar el catálogo histórico completo en [El Patrón](/infografia), donde están las seis revoluciones que siguieron este mismo patrón desde 1837, o quedarte simplemente con la pregunta y probarla la próxima vez que algo nuevo te incomode. Y si ya tienes algo concreto dándote vueltas en la cabeza, ya sabes dónde estoy.
