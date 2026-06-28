@@ -334,6 +334,21 @@ en ventana privada. Antes de asumir que "la corrección no funcionó",
 descartar caché primero — comparar el archivo real publicado en GitHub
 contra el que se generó, no solo lo que se ve en pantalla.
 
+**5. Tamaño mínimo legible del detalle fino del logo (corregido 27 jun
+2026):** el logo del infinito lleva un detalle pequeño en el cruce (dos
+trazos cobre + un punto). Ese detalle mide ~10% del ancho total del
+ícono, sin importar la escala — así que el tamaño mínimo del ÍCONO
+COMPLETO para que el detalle se siga viendo (no se vuelva mancha) es de
+~110-130px de ancho. Por debajo de eso, usar la versión simplificada
+(solo el punto cobre, sin los dos trazos) — no es un error, es la
+decisión correcta a ese tamaño. El logo de las imágenes destacadas
+quedó a 130px de ancho, fiel al original en desktop; en celular, donde
+la imagen completa se reduce a ~350-390px, el ícono vuelve a quedar
+por debajo del umbral y el detalle se suaviza — esto es una limitación
+física del tamaño, no un bug, y se decidió aceptarlo (27 jun 2026)
+porque forzarlo más grande para que se viera en celular lo haría
+desproporcionado en el resto de la composición.
+
 ---
 
 ## 10. Plantilla técnica (front matter de cada post)

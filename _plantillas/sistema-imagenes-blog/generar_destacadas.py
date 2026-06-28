@@ -118,7 +118,7 @@ def build_svg(category, titulo_lineas, subtitulo, icon_key, seed, extra_chips=No
       </radialGradient></defs>
       <rect width="{W}" height="{H}" fill="url(#fade)"/>
       {lines}{circles}
-      <g transform="translate(58.2,18) scale(0.205)">
+      <g transform="translate(1.18,-36.52) scale(0.4037)">
         <path d="
           M 400 210
           C 388 178, 344 140, 296 142
@@ -129,10 +129,12 @@ def build_svg(category, titulo_lineas, subtitulo, icon_key, seed, extra_chips=No
           C 514 150, 542 174, 542 202
           C 542 234, 516 254, 480 254
           C 444 254, 416 230, 400 210
-        " fill="none" stroke="#BDC8CC" stroke-width="9.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="400" cy="210" r="11" fill="#C8682E"/>
+        " fill="none" stroke="#BDC8CC" stroke-width="4.95" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 384 198 Q 392 210 384 222" fill="none" stroke="#C8682E" stroke-width="3.22" stroke-linecap="round"/>
+        <path d="M 416 198 Q 408 210 416 222" fill="none" stroke="#C8682E" stroke-width="3.22" stroke-linecap="round"/>
+        <circle cx="400" cy="210" r="4.46" fill="#C8682E"/>
       </g>
-      <text x="178" y="55" font-size="20" font-weight="300" fill="#EDF1F2" font-family="Inter,Arial,sans-serif" letter-spacing="3">infinexa</text>
+      <text x="235" y="55" font-size="20" font-weight="300" fill="#EDF1F2" font-family="Inter,Arial,sans-serif" letter-spacing="3">infinexa</text>
       <text x="90" y="170" font-size="16" font-weight="600" letter-spacing="3" fill="#C8682E" font-family="Inter,Arial,sans-serif">{category}</text>
       {title_svg}
       {sub_svg}
