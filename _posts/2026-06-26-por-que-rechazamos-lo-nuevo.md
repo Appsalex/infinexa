@@ -11,12 +11,17 @@ image_alt: "Ilustración conceptual de una persona dudando frente a algo nuevo y
 ---
 
 ¿Alguna vez has rechazado algo nuevo casi por reflejo, antes de entender realmente de qué se trataba?
+{: .lead}
 
 No te lo pregunto para hacerte sentir mal — te lo pregunto porque, si lo piensas con honestidad, la respuesta casi siempre es sí. A todos nos ha pasado. Y la buena noticia es que no es un defecto de carácter — es un patrón psicológico bien documentado, con nombre y explicación, que vale la pena conocer.
 
 ## Cuando a Carlos le dio risa su propia reacción
 
-Carlos recordaba con claridad el día que un amigo le habló por primera vez de comprar boletos de avión por internet. Su reacción fue inmediata: "eso no puede ser seguro, yo prefiero ir a la agencia de viajes." No lo dijo por mala fe ni por falta de inteligencia — lo dijo porque, en ese momento, lo desconocido le generaba más desconfianza que comodidad.
+Carlos recordaba con claridad el día que un amigo le habló por primera vez de comprar boletos de avión por internet. Su reacción fue inmediata:
+
+> "Eso no puede ser seguro, yo prefiero ir a la agencia de viajes."
+
+No lo dijo por mala fe ni por falta de inteligencia — lo dijo porque, en ese momento, lo desconocido le generaba más desconfianza que comodidad.
 
 Años después, comprando boletos por su teléfono sin pensarlo dos veces, Carlos recordó esa conversación y se rió de sí mismo. No porque hubiera sido tonto entonces — sino porque entendió, ya tarde, que su reacción inicial no tenía nada que ver con qué tan buena o mala fuera la tecnología. Tenía que ver con algo mucho más humano.
 
@@ -68,7 +73,10 @@ La pregunta no es si debes dudar — es si tu duda te está llevando a investiga
 
 
 
-Aquí está la parte más útil de todo esto: **reconocer el patrón en uno mismo, mientras está pasando, es mucho más valioso que reconocerlo después, como hizo Carlos con los boletos de avión.**
+Aquí está la parte más útil de todo esto:
+
+**Reconocer el patrón en uno mismo, mientras está pasando,** es mucho más valioso que reconocerlo después — como hizo Carlos con los boletos de avión.
+{: .insight}
 
 La próxima vez que algo nuevo te genere un rechazo inmediato, antes de entenderlo del todo, vale la pena hacerse una pregunta simple: *¿estoy rechazando esto porque ya lo analicé y tiene problemas reales, o lo estoy rechazando porque es desconocido, y lo desconocido incomoda?*
 

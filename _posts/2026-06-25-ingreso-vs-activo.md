@@ -11,6 +11,7 @@ image_alt: "Ilustración conceptual de dos caminos financieros distintos a parti
 ---
 
 ¿Alguna vez te has preguntado por qué dos personas pueden ganar exactamente el mismo sueldo durante veinte años, y al final de ese tiempo una sigue exactamente donde empezó, mientras la otra ya no depende de ese sueldo para vivir?
+{: .lead}
 
 No es un dato curioso al azar. Es una pregunta que vale la pena hacerse con calma, porque la respuesta no tiene que ver con cuánto se gana — tiene que ver con qué se hace con lo que sobra, y con una distinción muy simple que casi nadie nos enseñó a hacer a tiempo.
 
@@ -18,7 +19,9 @@ No es un dato curioso al azar. Es una pregunta que vale la pena hacerse con calm
 
 Carlos llevaba doce años en el mismo trabajo. Buen sueldo, prestaciones, un puesto que había costado esfuerzo conseguir. Cada quincena pagaba lo que debía pagar, ahorraba lo que podía ahorrar, y el resto se iba donde se va el dinero cuando uno no le pone atención: salidas, gustos, imprevistos.
 
-Un día, platicando con un excompañero de la universidad al que no veía desde hacía años, escuchó algo que se le quedó grabado: *"Yo ya no vivo de mi sueldo. Vivo de lo que mi sueldo construyó."*
+Un día, platicando con un excompañero de la universidad al que no veía desde hacía años, escuchó algo que se le quedó grabado:
+
+> "Yo ya no vivo de mi sueldo. Vivo de lo que mi sueldo construyó."
 
 Carlos no entendió bien qué quería decir eso. Su excompañero ganaba, hasta donde sabía, más o menos lo mismo que él. Pero algo en esa frase sonaba distinto — como si hablara de dos tipos de dinero diferentes, no solo de una cantidad mayor o menor.
 
@@ -110,4 +113,5 @@ Si quieres seguir el hilo, en [Diversifica](/diversifica) está el dato del 65% 
 
 Carlos tampoco lo resolvió en una tarde. Lo que cambió fue que dejó de posponer la pregunta.
 
-Como Carlos, no se trata de tener la respuesta perfecta desde el primer día — se trata de empezar a hacerse la pregunta antes de los cuarenta, no después.
+**Como Carlos, no se trata de tener la respuesta perfecta desde el primer día** — se trata de empezar a hacerse la pregunta antes de los cuarenta, no después.
+{: .insight}

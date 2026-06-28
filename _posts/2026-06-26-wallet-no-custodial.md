@@ -11,6 +11,7 @@ image_alt: "Comparación entre una app tradicional con botón de recuperar contr
 ---
 
 Tu correo tiene botón de "olvidé mi contraseña". Tu banco también. Tus redes sociales también. Una wallet no custodial de criptomonedas, no — y nunca lo va a tener.
+{: .lead}
 
 No es un descuido de quien la diseñó. Es, literalmente, la característica central de cómo funciona — y entender por qué no existe ese botón es la forma más clara de entender qué significa, en la práctica, tener tus propias llaves.
 
@@ -20,7 +21,9 @@ Carlos llevaba un par de semanas leyendo sobre economía descentralizada cuando 
 
 Carlos hizo lo que cualquiera haría: las tomó captura de pantalla, cerró la app, y siguió con su día.
 
-Unas semanas después, platicando con un primo que ya llevaba tiempo en esto, le preguntó algo que sonaba razonable: "¿Y si se me olvida mi contraseña, hay algún soporte técnico al que le pueda llamar?" La respuesta de su primo fue corta y lo dejó pensando: "No. Y esa es la idea."
+Unas semanas después, platicando con un primo que ya llevaba tiempo en esto, le preguntó algo que sonaba razonable: "¿Y si se me olvida mi contraseña, hay algún soporte técnico al que le pueda llamar?"
+
+> "No. Y esa es la idea."
 
 Esa respuesta es el punto de partida de esta reflexión.
 
@@ -58,7 +61,10 @@ Esa frase de doce o veinticuatro palabras que Carlos tomó captura de pantalla s
 
 ## La pregunta que vale la pena hacerse: ¿control total, o respaldo de alguien más?
 
-Ninguna de las dos opciones —custodial o no custodial— es automáticamente "la correcta". Son dos formas distintas de resolver la misma pregunta: **¿prefieres tener el control absoluto y la responsabilidad completa, o prefieres tener una red de respaldo a cambio de que alguien más tenga parte del control?**
+Ninguna de las dos opciones —custodial o no custodial— es automáticamente "la correcta". Son dos formas distintas de resolver la misma pregunta:
+
+**¿Prefieres tener el control absoluto y la responsabilidad completa,** o prefieres tener una red de respaldo a cambio de que alguien más tenga parte del control?
+{: .insight}
 
 - Una wallet **custodial** es más parecida a dejar las llaves de tu casa con alguien de confianza: si las pierdes, esa persona te puede ayudar. Pero también significa que esa persona, técnicamente, podría negarte el acceso si algo saliera mal de su lado.
 - Una wallet **no custodial** es como llevar las llaves de tu casa siempre en el bolsillo: el control es completamente tuyo, pero si las pierdes, nadie puede abrirte la puerta.

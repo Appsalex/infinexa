@@ -112,6 +112,37 @@ débiles en vez de uno fuerte — hay que enfocarlo antes de publicar.
 
 ---
 
+## 4.1 Ritmo visual tipográfico (evitar la "tira sin respiro")
+
+**Diagnóstico (27 jun 2026):** con solo encabezados H2/H3 como respiro,
+un post largo se siente como una sola tira de texto idéntico de
+principio a fin — el CSS ya tenía un estilo de `blockquote` (fondo
+tintado, borde cobre) pero nunca se usaba porque las citas de Carlos
+se escribían en cursiva inline, no como bloque markdown real.
+
+**Tres herramientas tipográficas, ya disponibles en `_layouts/post.html`,
+para usar en cada post nuevo:**
+
+- **`{: .lead}`** — en el párrafo de apertura (el gancho), justo
+  después del título. Texto más grande y más ligero, marca de entrada
+  distinta al cuerpo. Una sola vez por post.
+- **Blockquote real (`>`)** — para toda cita textual hablada (Carlos,
+  un amigo, un primo, una fuente). Nunca escribir el diálogo en cursiva
+  inline con asteriscos — siempre como bloque `>` para que se vea
+  visualmente distinto del resto del párrafo. Normalmente aparece 1-2
+  veces por post.
+- **`{: .insight}`** — para LA frase que resume el giro central del
+  post (el "ajá"). Texto centrado, grande, con línea divisoria arriba
+  y abajo — el equivalente en HTML de lo que antes era la imagen
+  "frase grande". Una sola vez por post, nunca más — si se usa seguido
+  pierde el efecto de pausa.
+
+Igual que con la regla de unicidad: variar EN QUÉ PUNTO del post cae
+cada elemento (no siempre el insight justo antes del cierre) para que
+la pausa se sienta orgánica, no como fórmula repetida.
+
+---
+
 ## 5. Regla de unicidad (crítica — leer con cuidado)
 
 **Regla general:** cada post del blog debe ser una pieza única de
