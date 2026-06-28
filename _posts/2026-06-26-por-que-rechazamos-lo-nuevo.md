@@ -28,7 +28,12 @@ Lo que no resolvimos ahí, y vale la pena platicar aquí, es **por qué** nos pa
 
 ## Tres razones documentadas, no solo intuición
 
-![Tres tarjetas mostrando las razones psicológicas: sesgo del status quo, riesgo social, amenaza a la identidad](/assets/blog/razones.webp)
+<div class="section-label-inline">TRES RAZONES DOCUMENTADAS, NO SOLO INTUICIÓN</div>
+<div class="cards-row cols-3">
+  <div class="card-box"><div class="card-num">1</div><div class="card-title">Sesgo del status quo</div><p class="card-text">Preferimos lo conocido, aunque sea peor, a lo desconocido, aunque sea mejor.</p></div>
+  <div class="card-box"><div class="card-num">2</div><div class="card-title">Riesgo social</div><p class="card-text">Tememos vernos mal frente a los demás si nos equivocamos con algo nuevo.</p></div>
+  <div class="card-box"><div class="card-num">3</div><div class="card-title">Amenaza a la identidad</div><p class="card-text">Lo nuevo puede sentirse como una amenaza a una habilidad en la que ya invertimos tiempo.</p></div>
+</div>
 
 **1. Preferimos lo conocido, aunque sea peor, a lo desconocido, aunque sea mejor.** Esto tiene nombre en psicología: sesgo del status quo. No es que la gente prefiera activamente quedarse estancada — es que el cerebro humano, por default, asocia "lo que ya conozco" con seguridad, y "lo que no conozco" con riesgo, incluso cuando los datos dicen lo contrario.
 
@@ -44,7 +49,11 @@ Vale la pena notar que este patrón no nació con la tecnología digital. Ha exi
 
 ## No toda duda es mala — la diferencia entre escepticismo sano y rechazo automático
 
-![Comparación entre escepticismo sano (investigar antes de decidir) y rechazo automático (descartar sin investigar)](/assets/blog/escepticismo.webp)
+<div class="section-label-inline">LA DIFERENCIA NO ES SI DUDAS — ES QUÉ HACE TU DUDA DESPUÉS</div>
+<div class="cards-row cols-2">
+  <div class="card-box"><div class="card-label">Escepticismo sano</div><p class="card-quote">"No lo entiendo todavía, déjame investigarlo antes de decidir."</p></div>
+  <div class="card-box accent"><div class="card-label">Rechazo automático</div><p class="card-quote">"Esto no sirve" — antes de haber investigado nada.</p></div>
+</div>
 
 Quiero ser cuidadoso con algo importante: nada de lo que hemos platicado significa que dudar esté mal, o que haya que adoptar todo lo nuevo sin cuestionarlo. Todo lo contrario — el escepticismo bien aplicado es justamente lo que protege a una persona de caer en modas vacías o en promesas exageradas.
 

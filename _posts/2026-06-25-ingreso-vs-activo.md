@@ -26,7 +26,19 @@ Esa conversación es el punto de partida de esta reflexión. No porque la respue
 
 ## La diferencia entre ingreso y activo: ¿esto depende de mí, o no?
 
-![Comparación visual entre un ingreso que depende de la presencia de la persona y un activo que sigue generando valor sin ella](/assets/blog/ingreso-vs-activo-comparacion.webp)
+<div class="section-label-inline">¿ESTO DEPENDE DE TI, O NO?</div>
+<div class="cards-row cols-2">
+  <div class="card-box" style="text-align:center;">
+    <svg class="card-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#C9D2D6" stroke-width="1.6" style="margin:0 auto clamp(10px,1.2vw,14px);display:block;"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+    <div class="card-title" style="text-align:center;">Ingreso</div>
+    <p class="card-text" style="text-align:center;">Si tú te detienes, el ingreso se detiene contigo.</p>
+  </div>
+  <div class="card-box accent" style="text-align:center;">
+    <svg class="card-icon" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#C8682E" stroke-width="1.6" style="margin:0 auto clamp(10px,1.2vw,14px);display:block;"><path d="M12 21v-9"/><path d="M12 12c0-4 -3-6-7-6 0 4 3 6 7 6z"/><path d="M12 9c0-3 2-5 5-5 0 3-2 5-5 5z"/></svg>
+    <div class="card-title" style="text-align:center;color:var(--cobre);">Activo</div>
+    <p class="card-text" style="text-align:center;">Sigue generando valor aunque tú no estés presente.</p>
+  </div>
+</div>
 
 Esta forma de ver el dinero se popularizó hace más de dos décadas a través del trabajo del autor e inversionista Robert Kiyosaki, conocido principalmente por su libro *Padre Rico, Padre Pobre*. La idea central, resumida en términos simples, es esta:
 
@@ -57,7 +69,11 @@ Esa es, quizás, la parte que con más frecuencia se omite cuando se habla de es
 
 ## Dos malentendidos comunes que vale la pena aclarar
 
-![Ilustración de dos ideas equivocadas comunes sobre construir un activo, representadas como obstáculos pequeños](/assets/blog/ingreso-vs-activo-malentendidos.webp)
+<div class="section-label-inline">DOS MALENTENDIDOS COMUNES</div>
+<div class="cards-row cols-2">
+  <div class="card-box"><div class="card-label">✕ Malentendido 1</div><p class="card-quote">"Todo lo que no es activo está mal"</p><p class="card-text" style="margin-top:10px;">La mayoría vive, y vivirá siempre, principalmente de ingreso — y no hay nada malo en eso.</p></div>
+  <div class="card-box"><div class="card-label">✕ Malentendido 2</div><p class="card-quote">"Necesito mucho dinero para empezar"</p><p class="card-text" style="margin-top:10px;">El primer activo de la mayoría empezó siendo pequeño, casi insignificante.</p></div>
+</div>
 
 **El primero: "entonces todo lo que no es activo está mal."** No. La mayoría de las personas en el mundo viven, y vivirán siempre, principalmente de ingreso — y no hay nada de malo en eso. Un sueldo estable es, para muchísima gente, la base que permite pagar lo urgente, sostener a una familia, dormir tranquilo. El punto de esta reflexión no es sustituir el ingreso por activos de la noche a la mañana. Es simplemente notar que, además del ingreso, existe la posibilidad de ir construyendo algo en paralelo — sin que eso signifique abandonar lo que ya funciona.
 
@@ -65,7 +81,12 @@ Esa es, quizás, la parte que con más frecuencia se omite cuando se habla de es
 
 ## Cómo se ve esto en distintas etapas de la vida
 
-![Línea de tiempo simple mostrando tres etapas de vida y cómo cambia la relación entre ingreso y activo en cada una](/assets/blog/ingreso-vs-activo-etapas-vida.webp)
+<div class="section-label-inline">LA MISMA PREGUNTA, EN DISTINTAS ETAPAS DE LA VIDA</div>
+<div class="timeline-row">
+  <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Inicio de carrera</div><div class="timeline-text">Solo ingreso por ahora — y eso es exactamente lo esperado.</div></div>
+  <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">Mitad de carrera</div><div class="timeline-text">Ya hay margen: ahorro, experiencia, tiempo libre el fin de semana.</div></div>
+  <div class="timeline-item"><div class="timeline-dot accent"></div><div class="timeline-label">Cerca del retiro</div><div class="timeline-text">Entre más temprano se hace la pregunta, más tiempo tiene el activo.</div></div>
+</div>
 
 La misma pregunta — ¿esto que tengo es ingreso o ya empezó a ser un activo? — se ve distinto según el momento de vida:
 

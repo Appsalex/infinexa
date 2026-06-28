@@ -185,19 +185,42 @@ de baja calidad sin revisión humana.
 
 ## 9. Imágenes — cantidad, especificaciones y metadatos
 
-**Cantidad:** 1 imagen destacada + 2-3 de apoyo dentro del cuerpo
-(aprox. cada 600-800 palabras) = 3-4 imágenes por post. Cada imagen de
-apoyo debe enseñar algo visualmente, nunca decorativa sin propósito.
+**Cantidad:** 1 imagen destacada por post. Las tarjetas de comparación,
+listas y líneas de tiempo dentro del cuerpo **ya NO son imagen** — se
+construyen en HTML/CSS nativo (ver sección 9.1). Solo se usa imagen de
+apoyo para el estilo "frase grande" (una sola declaración visual, sin
+columnas de texto pequeño, como `crisis-insight.webp`).
 
-**Dimensiones y peso:**
+**Por qué cambió (27 jun 2026):** las tarjetas con texto pequeño en
+columnas (3-4 por imagen) se volvían illegible en celular — el texto
+nace a 1200px y se escala junto con la imagen hasta ~345px reales en
+pantalla, cayendo a 4-5px de altura. Además, el texto horneado en una
+imagen es invisible para Google (no se indexa, no cuenta como
+contenido). Pasarlo a HTML real resuelve ambos problemas a la vez:
+texto siempre legible (controlado con `clamp()`, igual que el resto
+del post) y contenido indexable. Las imágenes destacadas y la de
+"frase grande" se quedan como imagen porque ahí sí funcionan: poco
+texto, grande, sin necesidad de escalar columnas.
+
+**Dimensiones y peso (imagen destacada y "frase grande"):**
 - Destacada/portada: 1200 × 630 px (ratio 1.91:1), máx 250 KB
-- Apoyo dentro del post: ~1200 px de ancho, 150–250 KB
-- Miniaturas: 600 × 400 px, 100–150 KB
-- Logo/iconos: SVG
+- Apoyo tipo "frase grande": ~1200 px de ancho, 150–250 KB
+- Logo/iconos de pilar: SVG, integrados en el mismo lienzo Playwright
 - Peso total de imágenes por página: bajo 2.5 MB
 
-**Formato:** WebP para fotografía/diseño, SVG para logo/iconos, 72 DPI
-siempre.
+**Formato:** WebP para la imagen destacada y la de "frase grande", SVG
+para logo/iconos, 72 DPI siempre.
+
+**Estilo visual de la imagen destacada (vigente desde 27 jun 2026):**
+fondo de constelación (puntos y líneas finas conectando nodos, color
+Petróleo claro para las líneas, Plata/Cobre para los nodos) sobre
+Grafito — no degradado difuso genérico. Texto reducido a la idea
+central (no el título SEO completo) + ícono fijo por pilar:
+- **La carta** (economía descentralizada): candado abstracto
+- **Diversifica** (diversificación/historia económica): bifurcación/rama
+- **El Patrón** (historia y tecnología): ciclo/flecha circular
+Los puntos de la constelación nunca se generan dentro de la zona de
+texto (columna izquierda) para no cruzar encima del título.
 
 **Metadatos:**
 - Alt text descriptivo y específico (nunca relleno de palabras clave)
@@ -207,13 +230,38 @@ siempre.
 
 **Detalles técnicos:**
 - Ancho y alto explícitos en el HTML
-- Imagen destacada carga inmediata (sin lazy load); las de apoyo sí
-  pueden diferirse
+- Imagen destacada carga inmediata (sin lazy load)
 - Nunca subir al tamaño nativo del pipeline — siempre reescalar antes
 
 **Flujo por imagen:** generar con Chromium/Playwright a 2x → reescalar
 al tamaño final → convertir a WebP comprimido → verificar peso →
 nombrar descriptivamente → escribir alt text.
+
+---
+
+## 9.1 Tarjetas de comparación, listas y líneas de tiempo (HTML nativo)
+
+Reemplazan lo que antes eran imágenes de apoyo con columnas de texto.
+Se escriben directo en el `.md` del post, en HTML crudo (Jekyll/kramdown
+lo permite sin problema). Clases ya definidas en `_layouts/post.html`:
+
+- **`.cards-row` + `.card-box`** — 2 o 3 columnas (se apilan solas en
+  celular). Variantes: `.card-box.accent` (borde cobre, para resaltar
+  la opción "buena" en una comparación), `.card-num` (círculo numerado),
+  `.card-label` (etiqueta pequeña en mayúsculas), `.card-title`,
+  `.card-quote` (cita en cursiva), `.card-text`, `.card-bullets` (viñetas;
+  `.muted` para la columna que no se quiere resaltar).
+- **`.timeline-row` + `.timeline-item`** — línea de tiempo horizontal
+  con línea conectora; se apila vertical en celular con borde lateral
+  en vez de línea horizontal. `.timeline-dot.accent` para resaltar un
+  punto. Sirve tanto para años (con `.timeline-year`) como para etapas
+  sin año (solo `.timeline-label` + `.timeline-text`).
+- **`.section-label-inline`** — encabezado pequeño centrado en mayúsculas,
+  reemplaza el texto que antes iba horneado arriba de la imagen.
+
+Antes de usar estas clases en un post nuevo: copiar la estructura de
+un bloque ya existente en los posts publicados, no inventar HTML desde
+cero, para no romper el espaciado ya calibrado.
 
 ---
 

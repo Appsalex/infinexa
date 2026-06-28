@@ -32,7 +32,25 @@ Esto se llama, en el mundo de las criptomonedas, una **wallet custodial**: un te
 
 ## Lo que pasa en una wallet no custodial — y por qué es distinto a propósito
 
-![Comparación entre wallet custodial y no custodial: quién tiene el control y qué pasa si pierdes el acceso](/assets/blog/wallet-comparacion.webp)
+<div class="section-label-inline">DOS FORMAS DISTINTAS DE RESOLVER EL MISMO PROBLEMA</div>
+<div class="cards-row cols-2">
+  <div class="card-box">
+    <div class="card-title">Custodial</div>
+    <ul class="card-bullets muted">
+      <li>Un tercero guarda tu acceso</li>
+      <li>Sí hay recuperación si olvidas tu contraseña</li>
+      <li>Ese tercero también puede limitar tu acceso</li>
+    </ul>
+  </div>
+  <div class="card-box accent">
+    <div class="card-title" style="color:var(--cobre);">No custodial</div>
+    <ul class="card-bullets">
+      <li>Solo tú tienes la frase semilla</li>
+      <li>No existe botón de recuperación, por diseño</li>
+      <li>Nadie más puede tocar, congelar o limitar tus fondos</li>
+    </ul>
+  </div>
+</div>
 
 Una **wallet no custodial** funciona bajo una premisa diferente desde su diseño: **nadie más, en ningún lugar, tiene una copia de tu acceso.** No hay una empresa guardando tu información de respaldo, porque ese es precisamente el punto — que ninguna empresa, gobierno o intermediario pueda tocar, congelar o controlar lo que es tuyo.
 
@@ -49,7 +67,11 @@ No es casualidad que en el espacio cripto se repita mucho una frase que resume e
 
 ## ¿Esto significa que es más riesgoso? La respuesta honesta es: depende de qué tipo de riesgo te preocupa más
 
-![Los dos tipos de riesgo: perder el acceso por descuido propio, o que un tercero limite tus fondos sin tu permiso](/assets/blog/wallet-riesgos.webp)
+<div class="section-label-inline">EL RIESGO NO DESAPARECE — SOLO CAMBIA EN QUIÉN RECAE</div>
+<div class="cards-row cols-2">
+  <div class="card-box"><div class="card-label">Riesgo 1</div><p class="card-text">Perder el acceso por tu propio descuido — mayor en una wallet no custodial.</p></div>
+  <div class="card-box"><div class="card-label">Riesgo 2</div><p class="card-text">Que un tercero pierda o limite tus fondos sin tu permiso — menor en una wallet no custodial.</p></div>
+</div>
 
 Es una reacción natural pensar que "sin soporte técnico" suena más peligroso. Vale la pena separar esto en dos tipos de riesgo distintos, porque no son lo mismo:
 

@@ -1,0 +1,152 @@
+from playwright.sync_api import sync_playwright
+import random
+
+W, H = 1200, 630
+
+ICONS = {
+    "carta": '''<g transform="translate(90,330)">
+        <rect x="0" y="14" width="34" height="26" rx="5" fill="none" stroke="#C8682E" stroke-width="2.5"/>
+        <path d="M 7 14 V 6 C 7 -1 27 -1 27 6 V 14" fill="none" stroke="#C8682E" stroke-width="2.5"/>
+        <circle cx="17" cy="27" r="2.6" fill="#C8682E"/>
+    </g>''',
+    "diversifica": '''<g transform="translate(90,330)">
+        <path d="M 17 40 V 20" stroke="#C8682E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M 17 20 L 2 0" stroke="#C8682E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M 17 20 L 17 0" stroke="#C8682E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M 17 20 L 32 0" stroke="#C8682E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <circle cx="2" cy="0" r="2.4" fill="#C8682E"/>
+        <circle cx="17" cy="0" r="2.4" fill="#C8682E"/>
+        <circle cx="32" cy="0" r="2.4" fill="#C8682E"/>
+    </g>''',
+    "patron": '''<g transform="translate(107,347)">
+        <path d="M 14 -7 A 14 14 0 1 1 -7 14" stroke="#C8682E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M -7 14 L -7 6 M -7 14 L 1 14" stroke="#C8682E" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>'''
+}
+
+def in_exclusion_zone(x, y):
+    # zona reservada para el texto (columna izquierda, donde van logo/categoría/título/subtítulo)
+    return 50 < x < 850 and 20 < y < 430
+
+def build_svg(category, titulo_lineas, subtitulo, icon_key, seed, extra_chips=None):
+    random.seed(seed)
+    points = []
+    tries = 0
+    while len(points) < 16 and tries < 200:
+        tries += 1
+        x, y = random.uniform(60, W-60), random.uniform(30, H-30)
+        if in_exclusion_zone(x, y):
+            continue
+        points.append((x, y))
+    lines, circles = "", ""
+    for i, (x, y) in enumerate(points):
+        if i < len(points) - 1:
+            x2, y2 = points[i+1]
+            if ((x2-x)**2 + (y2-y)**2) ** 0.5 < 250:
+                lines += f'<line x1="{x:.1f}" y1="{y:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="#2E6E80" stroke-width="1" opacity="0.5"/>\n'
+        r = random.choice([2, 2, 3, 4.5])
+        color = "#C8682E" if random.random() < 0.2 else "#C9D2D6"
+        op = 0.9 if color == "#C8682E" else random.uniform(0.25, 0.65)
+        circles += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r}" fill="{color}" opacity="{op:.2f}"/>\n'
+
+    title_y_start = 225
+    title_svg = ""
+    for i, linea in enumerate(titulo_lineas):
+        title_svg += f'<text x="90" y="{title_y_start + i*56}" font-size="46" font-weight="800" fill="#EDF1F2" font-family="Inter,Arial,sans-serif">{linea}</text>\n'
+
+    sub_y = title_y_start + len(titulo_lineas)*56 + 40
+    sub_svg = f'<text x="90" y="{sub_y}" font-size="20" font-weight="400" fill="#C9D2D6" opacity="0.85" font-family="Inter,Arial,sans-serif">{subtitulo}</text>' if subtitulo else ""
+
+    # punto de anclaje del ícono: siempre con margen fijo debajo del último elemento de texto real
+    contenido_bottom = sub_y + (12 if subtitulo else -28)
+    icon_anchor_y = contenido_bottom + 55
+
+    chips_svg = ""
+    if extra_chips:
+        cx = 90
+        chip_y = contenido_bottom + 28
+        for chip in extra_chips:
+            w = 18 * len(chip) + 40
+            chips_svg += f'''<rect x="{cx}" y="{chip_y}" width="{w}" height="40" rx="20" fill="none" stroke="#C8682E" stroke-width="1.5"/>
+            <text x="{cx+w/2}" y="{chip_y+26}" font-size="18" font-weight="700" fill="#C8682E" text-anchor="middle" font-family="Inter,Arial,sans-serif">{chip}</text>'''
+            cx += w + 14
+
+    icon_svg = ""
+    if not extra_chips:
+        icon_svg = ICONS[icon_key].replace('translate(90,330)', f'translate(90,{icon_anchor_y})').replace('translate(107,347)', f'translate(107,{icon_anchor_y+17})')
+
+    return f'''<!DOCTYPE html><html><head><style>
+    *{{margin:0;padding:0;}} body{{width:{W}px;height:{H}px;background:#0F1720;}}
+    </style></head><body>
+    <svg width="{W}" height="{H}" viewBox="0 0 {W} {H}">
+      <rect width="{W}" height="{H}" fill="#0F1720"/>
+      <defs><radialGradient id="fade" cx="78%" cy="28%" r="65%">
+        <stop offset="0%" stop-color="#1B4D5C" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="#0F1720" stop-opacity="0"/>
+      </radialGradient></defs>
+      <rect width="{W}" height="{H}" fill="url(#fade)"/>
+      {lines}{circles}
+      <g transform="translate(90,40)">
+        <path d="
+          M 40 12
+          C 36.8 8.8, 30.4 5.2, 25.2 5.5
+          C 19.3 5.8, 16.6 9.2, 17 12.4
+          C 17.4 15.9, 21 17.9, 26.4 17.5
+          C 31 17.1, 34.7 14.4, 36.7 13.2
+          C 38.7 12, 41.6 8.4, 45.6 7.7
+          C 49.7 7.1, 52.8 9.7, 52.8 12.7
+          C 52.8 16.1, 50 18.2, 46.2 18.2
+          C 42.4 18.2, 39.4 15.7, 37.8 13.6
+        " fill="none" stroke="#BDC8CC" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="62" y="18" font-size="20" font-weight="300" fill="#EDF1F2" font-family="Inter,Arial,sans-serif" letter-spacing="3">infinexa</text>
+      </g>
+      <text x="90" y="170" font-size="16" font-weight="600" letter-spacing="3" fill="#C8682E" font-family="Inter,Arial,sans-serif">{category}</text>
+      {title_svg}
+      {sub_svg}
+      {chips_svg}
+      {icon_svg}
+    </svg></body></html>'''
+
+CONFIGS = [
+    dict(out="wallet-no-custodial", category="ECONOMÍA DESCENTRALIZADA",
+         titulo=["Wallet no custodial:", "tus llaves, tu control"], subtitulo=None,
+         icon="carta", seed=7),
+    dict(out="ingreso-vs-activo", category="DIVERSIFICACIÓN",
+         titulo=["Ingreso vs. activo"], subtitulo="La diferencia que cambia cómo ves tu dinero",
+         icon="diversifica", seed=3),
+    dict(out="crisis-1929-2020", category="HISTORIA ECONÓMICA",
+         titulo=["Por qué la misma crisis", "se repite distinto cada vez"], subtitulo=None,
+         icon="diversifica", seed=11, chips=["1929","1994","2008","2020"]),
+    dict(out="por-que-rechazamos-lo-nuevo", category="HISTORIA Y TECNOLOGÍA",
+         titulo=["¿Por qué rechazamos lo nuevo", "antes de entenderlo?"], subtitulo=None,
+         icon="patron", seed=19),
+]
+
+with sync_playwright() as p:
+    browser = p.chromium.launch()
+    for cfg in CONFIGS:
+        html = build_svg(cfg["category"], cfg["titulo"], cfg.get("subtitulo"), cfg["icon"], cfg["seed"], cfg.get("chips"))
+        page = browser.new_page(viewport={"width": W, "height": H}, device_scale_factor=2)
+        page.set_content(html)
+        page.wait_for_timeout(200)
+        page.screenshot(path=f'/home/claude/mockup/{cfg["out"]}.png', type='png')
+        page.close()
+        print(f'{cfg["out"]} listo')
+    browser.close()
+
+# NOTA DE USO (27 jun 2026):
+# Para un post nuevo, agregar su config al diccionario CONFIGS arriba:
+#   out: nombre de archivo (sin extensión, debe coincidir con el campo
+#        "image" del front matter del post)
+#   category: el texto de la etiqueta superior (mismo que category en front matter)
+#   titulo: lista de 1-2 líneas, la idea central condensada — NO el
+#           título SEO completo si es muy largo
+#   subtitulo: opcional, una línea de apoyo
+#   icon: "carta" | "diversifica" | "patron" (según el pilar del post)
+#   seed: cualquier número distinto por imagen, para que la constelación
+#         no se vea idéntica entre posts
+#   chips: opcional, lista de strings cortos (años, cifras) en vez de ícono
+#
+# Después de correr el script, convertir el .png resultante a .webp:
+#   from PIL import Image
+#   Image.open('nombre.png').convert('RGB').resize((1200,630)).save('nombre.webp','WEBP',quality=82)
