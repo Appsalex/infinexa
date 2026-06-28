@@ -2,7 +2,7 @@
 
 > Este archivo es la fuente única de verdad del proyecto. Se actualiza después de cada sesión de trabajo, sin importar en qué conversación de Claude se realizó. No se crean archivos nuevos por conversación — siempre se edita este mismo documento.
 
-**Última actualización:** 23 de junio, 2026 (sesión: nuevo pipeline de render con Playwright/Chromium para piezas de marketing, infografía de Diversifica actualizada con datos verificados y atribuidos, guía consolidada de cumplimiento Meta/WhatsApp agregada a RECETAS.md, detección de riesgo de cumplimiento en la mecánica de Ciclos 2×2 de la carta — pendiente de ejecutar)
+**Última actualización:** 27 de junio, 2026 (sesión larga: auditoría de unicidad de los 4 posts del blog, conversión de imágenes ilegibles a HTML/CSS nativo, sistema de ritmo visual tipográfico, rediseño del sistema de imágenes destacadas del blog, principio de promoción vs. prevención documentado para todo el copy del sitio — detalle completo en `_gestion/BLOG_GUIA.md` y `_gestion/BITACORA.md`)
 
 ---
 
@@ -114,6 +114,7 @@ Ambos documentos quedaron optimizados como un sistema de dos capas con referenci
 | La infografía | `infinexa.app/infografia` | ✅ Publicada — gradiente corregido hasta DeFi, tipografía igualada con la carta |
 | Servicios | `infinexa.app/servicios` | ✅ Publicada — con precios USDT y wallet (sin QR) |
 | Diversifica | `infinexa.app/diversifica` | ✅ Publicada — ver detalles abajo |
+| Blog | `infinexa.app/blog` | ✅ Publicado — 4 posts, ver sección 4.4 |
 
 **Detalles técnicos resueltos en la infografía:**
 - Gradiente de la barra histórica corregido para terminar exactamente en el marcador "DeFi"
@@ -250,6 +251,32 @@ Diversifica apuntaba a la carpeta huérfana, que tenía una versión vieja del `
 
 **Lección para futuras sesiones:** antes de crear cualquier carpeta nueva de assets/imágenes de marca, verificar primero con `grep -rn "assets" --include="*.html" .` desde la raíz del repo si ya existe una convención establecida — evita crear carpetas duplicadas que generan inconsistencias silenciosas entre páginas.
 
+### 4.4 Blog de Infinexa
+
+**Estado:** ✅ Publicado en `infinexa.app/blog`, 4 posts activos (Ingreso vs.
+activo, 1929-2020: crisis económicas, Wallet no custodial, Por qué
+rechazamos lo nuevo). Plantilla Jekyll funcionando, deploy automático
+en push a `main`.
+
+La guía completa del blog (principio rector, proceso de 5 pasos antes
+de escribir, regla de unicidad, especificaciones de imagen, ritmo
+visual tipográfico, y el principio de promoción vs. prevención para
+todo el copy del sitio) vive en `_gestion/BLOG_GUIA.md` — no se
+duplica aquí, mismo criterio que ya se usa con `RECETAS.md`. El
+detalle sesión por sesión de qué se hizo y cuándo vive en
+`_gestion/BITACORA.md`.
+
+**Resumen de la sesión del 27 jun 2026 (la más reciente y extensa):**
+auditoría y corrección de unicidad de los 4 posts; conversión de 8
+imágenes de apoyo que se volvían ilegibles en celular a HTML/CSS
+nativo; sistema de ritmo visual tipográfico nuevo (`.lead`, blockquote
+real, `.insight`); rediseño completo del sistema de imágenes
+destacadas (constelación + ícono fijo por pilar, usando el path SVG
+original del logo, nunca redibujado a mano); corrección de centrado
+de página en pantallas anchas; y el principio de promoción vs.
+prevención aplicado al subtítulo del blog y documentado para todo
+copy futuro del sitio.
+
 ---
 
 ## 5. Servicios y precios (servicio completo, marca propia)
@@ -325,19 +352,20 @@ Diversifica apuntaba a la carpeta huérfana, que tenía una versión vieja del `
 ## 8. Próximos pasos inmediatos
 
 1. **🔴 Prioritario — Ejecutar la eliminación de la mecánica de Ciclos 2×2 del Escalón 4 de la carta** (riesgo de cumplimiento — ver sección 4.0). Prompt ya generado, pendiente de llevarse a la conversación de páginas web y aplicarse al `index.html` real.
-2. Generar HTML completo de `carta.html` e `infografia.html` para el sistema de builders (templates con variables) — al hacerlo, incorporar ya la versión corregida sin la mecánica de ciclos
-3. Terminar de personalizar y publicar el builder de prueba `carlos`
-4. Aplicar el nuevo logo al sitio web en vivo (`infinexa.app`)
-5. Importar los SVG de marca a Figma/Illustrator y generar exportaciones PNG
-6. Decidir si se generan los 4 textos de prospección semanal para grupos de WhatsApp
-7. Evaluar primer cliente real para el servicio completo o para Builder Edition
-8. Compartir la infografía de Diversifica actualizada (65%/45%/29%, fuente Tom Corley) en estados/grupos, enlazando a `infinexa.app/diversifica/`
-9. Cuando la página de Servicios esté lista para tráfico de búsqueda directa, solicitar su indexación en Google Search Console (mismo proceso ya usado para las otras 3 páginas)
-10. Agregar cada página nueva que se publique a futuro tanto al `sitemap.xml` como a la solicitud de indexación en Search Console
-11. Subir los dos documentos de marca actualizados (`Infinexa_Manual_de_Marca.docx`, `Infinexa_Brand_Identity_Brief.docx`) al repositorio, y eliminar las versiones anteriores (PDF del Manual y `infinexa-brand-brief.docx` viejo) una vez confirmado que el contenido fue migrado completo
-12. Ejecutar la semana 1 del plan de contenido orgánico en Facebook (`_marketing/PLAN-ORGANICO.md`) y registrar resultados reales (DMs recibidos, llamadas agendadas) en `BITACORA.md` para ajustar las semanas siguientes con datos, no con intuición
-13. ~~Revisar si la infografía de WhatsApp tiene el mismo desbalance detectado en Diversifica~~ — ✅ **Resuelto.** Revisión completa hecha en sesión del 22 jun 2026 (ver sección 4.1b).
-14. Aplicar la guía de cumplimiento Meta/WhatsApp (sección 10 / RECETAS.md) a futuras revisiones de copy en todas las páginas, especialmente antes de correr cualquier campaña de Meta Ads o Google Ads
+2. Definir el tema del post #5 del blog siguiendo el Paso 1 de `BLOG_GUIA.md` (demanda comprobada) — quedó pendiente de la sesión del 27 jun 2026, donde el trabajo se redirigió a auditar los 4 posts existentes antes de avanzar a uno nuevo.
+3. Generar HTML completo de `carta.html` e `infografia.html` para el sistema de builders (templates con variables) — al hacerlo, incorporar ya la versión corregida sin la mecánica de ciclos
+4. Terminar de personalizar y publicar el builder de prueba `carlos`
+5. Aplicar el nuevo logo al sitio web en vivo (`infinexa.app`)
+6. Importar los SVG de marca a Figma/Illustrator y generar exportaciones PNG
+7. Decidir si se generan los 4 textos de prospección semanal para grupos de WhatsApp
+8. Evaluar primer cliente real para el servicio completo o para Builder Edition
+9. Compartir la infografía de Diversifica actualizada (65%/45%/29%, fuente Tom Corley) en estados/grupos, enlazando a `infinexa.app/diversifica/`
+10. Cuando la página de Servicios esté lista para tráfico de búsqueda directa, solicitar su indexación en Google Search Console (mismo proceso ya usado para las otras 3 páginas)
+11. Agregar cada página nueva que se publique a futuro tanto al `sitemap.xml` como a la solicitud de indexación en Search Console
+12. Subir los dos documentos de marca actualizados (`Infinexa_Manual_de_Marca.docx`, `Infinexa_Brand_Identity_Brief.docx`) al repositorio, y eliminar las versiones anteriores (PDF del Manual y `infinexa-brand-brief.docx` viejo) una vez confirmado que el contenido fue migrado completo
+13. Ejecutar la semana 1 del plan de contenido orgánico en Facebook (`_marketing/PLAN-ORGANICO.md`) y registrar resultados reales (DMs recibidos, llamadas agendadas) en `BITACORA.md` para ajustar las semanas siguientes con datos, no con intuición
+14. ~~Revisar si la infografía de WhatsApp tiene el mismo desbalance detectado en Diversifica~~ — ✅ **Resuelto.** Revisión completa hecha en sesión del 22 jun 2026 (ver sección 4.1b).
+15. Aplicar la guía de cumplimiento Meta/WhatsApp (sección 10 / RECETAS.md) a futuras revisiones de copy en todas las páginas, especialmente antes de correr cualquier campaña de Meta Ads o Google Ads
 
 ---
 
