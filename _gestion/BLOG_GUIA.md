@@ -296,6 +296,46 @@ cero, para no romper el espaciado ya calibrado.
 
 ---
 
+## 9.2 Reglas de oro para evitar retrabajo (27 jun 2026)
+
+Esta sesión nos costó varias rondas de corrección que se pudieron
+evitar. Quedan como regla fija, no como sugerencia:
+
+**1. El logo y cualquier elemento de marca SIEMPRE se copian del activo
+original — nunca se redibujan a mano ni se aproximan a otra escala.**
+El logo del infinito vive en
+`_plantillas/sistema-favicons/codigo-final-render-og-image.py` con sus
+coordenadas SVG exactas. Si se necesita en otro tamaño, se envuelve el
+mismo `<path>` en un `<g transform="translate(X,Y) scale(S)">` y se
+calcula la matemática — nunca se vuelve a trazar la curva a ojo. Redibujar
+a mano fue exactamente el error que causó dos rondas de corrección del
+logo en esta sesión.
+
+**2. Checklist obligatorio antes de entregar cualquier imagen o cambio
+visual — los cuatro puntos, no solo los que parezcan obvios:**
+1. Legibilidad del texto a tamaño real de uso (no solo a tamaño completo)
+2. Cumplimiento de marca y paleta
+3. **Balance compositivo** — ¿el peso visual se reparte entre ambos
+   lados del lienzo, o se amontona en uno? Verificar visualmente, no
+   asumir.
+4. Simulación a ancho de celular (~390px) antes de dar por buena
+   cualquier imagen — redimensionar y ver, no solo calcular en teoría.
+
+**3. Centrado de contenedores: todo bloque con `max-width` fijo debe
+llevar `margin: 0 auto` junto con él.** `max-width` sin `margin:auto`
+deja el contenido pegado a la izquierda en pantallas anchas — fue la
+causa real de "se ve cargado a un lado", no la imagen.
+
+**4. Caché al actualizar una imagen con el mismo nombre de archivo:**
+GitHub Pages (vía CDN) y los navegadores cachean imágenes agresivamente.
+Si se sobrescribe un `.webp` con el mismo nombre, puede tardar en
+reflejarse o no reflejarse hasta forzar recarga (`Cmd+Shift+R`) o abrir
+en ventana privada. Antes de asumir que "la corrección no funcionó",
+descartar caché primero — comparar el archivo real publicado en GitHub
+contra el que se generó, no solo lo que se ve en pantalla.
+
+---
+
 ## 10. Plantilla técnica (front matter de cada post)
 
 ```yaml
