@@ -143,6 +143,59 @@ la pausa se sienta orgánica, no como fórmula repetida.
 
 ---
 
+## 4.2 Enfoque de promoción, no de prevención (27 jun 2026)
+
+**El principio:** existen dos formas de motivar a alguien hacia la
+misma acción — partir de un miedo a evitar (prevención: "no le temas",
+"protégete de", "sin presión", "no te quedes fuera") o partir de una
+posibilidad a alcanzar (promoción: "ve la puerta", "descubre",
+"construye", "entiende antes que los demás"). Ambas son honestas, pero
+la de prevención hace que el lector sienta primero el miedo y después
+el alivio; la de promoción lo hace sentir que avanza, no que se
+defiende. Esto es lo mismo que ya vive en tu filosofía de faro, no
+cazador — el faro no advierte de un peligro, simplemente está ahí.
+
+**Regla práctica para todo lo que se escriba (blog, carta, cualquier
+página):**
+- Evitar arrancar una frase central con una negación que plante la
+  duda que intenta resolver ("no es una pirámide", "sin presión", "no
+  le temas al cambio") —mejor describir el estado positivo directo.
+- **La línea con "promesas falsas" — dónde está exactamente:**
+  lenguaje de posibilidad describe que algo se puede VER o ENTENDER
+  antes que otros (percepción, conocimiento) — eso está bien.
+  Lenguaje de promesa describe un RESULTADO financiero garantizado
+  ("vas a multiplicar", "asegura tus ganancias") — eso sigue
+  prohibido, sin excepción, sin importar qué tan optimista sea el
+  tono. **Se promete claridad y perspectiva, nunca resultado.**
+- Antes de publicar cualquier frase de gancho, cierre, o título:
+  preguntarse "¿esto parte de un miedo o de una posibilidad?" — si
+  parte de un miedo, reescribir en positivo antes de revisar cualquier
+  otra cosa.
+
+**Cómo se descubrió:** el subtítulo original del blog ("sin presión,
+con datos verificados") partía de prevención. Se corrigió dos veces —
+primero a una versión que seguía partiendo de negación ("no le teme al
+cambio"), luego a la versión correcta de promoción ("ve la puerta
+antes que los demás"). Dos rondas que se hubieran evitado si esta
+sección ya existiera desde antes.
+
+**Excepción importante — auditoría del 27 jun 2026:** "sin presión"
+aparece 8 veces en el sitio (la carta, servicios, plantillas de
+Builder, plan de marketing), siempre junto a una invitación a llamada/
+conversación de WhatsApp. **Esos 8 casos NO se cambian** — ahí la
+prevención es legítima porque responde a una objeción real y nombrada
+("¿esta llamada va a ser un pitch de venta agresivo?"), no a un miedo
+inventado. La regla completa es: **prevención está bien cuando nombra
+una objeción específica que el lector de verdad tiene en ese momento
+(ej. justo antes de pedirle que agende una llamada); está mal cuando
+es atmósfera general sin objeción concreta detrás (ej. el subtítulo de
+una página de blog, donde nadie temía nada).** Antes de "corregir" una
+frase de prevención, preguntar primero: ¿a qué objeción específica
+responde? Si la respuesta es "a ninguna en particular", ahí sí se
+reescribe en positivo.
+
+---
+
 ## 5. Regla de unicidad (crítica — leer con cuidado)
 
 **Regla general:** cada post del blog debe ser una pieza única de
