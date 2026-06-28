@@ -28,11 +28,42 @@ def in_exclusion_zone(x, y):
     # zona reservada para el texto (columna izquierda, donde van logo/categoría/título/subtítulo)
     return 50 < x < 850 and 20 < y < 430
 
+def build_focal_cluster(seed):
+    # grupo de nodos más grandes en el lado derecho, para balancear el peso visual
+    # del bloque de texto en la izquierda — sin esto, el lado derecho queda vacío.
+    import math
+    rnd = random.Random(seed + 500)
+    cx, cy = rnd.uniform(870, 970), rnd.uniform(240, 360)
+    nodes = [(cx, cy)]
+    for _ in range(4):
+        ang = rnd.uniform(0, 2*math.pi)
+        dist = rnd.uniform(60, 110)
+        nx = max(820, min(W-50, cx + dist*math.cos(ang)))
+        ny = max(60, min(H-60, cy + dist*math.sin(ang)))
+        nodes.append((nx, ny))
+    svg = ""
+    for i in range(len(nodes)-1):
+        x1,y1 = nodes[i]
+        x2,y2 = nodes[i+1]
+        svg += f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="#2E6E80" stroke-width="1.2" opacity="0.6"/>\n'
+    svg += f'<line x1="{nodes[0][0]:.1f}" y1="{nodes[0][1]:.1f}" x2="{nodes[2][0]:.1f}" y2="{nodes[2][1]:.1f}" stroke="#2E6E80" stroke-width="1.2" opacity="0.6"/>\n'
+    for i, (x,y) in enumerate(nodes):
+        r = 7 if i == 0 else rnd.choice([4,5,6])
+        color = "#C8682E" if i == 0 else "#C9D2D6"
+        op = 0.95 if i == 0 else rnd.uniform(0.45,0.8)
+        svg += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r}" fill="{color}" opacity="{op:.2f}"/>\n'
+        if i == 0:
+            svg += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r+9}" fill="none" stroke="#C8682E" stroke-width="1" opacity="0.35"/>\n'
+    # anillo orbital grande detrás del cluster, para dar peso incluso donde no hay nodos
+    svg += f'<circle cx="{cx-20:.1f}" cy="{cy+10:.1f}" r="160" fill="none" stroke="#2E6E80" stroke-width="1" opacity="0.18"/>\n'
+    svg += f'<circle cx="{cx-20:.1f}" cy="{cy+10:.1f}" r="215" fill="none" stroke="#2E6E80" stroke-width="1" opacity="0.1"/>\n'
+    return svg
+
 def build_svg(category, titulo_lineas, subtitulo, icon_key, seed, extra_chips=None):
     random.seed(seed)
     points = []
     tries = 0
-    while len(points) < 16 and tries < 200:
+    while len(points) < 10 and tries < 200:
         tries += 1
         x, y = random.uniform(60, W-60), random.uniform(30, H-30)
         if in_exclusion_zone(x, y):
@@ -48,6 +79,7 @@ def build_svg(category, titulo_lineas, subtitulo, icon_key, seed, extra_chips=No
         color = "#C8682E" if random.random() < 0.2 else "#C9D2D6"
         op = 0.9 if color == "#C8682E" else random.uniform(0.25, 0.65)
         circles += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r}" fill="{color}" opacity="{op:.2f}"/>\n'
+    circles += build_focal_cluster(seed)
 
     title_y_start = 225
     title_svg = ""
@@ -133,20 +165,3 @@ with sync_playwright() as p:
         page.close()
         print(f'{cfg["out"]} listo')
     browser.close()
-
-# NOTA DE USO (27 jun 2026):
-# Para un post nuevo, agregar su config al diccionario CONFIGS arriba:
-#   out: nombre de archivo (sin extensión, debe coincidir con el campo
-#        "image" del front matter del post)
-#   category: el texto de la etiqueta superior (mismo que category en front matter)
-#   titulo: lista de 1-2 líneas, la idea central condensada — NO el
-#           título SEO completo si es muy largo
-#   subtitulo: opcional, una línea de apoyo
-#   icon: "carta" | "diversifica" | "patron" (según el pilar del post)
-#   seed: cualquier número distinto por imagen, para que la constelación
-#         no se vea idéntica entre posts
-#   chips: opcional, lista de strings cortos (años, cifras) en vez de ícono
-#
-# Después de correr el script, convertir el .png resultante a .webp:
-#   from PIL import Image
-#   Image.open('nombre.png').convert('RGB').resize((1200,630)).save('nombre.webp','WEBP',quality=82)
