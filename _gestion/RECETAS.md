@@ -34,6 +34,32 @@ El tema de la página es: [DESCRIBE EL TEMA Y MENSAJE CENTRAL]
 
 ---
 
+## 1.1 Cuándo SÍ quitar el menú de navegación (criterio con datos, 29 jun 2026)
+
+Quitar el menú de navegación sube las conversiones de forma dramática
+(16-100%+) **solo en páginas de un solo objetivo de conversión
+directa** — un formulario, un registro, una página de venta dedicada
+(lo que en mercadotecnia se llama "mitad/fondo de embudo"). En páginas
+educativas o de descubrimiento (blog, contenido de "tope de embudo"),
+la mejora medida es de apenas 0-4% — casi nula.
+
+El costo de quitarlo: se pierde enlazado interno hacia esa página
+desde cada página del sitio — un factor real de SEO, que pesa más en
+un sitio chico (5-6 páginas) como el nuestro, donde cada enlace
+interno representa una fracción más grande del total.
+
+**Regla práctica:** antes de quitar el menú de cualquier página nueva,
+preguntar — ¿esta página tiene UN solo objetivo de conversión
+inmediata (agendar, comprar, registrarse), o es contenido educativo/de
+descubrimiento? Solo en el primer caso aplica quitarlo.
+
+**Caso evaluado y descartado para el blog el 29 jun 2026** — ver
+`BITACORA.md` para el detalle completo de la decisión. Queda abierto
+para cuando exista una página futura de conversión directa de un solo
+paso.
+
+---
+
 ## 2. Infografías para WhatsApp (estado o grupo)
 
 **Cuándo usar:** para crear una pieza visual tipo infografía, con un dato como gancho, para compartir en estados o grupos de WhatsApp.
