@@ -155,6 +155,9 @@ CONFIGS = [
     dict(out="por-que-rechazamos-lo-nuevo", category="HISTORIA Y TECNOLOGÍA",
          titulo=["¿Por qué rechazamos lo nuevo", "antes de entenderlo?"], subtitulo=None,
          icon="patron", seed=19),
+    dict(out="cajero-automatico-wallet", category="HISTORIA Y TECNOLOGÍA",
+         titulo=["El cajero automático y", "la misma desconfianza de hoy"], subtitulo=None,
+         icon="patron", seed=31),
 ]
 
 with sync_playwright() as p:
