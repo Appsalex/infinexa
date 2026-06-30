@@ -394,6 +394,17 @@ y confirmar, línea por línea, que cada resultado tenga también
 chequeo se vuelve parte obligatoria del checklist de la sección 9.2,
 punto 3 — no opcional, no "si se acuerda".
 
+**Nota de cierre de este incidente (30 jun 2026):** tras aplicar el fix
+y confirmarlo publicado byte por byte en GitHub, el usuario seguía
+viendo la versión vieja incluso en ventana de incógnito con parámetro
+de caché forzado (`?v=2`). Se resolvió solo, minutos después, sin
+ningún cambio adicional — la propagación del CDN de GitHub Pages
+ocasionalmente tarda más de lo normal (más allá de los 1-2 minutos
+típicos). **Antes de seguir diagnosticando un "bug fantasma" después
+de confirmar que el código está bien publicado, esperar unos minutos
+más primero** — no asumir que la verificación de código fue
+insuficiente solo porque el navegador todavía no refleja el cambio.
+
 **4. Caché al actualizar una imagen con el mismo nombre de archivo:**
 GitHub Pages (vía CDN) y los navegadores cachean imágenes agresivamente.
 Si se sobrescribe un `.webp` con el mismo nombre, puede tardar en
