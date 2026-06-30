@@ -469,3 +469,9 @@ unicidad, especificaciones de imagen, y sus ampliaciones) vive en
 `_gestion/BLOG_GUIA.md` — no se duplica aquí. Para cualquier
 conversación sobre el blog, pedir a Claude que lea ese archivo
 directamente (vía raw.githubusercontent.com o `cat` local).
+
+**Audio de texto a voz (ElevenLabs):** el protocolo completo de
+generación y verificación vive en la sección 9.3 de `BLOG_GUIA.md`.
+Aplica igual si se decide agregar audio a otras páginas del sitio (la
+carta, Diversifica, El Patrón) — mismo riesgo de truncado por límite
+de caracteres, mismo protocolo de verificación.

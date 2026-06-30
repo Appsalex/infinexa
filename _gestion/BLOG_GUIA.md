@@ -404,6 +404,49 @@ desproporcionado en el resto de la composición.
 
 ---
 
+## 9.3 Audio de los posts (texto a voz) — protocolo de verificación (29 jun 2026)
+
+**Herramienta:** ElevenLabs, modelo Multilingual v2, voz de categoría
+"Narración" en español latinoamericano (no Conversacional, Anuncio, ni
+Redes Sociales — esas no calzan con el tono "sin presión" de la marca).
+
+**Por qué existe este protocolo:** en la primera implementación (post
+de Ingreso vs. activo), partes del texto no se escucharon en el audio
+final, aunque el resultado sonaba bien — el error pasó desapercibido
+hasta que el usuario lo notó escuchando con atención. Causa más
+probable: el límite de 5,000 caracteres por generación de ElevenLabs
+se acercó demasiado sin margen de seguridad, y/o la unión de los clips
+en QuickTime perdió contenido en el corte entre partes.
+
+**Protocolo obligatorio para cada audio nuevo, sin excepción:**
+
+1. **Margen de seguridad de caracteres:** cada parte del script debe
+   quedar claramente por debajo de 4,500 caracteres (no 5,000) al
+   dividir un post largo en dos o más partes.
+2. **Verificación del contador en ElevenLabs:** antes de generar,
+   confirmar que el contador en pantalla (ej. "2,887 / 5,000")
+   coincide con el conteo de caracteres que se entregó en el script —
+   si no coincide, algo se perdió al copiar/pegar y no se debe generar
+   todavía.
+3. **Puntos de control en la unión de clips:** al combinar partes en
+   QuickTime (Edición → Agregar clip al final), escuchar con atención
+   los últimos 10 segundos de cada parte y los primeros 10 segundos de
+   la siguiente — es el punto más común donde se pierde contenido.
+4. **Lectura cruzada del cierre/apertura:** al entregar un script
+   dividido en partes, se debe marcar explícitamente la última frase
+   de la Parte 1 y la primera frase de la Parte 2, para que sea fácil
+   confirmar de oído que ninguna se saltó en la unión.
+5. **Este mismo protocolo aplica a cualquier página del sitio que
+   reciba audio en el futuro** (la carta, Diversifica, El Patrón), no
+   solo al blog — el riesgo de truncado es del mismo origen (límite de
+   caracteres de la herramienta) sin importar qué página sea.
+
+**Carpeta de trabajo local recomendada:** `~/Downloads/infinexa-audio/`
+para los MP3 ya convertidos, antes de subirlos a `assets/audio/` en el
+repo — evita perderlos entre las descargas de otros archivos.
+
+---
+
 ## 10. Plantilla técnica (front matter de cada post)
 
 ```yaml
