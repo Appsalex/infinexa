@@ -13,6 +13,17 @@ image_alt: "Ilustración conceptual de dos caminos financieros distintos a parti
 ¿Alguna vez te has preguntado por qué dos personas pueden ganar exactamente el mismo sueldo durante veinte años, y al final de ese tiempo una sigue exactamente donde empezó, mientras la otra ya no depende de ese sueldo para vivir?
 {: .lead}
 
+<div class="audio-player">
+  <div class="audio-player-label">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+    Escuchar este artículo
+  </div>
+  <audio controls preload="none" style="width:100%;">
+    <source src="/assets/audio/ingreso-vs-activo.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+</div>
+
 No es un dato curioso al azar. Es una pregunta que vale la pena hacerse con calma, porque la respuesta no tiene que ver con cuánto se gana — tiene que ver con qué se hace con lo que sobra, y con una distinción muy simple que casi nadie nos enseñó a hacer a tiempo.
 
 ## La pregunta que Carlos no se había hecho
