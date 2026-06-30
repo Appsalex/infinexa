@@ -475,3 +475,38 @@ generación y verificación vive en la sección 9.3 de `BLOG_GUIA.md`.
 Aplica igual si se decide agregar audio a otras páginas del sitio (la
 carta, Diversifica, El Patrón) — mismo riesgo de truncado por límite
 de caracteres, mismo protocolo de verificación.
+
+---
+
+## QR compartible — patrón reutilizable (30 jun 2026)
+
+**Qué es:** un código QR generado dinámicamente en JavaScript al final
+de cualquier página, que apunta a la URL exacta de esa misma página.
+Permite que alguien que está viendo la página en pantalla la comparta
+instantáneamente escaneando el QR con su teléfono, sin necesidad de
+intercambiar datos ni buscar la URL.
+
+**Cómo funciona:** la librería QRCode.js (cdnjs, ~5KB, sin servidor)
+lee `window.location.href` en el momento de carga — siempre apunta
+a la URL correcta, sin imágenes extra ni retrabajo por página nueva.
+
+**Dónde ya está implementado (30 jun 2026):**
+- Posts del blog → en `_layouts/post.html` (aplica a todos los posts
+  automáticamente, incluyendo futuros)
+- Páginas standalone → insertado en `</body>` de `index.html`,
+  `servicios/index.html`, `diversifica/index.html`,
+  `infografia/index.html`, `donativo/index.html`
+
+**Para agregar a cualquier página nueva:** copiar el bloque entre
+`<!-- ── QR COMPARTIBLE ── -->` y el segundo `</script>` (inclusive)
+desde cualquier página que ya lo tenga, y pegarlo justo antes de
+`</body>`. El ID del div QR debe ser único por página si hay más de
+un QR en la misma página — en este caso usar `id="page-qr"` siempre
+funciona porque hay uno solo por página.
+
+**Nota de compatibilidad:** en los posts del blog el ID es `post-qr`
+(en `_layouts/post.html`); en las páginas standalone es `page-qr`.
+No mezclar los dos en la misma página.
+
+---
+

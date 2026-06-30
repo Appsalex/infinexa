@@ -328,5 +328,29 @@ function copyW(){
   });
 }
 </script>
+
+<!-- ── QR COMPARTIBLE ── -->
+<style>
+.share-qr-wrap{text-align:center;padding:clamp(32px,4vw,48px) clamp(24px,5vw,60px);border-top:1px solid rgba(255,255,255,0.055);}
+.share-qr-label{font-size:12px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:#C8682E;margin-bottom:12px;font-family:Inter,Arial,sans-serif;}
+.share-qr-hint{font-size:13px;color:#C9D2D6;opacity:.6;margin-bottom:16px;line-height:1.5;font-family:Inter,Arial,sans-serif;}
+.share-qr-canvas{background:#EDF1F2;border-radius:12px;padding:12px;display:inline-block;}
+.share-qr-url{font-size:11px;color:#C9D2D6;opacity:.4;margin-top:10px;word-break:break-all;font-family:"SF Mono","Courier New",monospace;}
+</style>
+<div class="share-qr-wrap">
+  <div class="share-qr-label">Compartir esta página</div>
+  <div class="share-qr-hint">Escanea con tu teléfono para abrir o compartir</div>
+  <div class="share-qr-canvas" id="page-qr"></div>
+  <div class="share-qr-url" id="page-qr-url"></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  var url=window.location.href.split("?")[0];
+  document.getElementById("page-qr-url").textContent=url;
+  new QRCode(document.getElementById("page-qr"),{text:url,width:180,height:180,colorDark:"#0F1720",colorLight:"#EDF1F2",correctLevel:QRCode.CorrectLevel.M});
+});
+</script>
+
 </body>
 </html>
