@@ -27,6 +27,28 @@ layout: default
   <a href="{{ '/donativo/' | relative_url }}">¿Te sirvió este contenido? Puedes invitarme un café →</a>
 </div>
 
+<div class="share-qr">
+  <div class="share-qr-label">Compartir este artículo</div>
+  <div class="share-qr-hint">Escanea con tu teléfono para abrir o compartir esta página</div>
+  <div class="share-qr-canvas" id="post-qr"></div>
+  <div class="share-qr-url" id="post-qr-url"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var url = window.location.href.split('?')[0];
+  document.getElementById('post-qr-url').textContent = url;
+  new QRCode(document.getElementById('post-qr'), {
+    text: url,
+    width: 180,
+    height: 180,
+    colorDark: '#0F1720',
+    colorLight: '#EDF1F2',
+    correctLevel: QRCode.CorrectLevel.M
+  });
+});
+</script>
+
 <style>
 /* ── HEADER DEL POST ── */
 .hdr-post{padding:clamp(28px,4vw,48px) var(--pad) clamp(20px,3vw,32px);}
@@ -96,4 +118,10 @@ layout: default
 .timeline-year{font-weight:800;color:var(--cobre);font-size:clamp(18px,2vw,22px);margin-bottom:4px;}
 .timeline-label{font-weight:700;color:var(--plata-cl);margin-bottom:6px;font-size:clamp(14px,1.3vw,16px);}
 .timeline-text{font-size:clamp(12.5px,1.15vw,13.5px);color:var(--plata);opacity:0.85;line-height:1.5;}
+.share-qr{text-align:center;padding:clamp(24px,3vw,36px) var(--pad) clamp(32px,4vw,48px);border-top:1px solid var(--border-s);margin-top:clamp(16px,2vw,24px);}
+.share-qr-label{font-size:12px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--cobre);margin-bottom:12px;}
+.share-qr-hint{font-size:13px;color:var(--plata);opacity:.6;margin-bottom:16px;line-height:1.5;}
+.share-qr-canvas{background:#EDF1F2;border-radius:12px;padding:12px;display:inline-block;}
+.share-qr-url{font-size:11px;color:var(--plata);opacity:.4;margin-top:10px;word-break:break-all;font-family:'SF Mono','Courier New',monospace;}
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
