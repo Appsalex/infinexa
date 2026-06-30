@@ -379,6 +379,21 @@ llevar `margin: 0 auto` junto con él.** `max-width` sin `margin:auto`
 deja el contenido pegado a la izquierda en pantallas anchas — fue la
 causa real de "se ve cargado a un lado", no la imagen.
 
+**Reincidencia confirmada (30 jun 2026):** este mismo error se repitió
+en la página `/donativo/`, una página nueva escrita desde cero — es
+decir, la regla ya estaba documentada arriba, pero no se aplicó como
+paso activo al escribir CSS nuevo, solo se recordó cuando ya estaba en
+producción y alguien lo reportó. **Por eso, de aquí en adelante, antes
+de entregar cualquier HTML/CSS nuevo (no solo posts del blog — cualquier
+página del sitio), correr expresamente:**
+```
+grep -n "max-width" archivo.html
+```
+y confirmar, línea por línea, que cada resultado tenga también
+`margin:0 auto` (o esté dentro de un contenedor que ya lo tenga). Este
+chequeo se vuelve parte obligatoria del checklist de la sección 9.2,
+punto 3 — no opcional, no "si se acuerda".
+
 **4. Caché al actualizar una imagen con el mismo nombre de archivo:**
 GitHub Pages (vía CDN) y los navegadores cachean imágenes agresivamente.
 Si se sobrescribe un `.webp` con el mismo nombre, puede tardar en
