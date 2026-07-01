@@ -164,6 +164,9 @@ CONFIGS = [
     dict(out="historia-del-dinero", category="HISTORIA ECONÓMICA",
          titulo=["Del trueque al", "dólar digital"], subtitulo=None,
          icon="patron", seed=67),
+    dict(out="dinero-e-inflacion", category="DIVERSIFICACIÓN",
+         titulo=["El impuesto", "silencioso"], subtitulo=None,
+         icon="diversifica", seed=53),
 ]
 
 with sync_playwright() as p:
