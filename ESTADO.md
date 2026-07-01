@@ -2,7 +2,7 @@
 
 > Este archivo es la fuente única de verdad del proyecto. Se actualiza después de cada sesión de trabajo, sin importar en qué conversación de Claude se realizó. No se crean archivos nuevos por conversación — siempre se edita este mismo documento.
 
-**Última actualización:** 27 de junio, 2026 (sesión larga: auditoría de unicidad de los 4 posts del blog, conversión de imágenes ilegibles a HTML/CSS nativo, sistema de ritmo visual tipográfico, rediseño del sistema de imágenes destacadas del blog, principio de promoción vs. prevención documentado para todo el copy del sitio — detalle completo en `_gestion/BLOG_GUIA.md` y `_gestion/BITACORA.md`)
+**Última actualización:** 30 de junio – 1 de julio, 2026 (sesión extensa: 5 posts nuevos publicados (#5–#9), sistema de principios visuales en los 9 posts, QR compartible dinámico en todo el sitio, página de donativo USDT+Bitcoin, audio en post #1 vía ElevenLabs, bloque `.principio` con círculo numerado cobre, investigación con datos verificados en posts de stablecoins e inflación — detalle en `_gestion/BLOG_GUIA.md` y `_gestion/BITACORA.md`)
 
 ---
 
@@ -114,7 +114,8 @@ Ambos documentos quedaron optimizados como un sistema de dos capas con referenci
 | La infografía | `infinexa.app/infografia` | ✅ Publicada — gradiente corregido hasta DeFi, tipografía igualada con la carta |
 | Servicios | `infinexa.app/servicios` | ✅ Publicada — con precios USDT y wallet (sin QR) |
 | Diversifica | `infinexa.app/diversifica` | ✅ Publicada — ver detalles abajo |
-| Blog | `infinexa.app/blog` | ✅ Publicado — 4 posts, ver sección 4.4 |
+| Blog | `infinexa.app/blog` | ✅ Publicado — 9 posts, ver sección 4.4 |
+| Donativo | `infinexa.app/donativo` | ✅ Publicada — USDT (Polygon) + Bitcoin, QR verificados |
 
 **Detalles técnicos resueltos en la infografía:**
 - Gradiente de la barra histórica corregido para terminar exactamente en el marcador "DeFi"
@@ -253,29 +254,36 @@ Diversifica apuntaba a la carpeta huérfana, que tenía una versión vieja del `
 
 ### 4.4 Blog de Infinexa
 
-**Estado:** ✅ Publicado en `infinexa.app/blog`, 4 posts activos (Ingreso vs.
-activo, 1929-2020: crisis económicas, Wallet no custodial, Por qué
-rechazamos lo nuevo). Plantilla Jekyll funcionando, deploy automático
-en push a `main`.
+**Estado:** ✅ Publicado en `infinexa.app/blog`, **9 posts activos** con
+sistema de principios visuales numerados, QR compartible dinámico,
+enlace discreto a `/donativo/`, y audio en el post #1.
 
-La guía completa del blog (principio rector, proceso de 5 pasos antes
-de escribir, regla de unicidad, especificaciones de imagen, ritmo
-visual tipográfico, y el principio de promoción vs. prevención para
-todo el copy del sitio) vive en `_gestion/BLOG_GUIA.md` — no se
-duplica aquí, mismo criterio que ya se usa con `RECETAS.md`. El
-detalle sesión por sesión de qué se hizo y cuándo vive en
-`_gestion/BITACORA.md`.
+**Posts publicados:**
 
-**Resumen de la sesión del 27 jun 2026 (la más reciente y extensa):**
-auditoría y corrección de unicidad de los 4 posts; conversión de 8
-imágenes de apoyo que se volvían ilegibles en celular a HTML/CSS
-nativo; sistema de ritmo visual tipográfico nuevo (`.lead`, blockquote
-real, `.insight`); rediseño completo del sistema de imágenes
-destacadas (constelación + ícono fijo por pilar, usando el path SVG
-original del logo, nunca redibujado a mano); corrección de centrado
-de página en pantallas anchas; y el principio de promoción vs.
-prevención aplicado al subtítulo del blog y documentado para todo
-copy futuro del sitio.
+| # | Título | Pilar | Principios |
+|---|---|---|---|
+| 1 | Ingreso vs. activo | Diversifica | 2 |
+| 2 | Por qué la misma crisis se repite | Historia económica | 1 |
+| 3 | ¿Por qué rechazamos lo nuevo? | El Patrón | 1 |
+| 4 | Wallet no custodial | La carta | 1 |
+| 5 | El cajero automático y la desconfianza | El Patrón | 1 |
+| 6 | Stablecoin vs. Bitcoin | La carta | 3 |
+| 7 | Historia del dinero: del trueque al dólar digital | Historia económica | 3 |
+| 8 | El impuesto silencioso (inflación) | Diversifica | 3 |
+| 9 | Ingreso pasivo: lo que sí es | Diversifica | 3 |
+
+**Sistemas activos en todos los posts:**
+- Bloque `.principio` — tarjeta con círculo numerado cobre, línea lateral,
+  número translúcido de fondo. CSS en `_layouts/post.html`.
+- QR compartible dinámico — generado con `window.location.href` al cargar.
+- Enlace discreto a `/donativo/` — después del CTA de pilar.
+- Audio en post #1 (ElevenLabs, Narración, español mexicano).
+
+**QR compartible también instalado en todas las páginas standalone:**
+carta, servicios, diversifica, infografía, donativo.
+
+La guía completa vive en `_gestion/BLOG_GUIA.md`. El detalle por sesión
+en `_gestion/BITACORA.md`.
 
 ---
 
@@ -352,7 +360,8 @@ copy futuro del sitio.
 ## 8. Próximos pasos inmediatos
 
 1. **🔴 Prioritario — Ejecutar la eliminación de la mecánica de Ciclos 2×2 del Escalón 4 de la carta** (riesgo de cumplimiento — ver sección 4.0). Prompt ya generado, pendiente de llevarse a la conversación de páginas web y aplicarse al `index.html` real.
-2. Definir el tema del post #5 del blog siguiendo el Paso 1 de `BLOG_GUIA.md` (demanda comprobada) — quedó pendiente de la sesión del 27 jun 2026, donde el trabajo se redirigió a auditar los 4 posts existentes antes de avanzar a uno nuevo.
+2. **Blog — próximos posts identificados (no escritos todavía):** Remesas y USDT (cómo enviar dinero sin banco, datos reales de comisiones, pilar la carta) · El dinero y la inflación en profundidad (tema escrito como post #8, puede ampliarse con más datos) · Posts futuros sobre DeFi en práctica.
+3. **Audio pendiente para posts #2–#9** — flujo documentado en sección 9.3 de `BLOG_GUIA.md`. Scripts de ElevenLabs pendientes de generar para cada post.
 3. Generar HTML completo de `carta.html` e `infografia.html` para el sistema de builders (templates con variables) — al hacerlo, incorporar ya la versión corregida sin la mecánica de ciclos
 4. Terminar de personalizar y publicar el builder de prueba `carlos`
 5. Aplicar el nuevo logo al sitio web en vivo (`infinexa.app`)
