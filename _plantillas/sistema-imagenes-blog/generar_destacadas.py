@@ -167,6 +167,9 @@ CONFIGS = [
     dict(out="dinero-e-inflacion", category="DIVERSIFICACIÓN",
          titulo=["El impuesto", "silencioso"], subtitulo=None,
          icon="diversifica", seed=53),
+    dict(out="ingreso-pasivo", category="DIVERSIFICACIÓN",
+         titulo=["Ingreso pasivo:", "lo que sí es"], subtitulo=None,
+         icon="diversifica", seed=77),
 ]
 
 with sync_playwright() as p:
