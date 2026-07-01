@@ -56,6 +56,16 @@ Esa conversación es el punto de partida de esta reflexión. No porque la respue
 
 Esta forma de ver el dinero se popularizó hace más de dos décadas a través del trabajo del autor e inversionista Robert Kiyosaki, conocido principalmente por su libro *Padre Rico, Padre Pobre*. La idea central, resumida en términos simples, es esta:
 
+<div class="principio">
+  <div class="principio-badge">1</div>
+  <div class="principio-body">
+    <div class="principio-label">Lo que te llevas</div>
+    <div class="principio-titulo">La pregunta que cambia todo: ¿esto sigue generando valor <em>cuando yo no estoy presente</em>?</div>
+    <p class="principio-texto">Si la respuesta es no, es ingreso. Si la respuesta es sí, ya empezaste a construir un activo. Esa distinción, aplicada con tiempo, cambia más que cualquier aumento de sueldo.</p>
+  </div>
+  <div class="principio-num">01</div>
+</div>
+
 - Un **ingreso** es dinero que entra a cambio de tu tiempo o tu esfuerzo directo. Si tú te detienes, el ingreso se detiene contigo.
 - Un **activo** es algo que sigue generando valor incluso cuando tú no estás presente en el momento exacto en que ese valor se genera.
 
@@ -80,6 +90,16 @@ Aquí hay un malentendido común que vale la pena aclarar: construir un activo n
 Quien renta una propiedad tuvo que ahorrar, comprarla, mantenerla en condiciones de rentarse. Quien vive de un curso grabado tuvo que grabarlo, editarlo, promocionarlo. El activo no aparece de la nada — aparece porque alguien invirtió tiempo concentrado una vez, en vez de tiempo repetido para siempre.
 
 Esa es, quizás, la parte que con más frecuencia se omite cuando se habla de este tema: no es magia, no es "dinero fácil", es simplemente una forma distinta de invertir el mismo esfuerzo que ya se está invirtiendo en el ingreso de todos los días.
+
+<div class="principio">
+  <div class="principio-badge">2</div>
+  <div class="principio-body">
+    <div class="principio-label">Lo que te llevas</div>
+    <div class="principio-titulo">Construir un activo no es trabajar menos — es <em>invertir esfuerzo una vez</em> en lugar de repetirlo siempre.</div>
+    <p class="principio-texto">Quien renta una propiedad, quien vende un curso grabado — invirtió tiempo concentrado una vez. Después ese tiempo sigue trabajando aunque ellos no estén.</p>
+  </div>
+  <div class="principio-num">02</div>
+</div>
 
 ## Dos malentendidos comunes que vale la pena aclarar
 

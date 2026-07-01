@@ -88,6 +88,16 @@ Ninguna de las dos opciones elimina el riesgo por completo — simplemente cambi
 
 **Una aclaración importante:** existen también wallets que buscan un punto intermedio entre estas dos opciones — por ejemplo, sistemas donde varias personas de confianza (no una sola empresa) pueden ayudarte a recuperar el acceso si lo necesitas, sin que ninguna de ellas controle tus fondos por sí sola. Esto no resuelve la decisión por ti, pero vale la pena saber que el espectro no es solo "todo o nada" entre las dos opciones que describimos arriba.
 
+<div class="principio">
+  <div class="principio-badge">1</div>
+  <div class="principio-body">
+    <div class="principio-label">Lo que te llevas</div>
+    <div class="principio-titulo">"Sin soporte técnico" no significa inseguro — significa que <em>la responsabilidad es tuya, no de otro</em>.</div>
+    <p class="principio-texto">El riesgo no desaparece con ninguna opción — solo cambia en quién recae. Custodial: el tercero puede fallar o limitarte. No custodial: tú puedes perder el acceso. Saber cuál riesgo prefieres asumir es la decisión que vale la pena tomar con calma.</p>
+  </div>
+  <div class="principio-num">01</div>
+</div>
+
 
 
 ## La misma decisión, antes de que existiera blockchain

@@ -48,6 +48,16 @@ Vale la pena ser preciso aquí, porque hay una diferencia real entre los dos cas
 
 En una wallet no custodial, el cambio es más profundo: no es que el responsable use otra cara, es que el puesto de "responsable" simplemente se elimina. Nadie más —ni el banco, ni una empresa, ni un soporte técnico— puede revertir una operación o recuperar un acceso perdido. Esa diferencia es real, y honestamente, conviene tenerla clara antes de decidir qué tan cómodo te sientes con cada modelo; no es lo mismo "cambiar de responsable" que "quedarte sin uno". Pero el mecanismo psicológico de fondo —la incomodidad inicial de no ver a quién reclamarle— es el mismo que ya superamos colectivamente una vez, con una máquina que hoy nadie piensa dos veces en usar.
 
+<div class="principio">
+  <div class="principio-badge">1</div>
+  <div class="principio-body">
+    <div class="principio-label">Lo que te llevas</div>
+    <div class="principio-titulo">La desconfianza ante lo nuevo casi nunca es hacia la tecnología — es hacia la idea de <em>quedarse sin alguien a quien reclamarle</em>.</div>
+    <p class="principio-texto">El cajero automático generó exactamente esa incomodidad en 1967. Hoy nadie la recuerda. El patrón se repite — lo que cambia es cuánto tiempo tarda cada generación en hacer esa paz.</p>
+  </div>
+  <div class="principio-num">01</div>
+</div>
+
 ## El botón que ya nadie extraña
 
 Al papá de Carlos, hoy, jamás se le ocurriría hacer fila para que una persona le entregue su dinero en efectivo. Se le olvidó por completo que alguna vez le pareció arriesgado dejarle esa tarea a una máquina — y ese olvido es, quizás, la señal más clara de que una tecnología nueva ya terminó de asentarse.

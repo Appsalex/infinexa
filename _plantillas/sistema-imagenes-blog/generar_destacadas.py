@@ -158,6 +158,9 @@ CONFIGS = [
     dict(out="cajero-automatico-wallet", category="HISTORIA Y TECNOLOGÍA",
          titulo=["El cajero automático y", "la misma desconfianza de hoy"], subtitulo=None,
          icon="patron", seed=31),
+    dict(out="stablecoin-vs-bitcoin", category="ECONOMÍA DESCENTRALIZADA",
+         titulo=["Stablecoin vs. Bitcoin:", "no son lo mismo"], subtitulo=None,
+         icon="carta", seed=43),
 ]
 
 with sync_playwright() as p:

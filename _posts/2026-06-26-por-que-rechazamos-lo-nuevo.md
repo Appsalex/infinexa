@@ -52,6 +52,16 @@ Estas tres razones no actúan solas — casi siempre se combinan. Alguien puede 
 
 Vale la pena notar que este patrón no nació con la tecnología digital. Ha existido siempre que algo nuevo reemplaza una forma conocida de hacer las cosas. Lo que sí cambió es la **frecuencia**: hoy aparecen más cosas nuevas, más seguido, que en cualquier otro momento de la historia — lo que significa que este patrón psicológico se activa con más frecuencia que antes, no porque las personas hayan cambiado, sino porque el ritmo del cambio sí lo hizo.
 
+<div class="principio">
+  <div class="principio-badge">1</div>
+  <div class="principio-body">
+    <div class="principio-label">Lo que te llevas</div>
+    <div class="principio-titulo">Rechazar algo nuevo casi nunca es un juicio racional — es un <em>mecanismo psicológico documentado</em>.</div>
+    <p class="principio-texto">Sesgo del status quo, riesgo social, amenaza a la identidad. Los tres operan antes de que el análisis empiece. Reconocerlos no elimina la reacción — solo te da la posibilidad de hacer una pausa antes de actuar desde ella.</p>
+  </div>
+  <div class="principio-num">01</div>
+</div>
+
 ## No toda duda es mala — la diferencia entre escepticismo sano y rechazo automático
 
 <div class="section-label-inline">LA DIFERENCIA NO ES SI DUDAS — ES QUÉ HACE TU DUDA DESPUÉS</div>
