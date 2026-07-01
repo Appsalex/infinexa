@@ -161,6 +161,9 @@ CONFIGS = [
     dict(out="stablecoin-vs-bitcoin", category="ECONOMÍA DESCENTRALIZADA",
          titulo=["Stablecoin vs. Bitcoin:", "no son lo mismo"], subtitulo=None,
          icon="carta", seed=43),
+    dict(out="historia-del-dinero", category="HISTORIA ECONÓMICA",
+         titulo=["Del trueque al", "dólar digital"], subtitulo=None,
+         icon="patron", seed=67),
 ]
 
 with sync_playwright() as p:
