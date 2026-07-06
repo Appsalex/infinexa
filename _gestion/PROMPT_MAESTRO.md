@@ -81,6 +81,10 @@ cat ~/Downloads/infinexa-repo/_gestion/BITACORA.md
 3. **El logo NUNCA se redibuja a mano** — siempre se copia el path SVG exacto de `_plantillas/sistema-favicons/codigo-final-render-og-image.py` y se envuelve en `<g transform="translate() scale()">`. Redibujar el logo fue el error que causó más rondas de corrección en la historia de este proyecto.
 4. **Checklist antes de entregar cualquier imagen:** (1) legibilidad a tamaño real, (2) marca/paleta, (3) balance compositivo (¿el peso visual se reparte entre los dos lados?), (4) simulación a 390px de ancho de celular.
 
+5. **URL de posts — verificar slug antes de distribuir** — el slug real viene del nombre del archivo `_posts/`, no del título. Antes de incluir cualquier URL de post en copy de WhatsApp o arte:
+   `head -5 _posts/[nombre-del-archivo].md`
+   Un 404 en WhatsApp no se puede corregir una vez enviado.
+
 ### Flujo de git (siempre este orden)
 ```bash
 git --no-pager diff --stat   # mostrar a Alejandro antes de commit
@@ -163,6 +167,7 @@ Guardar MP3 en `assets/audio/`. Protocolo completo en sección 9.3 de BLOG_GUIA.
 | Logo: tamaño mínimo del detalle fino | `_gestion/BLOG_GUIA.md` | 9.2 punto 5 |
 | Caché vs. bug real | `_gestion/BLOG_GUIA.md` | 9.2 punto 4 |
 | Cumplimiento WhatsApp/Meta | `_gestion/RECETAS.md` | "Cumplimiento" |
+| Arte + texto WhatsApp por post | `_gestion/RECETAS.md` | 11 |
 | Promoción vs. prevención en copy | `_gestion/BLOG_GUIA.md` | 4.2 |
 | Indexación en Search Console | `_gestion/RECETAS.md` | 7 |
 

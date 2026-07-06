@@ -510,3 +510,106 @@ No mezclar los dos en la misma página.
 
 ---
 
+
+---
+
+## 11. Arte + texto para WhatsApp por post del blog (6 jul 2026)
+
+**Cuándo usar:** cada vez que publiques un post nuevo y quieras compartirlo en WhatsApp con arte visual + texto persuasivo corto.
+
+### 11.1 Framework de texto — PAS + Gancho Deslizante
+
+**Base validada:** combinación de Problem-Agitation-Solution (PAS) con el principio del "gancho deslizante" de Joe Sugarman — cada línea tiene un solo trabajo: que el lector lea la siguiente.
+
+**Estructura (máximo 5 líneas de copy + firma):**
+
+| Elemento | Función | Extensión |
+|---|---|---|
+| **Realidad** (gancho) | Una verdad incómoda que el lector ya vive — sin inventar, sin exagerar | 1 línea |
+| **Agitación** | La consecuencia invisible de esa realidad | 1 línea |
+| **Puente** | Lo que el post resuelve, sin spoilear el contenido | 1 línea |
+| **CTA doble** | Leer o escuchar audio — reduce la fricción | 1 línea |
+| **Difusión** | Razón específica para reenviarlo (nombrar a quién le sirve) | 1 línea |
+
+**Prompt:**
+\`\`\`
+Escríbeme el texto de WhatsApp para compartir el post [URL DEL POST].
+Usa el framework PAS + Gancho Deslizante: Realidad → Agitación →
+Puente → CTA doble → Difusión. Máximo 5 líneas de copy + firma.
+El gancho arranca desde una realidad cotidiana que el lector ya vive.
+Si el post tiene audio, mencionarlo con 👁️ y 🎧 en el CTA.
+Tono México: frases naturales de uso común, sin regionalismos poco
+conocidos (lección documentada: una sola palabra desconocida rompe
+el hilo completo antes de que el lector termine de leer).
+Antes de escribir, lee el post completo en la URL.
+Al final incluye la firma estándar de Alejandro.
+\`\`\`
+
+**Firma estándar:**
+\`\`\`
+Un abrazo,
+*Alejandro García, MBA*
+4 años compartiendo la evolución del nuevo sistema financiero: DeFi
+📲 +52 646 117 3209
+\`\`\`
+
+---
+
+### 11.2 Arte visual en PNG para WhatsApp
+
+**Especificaciones técnicas:**
+- Formato: PNG, 680×920px, ~60-65KB
+- Motor de render: Playwright + Chromium (mismo pipeline de ESTADO.md sección 3.7)
+- Paleta: Grafito \`#0F1720\`, Cobre \`#C8682E\`, Plata \`#C9D2D6\`
+- Tipografía: Georgia serif
+
+**Estructura visual (de arriba a abajo):**
+1. Franja Cobre 8px
+2. Wordmark INFINEXA — Plata, letter-spacing amplio
+3. Gancho en cursiva
+4. Título principal 52px+ — concepto central del post
+5. Comparativa en dos columnas o tarjeta de dato central
+6. Frase de cierre en blanco
+7. CTA en recuadro con borde Cobre
+8. URL discreta
+9. Tagline \`connecting value with purpose\`
+10. Franja Cobre 8px
+
+**Prompt:**
+\`\`\`
+Genera el arte de WhatsApp para el post [TÍTULO].
+Concepto central: [UNA LÍNEA].
+Gancho visual: [PREGUNTA O REALIDAD QUE ABRE EL POST].
+Paleta Infinexa: fondo #0F1720, acento #C8682E, texto #C9D2D6.
+PNG 680×920px vía Playwright + Chromium.
+Franja Cobre 8px arriba y abajo, wordmark INFINEXA.
+CTA: "Lee el artículo completo + audio" (quitar "+ audio" si no tiene).
+Columnas con fondo sólido opacidad mínima 0.7, texto 14px mínimo.
+\`\`\`
+
+---
+
+### 11.3 Regla crítica — verificar URL antes de distribuir
+
+El slug real de un post viene del **nombre del archivo**, no del título.
+Jekyll forma la URL así: \`infinexa.app/blog/[nombre-sin-fecha-sin-.md]/\`
+
+Antes de incluir cualquier URL en copy de WhatsApp o en el arte:
+\`\`\`bash
+head -5 _posts/[nombre-del-archivo].md
+\`\`\`
+
+Ejemplo: \`2026-06-25-ingreso-vs-activo.md\` → \`/blog/ingreso-vs-activo/\`
+
+Un 404 en WhatsApp no se puede corregir una vez enviado.
+
+---
+
+### 11.4 Checklist antes de distribuir
+
+- [ ] URL verificada con \`head -5 _posts/[archivo].md\`
+- [ ] Texto revisado contra políticas Meta/WhatsApp (ver sección Cumplimiento)
+- [ ] Arte verificado visualmente a ancho de celular (~390px)
+- [ ] Si tiene audio: CTA doble con 👁️ y 🎧
+- [ ] Sin promesa de resultado financiero en texto ni en imagen
+- [ ] Hilo conductor: post ↔ arte ↔ texto hablan del mismo dolor y destino

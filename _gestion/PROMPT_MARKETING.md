@@ -103,15 +103,25 @@ Ver `_marketing/PLAN-ORGANICO.md` — 12 publicaciones completas, escalera de co
 
 ## PROMOCIÓN DE POSTS DEL BLOG
 
-**Copy para WhatsApp al compartir un post nuevo:**
-- Gancho = las primeras 2 líneas del `.lead` del post (no el título)
-- Nunca revelar el principio principal en el copy de promoción — ese es el premio de leer
-- CTA suave: "lo puedes leer aquí →" con la URL del post
-- Cumplimiento: ningún copy de promoción puede prometer resultado financiero
+Proceso completo: RECETAS.md sección 11 — framework de texto, especificaciones de arte PNG, prompts listos para usar, y checklist de distribución.
 
-**Texto del QR para presentaciones en vivo:**
-"Escanea con tu app de wallet" → solo para QR de donativo
-"Escanea con tu teléfono para abrir esta página" → para QR de posts/páginas
+**Regla crítica antes de distribuir cualquier copy con URL:**
+```bash
+head -5 _posts/[nombre-del-archivo].md
+```
+El slug viene del nombre del archivo, no del título. Jekyll forma la URL así:
+`infinexa.app/blog/[nombre-sin-fecha-sin-.md]/`
+Un 404 en WhatsApp no se puede corregir una vez enviado.
+
+**Resumen del framework (detalle en RECETAS.md sección 11):**
+- Estructura: Realidad → Agitación → Puente → CTA doble → Difusión
+- Máximo 5 líneas de copy + firma estándar
+- Gancho arranca desde una realidad cotidiana que el lector ya vive
+- Tono México: frases naturales de uso común, sin regionalismos poco conocidos
+- Si el post tiene audio: CTA doble con 👁️ y 🎧
+
+**Hilo conductor obligatorio:** post ↔ arte ↔ texto deben hablar del mismo dolor, mismo concepto central, mismo destino.
+
 
 ---
 

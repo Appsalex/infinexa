@@ -338,7 +338,8 @@ en `_gestion/BITACORA.md`.
 - Imagen para estado de WhatsApp ("¿En cuál etapa estás tú?") diseñada en Claude Design — calidad superior a generación por código
 - Imagen alternativa sin CTA "Escríbeme" para envío directo
 - Mensajes de WhatsApp redactados (enfoque "cercano y directo" y "profesional y considerado")
-- **Infografía de Diversifica actualizada** (23 jun 2026) — ver sección 4.1, datos verificados 65%/45%/29% con fuente citada (Tom Corley)
+- **Infografía de Diversifica actualizada** (23 jun 2026)
+- **Arte + texto WhatsApp para post #1 — Ingreso vs. activo (6 jul 2026):** primera pieza de la serie de artes por post del blog. Arte PNG 680×920px, paleta Infinexa completa, texto bajo framework PAS + Gancho Deslizante (5 líneas + firma). URL verificada: `infinexa.app/blog/ingreso-vs-activo/`. Proceso completo documentado en RECETAS.md sección 11. — ver sección 4.1, datos verificados 65%/45%/29% con fuente citada (Tom Corley)
 - **Pieza de Día del Padre** (23 jun 2026) — ejercicio de buena voluntad de marca, no prospección directa, con logo real y nuevo pipeline de render
 
 **Estrategia para grupos abiertos de WhatsApp:**
