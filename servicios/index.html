@@ -115,6 +115,25 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
 .ftr-links{display:flex;gap:clamp(16px,2vw,28px);}
 .ftr-links a{font-size:13px;color:var(--tmuted);text-decoration:none;opacity:.7;}
 .ftr-links a:hover{opacity:1;}
+
+/* FAQ SECTION */
+.faq-sec{padding:clamp(40px,5vw,72px) var(--pad);background:var(--grafito-dk);border-top:1px solid rgba(27,77,92,0.25);border-bottom:1px solid rgba(27,77,92,0.25);}
+.faq-accordion{max-width:800px;margin:clamp(24px,3vw,40px) auto 0;}
+.faq-item{border-bottom:1px solid rgba(27,77,92,0.25);}
+.faq-item:first-child{border-top:1px solid rgba(27,77,92,0.25);}
+.faq-trigger{width:100%;display:flex;align-items:center;justify-content:space-between;padding:18px 8px;background:none;border:none;cursor:pointer;text-align:left;gap:16px;transition:all .2s;}
+.faq-trigger:hover{background:rgba(27,77,92,0.06);}
+.faq-q{font-size:clamp(15px,1.3vw,17px);font-weight:600;color:var(--plata-cl);transition:color .2s;}
+.faq-trigger:hover .faq-q{color:var(--cobre);}
+.faq-icon{width:32px;height:32px;border-radius:50%;border:1px solid rgba(27,77,92,0.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .25s;}
+.faq-icon svg{width:14px;height:14px;stroke:var(--plata);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s;}
+.faq-item.open .faq-icon{border-color:var(--cobre);background:rgba(200,104,46,0.08);}
+.faq-item.open .faq-icon svg{stroke:var(--cobre);transform:rotate(180deg);}
+.faq-item.open .faq-q{color:var(--cobre);}
+.faq-panel{max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(0.4,0,0.2,1);}
+.faq-answer{padding:0 8px 18px;font-size:clamp(13px,1.1vw,14.5px);color:var(--tbody);line-height:1.75;}
+.faq-answer p{margin-bottom:8px;}
+.faq-answer p:last-child{margin-bottom:0;}
 </style>
 </head>
 <body>
@@ -298,6 +317,75 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
   </div>
 </section>
 
+<!-- PREGUNTAS FRECUENTES -->
+<section class="faq-sec">
+  <div class="sec-label">Preguntas frecuentes</div>
+  <h2 class="sec-h">Resolvemos tus<br><em>dudas de inmediato.</em></h2>
+  <p class="sec-sub">Todo lo que necesitas saber sobre el proceso, los pagos y el mantenimiento de tu presencia digital.</p>
+  
+  <div class="faq-accordion">
+    <div class="faq-item">
+      <button class="faq-trigger" onclick="toggleFaq(this)">
+        <span class="faq-q">¿Realmente el sitio web está listo en 48 horas?</span>
+        <span class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="faq-panel">
+        <div class="faq-answer">
+          <p>Sí, absolutamente. A partir del Día 0 (sesión de briefing de 30 minutos donde definimos la estructura, textos y enfoque de tu marca), nuestro equipo trabaja de forma directa. El Día 1 tendrás lista la propuesta de identidad y sitio web, y el Día 2 te entregaremos el proyecto terminado junto con los materiales de prospección y la capacitación en vivo.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <button class="faq-trigger" onclick="toggleFaq(this)">
+        <span class="faq-q">¿Por qué el pago es únicamente en USDT?</span>
+        <span class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="faq-panel">
+        <div class="faq-answer">
+          <p>El uso de USDT en la red Polygon nos permite ofrecer transacciones inmediatas, globales y con comisiones de apenas unos centavos. Esto nos ayuda a evitar la burocracia bancaria tradicional y las pasarelas de pago lentas, permitiéndonos iniciar el desarrollo de tu sitio web de inmediato.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-trigger" onclick="toggleFaq(this)">
+        <span class="faq-q">¿Qué pasa si no sé cómo usar USDT o no tengo una wallet?</span>
+        <span class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="faq-panel">
+        <div class="faq-answer">
+          <p>No te preocupes. Durante la sesión de briefing te guiaremos paso a paso para abrir tu wallet no custodial y te enseñaremos cómo adquirir y enviar USDT de forma segura. Es un proceso sencillo y una excelente manera de familiarizarte con las finanzas descentralizadas.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-trigger" onclick="toggleFaq(this)">
+        <span class="faq-q">¿Tengo que contratar el hosting o dominio por mi cuenta?</span>
+        <span class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="faq-panel">
+        <div class="faq-answer">
+          <p>No, todo está cubierto. Tanto el dominio (.app, .com o .io) como el hosting de alta velocidad y el certificado de seguridad SSL están incluidos en el costo inicial y el mantenimiento mensual/anual. Nosotros nos encargamos de toda la configuración técnica.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-trigger" onclick="toggleFaq(this)">
+        <span class="faq-q">¿Cómo funcionan las actualizaciones de contenido después de la entrega?</span>
+        <span class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="faq-panel">
+        <div class="faq-answer">
+          <p>El plan mensual ($97 USDT) te otorga hasta 2 actualizaciones de contenido al mes (como cambios de textos, teléfonos de contacto o reemplazo de imágenes). El plan anual incluye actualizaciones ilimitadas. Para cualquier cambio, solo nos envías un mensaje y lo implementamos a la brevedad.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta-sec">
   <div class="cta-inner">
@@ -326,6 +414,25 @@ function copyW(){
     el.style.display='block';
     setTimeout(function(){el.style.display='none';},2000);
   });
+}
+function toggleFaq(btn) {
+  var item = btn.parentElement;
+  var panel = btn.nextElementSibling;
+  var isOpen = item.classList.contains('open');
+  
+  var allItems = document.querySelectorAll('.faq-item');
+  allItems.forEach(function(i) {
+    i.classList.remove('open');
+    i.querySelector('.faq-panel').style.maxHeight = null;
+  });
+  
+  if (!isOpen) {
+    item.classList.add('open');
+    panel.style.maxHeight = panel.scrollHeight + "px";
+  } else {
+    item.classList.remove('open');
+    panel.style.maxHeight = null;
+  }
 }
 </script>
 
