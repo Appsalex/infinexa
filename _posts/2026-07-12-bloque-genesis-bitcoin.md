@@ -1,5 +1,5 @@
 ---
-title: "El mensaje escondido en el primer bloque de la historia"
+title: "El mensaje escondido en el primer bloque de la historia: lo que Satoshi dejó grabado para siempre"
 author: "Alejandro García, MBA"
 category: "economía descentralizada"
 pillar: "/"

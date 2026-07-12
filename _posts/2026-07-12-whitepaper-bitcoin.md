@@ -1,5 +1,5 @@
 ---
-title: "El documento de nueve páginas que cambió todo"
+title: "El documento de nueve páginas que cambió todo: qué dice realmente el whitepaper de Bitcoin"
 author: "Alejandro García, MBA"
 category: "economía descentralizada"
 pillar: "/"

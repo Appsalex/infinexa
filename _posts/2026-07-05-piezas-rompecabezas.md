@@ -1,5 +1,5 @@
 ---
-title: "Las piezas sueltas de un rompecabezas de 30 años"
+title: "Las piezas sueltas de un rompecabezas de 30 años: lo que ya existía antes de Bitcoin"
 author: "Alejandro García, MBA"
 category: "historia y tecnología"
 pillar: "/infografia"

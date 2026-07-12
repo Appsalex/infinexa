@@ -1,5 +1,5 @@
 ---
-title: "Una idea que fracasó antes de tener éxito"
+title: "Una idea que fracasó antes de tener éxito: la historia de eCash y DigiCash"
 author: "Alejandro García, MBA"
 category: "historia y tecnología"
 pillar: "/infografia"
