@@ -1,5 +1,6 @@
 ---
 title: "¿Por qué una wallet no custodial no tiene botón de \"olvidé mi contraseña\"?"
+date: 2026-06-26 17:00:00 -0700
 author: "Alejandro García, MBA"
 category: "economía descentralizada"
 pillar: "/"

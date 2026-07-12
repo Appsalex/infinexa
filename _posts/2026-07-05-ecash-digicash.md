@@ -1,5 +1,6 @@
 ---
 title: "Una idea que fracasó antes de tener éxito: la historia de eCash y DigiCash"
+date: 2026-07-05 15:00:00 -0700
 author: "Alejandro García, MBA"
 category: "historia y tecnología"
 pillar: "/infografia"

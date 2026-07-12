@@ -1,5 +1,6 @@
 ---
 title: "De un experimento de nueve páginas a la infraestructura del dinero de hoy: por qué esta historia importa ahora"
+date: 2026-07-12 12:00:00 -0700
 author: "Alejandro García, MBA"
 category: "diversificación"
 pillar: "/diversifica"
