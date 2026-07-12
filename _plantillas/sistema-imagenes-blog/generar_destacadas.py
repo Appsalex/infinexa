@@ -182,6 +182,9 @@ CONFIGS = [
     dict(out="bloque-genesis-bitcoin", category="ECONOMÍA DESCENTRALIZADA",
          titulo=["El mensaje del", "primer bloque"], subtitulo=None,
          icon="carta", seed=103),
+    dict(out="nodos-y-mineros", category="HISTORIA Y TECNOLOGÍA",
+         titulo=["Quién guarda", "la verdad"], subtitulo=None,
+         icon="patron", seed=107),
 ]
 
 with sync_playwright() as p:
