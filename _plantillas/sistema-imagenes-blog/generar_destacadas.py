@@ -176,6 +176,9 @@ CONFIGS = [
     dict(out="ecash-digicash", category="HISTORIA Y TECNOLOGÍA",
          titulo=["Una idea que fracasó", "antes de tener éxito"], subtitulo=None,
          icon="patron", seed=97),
+    dict(out="whitepaper-bitcoin", category="ECONOMÍA DESCENTRALIZADA",
+         titulo=["El documento de nueve", "páginas que cambió todo"], subtitulo=None,
+         icon="carta", seed=101),
 ]
 
 with sync_playwright() as p:
