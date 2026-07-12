@@ -179,6 +179,9 @@ CONFIGS = [
     dict(out="whitepaper-bitcoin", category="ECONOMÍA DESCENTRALIZADA",
          titulo=["El documento de nueve", "páginas que cambió todo"], subtitulo=None,
          icon="carta", seed=101),
+    dict(out="bloque-genesis-bitcoin", category="ECONOMÍA DESCENTRALIZADA",
+         titulo=["El mensaje escondido en", "el primer bloque de la historia"], subtitulo=None,
+         icon="carta", seed=103),
 ]
 
 with sync_playwright() as p:
