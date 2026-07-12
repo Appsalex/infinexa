@@ -9,6 +9,13 @@ kramdown:
   input: GFM
   hard_wrap: false
 
+# Nunca ocultar posts por fecha/hora "futura" respecto al momento del build.
+# Sin esto, Jekyll oculta silenciosamente (sin error) cualquier post cuya
+# fecha/hora sea posterior al momento exacto en que GitHub Pages reconstruye
+# el sitio (en UTC) — esto causó que los posts #13, #14 y #15 desaparecieran
+# del blog el 12 jul 2026 al agregarles hora explícita. Ver BITACORA.md.
+future: true
+
 # Permalink sin fecha en la URL — el blog es "biblioteca", no "publicación".
 # La fecha en el nombre del archivo (_posts/AAAA-MM-DD-titulo.md) sigue
 # siendo obligatoria para que Jekyll ordene los posts, pero no aparece
