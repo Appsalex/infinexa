@@ -54,23 +54,25 @@ En 1998, DigiCash se declaró en quiebra. Los bancos apagaron sus servidores. eC
 Pero hay una cuarta capa que pocas narrativas mencionan: la naturaleza del producto mismo. eCash requería que tanto el comprador como el vendedor tuvieran el software instalado, una cuenta en un banco participante, y suficiente comodidad técnica para manejar tokens digitales en una época en que la mayoría de las personas todavía usaba internet por primera vez. No era difícil para un criptógrafo — era difícil para cualquier otra persona.
 
 <div class="principio">
-  <div class="principio-badge">3</div>
+  <div class="principio-badge">2</div>
   <div class="principio-body">
     <div class="principio-label">Lo que te llevas</div>
     <div class="principio-titulo">Una tecnología que requiere que todos la adopten al mismo tiempo <em>casi nunca despega</em>.</div>
     <p class="principio-texto">eCash necesitaba compradores con el software, vendedores con el software, y bancos con la integración — simultáneamente. Bitcoin resolvió esto de forma elegante: cualquiera puede empezar a usarlo sin que nadie más cambie nada. Esa diferencia de arquitectura, más que cualquier otra cosa, explica por qué uno desapareció y el otro no.</p>
   </div>
-  <div class="principio-num">03</div>
+  <div class="principio-num">02</div>
 </div>
 
+Sumadas, esas cuatro capas explican por qué algo tan bien resuelto en lo técnico terminó apagando sus servidores en silencio, sin que casi nadie se enterara.
+
 <div class="principio">
-  <div class="principio-badge">2</div>
+  <div class="principio-badge">3</div>
   <div class="principio-body">
     <div class="principio-label">Lo que te llevas</div>
     <div class="principio-titulo">Una tecnología correcta en el momento equivocado no espera — <em>desaparece y deja que alguien más la reinvente cuando el contexto esté listo</em>.</div>
     <p class="principio-texto">eCash no fracasó porque la criptografía fallara. Fracasó porque el ecosistema que necesitaba para funcionar — comercio en línea masivo, usuarios digitales, infraestructura de internet — todavía no existía. Diez años después, todo eso existía. Y Bitcoin llegó justo cuando el sistema financiero global demostraba, en tiempo real, por qué alguien podría querer una alternativa.</p>
   </div>
-  <div class="principio-num">02</div>
+  <div class="principio-num">03</div>
 </div>
 
 ## Lo que sobrevivió al fracaso
