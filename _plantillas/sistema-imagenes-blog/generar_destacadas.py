@@ -185,6 +185,9 @@ CONFIGS = [
     dict(out="nodos-y-mineros", category="HISTORIA Y TECNOLOGÍA",
          titulo=["Quién guarda", "la verdad"], subtitulo=None,
          icon="patron", seed=107),
+    dict(out="infraestructura-del-dinero-hoy", category="DIVERSIFICACIÓN",
+         titulo=["Quince años", "después"], subtitulo=None,
+         icon="diversifica", seed=109),
 ]
 
 with sync_playwright() as p:
