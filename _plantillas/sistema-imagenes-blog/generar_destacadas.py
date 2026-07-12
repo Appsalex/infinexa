@@ -173,6 +173,9 @@ CONFIGS = [
     dict(out="piezas-rompecabezas", category="HISTORIA Y TECNOLOGÍA",
          titulo=["Las piezas de un", "rompecabezas de 30 años"], subtitulo=None,
          icon="patron", seed=89),
+    dict(out="ecash-digicash", category="HISTORIA Y TECNOLOGÍA",
+         titulo=["Una idea que fracasó", "antes de tener éxito"], subtitulo=None,
+         icon="patron", seed=97),
 ]
 
 with sync_playwright() as p:
