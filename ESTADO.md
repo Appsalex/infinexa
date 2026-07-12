@@ -2,7 +2,7 @@
 
 > Este archivo es la fuente única de verdad del proyecto. Se actualiza después de cada sesión de trabajo, sin importar en qué conversación de Claude se realizó. No se crean archivos nuevos por conversación — siempre se edita este mismo documento.
 
-**Última actualización:** 30 de junio – 1 de julio, 2026 (sesión extensa: 5 posts nuevos publicados (#5–#9), sistema de principios visuales en los 9 posts, QR compartible dinámico en todo el sitio, página de donativo USDT+Bitcoin, audio en post #1 vía ElevenLabs, bloque `.principio` con círculo numerado cobre, investigación con datos verificados en posts de stablecoins e inflación — detalle en `_gestion/BLOG_GUIA.md` y `_gestion/BITACORA.md`)
+**Última actualización:** 12 de julio, 2026 (arco Bitcoin del blog avanzado a 4/6 posts publicados — #10 al #13 —, corrección de un bug de orden en bloques `.principio` del post #11, y corrección de duplicidad título/imagen en los posts #10–#13; dos reglas nuevas documentadas en `PROMPT_BLOG.md` — detalle completo en `_gestion/BITACORA.md`, entrada del 12 jul 2026)
 
 ---
 
@@ -114,7 +114,7 @@ Ambos documentos quedaron optimizados como un sistema de dos capas con referenci
 | La infografía | `infinexa.app/infografia` | ✅ Publicada — gradiente corregido hasta DeFi, tipografía igualada con la carta |
 | Servicios | `infinexa.app/servicios` | ✅ Publicada — con precios USDT y wallet (sin QR) |
 | Diversifica | `infinexa.app/diversifica` | ✅ Publicada — ver detalles abajo |
-| Blog | `infinexa.app/blog` | ✅ Publicado — 9 posts, ver sección 4.4 |
+| Blog | `infinexa.app/blog` | ✅ Publicado — 13 posts, ver sección 4.4 |
 | Donativo | `infinexa.app/donativo` | ✅ Publicada — USDT (Polygon) + Bitcoin, QR verificados |
 
 **Detalles técnicos resueltos en la infografía:**
@@ -254,9 +254,13 @@ Diversifica apuntaba a la carpeta huérfana, que tenía una versión vieja del `
 
 ### 4.4 Blog de Infinexa
 
-**Estado:** ✅ Publicado en `infinexa.app/blog`, **9 posts activos** con
+**Estado:** ✅ Publicado en `infinexa.app/blog`, **13 posts activos** con
 sistema de principios visuales numerados, QR compartible dinámico,
 enlace discreto a `/donativo/`, y audio en el post #1.
+
+**Serie en progreso — Arco Bitcoin (6 posts, historia de blockchain):** 4 de 6
+publicados (#10–#13). Pendientes #14 (nodos y mineros, PoW vs. PoS) y #15
+(cierre del arco). Detalle completo del plan en `_gestion/PROMPT_BLOG.md`.
 
 **Posts publicados:**
 
@@ -271,6 +275,10 @@ enlace discreto a `/donativo/`, y audio en el post #1.
 | 7 | Historia del dinero: del trueque al dólar digital | Historia económica | 3 |
 | 8 | El impuesto silencioso (inflación) | Diversifica | 3 |
 | 9 | Ingreso pasivo: lo que sí es | Diversifica | 3 |
+| 10 | Las piezas sueltas de un rompecabezas de 30 años | El Patrón | 3 |
+| 11 | Una idea que fracasó antes de tener éxito (eCash/DigiCash) | El Patrón | 3 |
+| 12 | El documento de nueve páginas que cambió todo (whitepaper) | La carta | 2 |
+| 13 | El mensaje escondido en el primer bloque de la historia (bloque génesis) | La carta | 2 |
 
 **Sistemas activos en todos los posts:**
 - Bloque `.principio` — tarjeta con círculo numerado cobre, línea lateral,

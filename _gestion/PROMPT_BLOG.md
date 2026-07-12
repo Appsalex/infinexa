@@ -1,5 +1,5 @@
 # PROMPT · BLOG INFINEXA
-**Versión:** 1.0 · **Fecha:** 1 jul 2026
+**Versión:** 1.1 · **Fecha:** 12 jul 2026
 **Instrucción de evolución:** al cerrar la sesión, pedir "actualiza el prompt de blog" si se descubrió alguna regla nueva. Este archivo vive en `_gestion/PROMPT_BLOG.md`.
 
 ---
@@ -16,9 +16,9 @@ Esa guía es la fuente de verdad. Este prompt es el contexto de arranque — la 
 
 ---
 
-## ESTADO DEL BLOG (1 jul 2026)
+## ESTADO DEL BLOG (12 jul 2026)
 
-**10 posts publicados · 21 principios visuales · último commit: `cdfdc9d`**
+**13 posts publicados · 28 principios visuales · último commit: `393e5d0`**
 
 | # | Título | Pilar | Principios |
 |---|---|---|---|
@@ -32,14 +32,17 @@ Esa guía es la fuente de verdad. Este prompt es el contexto de arranque — la 
 | 8 | El impuesto silencioso (inflación) | Diversifica | 3 |
 | 9 | Ingreso pasivo: lo que sí es | Diversifica | 3 |
 | 10 | Las piezas sueltas de un rompecabezas de 30 años | El Patrón | 3 |
+| 11 | Una idea que fracasó antes de tener éxito (eCash/DigiCash) | El Patrón | 3 |
+| 12 | El documento de nueve páginas que cambió todo (whitepaper) | La carta | 2 |
+| 13 | El mensaje escondido en el primer bloque de la historia (bloque génesis) | La carta | 2 |
 
 **Subtítulo del blog:** "porque quien entiende el patrón, ve la puerta antes que los demás"
 
 **Serie en progreso — Arco Bitcoin (6 posts):**
 - ✅ #10 Las piezas sueltas de un rompecabezas de 30 años (1976–1998)
-- ⬜ #11 Una idea que fracasó antes de tener éxito (eCash/DigiCash)
-- ⬜ #12 El documento de nueve páginas que cambió todo (whitepaper, 31 oct 2008)
-- ⬜ #13 El mensaje escondido en el primer bloque de la historia (bloque génesis)
+- ✅ #11 Una idea que fracasó antes de tener éxito (eCash/DigiCash)
+- ✅ #12 El documento de nueve páginas que cambió todo (whitepaper, 31 oct 2008)
+- ✅ #13 El mensaje escondido en el primer bloque de la historia (bloque génesis)
 - ⬜ #14 Quién guarda la verdad cuando nadie está a cargo (nodos, PoW vs PoS)
 - ⬜ #15 De un experimento de nueve páginas a la infraestructura del dinero de hoy
 
@@ -95,6 +98,14 @@ El logo del infinito a 130px de ancho. A tamaño de celular el detalle fino (par
 **4. Audio — margen de seguridad:** máximo 4,500 caracteres por parte (no 5,000). Verificar el contador en ElevenLabs antes de generar. Confirmar de oído las primeras/últimas frases de cada unión entre partes.
 
 **5. Enfoque de copy — promoción, no prevención:** nunca arrancar una frase central con negación decorativa. "Sin presión" junto a un CTA de llamada es legítimo; como atmósfera general no. Se promete claridad y perspectiva, nunca resultado financiero.
+
+**6. El título de la imagen y el título del post NUNCA pueden ser el mismo texto.** La imagen lleva una versión corta (2-4 palabras por línea, sin puntuación de cierre); el `title` del front matter lleva la versión completa, casi siempre con estructura "frase corta: expansión con contexto" (ej. imagen: "30 años de piezas sueltas" / post: "Las piezas sueltas de un rompecabezas de 30 años: lo que ya existía antes de Bitcoin"). Este patrón se rompió sin darse cuenta en los posts #10–#13 (el `title` copiaba literalmente el texto de la imagen, partido en dos líneas) y se corrigió el 12 jul 2026. Antes de mandar a generar la imagen, comparar mentalmente ambos textos — si son el mismo texto partido en líneas, hay que reescribir uno de los dos.
+
+**7. Los bloques `.principio` deben numerarse de forma secuencial (1, 2, 3) en el orden en que aparecen en el archivo, y cada uno debe tener texto propio alrededor — nunca dos bloques pegados uno justo después del otro sin un párrafo de transición entre ambos.** Este error ocurrió en el post #11 (badges en orden 1→3→2, dos bloques consecutivos sin texto entre ellos) y se corrigió el 12 jul 2026. Verificar con:
+```bash
+grep -n "principio-badge" _posts/nombre-del-post.md
+```
+Los números deben leerse en orden ascendente de arriba a abajo.
 
 ---
 
@@ -237,6 +248,16 @@ find ~/Downloads -maxdepth 2 -iname "nombre-aproximado*"
 ls -la _posts/YYYY-MM-DD-slug.md assets/blog/slug.webp
 git --no-pager diff --stat
 git status   # el .md y el .webp deben aparecer como "Untracked files"
+```
+
+Verificación adicional obligatoria (reglas 6 y 7):
+```bash
+# El título del post no debe ser idéntico al texto de la imagen
+grep "^title:" _posts/YYYY-MM-DD-slug.md
+grep -A2 "out=\"slug" _plantillas/sistema-imagenes-blog/generar_destacadas.py
+
+# Los badges de .principio deben leerse en orden 1, 2, 3 — sin excepción
+grep -n "principio-badge" _posts/YYYY-MM-DD-slug.md
 ```
 
 Alejandro revisa y aprueba antes de continuar.
