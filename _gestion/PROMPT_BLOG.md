@@ -18,7 +18,7 @@ Esa guía es la fuente de verdad. Este prompt es el contexto de arranque — la 
 
 ## ESTADO DEL BLOG (1 jul 2026)
 
-**9 posts publicados · 18 principios visuales · último commit: `93abd63`**
+**10 posts publicados · 21 principios visuales · último commit: `cdfdc9d`**
 
 | # | Título | Pilar | Principios |
 |---|---|---|---|
@@ -31,12 +31,20 @@ Esa guía es la fuente de verdad. Este prompt es el contexto de arranque — la 
 | 7 | Historia del dinero: del trueque al dólar digital | Historia económica | 3 |
 | 8 | El impuesto silencioso (inflación) | Diversifica | 3 |
 | 9 | Ingreso pasivo: lo que sí es | Diversifica | 3 |
+| 10 | Las piezas sueltas de un rompecabezas de 30 años | El Patrón | 3 |
 
 **Subtítulo del blog:** "porque quien entiende el patrón, ve la puerta antes que los demás"
 
-**Próximos posts identificados (no escritos):**
+**Serie en progreso — Arco Bitcoin (6 posts):**
+- ✅ #10 Las piezas sueltas de un rompecabezas de 30 años (1976–1998)
+- ⬜ #11 Una idea que fracasó antes de tener éxito (eCash/DigiCash)
+- ⬜ #12 El documento de nueve páginas que cambió todo (whitepaper, 31 oct 2008)
+- ⬜ #13 El mensaje escondido en el primer bloque de la historia (bloque génesis)
+- ⬜ #14 Quién guarda la verdad cuando nadie está a cargo (nodos, PoW vs PoS)
+- ⬜ #15 De un experimento de nueve páginas a la infraestructura del dinero de hoy
+
+**Otros posts identificados (no escritos):**
 - Remesas y USDT — cómo enviar dinero sin banco (pilar la carta)
-- DeFi en práctica — qué es y cómo funciona en el día a día
 
 ---
 
@@ -114,3 +122,141 @@ Esperar. Comparar el archivo real en GitHub antes de asumir que hay un bug. El C
 ## PALETA DE MARCA
 
 `#0F1720` Grafito dk · `#1F2A33` Grafito · `#1B4D5C` Petróleo · `#2E6E80` Petróleo cl · `#C8682E` Cobre · `#C9D2D6` Plata · `#EDF1F2` Plata cl
+
+---
+
+## Proceso paso a paso para publicar un post nuevo
+
+**Versión documentada:** 5 jul 2026 · Este proceso se descubrió necesario porque en conversaciones nuevas no había contexto de cómo se publica cada post.
+
+### Antes de empezar — verificar que estás en la carpeta correcta
+El prompt de la terminal debe decir `infinexa-repo %`. Si dice otro directorio, correr:
+```bash
+cd ~/Downloads/infinexa-repo
+```
+
+### Paso 1 — Verificación de unicidad (ANTES de escribir una sola línea)
+```bash
+cd ~/Downloads/infinexa-repo
+
+# Ver todos los ganchos (primer párrafo) existentes
+python3 -c "
+import os
+for f in sorted(os.listdir('_posts')):
+    content = open(f'_posts/{f}').read()
+    body = content.split('---')[2].strip()
+    first = next((l for l in body.split('\n') if l.strip() and not l.startswith('#') and not l.startswith('{:')), '')
+    print(f'{f}:')
+    print(f'  {first[:100]}')
+"
+
+# Ver todos los H2 existentes — ninguno puede repetirse en el post nuevo
+grep "^## " _posts/*.md | sed 's/.*:## //' | sort
+```
+
+### Paso 2 — Escribir el post
+Front matter obligatorio exacto (todos estos campos, en este orden):
+```yaml
+---
+title: ""
+author: "Alejandro García, MBA"
+category: ""           # diversificación | historia y tecnología | economía descentralizada | historia económica
+pillar: "/"            # / = la carta | /diversifica | /infografia
+pillar_label: ""       # "Ver la carta" | "Ver Diversifica" | "Ver El Patrón"
+keywords: []
+description: ""
+image: "/assets/blog/slug-del-post.webp"
+image_alt: ""
+---
+```
+
+Elementos obligatorios en el cuerpo:
+- Primer párrafo con `{: .lead}` al final
+- 1 a 3 bloques `.principio` (ver HTML exacto arriba en este prompt)
+- Callback a Carlos al menos 1 vez, idealmente en el cierre
+- CTA final con enlace al pilar usando `[texto](/ruta)`
+
+**Nombre del archivo:** `YYYY-MM-DD-slug-del-post.md` donde la fecha es la de publicación real.
+
+### Paso 3 — Generar la imagen destacada
+Agregar entrada al final del array CONFIGS en `generar_destacadas.py`:
+```python
+dict(out="slug-del-post", category="CATEGORÍA EN MAYÚSCULAS",
+     titulo=["Línea 1 del título", "Línea 2 del título"], subtitulo=None,
+     icon="patron",   # patron | carta | diversifica
+     seed=XX),        # número diferente a todos los anteriores (89, 97, 101, etc.)
+```
+
+Generar y verificar:
+```bash
+cd ~/Downloads/infinexa-repo
+python3 _plantillas/sistema-imagenes-blog/generar_destacadas.py
+```
+
+Checklist antes de aprobar (los 4, sin saltarse ninguno):
+1. ¿El texto se lee a tamaño real?
+2. ¿Logo correcto (infinito con punto cobre, no redibujado)?
+3. ¿Balance visual entre lado izquierdo y derecho?
+4. ¿Se lee bien a 390px de ancho (celular)?
+
+Convertir a WebP:
+```python
+from PIL import Image
+im = Image.open('slug.png').convert('RGB')
+im.resize((1200,630), Image.LANCZOS).save('slug.webp', 'WEBP', quality=82)
+```
+
+### Paso 4 — Actualizar el sitemap
+Agregar antes de `</urlset>` en `sitemap.xml`:
+```xml
+<url>
+  <loc>https://infinexa.app/blog/slug-del-post/</loc>
+  <lastmod>YYYY-MM-DD</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+```
+
+### Paso 5 — Mover los archivos al repo
+```bash
+cd ~/Downloads/infinexa-repo
+
+mv ~/Downloads/files/YYYY-MM-DD-slug.md _posts/
+mv ~/Downloads/files/slug.webp assets/blog/
+mv ~/Downloads/files/generar_destacadas.py _plantillas/sistema-imagenes-blog/
+mv ~/Downloads/files/sitemap.xml .
+```
+
+Si algún archivo no aparece en `~/Downloads/files/`:
+```bash
+find ~/Downloads -maxdepth 2 -iname "nombre-aproximado*"
+```
+
+### Paso 6 — Verificar antes del commit
+```bash
+ls -la _posts/YYYY-MM-DD-slug.md assets/blog/slug.webp
+git --no-pager diff --stat
+git status   # el .md y el .webp deben aparecer como "Untracked files"
+```
+
+Alejandro revisa y aprueba antes de continuar.
+
+### Paso 7 — Commit y push
+```bash
+git add -A
+git commit -m "Publicar post #N: Título del post"
+git push
+```
+
+### Paso 8 — Verificación final en GitHub
+```bash
+git clone --depth 1 https://github.com/Appsalex/infinexa.git /tmp/check-post
+ls -la /tmp/check-post/_posts/YYYY-MM-DD-slug.md
+ls -la /tmp/check-post/assets/blog/slug.webp
+grep "slug-del-post" /tmp/check-post/sitemap.xml
+```
+
+Los 3 deben confirmar. Si coinciden — publicación completa.
+
+### ⚠️ Error más común
+Estar en la carpeta equivocada al hacer el commit. Siempre confirmar que el prompt diga `infinexa-repo %` antes de cualquier comando `git`.
