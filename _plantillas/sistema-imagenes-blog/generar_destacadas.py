@@ -170,6 +170,9 @@ CONFIGS = [
     dict(out="ingreso-pasivo", category="DIVERSIFICACIÓN",
          titulo=["Ingreso pasivo:", "lo que sí es"], subtitulo=None,
          icon="diversifica", seed=77),
+    dict(out="piezas-rompecabezas", category="HISTORIA Y TECNOLOGÍA",
+         titulo=["Las piezas de un", "rompecabezas de 30 años"], subtitulo=None,
+         icon="patron", seed=89),
 ]
 
 with sync_playwright() as p:
