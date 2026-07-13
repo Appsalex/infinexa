@@ -2,7 +2,7 @@
 
 > Este archivo es la fuente única de verdad del proyecto. Se actualiza después de cada sesión de trabajo, sin importar en qué conversación de Claude se realizó. No se crean archivos nuevos por conversación — siempre se edita este mismo documento.
 
-**Última actualización:** 13 de julio, 2026 — 🔴 **Decisión estratégica: reposicionamiento total de Infinexa, desvinculación completa de Hand4Hand.** Infinexa deja de ser un funnel de prospección hacia Hand4Hand y pasa a ser una plataforma independiente de educación, criterio y conexión sobre la evolución del dinero, blockchain, Web3, IA y nuevos modelos de creación de valor. **Fase 1** (eliminación de Hand4Hand de `index.html`, commit `06747d6`), **Fase 2** (nueva home de 13 secciones + navegación unificada en todo el sitio, commit `51caf8a`) y **Fase 3** (reposicionamiento de contenido de Diversifica, Infografía y Servicios → Infinexa Digital, commits `2520362`/`47285b5`) ejecutadas y publicadas — ver sección 1.1–1.3 y `_gestion/BITACORA.md`. Fases siguientes (auditar claims de los 15 posts del blog, páginas propias de transparencia/riesgos/privacidad/términos, decisión sobre `builders/carlos`, SEO/analítica/accesibilidad) quedan pendientes para próximas sesiones.
+**Última actualización:** 13 de julio, 2026 — 🔴 **Decisión estratégica: reposicionamiento total de Infinexa, desvinculación completa de Hand4Hand.** Infinexa deja de ser un funnel de prospección hacia Hand4Hand y pasa a ser una plataforma independiente de educación, criterio y conexión sobre la evolución del dinero, blockchain, Web3, IA y nuevos modelos de creación de valor. **Fase 1** (eliminación de Hand4Hand de `index.html`, commit `06747d6`), **Fase 2** (nueva home de 13 secciones + navegación unificada, commit `51caf8a`), **Fase 3** (reposicionamiento de contenido de Diversifica, Infografía y Servicios → Infinexa Digital, commits `2520362`/`47285b5`) y **Fase 4** (páginas de Transparencia/Riesgos/Privacidad/Términos + sitemap, commit `07a8512`) ejecutadas y publicadas — ver sección 1.1–1.4 y `_gestion/BITACORA.md`. Fases siguientes (auditar claims de los 15 posts del blog, decisión sobre `builders/carlos`, analítica real, accesibilidad) quedan pendientes para próximas sesiones.
 
 ---
 
@@ -45,7 +45,18 @@ Contenido de Diversifica, Infografía y Servicios no se tocó en esta fase (solo
 
 Verificado tras el push: balance de HTML correcto en los 3 archivos, cero menciones de Hand4Hand, cero menciones de "prospección".
 
-**Qué falta de la visión completa de reposicionamiento (fases futuras, no ejecutadas):** páginas dedicadas de transparencia/riesgos/privacidad/términos (hoy Diagnóstico/Talleres/Nosotros son anclas en la home, no rutas propias), auditoría de claims sensibles en los 15 posts del blog, analítica real (falta ID de GA4/GTM), SEO (actualizar `sitemap.xml` con las nuevas anclas/estructura), accesibilidad, decisión sobre `builders/carlos` (ver "Próximos pasos" ítem 1b). El detalle completo de esta visión vive en el prompt maestro que Alejandro proporcionó el 13 jul 2026 (no se guardó como archivo aparte — si se retoma, pedir a Alejandro que lo vuelva a compartir o consultar el historial de esta conversación).
+### 1.4 Fase 4 — páginas legales y sitemap (13 jul 2026, commit `07a8512`)
+
+Creadas 4 páginas nuevas, todas con el sistema visual del sitio (nav compartida, footer, QR compartible):
+
+- **`/transparencia/`** — qué es/no es Infinexa, quién la dirige, cómo se genera y verifica el contenido, cómo se presentan proyectos de terceros y relaciones comerciales (con revelación explícita si Alejandro tiene una relación comercial con algo mencionado en una conversación 1:1), diferencia entre educación y promoción, qué implica solicitar una conversación.
+- **`/riesgos/`** — 10 categorías (mercado, tecnológico, custodia, contraparte, liquidez, regulatorio, operativo, fraude, proyectos productivos, pérdida), con nota de que no sustituye asesoría legal profesional.
+- **`/privacidad/`** — qué datos se recopilan (solo los que el usuario envía activamente por el diagnóstico, el formulario de talleres o WhatsApp — no hay cuentas de usuario ni analítica activa hoy), qué no se hace con ellos, y cómo ejercer derechos de acceso/corrección/eliminación.
+- **`/terminos/`** — naturaleza educativa del contenido, sin garantías de resultados, condiciones de Infinexa Digital, propiedad intelectual, ley aplicable (México).
+
+Enlazadas desde el footer de las 6 superficies del sitio (home, servicios, diversifica, infografía, donativo, blog) — antes no existían y no estaban enlazadas desde ningún lado. `sitemap.xml` actualizado con las 4 rutas nuevas (prioridad baja, `changefreq: yearly`, acorde a contenido legal/informativo estable).
+
+**Qué falta de la visión completa de reposicionamiento (fases futuras, no ejecutadas):** auditoría de claims sensibles en los 15 posts del blog, analítica real (falta ID de GA4/GTM — Alejandro debe proporcionarlo), accesibilidad, decisión sobre `builders/carlos` (ver "Próximos pasos" ítem 1b). El detalle completo de esta visión vive en el prompt maestro que Alejandro proporcionó el 13 jul 2026 (no se guardó como archivo aparte — si se retoma, pedir a Alejandro que lo vuelva a compartir o consultar el historial de esta conversación).
 
 ---
 

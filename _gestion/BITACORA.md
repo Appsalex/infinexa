@@ -83,6 +83,14 @@
 - **Verificado en vivo tras cada push** (`2520362`, `47285b5`): las tres páginas cargan correctamente con el contenido nuevo, nav intacta, balance de HTML correcto, cero menciones de Hand4Hand o "prospección" en los tres archivos.
 - **`ESTADO.md` actualizado** con la sección 1.3 documentando el detalle completo de esta fase.
 
+## 2026-07-13 (continuación) — Fase 4: páginas legales (Transparencia, Riesgos, Privacidad, Términos) y sitemap
+
+- **Creadas 4 páginas nuevas** con el mismo sistema visual del sitio: `/transparencia/`, `/riesgos/`, `/privacidad/`, `/terminos/`. Contenido redactado siguiendo el detalle pedido en el prompt maestro (qué es/no es Infinexa, cómo se verifica y actualiza el contenido, cómo se revelan relaciones comerciales con terceros, 10 categorías de riesgo, qué datos se recopilan realmente — solo diagnóstico/talleres/WhatsApp, sin cuentas ni analítica activa — y condiciones de uso). Todas incluyen nota de que no sustituyen asesoría legal profesional, sin redactarse como si fueran un documento legal definitivo.
+- **Enlazadas desde el footer de las 6 superficies del sitio** (antes no existían y no estaban enlazadas desde ningún lado) — cada página tocada necesitó su propio ajuste de footer porque el sitio no tiene un componente de footer compartido (mismo patrón que la nav antes de la Fase 2).
+- **`sitemap.xml` actualizado** con las 4 rutas nuevas, prioridad baja y `changefreq: yearly` (contenido legal/informativo, no editorial).
+- **Verificado en vivo tras el push** (`07a8512`): las 4 páginas cargan correctamente con nav y footer consistentes, balance de HTML correcto, sitemap.xml bien formado.
+- **`ESTADO.md` actualizado** con la sección 1.4.
+
 ## Cómo seguir esta bitácora
 
 - Cada sesión de trabajo nueva, pide a Claude: "agrega una entrada a la bitácora de hoy" al final de la conversación.
