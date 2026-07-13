@@ -2,7 +2,7 @@
 
 > Este archivo es la fuente única de verdad del proyecto. Se actualiza después de cada sesión de trabajo, sin importar en qué conversación de Claude se realizó. No se crean archivos nuevos por conversación — siempre se edita este mismo documento.
 
-**Última actualización:** 13 de julio, 2026 — 🔴 **Decisión estratégica: reposicionamiento total de Infinexa, desvinculación completa de Hand4Hand.** Infinexa deja de ser un funnel de prospección hacia Hand4Hand y pasa a ser una plataforma independiente de educación, criterio y conexión sobre la evolución del dinero, blockchain, Web3, IA y nuevos modelos de creación de valor. Fase 1 (eliminación de Hand4Hand de `index.html`) ejecutada y publicada — ver sección 1.1 y `_gestion/BITACORA.md`, entrada del 13 jul 2026. Fases siguientes (nueva arquitectura de marca, home nueva, nav unificado, páginas nuevas, blog) quedan pendientes para próximas sesiones.
+**Última actualización:** 13 de julio, 2026 — 🔴 **Decisión estratégica: reposicionamiento total de Infinexa, desvinculación completa de Hand4Hand.** Infinexa deja de ser un funnel de prospección hacia Hand4Hand y pasa a ser una plataforma independiente de educación, criterio y conexión sobre la evolución del dinero, blockchain, Web3, IA y nuevos modelos de creación de valor. **Fase 1** (eliminación de Hand4Hand de `index.html`, commit `06747d6`) y **Fase 2** (nueva home de 13 secciones + navegación unificada en todo el sitio, commit `51caf8a`) ejecutadas y publicadas — ver sección 1.1 y `_gestion/BITACORA.md`. Fases siguientes (reposicionar Diversifica/Infografía/Servicios, auditar claims del blog, páginas de transparencia/riesgos/privacidad/términos, SEO/analítica/accesibilidad) quedan pendientes para próximas sesiones.
 
 ---
 
@@ -25,7 +25,17 @@ Alejandro decidió pivotar Infinexa de "funnel de prospección hacia Hand4Hand" 
 
 **Pendiente de decisión explícita — NO tocado en esta sesión:** `builders/carlos/`, `builders/_template/` y `carlos/` en la raíz son landings completas de Hand4Hand para el sistema de subdominios "Builder Edition", con `carlos.infinexa.app` **en vivo para un tercero real** (un builder real de Hand4Hand). Eliminarlas o reescribirlas apaga su página sin aviso — requiere que Alejandro decida primero qué pasa con esa relación/subdominio antes de tocar el código. Ver sección 6 (sistema de builders) y "Próximos pasos" abajo.
 
-**Qué falta de la visión completa de reposicionamiento (fases futuras, no ejecutadas):** nueva arquitectura de marca (Aprender / Conectar / Digital), navegación unificada (el sitio no tiene nav/header compartido — cada página es HTML standalone), home nueva de 13 secciones, diagnóstico funcional, páginas nuevas (aprender, diagnóstico, talleres, nosotros, transparencia, riesgos, privacidad, términos), reposicionamiento de Diversifica/Infografía/Servicios como "Infinexa Digital", auditoría de claims sensibles en el blog, analítica, SEO, accesibilidad. El detalle completo de esta visión vive en el prompt maestro que Alejandro proporcionó el 13 jul 2026 (no se guardó como archivo aparte — si se retoma, pedir a Alejandro que lo vuelva a compartir o consultar el historial de esta conversación).
+### 1.2 Fase 2 — nueva home y navegación unificada (13 jul 2026, commit `51caf8a`)
+
+`index.html` se reconstruyó por completo como la nueva home (13 secciones: hero, "el cambio ya comenzó", "el verdadero problema", qué puedes aprender —10 tarjetas enlazadas a posts/páginas reales—, tres rutas Comprender/Evaluar/Aplicar, Método Infinexa de 5 pasos, Diagnóstico funcional con quiz de 3 preguntas sin backend que genera un mensaje de WhatsApp, "del conocimiento a la práctica", Talleres con formulario funcional, Infinexa Digital, Quién está detrás con el perfil de Alejandro, Principios, CTA final).
+
+Se agregó una nav compartida (Inicio · Aprender · Diagnóstico · Talleres · Servicios · Nosotros + botón "Hablemos") a **todas** las páginas del sitio: `index.html`, `servicios/`, `diversifica/`, `infografia/`, `donativo/`, y `_layouts/default.html` (blog — reemplaza el nav anterior de Inicio/Diversifica/El Patrón/Blog). "Diagnóstico"/"Talleres"/"Nosotros" son anclas dentro de la home (`/#diagnostico`, `/#talleres`, `/#nosotros`), no páginas separadas todavía — funcionan desde cualquier página del sitio.
+
+Se agregó un helper `trackEvent()` en la home, instrumentado en los CTA principales, pero **no hace nada todavía**: no hay GA4/GTM instalado en el sitio (se verificó, cero rastro de analítica previa). Pendiente: Alejandro debe proporcionar un ID de medición de GA4 o un contenedor de GTM para activarlo de verdad.
+
+Contenido de Diversifica, Infografía y Servicios **no se tocó** en esta fase (solo se les agregó la nav) — su reposicionamiento de contenido es una fase futura separada.
+
+**Qué falta de la visión completa de reposicionamiento (fases futuras, no ejecutadas):** reposicionar el contenido de Diversifica/Infografía/Servicios (más allá del nav), páginas dedicadas de transparencia/riesgos/privacidad/términos (hoy Diagnóstico/Talleres/Nosotros son anclas en la home, no rutas propias), auditoría de claims sensibles en los 15 posts del blog, analítica real (falta ID de GA4/GTM), SEO (actualizar `sitemap.xml` con las nuevas anclas/estructura), accesibilidad. El detalle completo de esta visión vive en el prompt maestro que Alejandro proporcionó el 13 jul 2026 (no se guardó como archivo aparte — si se retoma, pedir a Alejandro que lo vuelva a compartir o consultar el historial de esta conversación).
 
 ---
 
