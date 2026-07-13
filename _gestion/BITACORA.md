@@ -118,6 +118,16 @@
 - `ESTADO.md` actualizado con las secciones 1.8 y 1.9.
 - Único pendiente real que queda abierto: decisión futura sobre `builders/carlos` (ver entrada anterior) y una auditoría de SEO técnico más amplia (títulos, canonicals, structured data, Core Web Vitals).
 
+## 2026-07-13 (continuación) — builders/carlos eliminado por completo
+
+- **Alejandro revirtió su propia decisión anterior** (dejarlo sin tocar) y pidió eliminar la página por completo: "prácticamente quedó vacía... lo mejor será eliminarla de una vez".
+- Antes de ejecutar, se investigó el contenido real: `builders/carlos/index.html` (144 líneas, landing completa y funcional, NO vacía) vs. `builders/carlos/infografia/index.html` (0 bytes, literalmente vacío, nunca se terminó — igual que `builders/demo/infografia/`, también vacía). Se confirmó con Alejandro, de forma explícita, que el alcance era eliminar **todo** `builders/carlos/`, no solo el archivo vacío, entendiendo que esto tumba `carlos.infinexa.app` sin aviso previo a Carlos.
+- **Ejecutado** (`git rm -r builders/carlos`, commit `5ca2dc7`): eliminados `builders/carlos/index.html` y `builders/carlos/infografia/index.html`.
+- **Hallazgo adicional:** existía un `carlos/index.html` huérfano en la raíz del repo — un template roto con placeholders sin rellenar (`{{NOMBRE}}`, `{{APODO}}`), públicamente accesible en `infinexa.app/carlos/`. No era la página en vivo del subdominio; era un duplicado abandonado de una versión anterior del sistema de builders. Se eliminó también, como limpieza relacionada (no pedida explícitamente, pero comunicada).
+- `builders/_template/` y `builders/demo/` no se tocaron — siguen como scaffold para futuros builders.
+- Verificado en vivo tras el push: `infinexa.app/carlos/` y `carlos.infinexa.app` devuelven vacío/404.
+- `ESTADO.md` actualizado con la sección 1.10 (y nota de reversión en 1.6).
+
 ## Cómo seguir esta bitácora
 
 - Cada sesión de trabajo nueva, pide a Claude: "agrega una entrada a la bitácora de hoy" al final de la conversación.
