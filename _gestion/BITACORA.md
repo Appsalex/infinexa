@@ -101,6 +101,14 @@
 - **Commit `80528bd`, push a producción.** `ESTADO.md` actualizado con la sección 1.5.
 - Pendiente: decisión sobre `builders/carlos`, analítica real (GA4/GTM), accesibilidad, informe final consolidado de cumplimiento (sección 31 del prompt maestro).
 
+## 2026-07-13 (continuación) — decisión sobre builders/carlos y auditoría de accesibilidad
+
+- **Alejandro confirmó, vía pregunta directa:** dejar `builders/carlos`, `builders/_template` y `carlos/` sin tocar por ahora (ni aviso a Carlos, ni baja del subdominio, ni migración). Sigue siendo una decisión abierta a futuro. También confirmó mantener Diversifica e Infografía como páginas standalone enlazadas desde el home, sin fusionarlas al nav superior ni al blog.
+- **Auditoría de accesibilidad ejecutada (commit `ececf51`):** revisión de teclado/foco/contraste/aria/labels en las 6 superficies + 4 páginas legales. La mayoría ya estaba bien (labels de formularios asociados, aria-expanded en acordeones, lang="es" en todas). Hallazgo real medido con fórmula de contraste WCAG: el disclaimer de cumplimiento se renderizaba a ~2.1:1 (muy por debajo del mínimo 4.5:1 AA) en 8 páginas — corregido subiendo opacidad de .3 a .6 (resultado ~4.9-5.0:1). `donativo/index.html` tenía el mismo problema a menor escala (4.2:1 → 6.2:1). Se descubrió que `servicios/index.html` era la única página pública sin ninguna frase de disclaimer — se agregó una, y se subió el contraste de sus enlaces de footer.
+- Verificado balance de HTML en las 10 páginas tocadas antes de publicar.
+- `ESTADO.md` actualizado con las secciones 1.6 y 1.7.
+- Pendiente: analítica real (GA4/GTM — falta ID de Alejandro), informe final consolidado (sección 31 del prompt maestro).
+
 ## Cómo seguir esta bitácora
 
 - Cada sesión de trabajo nueva, pide a Claude: "agrega una entrada a la bitácora de hoy" al final de la conversación.

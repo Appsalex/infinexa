@@ -2,7 +2,7 @@
 
 > Este archivo es la fuente única de verdad del proyecto. Se actualiza después de cada sesión de trabajo, sin importar en qué conversación de Claude se realizó. No se crean archivos nuevos por conversación — siempre se edita este mismo documento.
 
-**Última actualización:** 13 de julio, 2026 — 🔴 **Decisión estratégica: reposicionamiento total de Infinexa, desvinculación completa de Hand4Hand.** Infinexa deja de ser un funnel de prospección hacia Hand4Hand y pasa a ser una plataforma independiente de educación, criterio y conexión sobre la evolución del dinero, blockchain, Web3, IA y nuevos modelos de creación de valor. **Fase 1** (eliminación de Hand4Hand de `index.html`, commit `06747d6`), **Fase 2** (nueva home de 13 secciones + navegación unificada, commit `51caf8a`), **Fase 3** (reposicionamiento de contenido de Diversifica, Infografía y Servicios → Infinexa Digital, commits `2520362`/`47285b5`), **Fase 4** (páginas de Transparencia/Riesgos/Privacidad/Términos + sitemap, commit `07a8512`) y **Fase 5** (auditoría de claims del blog, commit `80528bd`) ejecutadas y publicadas — ver sección 1.1–1.5 y `_gestion/BITACORA.md`. Fases siguientes (decisión sobre `builders/carlos`, analítica real, accesibilidad, informe final consolidado) quedan pendientes para próximas sesiones.
+**Última actualización:** 13 de julio, 2026 — 🔴 **Decisión estratégica: reposicionamiento total de Infinexa, desvinculación completa de Hand4Hand.** Infinexa deja de ser un funnel de prospección hacia Hand4Hand y pasa a ser una plataforma independiente de educación, criterio y conexión sobre la evolución del dinero, blockchain, Web3, IA y nuevos modelos de creación de valor. **Fase 1** (eliminación de Hand4Hand de `index.html`, commit `06747d6`), **Fase 2** (nueva home de 13 secciones + navegación unificada, commit `51caf8a`), **Fase 3** (reposicionamiento de contenido de Diversifica, Infografía y Servicios → Infinexa Digital, commits `2520362`/`47285b5`), **Fase 4** (páginas de Transparencia/Riesgos/Privacidad/Términos + sitemap, commit `07a8512`), **Fase 5** (auditoría de claims del blog, commit `80528bd`) y **Fase 6** (auditoría de accesibilidad, commit `ececf51`) ejecutadas y publicadas — ver sección 1.1–1.7 y `_gestion/BITACORA.md`. Alejandro confirmó dejar `builders/carlos` sin tocar por ahora (1.6) y mantener Diversifica/Infografía como páginas standalone enlazadas desde el home (no fusionarlas al nav). Pendiente: analítica real (falta ID de GA4/GTM) e informe final consolidado.
 
 ---
 
@@ -68,6 +68,22 @@ Sweep con grep sobre los 15 posts de `_posts/` buscando lenguaje absolutista, ga
 Verificado además: sin lenguaje de "rendimiento garantizado" ni urgencia artificial ("ventana que se cierra", "cupos limitados", etc.) en ninguna página publicada. La estadística del 65% (tres fuentes de ingreso) no aparece sin fuente en el blog — los posts que la mencionan (`ingreso-vs-activo.md`) remiten a Diversifica, donde ya está citada (Tom Corley / *Rich Habits*, corregido en Fase 3). `historia-del-dinero.md` y `piezas-rompecabezas.md` tenían coincidencias de "garantiza"/"aseguran" que en contexto son correctas (la primera niega explícitamente una garantía; la segunda es "cómo se aseguran de coordinarse", no una promesa financiera) — no requerían cambio. `sitemap.xml` actualizado con `lastmod: 2026-07-13` en los 4 posts editados.
 
 **Pendiente:** decisión sobre `builders/carlos`, analítica real (GA4/GTM), accesibilidad, informe final consolidado de cumplimiento (sección 31 del prompt maestro).
+
+### 1.6 Decisión sobre `builders/carlos` (13 jul 2026)
+
+Alejandro confirmó explícitamente: dejarlo como está por ahora. No se avisó a Carlos, no se dio de baja el subdominio, no se tocó código de `builders/carlos/`, `builders/_template/` ni `carlos/`. Sigue siendo una decisión abierta para el futuro, no resuelta — solo se confirmó que por ahora no se actúa.
+
+### 1.7 Auditoría de accesibilidad (13 jul 2026, commit `ececf51`)
+
+Revisión de navegación por teclado, foco, contraste de color, aria-labels y labels de formulario en las 6 superficies del sitio + las 4 páginas legales. La mayoría ya estaba en buen estado: `lang="es"` presente en todas las páginas, inputs del diagnóstico y de talleres con `<label for="">` correctamente asociado, acordeones con `aria-expanded` actualizado por JS, sin `outline:none` sin reemplazo visible.
+
+**Hallazgo real (medido con fórmula de contraste WCAG):** el párrafo del disclaimer de cumplimiento ("No es asesoría financiera...") se renderizaba a ~2.1:1 de contraste (`rgba(200,210,214,.3)` sobre el fondo oscuro) en 8 páginas (`index.html`, `_layouts/default.html`, `diversifica`, `infografia`, `transparencia`, `riesgos`, `privacidad`, `terminos`) — muy por debajo del mínimo 4.5:1 de WCAG AA para texto normal. Era, irónicamente, el párrafo que más necesitaba ser legible. Corregido subiendo la opacidad a .6 (contraste resultante ~4.9–5.0:1) en las 8 páginas.
+
+También corregido: `donativo/index.html` tenía el mismo disclaimer al 4.2:1 (opacity .7 sobre `--tmuted`) — subido a .9 (6.2:1). Y se descubrió que **`servicios/index.html` era la única página pública sin ninguna frase de disclaimer** — se agregó una en el footer, y se subió el contraste de los enlaces del footer de esa página (.7 → .85, de 4.2:1 a 5.1:1).
+
+Verificado balance de HTML en las 10 páginas tocadas antes de publicar. Sin cambios de estructura ni de contenido más allá del color/opacidad y la frase nueva en servicios.
+
+**Pendiente:** analítica real (GA4/GTM — falta ID de Alejandro), informe final consolidado (sección 31 del prompt maestro). `builders/carlos` no se toca (ver 1.6).
 
 ---
 
