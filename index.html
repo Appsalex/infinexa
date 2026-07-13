@@ -194,12 +194,6 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
 .analogia-divider{height:1px;background:var(--border-s);margin:clamp(8px,1vw,12px) 0;}
 .analogia-concl{font-size:clamp(15px,1.3vw,17px);color:var(--plata-cl);font-weight:600;line-height:1.65;padding-top:clamp(10px,1.2vw,14px);border-top:1px dashed rgba(200,104,46,0.25);margin-top:clamp(10px,1.2vw,14px);}
 
-/* H4H intro */
-.h4h-intro-box{background:rgba(27,77,92,0.12);border:1px solid rgba(46,110,128,0.2);border-radius:var(--r);padding:clamp(16px,2vw,22px);margin-bottom:clamp(14px,1.8vw,20px);}
-.h4h-intro-label{font-size:clamp(13px,1.1vw,14px);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--plata);margin-bottom:clamp(8px,1.2vw,12px);}
-.h4h-intro-text{font-size:clamp(16px,1.4vw,18px);color:var(--tbody);line-height:1.82;}
-.h4h-intro-text strong{color:var(--plata-cl);font-weight:600;}
-
 /* Autofinanciamiento */
 .auto-box{background:rgba(200,104,46,0.05);border:1px solid rgba(200,104,46,0.2);border-radius:var(--r);padding:clamp(18px,2.2vw,28px);margin-bottom:clamp(14px,1.8vw,20px);}
 .auto-headline{font-size:clamp(20px,2.2vw,28px);font-weight:700;color:var(--plata-cl);line-height:1.2;margin-bottom:clamp(10px,1.4vw,16px);}
@@ -221,59 +215,6 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
 .auto-disclaimer{display:flex;gap:clamp(8px,1vw,12px);align-items:flex-start;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:clamp(6px,.8vw,10px);padding:clamp(10px,1.2vw,14px);}
 .auto-disclaimer-icon{font-size:clamp(13px,1.2vw,15px);flex-shrink:0;margin-top:1px;opacity:.6;}
 .auto-disclaimer-text{font-size:clamp(12px,1vw,13px);color:var(--tmuted);line-height:1.65;opacity:.85;}
-
-/* Pilares valor */
-.valor-grid{display:grid;grid-template-columns:1fr;gap:clamp(10px,1.2vw,14px);margin-bottom:clamp(14px,1.8vw,20px);}
-.valor-card{background:rgba(200,104,46,0.06);border:1px solid var(--border);border-radius:var(--r);padding:clamp(14px,1.8vw,20px);display:flex;gap:clamp(12px,1.5vw,18px);align-items:flex-start;}
-.valor-icon{font-size:clamp(22px,2.2vw,28px);flex-shrink:0;margin-top:2px;}
-.valor-label{font-size:clamp(13px,1.1vw,14px);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--cobre);margin-bottom:5px;}
-.valor-title{font-size:clamp(16px,1.5vw,19px);font-weight:700;color:var(--plata-cl);margin-bottom:6px;line-height:1.3;}
-.valor-desc{font-size:clamp(14px,1.2vw,16px);color:var(--tbody);line-height:1.75;}
-.valor-desc strong{color:var(--plata-cl);font-weight:600;}
-
-/* Wallet — no custodia DESTACADO */
-.custodia-box{
-  background:var(--grafito);
-  border:1px solid rgba(200,104,46,0.25);
-  border-radius:var(--r);
-  padding:clamp(18px,2.2vw,28px);
-  margin-bottom:clamp(14px,1.8vw,20px);
-}
-.custodia-eyebrow{font-size:clamp(13px,1.1vw,14px);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--plata);margin-bottom:clamp(8px,1.2vw,12px);}
-.custodia-h{font-size:clamp(20px,2.2vw,28px);font-weight:800;color:var(--plata-cl);line-height:1.2;margin-bottom:clamp(12px,1.5vw,18px);}
-.custodia-h em{font-style:italic;color:#D97B3C;font-weight:700;font-weight:300;}
-.custodia-contrast{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.2vw,14px);margin-bottom:clamp(14px,1.8vw,20px);}
-.custodia-col{border-radius:clamp(8px,1vw,12px);padding:clamp(12px,1.5vw,18px);}
-.custodia-col.banco{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);}
-.custodia-col.h4h{background:rgba(200,104,46,0.08);border:1px solid rgba(200,104,46,0.22);}
-.custodia-col-label{font-size:clamp(10px,.9vw,12px);font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:8px;}
-.custodia-col.banco .custodia-col-label{color:var(--plata);}
-.custodia-col.h4h .custodia-col-label{color:var(--cobre);}
-.custodia-col-text{font-size:clamp(13px,1.2vw,15px);color:var(--tbody);line-height:1.7;}
-.custodia-remate{font-size:clamp(16px,1.5vw,19px);color:var(--plata-cl);font-weight:600;line-height:1.6;padding-top:clamp(12px,1.5vw,16px);border-top:1px dashed rgba(200,104,46,0.25);}
-.custodia-remate em{font-style:italic;color:#D97B3C;font-weight:700;font-weight:300;}
-.custodia-alerta{font-size:clamp(12px,1vw,13px);color:var(--plata);margin-top:clamp(10px,1.2vw,14px);line-height:1.6;font-style:italic;opacity:.8;}
-
-/* Tech badges */
-.tech{background:rgba(255,255,255,0.025);border:1px solid var(--border-s);border-radius:var(--r);padding:clamp(14px,1.8vw,20px);}
-.tech-row{display:flex;gap:clamp(10px,1.2vw,14px);margin-bottom:clamp(10px,1.2vw,14px);align-items:flex-start;}
-.tech-row:last-child{margin-bottom:0;}
-.tbadge{font-size:clamp(10px,.9vw,12px);font-weight:700;background:rgba(200,104,46,0.12);color:var(--cobre);border:1px solid rgba(200,104,46,0.3);padding:5px 10px;border-radius:6px;white-space:nowrap;flex-shrink:0;margin-top:2px;}
-.tbadge.b{background:rgba(200,210,214,0.08);color:var(--plata);border-color:rgba(200,210,214,0.2);}
-.ttext{font-size:clamp(14px,1.2vw,16px);color:var(--tbody);line-height:1.75;}
-.ttext strong{color:var(--plata-cl);font-weight:600;}
-.flow{display:flex;align-items:center;justify-content:center;gap:clamp(6px,1vw,12px);margin-top:clamp(12px,1.5vw,18px);flex-wrap:wrap;}
-.fnode{background:rgba(255,255,255,0.04);border:1px solid rgba(200,210,214,0.14);border-radius:8px;padding:clamp(6px,.8vw,9px) clamp(10px,1.2vw,16px);font-size:clamp(13px,1.2vw,15px);font-weight:500;color:var(--plata-cl);}
-.fnode.c{background:rgba(200,104,46,0.1);border-color:var(--border);color:#D97B3C;font-weight:700;}
-.farrow{color:var(--cobre);font-size:clamp(14px,1.6vw,20px);}
-
-/* SÍ/NO */
-.transp{background:rgba(255,255,255,0.025);border:1px solid var(--border-s);border-radius:var(--r);padding:clamp(14px,1.8vw,22px);}
-.t-row{display:flex;gap:clamp(10px,1.2vw,14px);margin-bottom:clamp(8px,1vw,12px);font-size:clamp(15px,1.3vw,17px);line-height:1.6;align-items:center;}
-.t-row:last-child{margin-bottom:0;}
-.si,.no{display:inline-flex;align-items:center;justify-content:center;min-width:clamp(40px,4vw,52px);padding:clamp(4px,.6vw,7px) clamp(8px,1vw,12px);border-radius:6px;font-size:clamp(13px,1.1vw,15px);font-weight:800;flex-shrink:0;letter-spacing:.5px;}
-.si{color:var(--plata-cl);background:rgba(46,110,128,0.25);border:1px solid rgba(46,110,128,0.5);}
-.no{color:var(--plata-cl);background:rgba(200,104,46,0.25);border:1px solid rgba(200,104,46,0.5);}
 
 /* Stat cards */
 .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px,1.2vw,14px);margin:clamp(14px,1.8vw,20px) 0;}
@@ -316,15 +257,6 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
 .cta-h{font-size:clamp(26px,3vw,42px);font-weight:700;color:var(--plata-cl);line-height:1.15;margin-bottom:clamp(10px,1.4vw,16px);}
 .cta-h em{font-style:italic;color:#D97B3C;font-weight:700;font-weight:300;}
 .cta-sub{font-size:clamp(16px,1.4vw,18px);color:var(--tbody);line-height:1.85;max-width:580px;margin:0 auto clamp(22px,2.8vw,36px);}
-.pasos-wrap{max-width:820px;margin:0 auto clamp(24px,3vw,38px);background:rgba(255,255,255,0.03);border:1px solid rgba(200,104,46,0.2);border-radius:var(--r);padding:clamp(18px,2.2vw,28px);text-align:left;}
-.pasos-label{font-size:clamp(13px,1.1vw,14px);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--plata);margin-bottom:clamp(14px,1.8vw,20px);text-align:center;}
-.pasos-grid{display:grid;grid-template-columns:1fr;gap:clamp(10px,1.2vw,14px);}
-@media(min-width:600px){.pasos-grid{grid-template-columns:1fr 1fr;}}
-.paso{display:flex;gap:clamp(10px,1.2vw,14px);align-items:flex-start;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:clamp(8px,1vw,12px);padding:clamp(12px,1.5vw,18px);}
-.paso-num{font-size:clamp(20px,2.2vw,28px);font-weight:800;color:var(--cobre);line-height:1;flex-shrink:0;width:clamp(26px,2.8vw,34px);}
-.paso-title{font-size:clamp(14px,1.3vw,16px);font-weight:700;color:var(--plata-cl);margin-bottom:4px;line-height:1.3;}
-.paso-desc{font-size:clamp(12px,1.1vw,14px);color:var(--tbody);line-height:1.7;}
-.pasos-nota{font-size:clamp(12px,1vw,13px);color:var(--tmuted);text-align:center;margin-top:clamp(12px,1.5vw,16px);font-style:italic;opacity:.8;}
 .wa-btn{display:inline-flex;align-items:center;gap:clamp(10px,1.2vw,14px);background:#25D366;color:#fff;font-size:clamp(16px,1.5vw,18px);font-weight:700;padding:clamp(14px,1.8vw,20px) clamp(28px,3.5vw,44px);border-radius:100px;text-decoration:none;box-shadow:0 8px 32px rgba(37,211,102,0.25);transition:transform .2s,box-shadow .2s;cursor:pointer;border:none;}
 .wa-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(37,211,102,0.35);}
 .wa-icon{width:clamp(20px,2vw,26px);height:clamp(20px,2vw,26px);flex-shrink:0;}
@@ -496,127 +428,14 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
   </div>
 </div>
 
-<!-- ESCALÓN 4: Hand4Hand -->
-<div class="acord-section" id="s4">
-  <button class="acord-trigger" onclick="toggle('s4')" aria-expanded="false">
-    <div class="acord-trigger-left">
-      <span class="acord-step">Escalón 4</span>
-      <span class="acord-title">Hand4Hand — apoyo mutuo en la nueva economía.</span>
-      <span class="acord-preview">Una sola aportación. Todo el sistema.</span>
-    </div>
-    <div class="acord-icon-wrap"><div class="acord-icon">
-      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-    </div><span class="acord-icon-label">Ver más</span></div>
-  </button>
-  <div class="acord-panel">
-    <div class="acord-inner">
-
-      <div class="body-text" style="font-style:italic;color:var(--plata);">Carlos no decidió en automático. Antes de aportar nada, quiso entender exactamente qué era esto. Esto es lo que encontró.</div>
-
-      <div class="h4h-intro-box">
-        <div class="h4h-intro-label">Qué es exactamente</div>
-        <div class="h4h-intro-text">Una comunidad global de apoyo mutuo en economía colaborativa, donde las personas se conectan mediante <strong>aportaciones voluntarias directas entre wallets</strong>, sin intermediarios financieros, verificable en blockchain pública.</div>
-        <div class="h4h-intro-text" style="margin-top:clamp(10px,1.4vw,16px); font-style:italic;">Cómo funciona en la práctica, qué se aporta y qué se puede esperar es exactamente lo que platicamos en la conversación de 20 minutos — es información que merece explicarse bien, en diálogo, no en una página.</div>
-      </div>
-
-      <!-- 3 PILARES -->
-      <div class="valor-grid">
-        <div class="valor-card">
-          <div class="valor-icon">📚</div>
-          <div>
-            <div class="valor-label">Pilar 1 · Educación</div>
-            <div class="valor-title">Formación real en la nueva economía</div>
-            <div class="valor-desc">Hand4Hand Labs te acompaña paso a paso: blockchain, wallets, economía descentralizada. <strong>No necesitas ser experto para empezar.</strong></div>
-          </div>
-        </div>
-        <div class="valor-card">
-          <div class="valor-icon">🌐</div>
-          <div>
-            <div class="valor-label">Pilar 2 · Comunidad</div>
-            <div class="valor-title">Red global activa con acompañamiento</div>
-            <div class="valor-desc">Sesiones diarias con mentores de múltiples países. Acompañamiento personal 90 días. <strong>No navegas solo.</strong></div>
-          </div>
-        </div>
-        <div class="valor-card">
-          <div class="valor-icon">🔗</div>
-          <div>
-            <div class="valor-label">Pilar 3 · Participación voluntaria</div>
-            <div class="valor-title">Apoyo mutuo entre personas</div>
-            <div class="valor-desc">Posibilidad voluntaria y <strong>no garantizada</strong> de participar en el sistema de apoyo mutuo. Te explicamos cómo funciona en la conversación inicial.</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- NO CUSTODIA — DESTACADO -->
-      <div class="custodia-box">
-        <div class="custodia-eyebrow">La diferencia que más importa</div>
-        <div class="custodia-h">El banco custodia tu dinero.<br><em>Aquí, tú.</em></div>
-        <div class="custodia-contrast">
-          <div class="custodia-col banco">
-            <div class="custodia-col-label">Sistema tradicional</div>
-            <div class="custodia-col-text">Tu dinero está en manos del banco. Ellos deciden cuándo puedes accederlo, a qué velocidad y bajo qué condiciones. Tú no tienes las llaves.</div>
-          </div>
-          <div class="custodia-col h4h">
-            <div class="custodia-col-label">Hand4Hand</div>
-            <div class="custodia-col-text">Tus fondos están en tu wallet no custodial. Solo tú tienes las llaves. Hand4Hand nunca puede moverlos, bloquearlos ni retenerlos.</div>
-          </div>
-        </div>
-        <div class="custodia-remate">Lo que llega a tu wallet, es tuyo. <em>Sin intermediarios. Sin custodia. Sin permisos.</em></div>
-        <div class="custodia-alerta">⚠ Hand4Hand jamás pedirá tu frase semilla. Si alguien lo hace, es fraude. Reporta de inmediato.</div>
-      </div>
-
-      <!-- TECH -->
-      <div class="tech">
-        <div class="tech-row"><span class="tbadge">USDT</span><div class="ttext"><strong>Valor en dólares, sin volatilidad.</strong> 1 USDT = $1 USD siempre.</div></div>
-        <div class="tech-row"><span class="tbadge b">POLYGON</span><div class="ttext"><strong>Blockchain pública verificable.</strong> Transacciones en segundos, comisiones mínimas.</div></div>
-        <div class="tech-row"><span class="tbadge">WALLET</span><div class="ttext"><strong>No custodial.</strong> Hand4Hand nunca toca tus fondos. Va directo de wallet a wallet.</div></div>
-      </div>
-      <div class="flow" style="margin-top:clamp(12px,1.5vw,18px);">
-        <div class="fnode">Tu wallet</div><div class="farrow">→</div>
-        <div class="fnode c">Red Polygon</div><div class="farrow">→</div>
-        <div class="fnode">Wallet receptor</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ESCALÓN 5: Claridad SÍ/NO -->
-<div class="acord-section" id="s5">
-  <button class="acord-trigger" onclick="toggle('s5')" aria-expanded="false">
-    <div class="acord-trigger-left">
-      <span class="acord-step">Escalón 5</span>
-      <span class="acord-title">Lo que es y lo que no es.</span>
-      <span class="acord-preview">Claridad total antes de cualquier decisión.</span>
-    </div>
-    <div class="acord-icon-wrap"><div class="acord-icon">
-      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-    </div><span class="acord-icon-label">Ver más</span></div>
-  </button>
-  <div class="acord-panel">
-    <div class="acord-inner">
-      <div class="transp">
-        <div class="t-row"><span class="si">SÍ</span><span style="color:var(--tbody);">Plataforma de aportaciones voluntarias entre personas</span></div>
-        <div class="t-row"><span class="si">SÍ</span><span style="color:var(--tbody);">Verificable en blockchain pública (red Polygon)</span></div>
-        <div class="t-row"><span class="si">SÍ</span><span style="color:var(--tbody);">Fee tecnológico del 10% transparente y documentado</span></div>
-        <div class="t-row"><span class="si">SÍ</span><span style="color:var(--tbody);">Formación real en nueva economía digital (Hand4Hand Labs)</span></div>
-        <div class="t-row"><span class="si">SÍ</span><span style="color:var(--tbody);">Wallet no custodial — tus llaves, tus fondos, siempre</span></div>
-        <div class="t-row" style="margin-top:12px;"><span class="no">NO</span><span style="color:var(--tbody);">es una inversión ni ofrece rendimientos de ningún tipo</span></div>
-        <div class="t-row"><span class="no">NO</span><span style="color:var(--tbody);">garantiza resultados — dependen de la participación activa</span></div>
-        <div class="t-row"><span class="no">NO</span><span style="color:var(--tbody);">custodia fondos ni pedirá jamás tu frase semilla</span></div>
-        <div class="t-row"><span class="no">NO</span><span style="color:var(--tbody);">es banco, fondo, exchange ni intermediario financiero</span></div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- ══ BRIDGE ══ -->
 <div class="bridge">
   <div class="bridge-title">¿Por qué vale la pena<br><em>dar el siguiente paso?</em></div>
   <div class="bridge-body">No te pedimos que confíes a ciegas. Te pedimos que tengas <strong>una conversación</strong>. Estas son las tres cosas concretas que obtienes al preguntar:</div>
-  <div class="bridge-body" style="font-style:italic;font-size:clamp(15px,1.3vw,17px);">Carlos hizo exactamente esta pregunta antes de decidir. No conversamos para convencerlo de algo — conversamos para que entendiera el modelo completo, sin presión.</div>
+  <div class="bridge-body" style="font-style:italic;font-size:clamp(15px,1.3vw,17px);">Carlos hizo exactamente esta pregunta antes de decidir. No conversamos para convencerlo de nada — conversamos para que entendiera sus opciones, sin presión.</div>
   <div class="razones">
     <div class="razon"><div class="razon-num">01</div><div class="razon-title">Claridad sobre la nueva economía</div><div class="razon-desc">Entiendas o no de tecnología, saldrás con contexto real — sin costo, sin compromiso.</div></div>
-    <div class="razon"><div class="razon-num">02</div><div class="razon-title">Visión honesta del modelo</div><div class="razon-desc">Cómo funciona, qué implica, cuánto se aporta, qué no se garantiza. Sin letra pequeña.</div></div>
+    <div class="razon"><div class="razon-num">02</div><div class="razon-title">Un diagnóstico honesto de tu punto de partida</div><div class="razon-desc">Qué ya sabes, qué te falta, y qué tendría sentido explorar primero. Sin letra pequeña.</div></div>
     <div class="razon"><div class="razon-num">03</div><div class="razon-title">Tú decides con información</div><div class="razon-desc">Sin presión ni seguimiento insistente. El objetivo es que decidas con criterio, no con presión.</div></div>
   </div>
 </div>
@@ -625,20 +444,9 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
 <div class="cta-sec">
   <div class="cta-eyebrow">¿Listo para la conversación?</div>
   <div class="cta-h">Una llamada de 20 minutos.<br><em>Sin presión. Sin compromiso.</em></div>
-  <div class="cta-sub">Escríbeme por WhatsApp y agendamos 20 minutos. Te explico el modelo completo, resolvemos todas tus dudas y tú decides si tiene sentido para ti.</div>
+  <div class="cta-sub">Escríbeme por WhatsApp y agendamos 20 minutos. Te cuento en qué consiste Infinexa, resolvemos todas tus dudas y tú decides si tiene sentido seguir explorando.</div>
 
-  <div class="pasos-wrap">
-    <div class="pasos-label">Si decides avanzar, así funciona el camino</div>
-    <div class="pasos-grid">
-      <div class="paso"><div class="paso-num">1</div><div><div class="paso-title">Conversación inicial</div><div class="paso-desc">Te explico el modelo completo, resolvemos tus dudas y decides con toda la información.</div></div></div>
-      <div class="paso"><div class="paso-num">2</div><div><div class="paso-title">Tu Génesis</div><div class="paso-desc">Registro · Human Wallet · Tu aportación inicial activa tu participación en el sistema. Te explicamos los montos exactos en la conversación.</div></div></div>
-      <div class="paso"><div class="paso-num">3</div><div><div class="paso-title">Sprint 72 horas</div><div class="paso-desc">Tu mentor te acompaña. Sesiones diarias L-V, 8am y 8pm hora CDMX, disponibles desde el día 1.</div></div></div>
-      <div class="paso"><div class="paso-num">4</div><div><div class="paso-title">Trayectoria 12 semanas</div><div class="paso-desc">Welcomes, Masterclasses, Builds y tu primer Summit. De Insider a Maker con acompañamiento real.</div></div></div>
-    </div>
-    <div class="pasos-nota">Cada paso es voluntario y a tu ritmo. Sin contratos ni permanencia obligatoria.</div>
-  </div>
-
-  <a class="wa-btn" href="https://wa.me/526461173209?text=Hola%2C%20le%C3%AD%20tu%20carta%20de%20Infinexa%20y%20me%20qued%C3%A9%20con%20curiosidad.%20%C2%BFMe%20puedes%20contar%20m%C3%A1s%20sobre%20Hand4Hand%3F" target="_blank" rel="noopener">
+  <a class="wa-btn" href="https://wa.me/526461173209?text=Hola%2C%20le%C3%AD%20tu%20carta%20de%20Infinexa%20y%20me%20qued%C3%A9%20con%20curiosidad.%20%C2%BFPodemos%20platicar%3F" target="_blank" rel="noopener">
     <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     Quiero saber más
   </a>
@@ -658,7 +466,7 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
     </div>
   </div>
 
-  <div class="disclaimer">Hand4Hand es una plataforma de aportaciones voluntarias entre personas en blockchain. No es una inversión. No es un banco ni un fondo. No ofrece rendimientos ni garantiza resultados de ningún tipo. Los resultados dependen exclusivamente de la participación activa y orgánica de cada miembro de la comunidad. La participación es una decisión consciente y voluntaria. Los datos estadísticos son referencias históricas de fuentes públicas y no constituyen proyecciones ni garantías. El personaje "Carlos" es ficticio y representativo — no es un testimonio real. Las referencias a activos digitales son información educativa documentada y no son indicativas de rendimiento futuro de Hand4Hand.</div>
+  <div class="disclaimer">Infinexa es una plataforma de educación y criterio sobre la evolución del dinero, blockchain y los nuevos modelos de creación de valor. No es un banco, fondo, exchange ni asesor financiero regulado. No ofrece rendimientos ni garantiza resultados de ningún tipo. Los datos estadísticos son referencias históricas de fuentes públicas y no constituyen proyecciones ni garantías. El personaje "Carlos" es ficticio y representativo — no es un testimonio real. Toda decisión sobre cómo aplicar este conocimiento corresponde exclusivamente a cada persona.</div>
 </div>
 
 </div><!-- fin card -->

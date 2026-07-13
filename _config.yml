@@ -1,5 +1,5 @@
 title: Infinexa
-description: "Educación y prospección en la nueva economía digital."
+description: "Educación financiera y tecnológica: dinero, blockchain, Web3 y los nuevos modelos de creación de valor."
 url: "https://infinexa.app"
 baseurl: ""
 lang: es_MX
@@ -43,5 +43,6 @@ exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
+  - ESTADO.md
   - _gestion
   - _marketing
