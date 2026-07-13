@@ -55,6 +55,17 @@
 
 ---
 
+## 2026-07-13 (decisión de reposicionamiento total — eliminación de Hand4Hand de la carta, Fase 1)
+
+- **Decisión estratégica de Alejandro:** Infinexa deja de ser un funnel de prospección hacia Hand4Hand y pasa a ser una plataforma independiente de educación financiera/tecnológica (dinero, blockchain, Web3, IA, nuevos modelos de creación de valor), con una futura ruta de "aplicación práctica" que puede o no involucrar terceros, sin nombrarlos en la home.
+- **Auditoría completa del repo** antes de tocar nada: confirmado que Hand4Hand solo vivía en `index.html` (Escalón 4/5 y CTA final) y en el sistema de builders (`builders/carlos/`, `builders/_template/`, `carlos/`) — Servicios, Diversifica, Infografía y los 15 posts del blog ya estaban limpios.
+- **Fase 1 ejecutada y publicada (commit `06747d6`):** eliminado el Escalón 4 (mecánica Ciclo 2×2 — el mismo hallazgo de riesgo de cumplimiento del 23 jun, nunca ejecutado hasta hoy) y el Escalón 5 (SI/NO, describía el producto de Hand4Hand). Eliminado el roadmap de onboarding H4H del CTA (Génesis, Human Wallet, Sprint 72h, Insider→Maker). Reescritos Bridge, CTA, mensaje de WhatsApp y disclaimer final para hablar de Infinexa en general, sin nombrar Hand4Hand. Limpiado CSS huérfano de los bloques eliminados.
+- **Hallazgo de seguridad no relacionado, corregido de paso:** `ESTADO.md` no tenía front matter ni estaba en el `exclude:` de `_config.yml` — Jekyll lo copiaba tal cual al build como archivo estático descargable en `infinexa.app/ESTADO.md`, exponiendo públicamente los hallazgos internos de cumplimiento (incluida la nota de que la mecánica de ciclos es "estructuralmente igual a un esquema Ponzi") y la estrategia de negocio. Agregado a `exclude:`.
+- **`_config.yml` — descripción del sitio corregida:** de "Educación y prospección en la nueva economía digital" a una descripción sin lenguaje de reclutamiento.
+- **No tocado, requiere decisión explícita de Alejandro:** `builders/carlos/`, `builders/_template/` y `carlos/` en la raíz — son landings completas de Hand4Hand, y `carlos.infinexa.app` está en vivo para un tercero real. Apagar o reescribir esas páginas sin avisar tiene implicaciones de relación/negocio que no me correspondía decidir solo. Ver `ESTADO.md` sección 1.1 y "Próximos pasos" ítem 1b.
+- **Flujo de git usado:** se encontró un `.git/index.lock` residual que el sistema de archivos del sandbox no dejaba borrar (protección de borrado de la carpeta conectada) — resuelto solicitando permiso de borrado explícito antes de continuar.
+- **Alcance total pactado con Alejandro:** el pedido completo (nueva arquitectura de marca en 3 pilares, home de 13 secciones, nav unificado — el sitio no tiene header/nav compartido, cada página es HTML standalone —, diagnóstico, páginas nuevas de transparencia/riesgos/privacidad/términos, auditoría de claims sensibles del blog, analítica, SEO, accesibilidad) es una reconstrucción de varias sesiones. Se acordó ejecutar por fases con commit y push al cierre de cada fase (no todo junto, no solo local). Fase 1 (esta) cerrada; fases siguientes pendientes de sesión futura.
+
 ## Cómo seguir esta bitácora
 
 - Cada sesión de trabajo nueva, pide a Claude: "agrega una entrada a la bitácora de hoy" al final de la conversación.

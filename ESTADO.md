@@ -2,13 +2,30 @@
 
 > Este archivo es la fuente única de verdad del proyecto. Se actualiza después de cada sesión de trabajo, sin importar en qué conversación de Claude se realizó. No se crean archivos nuevos por conversación — siempre se edita este mismo documento.
 
-**Última actualización:** 12 de julio, 2026 (arco Bitcoin del blog completado — 6/6 posts publicados, #10 al #15 —, corrección de bugs de orden y duplicidad título/imagen, corrección del orden de todo el blog vía fechas explícitas, e incidente de infraestructura resuelto: el dominio raíz quedó accidentalmente "Proxied" en Cloudflare y el Worker `infinexa-builders` tenía una ruta de más que interceptaba `infinexa.app/*` — ambos causaron una caída completa del sitio principal; resuelto y reforzado, detalle completo en `_gestion/BITACORA.md`, entrada del 12 jul 2026)
+**Última actualización:** 13 de julio, 2026 — 🔴 **Decisión estratégica: reposicionamiento total de Infinexa, desvinculación completa de Hand4Hand.** Infinexa deja de ser un funnel de prospección hacia Hand4Hand y pasa a ser una plataforma independiente de educación, criterio y conexión sobre la evolución del dinero, blockchain, Web3, IA y nuevos modelos de creación de valor. Fase 1 (eliminación de Hand4Hand de `index.html`) ejecutada y publicada — ver sección 1.1 y `_gestion/BITACORA.md`, entrada del 13 jul 2026. Fases siguientes (nueva arquitectura de marca, home nueva, nav unificado, páginas nuevas, blog) quedan pendientes para próximas sesiones.
 
 ---
 
 ## 1. Resumen del proyecto
 
-Infinexa es una marca digital que conecta personas con conceptos de finanzas descentralizadas (DeFi) y sirve como funnel de prospección hacia Hand4Hand. El proyecto se construyó desde cero usando Claude Code, con sitio web propio, identidad de marca completa, y un modelo de negocio de dos capas: venta del servicio completo a terceros, y venta de subdominios bajo la marca Infinexa ("Builder Edition") a otros builders de Hand4Hand.
+Infinexa es una plataforma de educación, análisis y conexión para personas y empresas que quieren entender cómo evolucionan el dinero, blockchain, Web3, la inteligencia artificial y los nuevos modelos de creación de valor — para llevar ese conocimiento a decisiones y proyectos concretos. **Ya no es un funnel de prospección hacia Hand4Hand** (decisión del 13 jul 2026, ver 1.1). El proyecto se construyó desde cero usando Claude Code, con sitio web propio e identidad de marca completa.
+
+### 1.1 Reposicionamiento y desvinculación de Hand4Hand (13 jul 2026)
+
+Alejandro decidió pivotar Infinexa de "funnel de prospección hacia Hand4Hand" a "plataforma independiente de educación financiera/tecnológica". Motivo directo: el propio hallazgo de cumplimiento del 23 jun (sección 4.0 original, ver abajo) ya había marcado la mecánica "Ciclo 2×2" de la carta como estructuralmente similar a un esquema Ponzi/piramidal ante los detectores automáticos de Meta/WhatsApp — nunca se había ejecutado la corrección.
+
+**Ejecutado en esta sesión (Fase 1, commit `06747d6`):**
+- Eliminado el Escalón 4 completo de `index.html` (mecánica Ciclo 2×2, los 3 "pilares" de Hand4Hand, tabla comparativa de custodia, tech badges USDT/Polygon/wallet) y el Escalón 5 (SI/NO — describía en su totalidad el producto de Hand4Hand).
+- Eliminado el roadmap de onboarding de Hand4Hand del CTA final (Génesis, Human Wallet, Sprint 72h, trayectoria Insider→Maker).
+- Reescritos el Bridge y el CTA para invitar a una conversación genérica sobre Infinexa, sin nombrar Hand4Hand ni presuponer ningún producto específico.
+- Reescrito el disclaimer final: ahora describe a Infinexa como plataforma educativa (no a Hand4Hand como producto de aportaciones).
+- Limpiado el CSS huérfano de todos los bloques eliminados.
+- `_config.yml`: la descripción del sitio ya no dice "prospección"; ahora describe la propuesta educativa. Se agregó también `ESTADO.md` a `exclude:` — este archivo se estaba subiendo sin querer como archivo estático descargable en GitHub Pages (no tenía front matter, Jekyll lo copiaba tal cual), exponiendo públicamente hallazgos internos de cumplimiento y estrategia de negocio.
+- Verificado: cero menciones de "Hand4Hand"/"H4H" en cualquier página, post o layout publicado (servicios, diversifica, infografía y los 15 posts del blog ya estaban limpios desde antes — solo la carta y el sistema de builders tenían el contenido).
+
+**Pendiente de decisión explícita — NO tocado en esta sesión:** `builders/carlos/`, `builders/_template/` y `carlos/` en la raíz son landings completas de Hand4Hand para el sistema de subdominios "Builder Edition", con `carlos.infinexa.app` **en vivo para un tercero real** (un builder real de Hand4Hand). Eliminarlas o reescribirlas apaga su página sin aviso — requiere que Alejandro decida primero qué pasa con esa relación/subdominio antes de tocar el código. Ver sección 6 (sistema de builders) y "Próximos pasos" abajo.
+
+**Qué falta de la visión completa de reposicionamiento (fases futuras, no ejecutadas):** nueva arquitectura de marca (Aprender / Conectar / Digital), navegación unificada (el sitio no tiene nav/header compartido — cada página es HTML standalone), home nueva de 13 secciones, diagnóstico funcional, páginas nuevas (aprender, diagnóstico, talleres, nosotros, transparencia, riesgos, privacidad, términos), reposicionamiento de Diversifica/Infografía/Servicios como "Infinexa Digital", auditoría de claims sensibles en el blog, analítica, SEO, accesibilidad. El detalle completo de esta visión vive en el prompt maestro que Alejandro proporcionó el 13 jul 2026 (no se guardó como archivo aparte — si se retoma, pedir a Alejandro que lo vuelva a compartir o consultar el historial de esta conversación).
 
 ---
 
@@ -377,15 +394,17 @@ en `_gestion/BITACORA.md`.
 
 ## 8. Próximos pasos inmediatos
 
-1. **🔴 Prioritario — Ejecutar la eliminación de la mecánica de Ciclos 2×2 del Escalón 4 de la carta** (riesgo de cumplimiento — ver sección 4.0). Prompt ya generado, pendiente de llevarse a la conversación de páginas web y aplicarse al `index.html` real.
+1. ~~🔴 Prioritario — Ejecutar la eliminación de la mecánica de Ciclos 2×2 del Escalón 4 de la carta~~ — ✅ **Resuelto el 13 jul 2026**, ver sección 1.1. Superado además por la decisión de eliminar Hand4Hand por completo, no solo la mecánica de ciclos.
+1b. **🔴 Nuevo prioritario — Decidir qué pasa con `builders/carlos/`, `builders/_template/` y `carlos/`** (landings de Hand4Hand del sistema Builder Edition, `carlos.infinexa.app` en vivo para un tercero real). No se tocaron en la sesión del 13 jul — requiere que Alejandro decida primero (¿avisar a Carlos? ¿dar de baja el subdominio? ¿migrar a una landing propia de Hand4Hand fuera de Infinexa, backlog Fase 3?) antes de que el código se modifique.
+1c. **Continuar las fases del reposicionamiento de Infinexa** (arquitectura de marca, home nueva, nav unificado, diagnóstico, páginas nuevas, auditoría de claims del blog, SEO/analítica/accesibilidad) — ver detalle en sección 1.1. Pendiente de sesión(es) futuras.
 2. **Blog — próximos posts identificados (no escritos todavía):** Remesas y USDT (cómo enviar dinero sin banco, datos reales de comisiones, pilar la carta) · El dinero y la inflación en profundidad (tema escrito como post #8, puede ampliarse con más datos) · Posts futuros sobre DeFi en práctica.
 3. **Audio pendiente para posts #2–#9** — flujo documentado en sección 9.3 de `BLOG_GUIA.md`. Scripts de ElevenLabs pendientes de generar para cada post.
-3. Generar HTML completo de `carta.html` e `infografia.html` para el sistema de builders (templates con variables) — al hacerlo, incorporar ya la versión corregida sin la mecánica de ciclos
-4. Terminar de personalizar y publicar el builder de prueba `carlos`
+3b. ⚠️ *Posiblemente obsoleto tras el pivote del 13 jul — confirmar con Alejandro antes de ejecutar:* generar HTML completo de `carta.html` e `infografia.html` para el sistema de builders (templates con variables).
+4. ⚠️ *Posiblemente obsoleto tras el pivote:* terminar de personalizar y publicar el builder de prueba `carlos` — ver 1b, depende de la decisión sobre Builder Edition.
 5. Aplicar el nuevo logo al sitio web en vivo (`infinexa.app`)
 6. Importar los SVG de marca a Figma/Illustrator y generar exportaciones PNG
-7. Decidir si se generan los 4 textos de prospección semanal para grupos de WhatsApp
-8. Evaluar primer cliente real para el servicio completo o para Builder Edition
+7. ⚠️ *Posiblemente obsoleto tras el pivote:* decidir si se generan los 4 textos de prospección semanal para grupos de WhatsApp (prospección apuntaba a Hand4Hand).
+8. ⚠️ *Posiblemente obsoleto tras el pivote:* evaluar primer cliente real para Builder Edition (Hand4Hand). El servicio completo de Infinexa Digital/Servicios sigue vigente.
 9. Compartir la infografía de Diversifica actualizada (65%/45%/29%, fuente Tom Corley) en estados/grupos, enlazando a `infinexa.app/diversifica/`
 10. Cuando la página de Servicios esté lista para tráfico de búsqueda directa, solicitar su indexación en Google Search Console (mismo proceso ya usado para las otras 3 páginas)
 11. Agregar cada página nueva que se publique a futuro tanto al `sitemap.xml` como a la solicitud de indexación en Search Console
