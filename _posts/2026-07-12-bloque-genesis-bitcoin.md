@@ -4,7 +4,7 @@ date: 2026-07-12 10:00:00 -0700
 author: "Alejandro García, MBA"
 category: "economía descentralizada"
 pillar: "/"
-pillar_label: "Ver la carta"
+pillar_label: "Ver Infinexa"
 keywords: ["bloque génesis bitcoin", "mensaje oculto bloque génesis", "primer bloque de bitcoin explicado", "the times chancellor bailout bitcoin", "3 de enero 2009 bitcoin historia"]
 description: "El primer bloque de Bitcoin contiene 50 BTC que nadie ha podido gastar jamás — y un mensaje escondido que convirtió un experimento técnico en una declaración. Esto es lo que dice, y por qué sigue importando."
 image: "/assets/blog/bloque-genesis-bitcoin.webp"

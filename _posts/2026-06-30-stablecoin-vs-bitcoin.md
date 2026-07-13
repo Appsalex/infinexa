@@ -3,7 +3,7 @@ title: "Qué es una stablecoin, y por qué no es lo mismo que Bitcoin"
 author: "Alejandro García, MBA"
 category: "economía descentralizada"
 pillar: "/"
-pillar_label: "Ver la carta"
+pillar_label: "Ver Infinexa"
 keywords: ["qué es una stablecoin", "stablecoin explicación simple", "diferencia entre USDT y Bitcoin", "qué es USDT", "dólar digital cripto para qué sirve"]
 description: "Bitcoin sube y baja en cuestión de horas. Una stablecoin como USDT no. Entender por qué es la diferencia entre confundir 'cripto' con una sola cosa, y ver la nueva economía digital con más precisión."
 image: "/assets/blog/stablecoin-vs-bitcoin.webp"
@@ -37,7 +37,7 @@ Bitcoin nació como un experimento en dinero sin fronteras ni emisores centrales
 
 Una stablecoin fue diseñada con el objetivo opuesto: que su valor no se mueva.
 
-El nombre lo dice literalmente — *stable* (estable) + *coin* (moneda). USDT, emitida por la empresa Tether, está diseñada para valer siempre exactamente un dólar. Para mantener ese ancla, Tether respalda cada USDT en circulación con activos en dólares — bonos del tesoro, equivalentes de efectivo — de forma que si alguien quiere canjear sus USDT por dólares, siempre hay con qué. Al cierre de junio de 2026, hay más de 155,000 millones de dólares en USDT en circulación, con un volumen de transacciones diario que en varios momentos del último año superó al propio Bitcoin — lo que lo convierte en la stablecoin más usada del mundo y uno de los activos digitales con mayor movimiento real.
+El nombre lo dice literalmente — *stable* (estable) + *coin* (moneda). USDT, emitida por la empresa Tether, está diseñada con el objetivo de mantener su valor en un dólar. Para sostener ese ancla, Tether declara respaldar cada USDT en circulación con activos en dólares — bonos del tesoro, equivalentes de efectivo — de forma que quien quiera canjear sus USDT por dólares pueda hacerlo. Al cierre de junio de 2026, hay más de 155,000 millones de dólares en USDT en circulación, con un volumen de transacciones diario que en varios momentos del último año superó al propio Bitcoin — lo que lo convierte en la stablecoin más usada del mundo y uno de los activos digitales con mayor movimiento real. Vale la pena ser preciso aquí: "estable" es el objetivo de diseño, no una garantía absoluta — ninguna stablecoin, incluida USDT, está exenta del riesgo de perder temporalmente su paridad 1:1 en condiciones extremas de mercado, y la composición exacta de las reservas de Tether ha sido objeto de escrutinio público en distintos momentos.
 
 <div class="principio">
   <div class="principio-badge">2</div>
@@ -59,7 +59,7 @@ Más allá de las remesas: guardar valor en dólares cuando la moneda local pier
 
 ## Un detalle práctico que conviene entender antes de usarlo
 
-USDT existe en varias redes al mismo tiempo: Tron (TRC20), Ethereum (ERC20), Polygon, BNB Chain, y otras. El valor es siempre el mismo — un dólar — pero la red por la que viaja determina la comisión y la velocidad. Polygon tiene comisiones de fracciones de centavo; Ethereum puede costar varios dólares en horas de alta demanda.
+USDT existe en varias redes al mismo tiempo: Tron (TRC20), Ethereum (ERC20), Polygon, BNB Chain, y otras. El valor buscado es el mismo en todas — un dólar — pero la red por la que viaja determina la comisión y la velocidad. Polygon tiene comisiones de fracciones de centavo; Ethereum puede costar varios dólares en horas de alta demanda.
 
 Lo crítico: si alguien te envía USDT por la red Polygon y tú lo intentas recibir en una wallet configurada para Tron, los fondos se pierden. No hay forma de revertirlo — es la misma naturaleza de las blockchains que mencionamos en el post de [wallet no custodial](/blog/wallet-no-custodial/). Por eso, antes de cualquier transacción, siempre confirmar: ¿qué red? ¿la misma en los dos lados?
 
@@ -81,4 +81,4 @@ Ninguno de los dos estaba equivocado en lo que hizo. Estaban usando herramientas
 
 Ahora ya lo sabes. Eso cambia cómo escuchas cualquier conversación sobre este tema a partir de hoy.
 
-Si quieres ver cómo encaja todo esto en el panorama completo, eso es exactamente de lo que trata [la carta de Infinexa](/). Y si ya tienes preguntas concretas sobre cómo funciona USDT en la práctica — en qué red conviene usarlo, cómo se guarda, qué implica tenerlo — podemos platicarlo directamente.
+Si quieres ver cómo encaja todo esto en el panorama completo, eso es exactamente de lo que trata [Infinexa](/). Y si ya tienes preguntas concretas sobre cómo funciona USDT en la práctica — en qué red conviene usarlo, cómo se guarda, qué implica tenerlo — podemos platicarlo directamente.

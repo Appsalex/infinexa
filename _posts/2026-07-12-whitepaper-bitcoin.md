@@ -4,7 +4,7 @@ date: 2026-07-12 09:00:00 -0700
 author: "Alejandro García, MBA"
 category: "economía descentralizada"
 pillar: "/"
-pillar_label: "Ver la carta"
+pillar_label: "Ver Infinexa"
 keywords: ["whitepaper de bitcoin explicado", "qué dice el whitepaper de satoshi nakamoto", "bitcoin peer to peer electronic cash system resumen", "por qué se escribió el whitepaper de bitcoin", "31 de octubre 2008 bitcoin historia"]
 description: "El 31 de octubre de 2008, en medio del peor colapso financiero en generaciones, alguien publicó un documento de nueve páginas. Esto es lo que decía exactamente — y por qué el momento en que se publicó importa tanto como su contenido."
 image: "/assets/blog/whitepaper-bitcoin.webp"
@@ -89,4 +89,4 @@ Un amigo mío —le llamo Carlos en estos posts— me hizo una pregunta después
 La red sigue viva, sigue validando bloques, y el documento que la describió sigue siendo, palabra por palabra, la misma explicación técnica de por qué funciona.
 {: .insight}
 
-Dos formas de seguir desde aquí: si quieres leer el whitepaper completo, en español, la fuente original sigue disponible públicamente y vale la pena leerla al menos una vez — o si prefieres entender primero cómo se ve este mecanismo explicado en un lenguaje pensado para eso, sin necesidad de leer un documento técnico, [descubre la carta](/). En el siguiente post de esta serie entramos al primer bloque que esa red produjo — y al mensaje que quedó escondido dentro de él.
+Dos formas de seguir desde aquí: si quieres leer el whitepaper completo, en español, la fuente original sigue disponible públicamente y vale la pena leerla al menos una vez — o si prefieres entender primero cómo se ve este mecanismo explicado en un lenguaje pensado para eso, sin necesidad de leer un documento técnico, [descubre Infinexa](/). En el siguiente post de esta serie entramos al primer bloque que esa red produjo — y al mensaje que quedó escondido dentro de él.
