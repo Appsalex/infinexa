@@ -2,7 +2,7 @@
 
 > Este archivo es la fuente única de verdad del proyecto. Se actualiza después de cada sesión de trabajo, sin importar en qué conversación de Claude se realizó. No se crean archivos nuevos por conversación — siempre se edita este mismo documento.
 
-**Última actualización:** 13 de julio, 2026 — 🔴 **Decisión estratégica: reposicionamiento total de Infinexa, desvinculación completa de Hand4Hand.** Infinexa deja de ser un funnel de prospección hacia Hand4Hand y pasa a ser una plataforma independiente de educación, criterio y conexión sobre la evolución del dinero, blockchain, Web3, IA y nuevos modelos de creación de valor. **Fase 1** (eliminación de Hand4Hand de `index.html`, commit `06747d6`), **Fase 2** (nueva home de 13 secciones + navegación unificada, commit `51caf8a`), **Fase 3** (reposicionamiento de contenido de Diversifica, Infografía y Servicios → Infinexa Digital, commits `2520362`/`47285b5`), **Fase 4** (páginas de Transparencia/Riesgos/Privacidad/Términos + sitemap, commit `07a8512`), **Fase 5** (auditoría de claims del blog, commit `80528bd`) y **Fase 6** (auditoría de accesibilidad, commit `ececf51`) ejecutadas y publicadas — ver sección 1.1–1.7 y `_gestion/BITACORA.md`. Alejandro confirmó dejar `builders/carlos` sin tocar por ahora (1.6) y mantener Diversifica/Infografía como páginas standalone enlazadas desde el home (no fusionarlas al nav). Pendiente: analítica real (falta ID de GA4/GTM) e informe final consolidado.
+**Última actualización:** 13 de julio, 2026 — 🔴 **Decisión estratégica: reposicionamiento total de Infinexa, desvinculación completa de Hand4Hand.** Infinexa deja de ser un funnel de prospección hacia Hand4Hand y pasa a ser una plataforma independiente de educación, criterio y conexión sobre la evolución del dinero, blockchain, Web3, IA y nuevos modelos de creación de valor. **Fase 1** (eliminación de Hand4Hand de `index.html`, commit `06747d6`), **Fase 2** (nueva home de 13 secciones + navegación unificada, commit `51caf8a`), **Fase 3** (reposicionamiento de contenido de Diversifica, Infografía y Servicios → Infinexa Digital, commits `2520362`/`47285b5`), **Fase 4** (páginas de Transparencia/Riesgos/Privacidad/Términos + sitemap, commit `07a8512`), **Fase 5** (auditoría de claims del blog, commit `80528bd`), **Fase 6** (auditoría de accesibilidad, commit `ececf51`) y **Fase 7** (Google Analytics 4 conectado, commit `4d43ff8`) ejecutadas y publicadas — ver sección 1.1–1.9 y `_gestion/BITACORA.md`. Alejandro confirmó dejar `builders/carlos` sin tocar por ahora (1.6), mantener Diversifica/Infografía como páginas standalone enlazadas desde el home (no fusionarlas al nav), y entregó el ID de GA4 (`G-X8LW9B8JP2`), ya conectado en las 10 superficies del sitio. Se entregó también el informe final consolidado (1.8). Único pendiente real: decisión futura sobre `builders/carlos` y SEO técnico ampliado.
 
 ---
 
@@ -84,6 +84,20 @@ También corregido: `donativo/index.html` tenía el mismo disclaimer al 4.2:1 (o
 Verificado balance de HTML en las 10 páginas tocadas antes de publicar. Sin cambios de estructura ni de contenido más allá del color/opacidad y la frase nueva en servicios.
 
 **Pendiente:** analítica real (GA4/GTM — falta ID de Alejandro), informe final consolidado (sección 31 del prompt maestro). `builders/carlos` no se toca (ver 1.6).
+
+### 1.8 Informe final consolidado (13 jul 2026)
+
+Se generó y se entregó a Alejandro un informe consolidado (`Infinexa_Informe_Final_13jul2026.docx`, fuera del repo) resumiendo las 6 fases ejecutadas, verificaciones realizadas, decisiones tomadas, pendientes abiertos y una recomendación GO. No se guardó dentro del repositorio para no romper la convención de "un solo archivo de estado" (`ESTADO.md`) — vive como entregable aparte.
+
+### 1.9 Analítica real conectada — Google Analytics 4 (13 jul 2026, commit `4d43ff8`)
+
+Alejandro proporcionó el ID de medición `G-X8LW9B8JP2`. Se agregó el snippet de `gtag.js` al `<head>` de las 9 páginas standalone y de `_layouts/default.html` (cubre los 15 posts del blog) — las 10 superficies del sitio ahora cargan GA4. El helper `trackEvent()` que ya estaba instrumentado en varios CTAs desde la Fase 2 deja de ser un no-op.
+
+Se actualizó `/privacidad/` para cumplir la promesa que esa misma página hacía ("si se activa analítica, esta página se actualizará antes de que entre en funcionamiento"): ahora explica que se usa GA4, que usa cookies propias y de terceros, que no se cruza con los datos de WhatsApp/diagnóstico/talleres, que el usuario puede bloquear el rastreo sin perder funcionalidad, y enlaza a la política de privacidad de Google.
+
+Verificado balance de HTML en las 10 páginas tocadas antes de publicar.
+
+**Pendiente:** decisión sobre `builders/carlos` (ver 1.6, sigue abierta), SEO técnico ampliado (títulos/canonicals/structured data/Core Web Vitals más allá del sitemap).
 
 ---
 

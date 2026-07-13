@@ -109,6 +109,15 @@
 - `ESTADO.md` actualizado con las secciones 1.6 y 1.7.
 - Pendiente: analítica real (GA4/GTM — falta ID de Alejandro), informe final consolidado (sección 31 del prompt maestro).
 
+## 2026-07-13 (continuación) — informe final y Google Analytics 4 conectado
+
+- **Informe final consolidado entregado** (`Infinexa_Informe_Final_13jul2026.docx`, fuera del repo): resume las 6 fases ejecutadas, verificaciones, decisiones tomadas por Alejandro, pendientes abiertos, riesgos residuales y una recomendación GO.
+- **Alejandro proporcionó el ID de GA4** (`G-X8LW9B8JP2`). Conectado en el `<head>` de las 9 páginas standalone + `_layouts/default.html` (commit `4d43ff8`) — el helper `trackEvent()` deja de ser un no-op.
+- **`/privacidad/` actualizada** para cumplir su propia promesa de reflejar cualquier herramienta de analítica antes de activarla: ahora describe el uso de GA4, cookies, separación de datos de WhatsApp/diagnóstico/talleres, opción de bloqueo, y enlace a la política de Google.
+- Verificado balance de HTML en las 10 páginas tocadas antes de publicar.
+- `ESTADO.md` actualizado con las secciones 1.8 y 1.9.
+- Único pendiente real que queda abierto: decisión futura sobre `builders/carlos` (ver entrada anterior) y una auditoría de SEO técnico más amplia (títulos, canonicals, structured data, Core Web Vitals).
+
 ## Cómo seguir esta bitácora
 
 - Cada sesión de trabajo nueva, pide a Claude: "agrega una entrada a la bitácora de hoy" al final de la conversación.
