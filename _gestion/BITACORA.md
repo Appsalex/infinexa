@@ -91,6 +91,16 @@
 - **Verificado en vivo tras el push** (`07a8512`): las 4 páginas cargan correctamente con nav y footer consistentes, balance de HTML correcto, sitemap.xml bien formado.
 - **`ESTADO.md` actualizado** con la sección 1.4.
 
+## 2026-07-13 (continuación) — Fase 5: auditoría de claims del blog
+
+- **Sweep con grep** sobre los 15 posts de `_posts/` buscando lenguaje absolutista, garantías de rendimiento, urgencia artificial y superlativos sin fuente. La gran mayoría de coincidencias ("siempre"/"nunca") resultaron ser usos narrativos normales, no claims financieros problemáticos.
+- **Corregido `stablecoin-vs-bitcoin.md`:** describía la paridad de USDT como absoluta ("siempre exactamente un dólar", "siempre hay con qué canjear"). Reescrito como objetivo de diseño, no garantía, agregando una frase explícita sobre riesgo de de-peg y el escrutinio público de las reservas de Tether.
+- **Corregidas referencias obsoletas a "la carta"** en 4 posts (`wallet-no-custodial`, `stablecoin-vs-bitcoin`, `bloque-genesis-bitcoin`, `whitepaper-bitcoin`) y en `donativo/index.html`: apuntaban a `/` describiéndolo como "la carta de Infinexa", narrativa que ya no existe ahí desde que la Fase 2 reconstruyó la home por completo. Cambiado a "Infinexa" de forma genérica, tanto en `pillar_label` del front matter como en los enlaces del cuerpo.
+- **Verificado:** sin lenguaje de rendimiento garantizado ni urgencia artificial en ninguna página publicada. La estadística del 65% no aparece sin fuente en el blog (remite a Diversifica, ya citada desde la Fase 3). Un par de coincidencias de "garantiza"/"aseguran" en `historia-del-dinero.md` y `piezas-rompecabezas.md` se revisaron en contexto y no requerían cambio.
+- **`sitemap.xml` actualizado** con `lastmod: 2026-07-13` en los 4 posts editados.
+- **Commit `80528bd`, push a producción.** `ESTADO.md` actualizado con la sección 1.5.
+- Pendiente: decisión sobre `builders/carlos`, analítica real (GA4/GTM), accesibilidad, informe final consolidado de cumplimiento (sección 31 del prompt maestro).
+
 ## Cómo seguir esta bitácora
 
 - Cada sesión de trabajo nueva, pide a Claude: "agrega una entrada a la bitácora de hoy" al final de la conversación.
