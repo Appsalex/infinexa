@@ -2,7 +2,7 @@
 
 > Este archivo es la fuente única de verdad del proyecto. Se actualiza después de cada sesión de trabajo, sin importar en qué conversación de Claude se realizó. No se crean archivos nuevos por conversación — siempre se edita este mismo documento.
 
-**Última actualización:** 12 de julio, 2026 (arco Bitcoin del blog avanzado a 4/6 posts publicados — #10 al #13 —, corrección de un bug de orden en bloques `.principio` del post #11, y corrección de duplicidad título/imagen en los posts #10–#13; dos reglas nuevas documentadas en `PROMPT_BLOG.md` — detalle completo en `_gestion/BITACORA.md`, entrada del 12 jul 2026)
+**Última actualización:** 12 de julio, 2026 (arco Bitcoin del blog completado — 6/6 posts publicados, #10 al #15 —, corrección de bugs de orden y duplicidad título/imagen, corrección del orden de todo el blog vía fechas explícitas, e incidente de infraestructura resuelto: el dominio raíz quedó accidentalmente "Proxied" en Cloudflare y el Worker `infinexa-builders` tenía una ruta de más que interceptaba `infinexa.app/*` — ambos causaron una caída completa del sitio principal; resuelto y reforzado, detalle completo en `_gestion/BITACORA.md`, entrada del 12 jul 2026)
 
 ---
 
@@ -21,6 +21,12 @@ Infinexa es una marca digital que conecta personas con conceptos de finanzas des
 - **SSL/TLS:** modo **Full** activado en Cloudflare para generar certificados automáticos en subdominios wildcard
 - **Cloudflare Worker:** `infinexa-builders` — hace proxy transparente de cualquier subdominio (excepto `www`, `infinexa`, `app`) hacia la carpeta correspondiente en `infinexa.app/{subdominio}`
 - **Workers Route:** `*.infinexa.app/*` → Worker `infinexa-builders`
+
+⚠️ **Regla crítica de infraestructura (incidente 12 jul 2026):** el dominio raíz (`infinexa.app`) DEBE quedarse en modo **DNS only** (nube gris) — NUNCA en Proxied. Si se activa el proxy en el dominio raíz por error, y el Worker `infinexa-builders` llega a tener una ruta que también matchee `infinexa.app/*` (además de `*.infinexa.app/*`), el sitio principal completo deja de cargar (timeout / certificado inválido) sin ningún error visible en los builds de GitHub Pages, que siguen mostrándose exitosos. Antes de tocar cualquier configuración de DNS o Workers Routes, confirmar que:
+  1. Los 4 registros A de `infinexa.app` y el CNAME de `www` están en DNS only.
+  2. Solo el CNAME `*.infinexa.app` está en Proxied.
+  3. El Worker `infinexa-builders` tiene ÚNICAMENTE la ruta `*.infinexa.app/*` — nunca `infinexa.app/*`.
+  Detalle completo del incidente en `_gestion/BITACORA.md`, entrada del 12 jul 2026.
 - **GitHub:** autenticación con 2FA vía Google Authenticator
 - **Entorno local:** MacBook Air, terminal Ghostty, Claude Code instalado (`curl -fsSL https://claude.ai/install.sh | sh`)
 - **Carpeta de trabajo local:** `~/Downloads/infinexa-repo`
@@ -114,7 +120,7 @@ Ambos documentos quedaron optimizados como un sistema de dos capas con referenci
 | La infografía | `infinexa.app/infografia` | ✅ Publicada — gradiente corregido hasta DeFi, tipografía igualada con la carta |
 | Servicios | `infinexa.app/servicios` | ✅ Publicada — con precios USDT y wallet (sin QR) |
 | Diversifica | `infinexa.app/diversifica` | ✅ Publicada — ver detalles abajo |
-| Blog | `infinexa.app/blog` | ✅ Publicado — 13 posts, ver sección 4.4 |
+| Blog | `infinexa.app/blog` | ✅ Publicado — 15 posts, ver sección 4.4 |
 | Donativo | `infinexa.app/donativo` | ✅ Publicada — USDT (Polygon) + Bitcoin, QR verificados |
 
 **Detalles técnicos resueltos en la infografía:**
@@ -254,13 +260,13 @@ Diversifica apuntaba a la carpeta huérfana, que tenía una versión vieja del `
 
 ### 4.4 Blog de Infinexa
 
-**Estado:** ✅ Publicado en `infinexa.app/blog`, **13 posts activos** con
+**Estado:** ✅ Publicado en `infinexa.app/blog`, **15 posts activos** con
 sistema de principios visuales numerados, QR compartible dinámico,
-enlace discreto a `/donativo/`, y audio en el post #1.
+enlace discreto a `/donativo/`, y audio en el post #1. Cada post tiene
+campo `date:` explícito con hora (ver regla de orden en `_gestion/PROMPT_BLOG.md`).
 
-**Serie en progreso — Arco Bitcoin (6 posts, historia de blockchain):** 4 de 6
-publicados (#10–#13). Pendientes #14 (nodos y mineros, PoW vs. PoS) y #15
-(cierre del arco). Detalle completo del plan en `_gestion/PROMPT_BLOG.md`.
+**Arco Bitcoin (6 posts, historia de blockchain): completo ✅ (#10–#15).**
+Detalle completo en `_gestion/PROMPT_BLOG.md`.
 
 **Posts publicados:**
 
@@ -278,6 +284,9 @@ publicados (#10–#13). Pendientes #14 (nodos y mineros, PoW vs. PoS) y #15
 | 10 | Las piezas sueltas de un rompecabezas de 30 años | El Patrón | 3 |
 | 11 | Una idea que fracasó antes de tener éxito (eCash/DigiCash) | El Patrón | 3 |
 | 12 | El documento de nueve páginas que cambió todo (whitepaper) | La carta | 2 |
+| 13 | El mensaje escondido en el primer bloque de la historia (bloque génesis) | La carta | 2 |
+| 14 | Quién guarda la verdad cuando nadie está a cargo (nodos/mineros) | El Patrón | 2 |
+| 15 | De un experimento de nueve páginas a la infraestructura del dinero de hoy (cierre) | Diversifica | 2 |
 | 13 | El mensaje escondido en el primer bloque de la historia (bloque génesis) | La carta | 2 |
 
 **Sistemas activos en todos los posts:**
