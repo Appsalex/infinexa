@@ -4,7 +4,9 @@ layout: default
 <div class="hdr-post">
   <div class="sec-label-post">{{ page.category | default: "Infinexa" }}</div>
   <div class="hero-h1-post">{{ page.title }}</div>
-  <div class="post-byline">Por {{ page.author | default: "Infinexa" }} · {{ page.date | date: "%-d de %B de %Y" }}{% if page.last_modified_at %} · Actualizado el {{ page.last_modified_at | date: "%-d de %B de %Y" }}{% endif %}</div>
+  {% assign meses = "enero,febrero,marzo,abril,mayo,junio,julio,agosto,septiembre,octubre,noviembre,diciembre" | split: "," %}
+  {% assign mes_pub = page.date | date: "%-m" | minus: 1 %}
+  <div class="post-byline">Por {{ page.author | default: "Infinexa" }} · {{ page.date | date: "%-d" }} de {{ meses[mes_pub] }} de {{ page.date | date: "%Y" }}{% if page.last_modified_at %} · Actualizado el {% assign mes_upd = page.last_modified_at | date: "%-m" | minus: 1 %}{{ page.last_modified_at | date: "%-d" }} de {{ meses[mes_upd] }} de {{ page.last_modified_at | date: "%Y" }}{% endif %}</div>
   <div class="edu-note-post">Contenido con fines educativos — no constituye asesoría financiera, legal o fiscal.</div>
 
   {% if page.image %}
