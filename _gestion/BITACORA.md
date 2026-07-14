@@ -6,6 +6,14 @@
 
 ---
 
+## 2026-07-13 (sesión de pruebas responsive — extensión de Claude in Chrome conectada por primera vez)
+
+- Alejandro instaló y conectó la extensión de Claude in Chrome (`list_connected_browsers` confirmó el dispositivo). Primer intento real de pruebas responsive visuales de la sesión.
+- Se intentó `resize_window` a 375/768/1024/1440/2048px sobre una pestaña en `infinexa.app/` — el comando reportó éxito pero `window.innerWidth` se quedó fijo en 1280px en los 5 casos (confirmado con `javascript_tool` leyendo `window.innerWidth` tras cada resize). Se intentó también simular anchos vía zoom del navegador (`ctrl+=`, `cmd+=`) — tampoco cambió el viewport real. Ambos métodos parecen no tener efecto en el entorno de esta sesión (posible limitación de la ventana/pantalla virtual del sandbox).
+- Ante esta limitación, se hizo en su lugar una verificación real (no solo por código fuente) al único ancho disponible de forma fiable (1280px, dentro del rango 900–1400px de los breakpoints): se navegó y midió `getBoundingClientRect()`/`getComputedStyle()` del `.card` en `/`, `/aprender/`, `/contacto/`, `/blog/`, `/infografia/`, `/diversifica/` y `/servicios/` — las 7 superficies devolvieron exactamente 1200px de ancho de shell, confirmando en un navegador real (no por inspección de código) que la unificación de Fase 1.5B/1.5D sigue vigente.
+- Capturas de pantalla tomadas confirman: el botón "Hablemos" de `/contacto/` no se parte en dos líneas (una sola línea, el bug original de Fase 1.5A sigue corregido); `/infografia/` muestra el logo de Infinexa una sola vez (el fix de Fase 1.5E sigue vigente, verificado visualmente por primera vez, no solo por fetch de HTML).
+- **Pendiente real, no oculto:** no se logró verificar visualmente los anchos por debajo de 900px (mobile puro: 320/375/390px) ni por encima de 1400px (pantallas grandes: 1440/2048px) — el entorno de esta sesión no permitió forzar esos viewports. La consistencia en esos rangos sigue respaldada solo por revisión de código fuente (las reglas CSS son idénticas en los 8 archivos, confirmado por grep en fases anteriores), no por renderizado real. Repetir cuando el entorno lo permita o probar desde un dispositivo físico.
+
 ## 2026-07-13 (sesión Fase 1.5E — eliminación de logo duplicado + regla global de prevención)
 
 - Detectado, después de integrar `/infografia/` y `/diversifica/` en Fase 1.5D, que ambas seguían mostrando el logo de Infinexa dos veces: una vez pequeño en `{% include nav.html %}` (agregado en 1.5D), otra vez grande en el bloque `.ifx-lockup` heredado de su propio `.hdr` (nunca eliminado en la migración). Bug de la misma familia que el ya corregido en `/servicios/` durante Fase 1.5A (issue #8 de aquella auditoría).
