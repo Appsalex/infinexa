@@ -6,6 +6,13 @@
 
 ---
 
+## 2026-07-13 (sesión — clave real de Web3Forms conectada y verificada)
+
+- Alejandro compartió la access key real de Web3Forms (creada en web3forms.com). Se reemplazó el placeholder `WEB3FORMS_ACCESS_KEY_PENDIENTE` en los dos únicos lugares donde vivía: `_includes/form-handler.html` (usado por `/diagnostico/`, `/talleres/`, `/contacto/`) y la copia inline de `servicios/index.html` (nunca migrada al include compartido). Commit `dda4a53`.
+- Con permiso explícito de Alejandro, se hizo un envío de prueba real usando la extensión de Claude in Chrome (ya conectada): se llenó y envió el formulario de `/contacto/` con datos claramente marcados como prueba ("PRUEBA - Claude (verificación Web3Forms)"), consentimiento marcado. El formulario respondió "Listo — recibimos tu información. Te contactaremos pronto." (respuesta de éxito de la API de Web3Forms) y se reseteó correctamente, mostrando además el seguimiento de WhatsApp opcional.
+- Con esto, los 4 formularios del sitio (diagnóstico, talleres, contacto, servicios) quedan confirmados como funcionales de punta a punta — no solo validando la UI, sino la entrega real vía la API de Web3Forms.
+- Pendiente: que Alejandro confirme haber recibido el correo de prueba en su bandeja.
+
 ## 2026-07-13 (sesión de pruebas responsive — extensión de Claude in Chrome conectada por primera vez)
 
 - Alejandro instaló y conectó la extensión de Claude in Chrome (`list_connected_browsers` confirmó el dispositivo). Primer intento real de pruebas responsive visuales de la sesión.
