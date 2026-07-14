@@ -6,6 +6,14 @@
 
 ---
 
+## 2026-07-13 (sesión Fase 1.5E — eliminación de logo duplicado + regla global de prevención)
+
+- Detectado, después de integrar `/infografia/` y `/diversifica/` en Fase 1.5D, que ambas seguían mostrando el logo de Infinexa dos veces: una vez pequeño en `{% include nav.html %}` (agregado en 1.5D), otra vez grande en el bloque `.ifx-lockup` heredado de su propio `.hdr` (nunca eliminado en la migración). Bug de la misma familia que el ya corregido en `/servicios/` durante Fase 1.5A (issue #8 de aquella auditoría).
+- Corregido en ambas páginas: eliminado el bloque HTML `.ifx-lockup` de `.hdr` (se conserva el resto del header intacto) y el CSS huérfano resultante (`.ifx-lockup`, `.ifx-sep-v`, `.ifx-wm`, `.ifx-name`, `.ifx-line`, `.ifx-tag`), verificado que ninguna otra clase los reutilizaba. Commit `5bb4619`.
+- Agregada una regla global de prevención en `_gestion/RECETAS.md` §1.2: checklist de 4 pasos obligatorio para cualquier futura migración de una página a `nav.html` compartido, para que este bug no se repita una tercera vez (aplica a `donativo/`, `transparencia/`, `riesgos/`, `privacidad/`, `terminos/` si se integran más adelante).
+- Verificado balance de `<div>`/`<svg>`/Liquid en ambos archivos y contenido en vivo post-deploy: el logo aparece una sola vez, resto del contenido/CTAs/disclaimers sin cambios.
+- Dictamen: **GO**.
+
 ## 2026-07-13 (sesión Fase 1.5D — integración de /infografia/ y /diversifica/)
 
 - Última de las páginas "preexistentes" (junto con `/servicios/`, ya normalizada en 1.5A) que seguían fuera del sistema unificado de shell/nav/tokens. Auditoría previa confirmó: sin front matter de Jekyll, nav hardcodeada con el mismo bug de "Aprender" → `/blog/` ya corregido en 1.5B para otras páginas, y un tercer valor de ancho de shell (1100/1200px) distinto al resto del sitio (1200/1320px).

@@ -60,6 +60,41 @@ paso.
 
 ---
 
+## 1.2 Regla de prevención: verificar logo duplicado al migrar una página a `nav.html` compartido (13 jul 2026)
+
+**El bug que se repitió dos veces:** cada página de Infinexa construida
+antes de que existiera `_includes/nav.html` trae su propio bloque de
+header con el logo grande (`.ifx-lockup`: SVG + separador + wordmark
+"infinexa" + tagline). Cuando esa página se migra para usar
+`{% include nav.html %}` (que ya renderiza el logo en versión pequeña,
+`.ifx-lockup-sm`, en la barra de navegación), el logo grande del `.hdr`
+propio de la página se vuelve una **duplicación visual del mismo
+elemento de marca** — el logo aparece dos veces al cargar la página.
+
+Esto pasó primero en `/servicios/` (detectado y corregido en Fase
+1.5A) y volvió a pasar en `/infografia/` y `/diversifica/` (detectado
+y corregido en Fase 1.5E, después de migrarlas en Fase 1.5D) — en
+ambos casos porque la migración se centró en la navegación en sí y no
+en revisar el resto del header de la página.
+
+**Regla práctica — checklist obligatorio al migrar cualquier página a
+`{% include nav.html %}`:**
+1. Buscar `class="ifx-lockup"` (sin el sufijo `-sm`) en el archivo.
+2. Si existe, eliminar ese bloque HTML completo de `.hdr` — el logo
+   pequeño de `nav.html` ya es la marca visible en esa página.
+3. Eliminar también el CSS que queda huérfano al hacerlo: `.ifx-lockup`,
+   `.ifx-sep-v`, `.ifx-wm`, `.ifx-name`, `.ifx-line`, `.ifx-tag` — pero
+   solo si no se reutilizan en otro punto del mismo archivo (verificar
+   con una búsqueda antes de borrar).
+4. Verificar balance de `<div>`/`<svg>`/Liquid antes de hacer commit.
+
+Esta regla aplica a cualquier página que quede pendiente de migrar en
+el futuro (por ejemplo `donativo/`, `transparencia/`, `riesgos/`,
+`privacidad/`, `terminos/`, si algún día se integran al sistema de nav
+compartido).
+
+---
+
 ## 2. Infografías para WhatsApp (estado o grupo)
 
 **Cuándo usar:** para crear una pieza visual tipo infografía, con un dato como gancho, para compartir en estados o grupos de WhatsApp.
