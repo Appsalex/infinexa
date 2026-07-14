@@ -87,10 +87,10 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
 .card{background:var(--bg);width:100%;}
 @media(min-width:900px){
   .shell{padding:32px;}
-  .card{max-width:1200px;border-radius:20px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.5);}
+  .card{max-width:var(--content-max-width);border-radius:20px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.5);}
 }
 @media(max-width:899px){.shell{padding:0;}.card{border-radius:0;}}
-@media(min-width:1400px){.shell{padding:40px;}.card{max-width:1320px;}}
+@media(min-width:1400px){.shell{padding:40px;}.card{max-width:var(--site-max-width);}}
 
 /* ── TIPOGRAFÍA BASE ── */
 .sec-label{font-size:clamp(13px,1.1vw,14px);font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--plata);margin-bottom:clamp(8px,1.2vw,12px);}
@@ -247,31 +247,7 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
 <div class="shell">
 <div class="card">
 
-<!-- ══ NAV ══ -->
-<div class="site-nav">
-  <a href="/" class="ifx-lockup-sm">
-    <svg width="64" height="32" viewBox="95 52 215 80" xmlns="http://www.w3.org/2000/svg">
-      <path d="M 210 100 C 202 78,172 58,146 60 C 116 62,102 82,104 98 C 106 116,124 126,148 124 C 170 122,196 106,210 100 C 224 94,240 74,260 68 C 282 62,298 76,298 92 C 298 110,282 122,260 122 C 238 122,222 108,210 100" fill="none" stroke="#BDC8CC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M 202 93 Q 210 100 202 108" fill="none" stroke="#C8682E" stroke-width="2.2" stroke-linecap="round"/>
-      <path d="M 218 93 Q 210 100 218 108" fill="none" stroke="#C8682E" stroke-width="2.2" stroke-linecap="round"/>
-      <circle cx="210" cy="100" r="2.4" fill="#C8682E"/>
-    </svg>
-    <div class="ifx-wm-sm">
-      <div class="ifx-name-sm">infinexa</div>
-      <div class="ifx-tag-sm">connecting value with purpose</div>
-    </div>
-  </a>
-  <div class="nav-links">
-    <a href="/" class="active">Inicio</a>
-    <a href="/blog/">Aprender</a>
-    <a href="/diagnostico/">Diagnóstico</a>
-    <a href="/talleres/">Talleres</a>
-    <a href="/servicios/">Servicios</a>
-    <a href="/nosotros/">Nosotros</a>
-    <a href="/contacto/">Contacto</a>
-    <a class="nav-cta" href="https://wa.me/526461173209?text=Hola%2C%20vi%20infinexa.app%20y%20me%20gustar%C3%ADa%20platicar." target="_blank" rel="noopener" id="nav-cta-wa">Hablemos</a>
-  </div>
-</div>
+{% include nav.html active="inicio" wa_text="Hola, vi infinexa.app y me gustaría platicar." %}
 <span id="main" tabindex="-1"></span>
 
 <!-- ══ HERO ══ -->

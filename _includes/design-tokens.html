@@ -2,10 +2,13 @@
 /* ══ TOKENS DE DISEÑO COMPARTIDOS — _includes/design-tokens.html ══
    Fase 1.5A — normalización visual. No redefine colores de marca
    (--grafito, --cobre, --plata, etc. siguen viviendo en cada página);
-   esto solo centraliza anchos, espaciado y escala tipográfica. */
+   esto solo centraliza anchos, espaciado y escala tipográfica.
+   Fase 1.5B — --content-max-width y --site-max-width ahora igualan
+   el shell exterior real de Inicio (1200px / 1320px), que es el
+   ancho de referencia aprobado para las 8 superficies del sitio. */
 :root{
   --site-max-width: 1320px;
-  --content-max-width: 1040px;
+  --content-max-width: 1200px;
   --reading-max-width: 780px;
   --page-gutter: clamp(20px, 4vw, 60px);
 
