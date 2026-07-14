@@ -1,0 +1,170 @@
+---
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% include ga4.html %}
+<title>infinexa · Aprender — hub editorial</title>
+<meta name="description" content="Todo el contenido educativo de Infinexa organizado por ruta: dinero e historia económica, diversificación, economía descentralizada, y cómo la sociedad adopta lo nuevo.">
+<link rel="canonical" href="https://infinexa.app/aprender/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://infinexa.app/aprender/">
+<meta property="og:title" content="infinexa · Aprender — hub editorial">
+<meta property="og:description" content="Todo el contenido educativo de Infinexa organizado por ruta.">
+<meta property="og:image" content="https://infinexa.app/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://infinexa.app/assets/og-image.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Inicio","item":"https://infinexa.app/"},
+    {"@type":"ListItem","position":2,"name":"Aprender","item":"https://infinexa.app/aprender/"}
+  ]
+}
+</script>
+{% include reduced-motion.html %}
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --grafito:#1F2A33;--grafito-dk:#0F1720;--petroleo:#1B4D5C;--petroleo-cl:#2E6E80;
+  --cobre:#C8682E;--plata:#C9D2D6;--plata-cl:#EDF1F2;--bg:#0F1720;--bg-dk:#0a1018;
+  --border:rgba(200,104,46,0.15);--border-s:rgba(255,255,255,0.055);
+  --tbody:#C9D2D6;--tmuted:#8AA5BF;--pad:clamp(24px,5vw,60px);--r:clamp(10px,1.2vw,16px);
+}
+html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter','Helvetica Neue',Arial,sans-serif;}
+.shell{width:100%;min-height:100vh;background:linear-gradient(150deg,#0c1219 0%,#14202c 100%);display:flex;justify-content:center;padding:0;}
+.card{background:var(--bg);width:100%;}
+@media(min-width:900px){.shell{padding:32px;}.card{max-width:1000px;border-radius:20px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.5);}}
+@media(max-width:899px){.shell{padding:0;}.card{border-radius:0;}}
+@media(min-width:1400px){.shell{padding:40px;}.card{max-width:1080px;}}
+
+.site-nav{padding:clamp(18px,2.5vw,26px) var(--pad);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:14px;}
+.ifx-lockup-sm{display:flex;align-items:center;gap:clamp(10px,1.5vw,14px);text-decoration:none;flex-shrink:0;}
+.ifx-lockup-sm svg{flex-shrink:0;}
+.ifx-wm-sm{display:flex;flex-direction:column;gap:3px;}
+.ifx-name-sm{font-size:clamp(15px,1.6vw,18px);font-weight:300;color:var(--plata-cl);letter-spacing:clamp(4px,.8vw,8px);}
+.ifx-tag-sm{font-size:clamp(9px,.8vw,10px);font-weight:300;color:var(--plata-cl);letter-spacing:2.5px;opacity:.5;}
+.nav-links{display:flex;align-items:center;gap:clamp(12px,1.6vw,20px);flex-wrap:wrap;}
+.nav-links a{font-size:clamp(13px,1.1vw,14px);font-weight:500;color:var(--plata-cl);text-decoration:none;opacity:.75;letter-spacing:.3px;white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{opacity:1;color:var(--cobre);}
+.nav-cta{display:inline-flex;align-items:center;gap:6px;background:var(--cobre);color:#fff !important;font-weight:700 !important;opacity:1 !important;padding:8px 16px;border-radius:100px;font-size:clamp(12px,1vw,13px) !important;}
+.nav-cta:hover{background:#b05a26;color:#fff !important;}
+
+.hdr{padding:clamp(32px,4.5vw,56px) var(--pad) clamp(20px,3vw,28px);border-bottom:1px solid var(--border);}
+.sec-label{font-size:clamp(12px,1vw,13px);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--cobre);margin-bottom:clamp(10px,1.4vw,14px);}
+.page-h1{font-size:clamp(28px,4vw,44px);font-weight:800;color:var(--plata-cl);line-height:1.15;margin-bottom:clamp(12px,1.5vw,18px);}
+.page-sub{font-size:clamp(15px,1.4vw,18px);color:var(--tbody);line-height:1.8;max-width:680px;}
+
+.sec{padding:clamp(24px,3.5vw,40px) var(--pad);border-bottom:1px solid var(--border-s);}
+.route-title{font-size:clamp(17px,1.8vw,22px);font-weight:800;color:var(--plata-cl);margin-bottom:6px;}
+.route-sub{font-size:13.5px;color:var(--tmuted);margin-bottom:16px;}
+.post-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;}
+.post-card{background:rgba(255,255,255,0.025);border:1px solid var(--border-s);border-radius:10px;padding:16px;text-decoration:none;display:block;transition:border-color .2s;}
+.post-card:hover{border-color:rgba(200,104,46,.4);}
+.post-card-title{font-size:14.5px;font-weight:700;color:var(--plata-cl);line-height:1.4;margin-bottom:6px;}
+.post-card-cta{font-size:12.5px;color:var(--cobre);font-weight:600;}
+
+.cierre{padding:clamp(28px,4vw,44px) var(--pad);background:var(--bg-dk);border-top:2px solid var(--cobre);text-align:center;}
+.firma{display:flex;align-items:center;justify-content:center;gap:14px;}
+.firma-name{font-size:clamp(14px,1.3vw,17px);font-weight:300;color:var(--plata-cl);letter-spacing:5px;opacity:.75;}
+.firma-tag{font-size:clamp(12px,1vw,13px);color:var(--cobre);letter-spacing:1.2px;opacity:.85;text-transform:uppercase;}
+.legal-links{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:16px;}
+.legal-links a{font-size:12px;color:var(--tmuted);text-decoration:none;opacity:.8;}
+.legal-links a:hover{opacity:1;color:var(--cobre);}
+.edu-disclaimer{font-size:clamp(12px,1vw,13px);color:rgba(200,210,214,.6);text-align:center;padding:clamp(14px,2vw,20px) var(--pad);line-height:1.65;border-top:1px solid var(--border-s);}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Saltar al contenido</a>
+<div class="shell">
+<div class="card">
+
+{% include nav.html active="aprender" wa_text="Hola, vi infinexa.app/aprender y me gustaría platicar." %}
+
+<main id="main">
+<div class="hdr">
+  <div class="sec-label">Aprender</div>
+  <h1 class="page-h1">Todo el contenido, organizado por ruta</h1>
+  <p class="page-sub">15 artículos agrupados en 4 rutas temáticas. Empieza por la que más te resuene, o revisa el <a href="/blog/" style="color:var(--cobre);">blog completo</a> en orden cronológico.</p>
+</div>
+
+<div class="sec">
+  <div class="route-title">Dinero, inflación y diversificación</div>
+  <div class="route-sub">Por qué el dinero cambia de valor, y cómo reducir tu dependencia de una sola fuente.</div>
+  <div class="post-grid">
+    <a class="post-card" href="/blog/historia-del-dinero/" id="aprender-card-1"><div class="post-card-title">Del trueque al dólar digital: la historia del dinero</div><div class="post-card-cta">Leer →</div></a>
+    <a class="post-card" href="/blog/dinero-e-inflacion/"><div class="post-card-title">El impuesto silencioso: inflación y poder adquisitivo</div><div class="post-card-cta">Leer →</div></a>
+    <a class="post-card" href="/blog/crisis-1929-2020/"><div class="post-card-title">Por qué la misma crisis se repite distinto cada vez</div><div class="post-card-cta">Leer →</div></a>
+    <a class="post-card" href="/blog/ingreso-vs-activo/"><div class="post-card-title">Ingreso vs. activo: la diferencia que cambia todo</div><div class="post-card-cta">Leer →</div></a>
+    <a class="post-card" href="/blog/ingreso-pasivo/"><div class="post-card-title">Qué es el ingreso pasivo en realidad</div><div class="post-card-cta">Leer →</div></a>
+    <a class="post-card" href="/diversifica/"><div class="post-card-title">Diversifica — guía completa</div><div class="post-card-cta">Explorar →</div></a>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="route-title">Economía descentralizada</div>
+  <div class="route-sub">Bitcoin, blockchain, wallets y stablecoins explicados sin tecnicismos innecesarios.</div>
+  <div class="post-grid">
+    <a class="post-card" href="/blog/whitepaper-bitcoin/"><div class="post-card-title">El documento de nueve páginas que cambió todo</div><div class="post-card-cta">Leer →</div></a>
+    <a class="post-card" href="/blog/bloque-genesis-bitcoin/"><div class="post-card-title">El mensaje escondido en el primer bloque de la historia</div><div class="post-card-cta">Leer →</div></a>
+    <a class="post-card" href="/blog/wallet-no-custodial/"><div class="post-card-title">Wallets y autocustodia</div><div class="post-card-cta">Leer →</div></a>
+    <a class="post-card" href="/blog/stablecoin-vs-bitcoin/"><div class="post-card-title">Qué es una stablecoin, y por qué no es lo mismo que Bitcoin</div><div class="post-card-cta">Leer →</div></a>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="route-title">Historia y tecnología</div>
+  <div class="route-sub">Cómo la sociedad ha reaccionado ante cada innovación — y qué distingue a la que triunfa.</div>
+  <div class="post-grid">
+    <a class="post-card" href="/blog/por-que-rechazamos-lo-nuevo/"><div class="post-card-title">¿Por qué rechazamos lo nuevo antes de entenderlo?</div><div class="post-card-cta">Leer →</div></a>
+    <a class="post-card" href="/blog/cajero-automatico-wallet/"><div class="post-card-title">El cajero automático y la desconfianza hacia lo nuevo</div><div class="post-card-cta">Leer →</div></a>
+    <a class="post-card" href="/blog/ecash-digicash/"><div class="post-card-title">Una idea que fracasó antes de tener éxito: eCash y DigiCash</div><div class="post-card-cta">Leer →</div></a>
+    <a class="post-card" href="/blog/piezas-rompecabezas/"><div class="post-card-title">Las piezas sueltas de un rompecabezas de 30 años</div><div class="post-card-cta">Leer →</div></a>
+    <a class="post-card" href="/blog/nodos-y-mineros/"><div class="post-card-title">Nodos, mineros y el reparto real del poder en Bitcoin</div><div class="post-card-cta">Leer →</div></a>
+    <a class="post-card" href="/blog/infraestructura-del-dinero-hoy/"><div class="post-card-title">De un experimento de nueve páginas a la infraestructura de hoy</div><div class="post-card-cta">Leer →</div></a>
+    <a class="post-card" href="/infografia/"><div class="post-card-title">El Patrón — cómo evaluar una innovación</div><div class="post-card-cta">Explorar →</div></a>
+  </div>
+</div>
+
+<div class="sec" style="border-bottom:none;">
+  <div class="route-title">¿No sabes por dónde empezar?</div>
+  <div class="route-sub">El diagnóstico te ayuda a identificar tu punto de partida en menos de dos minutos.</div>
+  <div class="post-grid">
+    <a class="post-card" href="/diagnostico/"><div class="post-card-title">Hacer el diagnóstico</div><div class="post-card-cta">Empezar →</div></a>
+    <a class="post-card" href="/blog/"><div class="post-card-title">Ver el blog completo</div><div class="post-card-cta">Explorar →</div></a>
+  </div>
+</div>
+
+</main>
+
+{% include footer.html %}
+
+</div>
+</div>
+
+{% include analytics.html %}
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.post-card').forEach(function(el){
+    el.addEventListener('click', function(){
+      if (window.trackEvent) trackEvent('article_opened', {ruta: el.closest('.sec').querySelector('.route-title').textContent, destino: el.getAttribute('href')});
+    });
+  });
+});
+</script>
+
+{% include qr-share.html %}
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+---
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% include ga4.html %}
+<title>infinexa · Contacto</title>
+<meta name="description" content="¿Tienes una pregunta concreta? Escríbenos por formulario, correo o WhatsApp. Sin compromiso, sin presión.">
+<link rel="canonical" href="https://infinexa.app/contacto/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://infinexa.app/contacto/">
+<meta property="og:title" content="infinexa · Contacto">
+<meta property="og:description" content="¿Tienes una pregunta concreta? Escríbenos por formulario, correo o WhatsApp.">
+<meta property="og:image" content="https://infinexa.app/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://infinexa.app/assets/og-image.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Inicio","item":"https://infinexa.app/"},
+    {"@type":"ListItem","position":2,"name":"Contacto","item":"https://infinexa.app/contacto/"}
+  ]
+}
+</script>
+{% include reduced-motion.html %}
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --grafito:#1F2A33;--grafito-dk:#0F1720;--petroleo:#1B4D5C;--petroleo-cl:#2E6E80;
+  --cobre:#C8682E;--plata:#C9D2D6;--plata-cl:#EDF1F2;--bg:#0F1720;--bg-dk:#0a1018;
+  --border:rgba(200,104,46,0.15);--border-s:rgba(255,255,255,0.055);
+  --tbody:#C9D2D6;--tmuted:#8AA5BF;--pad:clamp(24px,5vw,60px);--r:clamp(10px,1.2vw,16px);
+}
+html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter','Helvetica Neue',Arial,sans-serif;}
+.shell{width:100%;min-height:100vh;background:linear-gradient(150deg,#0c1219 0%,#14202c 100%);display:flex;justify-content:center;padding:0;}
+.card{background:var(--bg);width:100%;}
+@media(min-width:900px){.shell{padding:32px;}.card{max-width:760px;border-radius:20px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.5);}}
+@media(max-width:899px){.shell{padding:0;}.card{border-radius:0;}}
+@media(min-width:1400px){.shell{padding:40px;}.card{max-width:800px;}}
+
+.site-nav{padding:clamp(18px,2.5vw,26px) var(--pad);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:14px;}
+.ifx-lockup-sm{display:flex;align-items:center;gap:clamp(10px,1.5vw,14px);text-decoration:none;flex-shrink:0;}
+.ifx-lockup-sm svg{flex-shrink:0;}
+.ifx-wm-sm{display:flex;flex-direction:column;gap:3px;}
+.ifx-name-sm{font-size:clamp(15px,1.6vw,18px);font-weight:300;color:var(--plata-cl);letter-spacing:clamp(4px,.8vw,8px);}
+.ifx-tag-sm{font-size:clamp(9px,.8vw,10px);font-weight:300;color:var(--plata-cl);letter-spacing:2.5px;opacity:.5;}
+.nav-links{display:flex;align-items:center;gap:clamp(12px,1.6vw,20px);flex-wrap:wrap;}
+.nav-links a{font-size:clamp(13px,1.1vw,14px);font-weight:500;color:var(--plata-cl);text-decoration:none;opacity:.75;letter-spacing:.3px;white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{opacity:1;color:var(--cobre);}
+.nav-cta{display:inline-flex;align-items:center;gap:6px;background:var(--cobre);color:#fff !important;font-weight:700 !important;opacity:1 !important;padding:8px 16px;border-radius:100px;font-size:clamp(12px,1vw,13px) !important;}
+.nav-cta:hover{background:#b05a26;color:#fff !important;}
+
+.hdr{padding:clamp(32px,4.5vw,56px) var(--pad) clamp(20px,3vw,28px);border-bottom:1px solid var(--border);}
+.sec-label{font-size:clamp(12px,1vw,13px);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--cobre);margin-bottom:clamp(10px,1.4vw,14px);}
+.page-h1{font-size:clamp(28px,4vw,40px);font-weight:800;color:var(--plata-cl);line-height:1.15;margin-bottom:clamp(12px,1.5vw,18px);}
+.page-sub{font-size:clamp(15px,1.4vw,18px);color:var(--tbody);line-height:1.8;}
+
+.sec{padding:clamp(28px,4vw,44px) var(--pad);}
+.contact-options{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;}
+.contact-opt{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--tmuted);background:rgba(255,255,255,0.025);border:1px solid var(--border-s);border-radius:20px;padding:8px 16px;text-decoration:none;}
+.contact-opt:hover{color:var(--cobre);border-color:rgba(200,104,46,.3);}
+
+.form-box{background:rgba(255,255,255,0.02);border:1px solid var(--border-s);border-radius:var(--r);padding:clamp(20px,3vw,32px);}
+.privacy-note{font-size:12.5px;color:var(--tmuted);opacity:.85;line-height:1.6;margin-top:16px;}
+
+.cierre{padding:clamp(28px,4vw,44px) var(--pad);background:var(--bg-dk);border-top:2px solid var(--cobre);text-align:center;}
+.firma{display:flex;align-items:center;justify-content:center;gap:14px;}
+.firma-name{font-size:clamp(14px,1.3vw,17px);font-weight:300;color:var(--plata-cl);letter-spacing:5px;opacity:.75;}
+.firma-tag{font-size:clamp(12px,1vw,13px);color:var(--cobre);letter-spacing:1.2px;opacity:.85;text-transform:uppercase;}
+.legal-links{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:16px;}
+.legal-links a{font-size:12px;color:var(--tmuted);text-decoration:none;opacity:.8;}
+.legal-links a:hover{opacity:1;color:var(--cobre);}
+.edu-disclaimer{font-size:clamp(12px,1vw,13px);color:rgba(200,210,214,.6);text-align:center;padding:clamp(14px,2vw,20px) var(--pad);line-height:1.65;border-top:1px solid var(--border-s);}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Saltar al contenido</a>
+<div class="shell">
+<div class="card">
+
+{% include nav.html active="contacto" wa_text="Hola, vi infinexa.app/contacto y me gustaría platicar." %}
+
+<main id="main">
+<div class="hdr">
+  <div class="sec-label">Contacto</div>
+  <h1 class="page-h1">¿Tienes una pregunta concreta?</h1>
+  <p class="page-sub">Escríbenos por el formulario, correo o WhatsApp — lo que te resulte más cómodo. Sin compromiso, sin presión.</p>
+</div>
+
+<div class="sec">
+  <div class="contact-options">
+    <a class="contact-opt" href="mailto:mbaalejandrogarcia@gmail.com">✉ mbaalejandrogarcia@gmail.com</a>
+    <a class="contact-opt" href="https://wa.me/526461173209?text=Hola%2C%20vi%20infinexa.app%2Fcontacto%20y%20me%20gustar%C3%ADa%20platicar." target="_blank" rel="noopener" id="contacto-wa-link">💬 WhatsApp directo</a>
+  </div>
+
+  <div class="form-box">
+    <form id="contacto-form-full" class="ifx-form" novalidate>
+      <label for="c-nombre">Nombre</label>
+      <input type="text" id="c-nombre" name="nombre" required>
+
+      <label for="c-correo">Correo electrónico</label>
+      <input type="email" id="c-correo" name="correo" required>
+
+      <label for="c-pais">País</label>
+      <input type="text" id="c-pais" name="pais">
+
+      <label for="c-tema">Tema</label>
+      <select id="c-tema" name="tema" required>
+        <option value="">Selecciona un tema</option>
+        <option value="Diagnóstico">Diagnóstico</option>
+        <option value="Talleres">Talleres</option>
+        <option value="Infinexa Digital">Infinexa Digital</option>
+        <option value="Duda sobre un artículo del blog">Duda sobre un artículo del blog</option>
+        <option value="Otro">Otro</option>
+      </select>
+
+      <label for="c-mensaje">Mensaje</label>
+      <textarea id="c-mensaje" name="mensaje" rows="4" required></textarea>
+
+      <input type="hidden" name="asunto" value="Nuevo mensaje de contacto — infinexa.app/contacto">
+      <input type="hidden" name="formulario" value="contacto">
+
+      <div class="consent-row">
+        <input type="checkbox" id="c-consent" name="consentimiento" required>
+        <label for="c-consent">Acepto que Infinexa use estos datos para responder mi mensaje, según la <a href="/privacidad/" style="color:var(--cobre);">política de privacidad</a>.</label>
+      </div>
+
+      <button type="submit">Enviar mensaje</button>
+      <div id="contacto-form-full-status" class="form-status" role="status"></div>
+      <div class="whatsapp-followup" id="contacto-form-full-whatsapp">
+        <a href="https://wa.me/526461173209?text=Hola%2C%20acabo%20de%20enviar%20un%20mensaje%20por%20el%20formulario%20de%20contacto." target="_blank" rel="noopener">💬 También puedes escribirnos por WhatsApp (opcional)</a>
+      </div>
+    </form>
+    <p class="privacy-note">Tus datos solo se usan para responder tu mensaje. No se comparten con terceros. Ver <a href="/privacidad/" style="color:var(--cobre);">política de privacidad</a>.</p>
+  </div>
+</div>
+
+</main>
+
+{% include footer.html %}
+
+</div>
+</div>
+
+{% include analytics.html %}
+{% include form-handler.html %}
+<script>
+document.getElementById('contacto-wa-link').addEventListener('click', function(){
+  if (window.trackEvent) trackEvent('whatsapp_clicked');
+});
+ifxHandleForm('contacto-form-full', { event: 'contact_form_submitted' });
+</script>
+
+{% include qr-share.html %}
+
+</body>
+</html>

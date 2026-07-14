@@ -1,0 +1,32 @@
+<!-- ══ FOOTER (compartido — _includes/footer.html) ══ -->
+<div class="cierre">
+  <div class="firma">
+    <svg width="44" height="20" viewBox="95 52 215 80" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 210 100 C 202 78,172 58,146 60 C 116 62,102 82,104 98 C 106 116,124 126,148 124 C 170 122,196 106,210 100 C 224 94,240 74,260 68 C 282 62,298 76,298 92 C 298 110,282 122,260 122 C 238 122,222 108,210 100" fill="none" stroke="#BDC8CC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 202 93 Q 210 100 202 108" fill="none" stroke="#C8682E" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M 218 93 Q 210 100 218 108" fill="none" stroke="#C8682E" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="210" cy="100" r="2.4" fill="#C8682E"/>
+    </svg>
+    <div>
+      <div class="firma-name">infinexa</div>
+      <div class="firma-tag">connecting value with purpose</div>
+    </div>
+  </div>
+  <div class="legal-links">
+    <a href="/transparencia/" id="footer-link-transparencia">Transparencia</a>
+    <a href="/riesgos/" id="footer-link-riesgos">Riesgos</a>
+    <a href="/privacidad/">Privacidad</a>
+    <a href="/terminos/">Términos</a>
+  </div>
+</div>
+
+<div class="edu-disclaimer">Infinexa es una plataforma de educación y criterio sobre la evolución del dinero, blockchain y los nuevos modelos de creación de valor. No es un banco, fondo, exchange ni asesor financiero regulado. No ofrece rendimientos ni garantiza resultados de ningún tipo.</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var t = document.getElementById('footer-link-transparencia');
+  var r = document.getElementById('footer-link-riesgos');
+  if (t) t.addEventListener('click', function(){ if(window.trackEvent) trackEvent('transparency_page_opened'); });
+  if (r) r.addEventListener('click', function(){ if(window.trackEvent) trackEvent('risk_page_opened'); });
+});
+</script>

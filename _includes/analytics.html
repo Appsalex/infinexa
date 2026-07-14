@@ -1,0 +1,9 @@
+<script>
+/* Helper de analítica compartido — _includes/analytics.html
+   No envía datos personales (nombre, correo, mensajes, wallets) — solo contexto no identificable
+   (página, ruta, categoría, tipo de CTA, fuente, estado de formulario). Ver /privacidad/. */
+function trackEvent(name, data){
+  if (window.dataLayer) { window.dataLayer.push(Object.assign({event:name}, data||{})); }
+  if (window.gtag) { window.gtag('event', name, data||{}); }
+}
+</script>

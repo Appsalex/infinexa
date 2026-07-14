@@ -1,0 +1,25 @@
+<!-- ══ NAV (compartida — _includes/nav.html) ══ -->
+<div class="site-nav">
+  <a href="/" class="ifx-lockup-sm">
+    <svg width="64" height="32" viewBox="95 52 215 80" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 210 100 C 202 78,172 58,146 60 C 116 62,102 82,104 98 C 106 116,124 126,148 124 C 170 122,196 106,210 100 C 224 94,240 74,260 68 C 282 62,298 76,298 92 C 298 110,282 122,260 122 C 238 122,222 108,210 100" fill="none" stroke="#BDC8CC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 202 93 Q 210 100 202 108" fill="none" stroke="#C8682E" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M 218 93 Q 210 100 218 108" fill="none" stroke="#C8682E" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="210" cy="100" r="2.4" fill="#C8682E"/>
+    </svg>
+    <div class="ifx-wm-sm">
+      <div class="ifx-name-sm">infinexa</div>
+      <div class="ifx-tag-sm">connecting value with purpose</div>
+    </div>
+  </a>
+  <div class="nav-links" id="nav-links-list">
+    <a href="/"{% if include.active == 'inicio' %} class="active"{% endif %}>Inicio</a>
+    <a href="/aprender/"{% if include.active == 'aprender' %} class="active"{% endif %}>Aprender</a>
+    <a href="/diagnostico/"{% if include.active == 'diagnostico' %} class="active"{% endif %}>Diagnóstico</a>
+    <a href="/talleres/"{% if include.active == 'talleres' %} class="active"{% endif %}>Talleres</a>
+    <a href="/servicios/"{% if include.active == 'servicios' %} class="active"{% endif %}>Servicios</a>
+    <a href="/nosotros/"{% if include.active == 'nosotros' %} class="active"{% endif %}>Nosotros</a>
+    <a href="/contacto/"{% if include.active == 'contacto' %} class="active"{% endif %}>Contacto</a>
+    <a class="nav-cta" href="https://wa.me/526461173209?text={{ include.wa_text | default: 'Hola, vi infinexa.app y me gustaría platicar.' | url_encode }}" target="_blank" rel="noopener" id="nav-cta-wa">Hablemos</a>
+  </div>
+</div>

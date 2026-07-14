@@ -1,0 +1,78 @@
+<style>
+.form-status{font-size:14px;margin-top:12px;min-height:20px;line-height:1.5;}
+.form-status.success{color:#7FBF8F;}
+.form-status.error{color:#E0785A;}
+.ifx-form label{display:block;font-size:13px;font-weight:600;color:var(--plata-cl,#EDF1F2);margin-bottom:6px;}
+.ifx-form input[type="text"],.ifx-form input[type="email"],.ifx-form input[type="tel"],.ifx-form select,.ifx-form textarea{
+  width:100%;background:rgba(255,255,255,0.03);border:1px solid var(--border-s,rgba(255,255,255,.08));border-radius:8px;
+  padding:11px 14px;color:var(--plata-cl,#EDF1F2);font-family:'Inter',Arial,sans-serif;font-size:15px;margin-bottom:16px;
+}
+.ifx-form input:focus,.ifx-form select:focus,.ifx-form textarea:focus{border-color:var(--cobre,#C8682E);outline:none;}
+.ifx-form .consent-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:16px;}
+.ifx-form .consent-row input[type="checkbox"]{width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--cobre,#C8682E);}
+.ifx-form .consent-row label{font-size:13px;font-weight:400;color:var(--tmuted,#8AA5BF);margin-bottom:0;line-height:1.5;}
+.ifx-form button[type="submit"]{background:var(--cobre,#C8682E);color:#fff;border:none;font-family:'Inter',Arial,sans-serif;font-weight:600;font-size:15px;padding:13px 28px;border-radius:100px;cursor:pointer;transition:opacity .2s;}
+.ifx-form button[type="submit"]:hover{opacity:.88;}
+.ifx-form button[type="submit"]:disabled{opacity:.6;cursor:default;}
+.whatsapp-followup{display:none;margin-top:18px;padding-top:18px;border-top:1px solid var(--border-s,rgba(255,255,255,.08));}
+.whatsapp-followup.show{display:block;}
+.whatsapp-followup a{display:inline-flex;align-items:center;gap:8px;color:#25D366;text-decoration:none;font-size:14px;font-weight:600;}
+</style>
+<script>
+/* Handler genérico de formularios — envía a Web3Forms, captura UTM, exige consentimiento,
+   nunca pierde el contacto si el visitante no abre WhatsApp después.
+   IMPORTANTE: reemplazar por la access key real de web3forms.com cuando Alejandro la comparta. */
+window.INFINEXA_WEB3FORMS_KEY = window.INFINEXA_WEB3FORMS_KEY || "WEB3FORMS_ACCESS_KEY_PENDIENTE";
+
+function ifxHandleForm(formId, opts){
+  opts = opts || {};
+  var form = document.getElementById(formId);
+  if (!form) return;
+  var statusEl = document.getElementById(formId + '-status');
+  var followupEl = document.getElementById(formId + '-whatsapp');
+  var submitBtn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    var consent = form.querySelector('[name="consentimiento"]');
+    if (consent && !consent.checked) {
+      if (statusEl) { statusEl.textContent = 'Necesitamos tu consentimiento para continuar.'; statusEl.className = 'form-status error'; statusEl.setAttribute('aria-live','assertive'); }
+      return;
+    }
+
+    var fd = new FormData(form);
+    fd.append('access_key', window.INFINEXA_WEB3FORMS_KEY);
+    var params = new URLSearchParams(window.location.search);
+    ['utm_source','utm_medium','utm_campaign'].forEach(function(k){ if (params.get(k)) fd.append(k, params.get(k)); });
+    fd.append('fuente_pagina', window.location.pathname);
+    fd.append('fecha', new Date().toISOString());
+
+    var originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando…';
+    if (statusEl) { statusEl.textContent = ''; statusEl.className = 'form-status'; }
+
+    fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd, headers: {'Accept':'application/json'} })
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+        if (data.success) {
+          if (statusEl) { statusEl.textContent = opts.successMessage || 'Listo — recibimos tu información. Te contactaremos pronto.'; statusEl.className = 'form-status success'; statusEl.setAttribute('aria-live','polite'); }
+          form.reset();
+          if (window.trackEvent && opts.event) trackEvent(opts.event, opts.eventData || {});
+          if (followupEl) followupEl.classList.add('show');
+          if (opts.onSuccess) opts.onSuccess(fd);
+        } else {
+          if (statusEl) { statusEl.textContent = 'No pudimos enviar tu información. Intenta de nuevo o escríbenos directo por WhatsApp.'; statusEl.className = 'form-status error'; statusEl.setAttribute('aria-live','assertive'); }
+        }
+      })
+      .catch(function(){
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+        if (statusEl) { statusEl.textContent = 'Hubo un problema de conexión. Intenta de nuevo o escríbenos directo por WhatsApp.'; statusEl.className = 'form-status error'; statusEl.setAttribute('aria-live','assertive'); }
+      });
+  });
+}
+</script>
