@@ -2,7 +2,9 @@
 
 > Este archivo es la fuente única de verdad del proyecto. Se actualiza después de cada sesión de trabajo, sin importar en qué conversación de Claude se realizó. No se crean archivos nuevos por conversación — siempre se edita este mismo documento.
 
-**Última actualización:** 13 de julio, 2026 — 🟢 **Fase 1.5 ejecutada: consolidación, medición y captación.** Sobre el reposicionamiento ya publicado (Fases 1-8, ver 1.1–1.10), se ejecutó un segundo prompt maestro ("Fase 1.5") con foco en 5 páginas dedicadas nuevas (antes anclas del home), captación estructurada de leads (Web3Forms, pendiente de clave real), los 21 eventos de GA4 completos, SEO técnico (canonicals + JSON-LD), accesibilidad ampliada, y navegación editorial sistemática del blog. Ver sección 1.11 para el detalle completo y el dictamen final.
+**Última actualización:** 13 de julio, 2026 — 🟢 **Fase 1.5B ejecutada: corrección de navegación y unificación del shell exterior.** Sobre Fase 1.5 (1.11), la reescritura del perfil de MBA Alejandro García (1.12) y la normalización visual Fase 1.5A (1.13), se corrigieron dos bugs confirmados tras 1.5A: el enlace "Aprender" del home (y, se descubrió en la verificación en vivo, también el del layout del blog) apuntaba a `/blog/` en vez de `/aprender/`; y el ancho exterior del shell de Home medía distinto al de las demás páginas. Ver sección 1.14 para el detalle completo y el dictamen final.
+
+**Histórico inmediato:** Fase 1.5 (1.11, consolidación/medición/captación) → integración del perfil de MBA Alejandro García como narrativa de liderazgo en todo el sitio (1.12) → Fase 1.5A, normalización visual/estructural de 7 páginas con tokens de diseño compartidos (1.13) → Fase 1.5B, corrección de nav + unificación de ancho exterior (1.14, esta actualización).
 
 **Histórico (Fases 1-8, 13 jul 2026):** 🔴 **Decisión estratégica: reposicionamiento total de Infinexa, desvinculación completa de Hand4Hand.** Infinexa deja de ser un funnel de prospección hacia Hand4Hand y pasa a ser una plataforma independiente de educación, criterio y conexión sobre la evolución del dinero, blockchain, Web3, IA y nuevos modelos de creación de valor. **Fase 1** (eliminación de Hand4Hand de `index.html`, commit `06747d6`), **Fase 2** (nueva home de 13 secciones + navegación unificada, commit `51caf8a`), **Fase 3** (reposicionamiento de contenido de Diversifica, Infografía y Servicios → Infinexa Digital, commits `2520362`/`47285b5`), **Fase 4** (páginas de Transparencia/Riesgos/Privacidad/Términos + sitemap, commit `07a8512`), **Fase 5** (auditoría de claims del blog, commit `80528bd`), **Fase 6** (auditoría de accesibilidad, commit `ececf51`), **Fase 7** (Google Analytics 4 conectado, commit `4d43ff8`) y **Fase 8** (`builders/carlos` eliminado por completo, commit `5ca2dc7`) ejecutadas y publicadas — ver sección 1.1–1.10 y `_gestion/BITACORA.md`. Alejandro mantuvo Diversifica/Infografía como páginas standalone enlazadas desde el home (no fusionarlas al nav), entregó el ID de GA4 (`G-X8LW9B8JP2`, ya conectado en las 10 superficies del sitio), y finalmente decidió eliminar por completo `builders/carlos` (revirtiendo la decisión inicial de dejarlo sin tocar) — esto tumbó `carlos.infinexa.app` sin aviso previo a Carlos, por instrucción explícita. Se entregó también el informe final consolidado (1.8).
 
@@ -148,6 +150,48 @@ Segundo prompt maestro ejecutado sobre el reposicionamiento ya publicado, con ma
 2. Pruebas responsive visuales reales en los 6 anchos de referencia — no realizadas esta sesión.
 3. Retrofit completo de las 9 páginas preexistentes a los includes compartidos (dedupe de HTML) — reconocido como incompleto, no oculto.
 4. Verificación de los 21 eventos de GA4 en el reporte de tiempo real de Google Analytics (solo se verificó que el código dispara `trackEvent`/`gtag`, no que Google los está recibiendo y clasificando correctamente — requiere que Alejandro lo confirme desde su propia cuenta de GA4).
+
+---
+
+### 1.12 Integración estratégica del perfil de MBA Alejandro García (13 jul 2026)
+
+Reescritura de marca ejecutiva de la biografía de Alejandro en todo el sitio, sobre un prompt de 34 secciones. Objetivo: pasar de una enumeración estilo CV a una narrativa de liderazgo (visión, capacidad de ejecución, evolución, resultados y propósito), sin nombrar instituciones (CETYS, Learning Heroes, Crypto Heroes, CEUX, UABC), sin credenciales inventadas, sin datos privados, sin lenguaje grandilocuente/absoluto, y atribuyendo correctamente los logros colectivos ("bajo su dirección, los equipos...", nunca "yo hice...").
+
+**Entregables ejecutados:** biografía completa nueva en `/nosotros/` (con 5 "pilares" de autoridad, bloque de resultados, sección "Evolucionar para comprender y ayudar", filosofía profesional, propósito y bloque de transparencia); versión de ~100 palabras integrada en el home (verificada por conteo exacto de palabras); bio de autor en el layout de posts del blog (`_layouts/post.html`) con avatar, texto y enlace a `/nosotros/`; referencias breves a su trayectoria en `talleres/` y `servicios/`; SEO actualizado en `/nosotros/` (title, meta description, H1/H2, JSON-LD `Person` con `description`/`image`/`jobTitle`/`knowsAbout`, sin `sameAs` ni instituciones). Titular adoptado en todo el sitio: "MBA Alejandro García" (estandarizado también en el front matter `author:` de los 15 posts del blog).
+
+**Verificación realizada:** barridos por `grep` confirmando cero menciones de las instituciones prohibidas, cero credenciales no verificadas, cero datos privados, en todos los archivos tocados. Balance de `<div>`/Liquid revisado en cada archivo antes de commit. Dictamen entregado: **GO**.
+
+---
+
+### 1.13 Fase 1.5A — Normalización visual y estructural (13 jul 2026)
+
+Auditoría y normalización (no rediseño) de inconsistencias visuales/estructurales en 7 páginas (`/`, `/aprender/`, `/diagnostico/`, `/talleres/`, `/servicios/`, `/nosotros/`, `/contacto/`): anchos máximos distintos, márgenes exteriores desiguales, dimensiones de header distintas, espaciados inconsistentes de logo/nav/CTA, el botón "Hablemos" partiéndose en dos líneas en `/contacto/`, escala tipográfica inconsistente, alturas/paddings de hero distintos, un bloque de logo duplicado en `/servicios/`, y aplicación solo parcial de estilos compartidos.
+
+**Ejecutado:** auditoría matriz previa de las 7 páginas; creación de `_includes/design-tokens.html` con variables CSS compartidas (`--site-max-width`, `--content-max-width`, `--reading-max-width`, `--page-gutter`, escala de espaciado y escala tipográfica); unificación del patrón shell/card en las 5 páginas "interiores" + `servicios/`; eliminación del header/logo duplicado en `/servicios/` y migración a nav/shell compartidos (incluyendo renombrar su clase `.card` interna, en colisión con la nueva clase de shell, a `.feature-card`); corrección del ancho de `/contacto/` (la página más angosta, causa real del wrap del botón "Hablemos"). Se conservaron intactos: color de marca, logo, contenido aprobado, orden de páginas, eventos de GA4, formularios, SEO, JSON-LD, includes existentes, URLs y funcionalidad.
+
+**Limitación reconocida en esta fase:** la normalización se aplicó a las 7 páginas explícitamente listadas en el prompt, pero no a `index.html` (que mantuvo sus propios valores de ancho hardcodeados, más anchos que el resto) ni a `_layouts/default.html` (el layout del blog, con un tercer valor de ancho distinto) — esta discrepancia fue detectada después, en Fase 1.5B (ver 1.14). Dictamen entregado: **GO**.
+
+---
+
+### 1.14 Fase 1.5B — Corrección de navegación y unificación del shell exterior (13 jul 2026, commits `c881955`, `fed7562`)
+
+Tras Fase 1.5A, Alejandro reportó dos bugs visuales confirmados:
+
+**Problema A — enlace "Aprender" inconsistente:** desde Home, "Aprender" llevaba a `/blog/` (comportamiento antiguo), mientras que desde el resto de páginas llevaba correctamente a `/aprender/`. Causa raíz confirmada mediante auditoría de código: `index.html` nunca se migró al include compartido `_includes/nav.html` durante 1.5A — conservaba su propio bloque de nav hardcodeado con el enlace obsoleto `<a href="/blog/">Aprender</a>`. Corregido reemplazando ese bloque completo por `{% include nav.html active="inicio" %}` (commit `c881955`).
+
+En la verificación en vivo posterior al deploy se encontró un **segundo caso del mismo bug, no reportado por Alejandro**: `_layouts/default.html` (el layout que usa el blog y sus 15 posts) tenía su propio nav hardcodeado independiente (`.blog-nav`/`.blog-nav-links`), también con "Aprender" apuntando a `/blog/`. Corregido de la misma forma: reemplazado por `{% include nav.html active="aprender" %}`, con sus selectores CSS renombrados para coincidir con el markup del include compartido (commit `fed7562`). Verificado en vivo tras el segundo deploy: tanto `/blog/` como un post individual (`/blog/historia-del-dinero/`) ahora muestran "Aprender" apuntando a `/aprender/`.
+
+**Problema B — ancho exterior del shell inconsistente:** a 2048px de viewport, el shell de Home medía ~1970px mientras que `/aprender/` y el resto medían ~1690px — Fase 1.5A había unificado las 6 páginas "interiores" a un valor más angosto (1040/1100px) sin tocar los valores reales de Home (1200/1320px) ni los de `_layouts/default.html` (1100/1200px, un tercer valor distinto). Decisión aprobada por Alejandro: todas las páginas deben igualarse al ancho real de Home, no al revés.
+
+Corregido redefiniendo los tokens compartidos (`--content-max-width` de `_includes/design-tokens.html`: 1040px → 1200px, el valor real de Home) y actualizando el breakpoint de 1400px en las 6 páginas interiores + `servicios/` de `calc(var(--content-max-width) + 60px)` a `var(--site-max-width)` (1320px); actualizando `index.html` para usar los tokens compartidos en vez de sus valores hardcodeados; y aplicando el mismo tratamiento a `_layouts/default.html`, que no tenía el include de tokens y usaba un tercer valor propio. Resultado: las 8 superficies (`/`, `/aprender/`, `/diagnostico/`, `/talleres/`, `/servicios/`, `/nosotros/`, `/contacto/`, `/blog/`) comparten ahora exactamente el mismo `max-width` de shell en ambos breakpoints (900px y 1400px).
+
+**Verificación realizada:** balance de `<div>`/Liquid revisado en los 9 archivos tocados antes de cada commit (sin discrepancias). Verificación en vivo post-deploy (con parámetros de cache-busting) confirmando: (1) Home → "Aprender" apunta a `/aprender/`; (2) blog (listado y post individual) → "Aprender" apunta a `/aprender/`; (3) los 8 archivos fuente comparten idénticos valores de `max-width` vía los mismos tokens. **No se verificó** el ancho computado real en píxeles en un navegador real (la extensión de Claude in Chrome no estaba disponible en esta sesión) — la verificación se hizo por consistencia de código fuente + confirmación de que el include/token correcto se aplica en las 8 superficies, no por medición visual directa. Contenido, GA4, formularios, SEO, JSON-LD, includes y rutas no se modificaron (excepto el propio bloque de nav, cuyo cambio es puramente de markup/CSS, sin afectar sus IDs, eventos ni destinos funcionales salvo la corrección del enlace de "Aprender").
+
+**Pendiente real de Fase 1.5B:**
+1. Pruebas responsive visuales reales en navegador (mismo pendiente arrastrado desde Fase 1.5/1.5A — Claude in Chrome no conectado en esta sesión).
+2. El JSON-LD `BreadcrumbList` de `_layouts/default.html` sigue nombrando el segundo nivel "Aprender" con `item: "https://infinexa.app/blog/"` — no se tocó por estar fuera del alcance visual/estructural explícito de esta fase (es contenido SEO, no nav visible). Queda como nota para una futura revisión de SEO, no como bug de navegación.
+
+Dictamen entregado: **GO**.
 
 ---
 

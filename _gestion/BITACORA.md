@@ -6,6 +6,15 @@
 
 ---
 
+## 2026-07-13 (sesión Fase 1.5B — corrección de navegación y unificación del shell exterior)
+
+- Ejecutados, en la misma sesión continua, tres prompts sucesivos sobre Fase 1.5: (1) integración estratégica del perfil de MBA Alejandro García como narrativa de liderazgo en todo el sitio — dictamen GO; (2) Fase 1.5A, normalización visual/estructural de 7 páginas con tokens de diseño compartidos (`_includes/design-tokens.html`) — dictamen GO; (3) Fase 1.5B, corrección de dos bugs confirmados tras 1.5A. Ver `ESTADO.md` §1.12–1.14 para el detalle completo de los tres.
+- **Fase 1.5B — Problema A (nav "Aprender"):** confirmado que `index.html` conservaba un bloque de nav hardcodeado con el enlace obsoleto `/blog/` para "Aprender" (nunca migrado al include compartido en 1.5A) — corregido con `{% include nav.html active="inicio" %}` (commit `c881955`). En la verificación en vivo posterior se encontró el mismo bug, no reportado, en `_layouts/default.html` (layout del blog, con su propio nav `.blog-nav` independiente) — corregido de la misma forma (commit `fed7562`).
+- **Fase 1.5B — Problema B (ancho del shell):** confirmado que Fase 1.5A normalizó las 6 páginas interiores a un ancho (1040/1100px) distinto del real de Home (1200/1320px) y del real del layout del blog (1100/1200px, un tercer valor). Corregido redefiniendo `--content-max-width` en `_includes/design-tokens.html` a 1200px (el valor real de Home), actualizando el breakpoint de 1400px de las 6 páginas interiores + `servicios/` a `var(--site-max-width)`, migrando `index.html` a los tokens compartidos, y agregando el include de tokens + los mismos valores a `_layouts/default.html`. Las 8 superficies del sitio (`/`, `/aprender/`, `/diagnostico/`, `/talleres/`, `/servicios/`, `/nosotros/`, `/contacto/`, `/blog/`) comparten ahora el mismo `max-width` de shell.
+- Verificado balance de `<div>`/Liquid en los 9 archivos tocados antes de cada commit. Verificado en vivo post-deploy (con cache-busting) que Home y el blog (listado + post individual) apuntan "Aprender" a `/aprender/`.
+- **Pendiente real, no oculto:** pruebas responsive visuales reales en navegador (Claude in Chrome no conectado en esta sesión — mismo pendiente arrastrado desde Fase 1.5/1.5A); el JSON-LD `BreadcrumbList` de `_layouts/default.html` sigue nombrando "Aprender" con `item: https://infinexa.app/blog/` — no corregido por estar fuera del alcance visual/estructural de esta fase.
+- Dictamen Fase 1.5B: **GO**.
+
 ## 2026-07-13 (sesión Fase 1.5 — consolidación, medición y captación)
 
 - Guardados como archivo, por primera vez, los dos prompts maestros que hasta ahora solo existían en el historial de conversación: `_gestion/PROMPT_MAESTRO_REPOSICIONAMIENTO_13JUL2026.md` (el prompt de 31 secciones que gobernó las Fases 1-8, commit `cbb2b86`) y `_gestion/PROMPT_FASE_1.5_CONSOLIDACION_13JUL2026.md` (el nuevo prompt de 22 secciones, commit `2f3e847`).
