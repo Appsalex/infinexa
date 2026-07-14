@@ -2,7 +2,9 @@
 
 > Este archivo es la fuente única de verdad del proyecto. Se actualiza después de cada sesión de trabajo, sin importar en qué conversación de Claude se realizó. No se crean archivos nuevos por conversación — siempre se edita este mismo documento.
 
-**Última actualización:** 14 de julio, 2026 — 🟢 **Auditoría SEO + investigación de keywords 2026 aplicada.** Informe completo entregado (`SEO_Infinexa_Julio2026.docx`, fuera del repo) y correcciones técnicas de bajo riesgo ya publicadas: meta description faltante en home/servicios/infografía, título de servicios reescrito, breadcrumb JSON-LD corregido. Ver sección 4.2 para el detalle completo y las fuentes de la investigación. Commit `1d66168`.
+**Última actualización:** 14 de julio, 2026 — 🟢 **Post #17 del blog publicado: "Remesas con USDT: lo que cambió en 2026" (pilar Infinexa/economía descentralizada).** Profundiza el post #6 (stablecoin vs. Bitcoin) sin repetirlo — dato central: el impuesto federal del 1% a remesas en efectivo vigente en EE.UU. desde el 1 de enero de 2026 no aplica a transferencias en USDT/cripto (no clasificadas como "instrumentos físicos" bajo la ley). Verificación de unicidad, checklist de imagen y verificación en GitHub completas. Commit `360ae3d`.
+
+**Anterior:** 14 de julio, 2026 — 🟢 **Auditoría SEO + investigación de keywords 2026 aplicada.** Informe completo entregado (`SEO_Infinexa_Julio2026.docx`, fuera del repo) y correcciones técnicas de bajo riesgo ya publicadas: meta description faltante en home/servicios/infografía, título de servicios reescrito, breadcrumb JSON-LD corregido. Ver sección 4.2 para el detalle completo y las fuentes de la investigación. Commit `1d66168`.
 
 **Anterior:** 14 de julio, 2026 — 🟢 **Post #16 del blog publicado: "El día que el dinero dejó de alcanzar" (inflación en profundidad, pilar Diversifica).** Amplía el post #8 sin repetirlo (origen monetario, medición real vía INPC/subyacente, 4 casos históricos de hiperinflación). Verificación de unicidad, checklist de imagen (4 puntos) y verificación en GitHub completas. Ver sección 4.4 para el detalle y sección 3.7 para una limitación de sandbox documentada (pipeline de imágenes Playwright no disponible en este entorno, resuelto con alternativa `cairosvg`). Commit `6b9f284`.
 
@@ -481,7 +483,7 @@ Diversifica apuntaba a la carpeta huérfana, que tenía una versión vieja del `
 
 ### 4.4 Blog de Infinexa
 
-**Estado:** ✅ Publicado en `infinexa.app/blog`, **16 posts activos** con
+**Estado:** ✅ Publicado en `infinexa.app/blog`, **17 posts activos** con
 sistema de principios visuales numerados, QR compartible dinámico,
 enlace discreto a `/donativo/`, y audio en el post #1. Cada post tiene
 campo `date:` explícito con hora (ver regla de orden en `_gestion/PROMPT_BLOG.md`).
@@ -509,6 +511,7 @@ Detalle completo en `_gestion/PROMPT_BLOG.md`.
 | 14 | Quién guarda la verdad cuando nadie está a cargo (nodos/mineros) | El Patrón | 2 |
 | 15 | De un experimento de nueve páginas a la infraestructura del dinero de hoy (cierre) | Diversifica | 2 |
 | 16 | El día que el dinero dejó de alcanzar (inflación en profundidad) | Diversifica | 3 |
+| 17 | Remesas con USDT: lo que cambió en 2026 | La carta / Infinexa | 3 |
 
 **Sistemas activos en todos los posts:**
 - Bloque `.principio` — tarjeta con círculo numerado cobre, línea lateral,
@@ -605,7 +608,7 @@ en `_gestion/BITACORA.md`.
 1. ~~🔴 Prioritario — Ejecutar la eliminación de la mecánica de Ciclos 2×2 del Escalón 4 de la carta~~ — ✅ **Resuelto el 13 jul 2026**, ver sección 1.1. Superado además por la decisión de eliminar Hand4Hand por completo, no solo la mecánica de ciclos.
 1b. ~~Decidir qué pasa con `builders/carlos/`, `builders/_template/` y `carlos/`~~ — ✅ **Resuelto el 13 jul 2026**, `builders/carlos` y el stub huérfano `carlos/` eliminados por completo (ver 1.10). Condición documentada para el futuro: cualquier landing dedicada nueva para Carlos debe vivir fuera de la identidad de Infinexa, y requiere comunicación previa con él (ver adenda en 1.10).
 1c. ~~Continuar las fases del reposicionamiento de Infinexa (auditoría de claims del blog)~~ — ✅ **Resuelto el 13 jul 2026**, ver sección 1.5. SEO técnico, analítica y accesibilidad ampliada ✅ resueltos en Fase 1.5 (ver 1.11).
-2. **Blog — próximos posts identificados:** ~~El dinero y la inflación en profundidad~~ — ✅ **Resuelto el 14 jul 2026**, post #16 publicado (commit `6b9f284`), ver sección 4.4. Pendientes: Remesas y USDT (cómo enviar dinero sin banco, datos reales de comisiones, pilar la carta) · Posts futuros sobre DeFi en práctica.
+2. **Blog — próximos posts identificados:** ~~El dinero y la inflación en profundidad~~ — ✅ **Resuelto el 14 jul 2026**, post #16 publicado (commit `6b9f284`). ~~Remesas y USDT~~ — ✅ **Resuelto el 14 jul 2026**, post #17 publicado (commit `360ae3d`), con el dato del nuevo impuesto federal de EE.UU. a remesas en efectivo (vigente desde el 1 de enero de 2026) y la exención explícita de activos digitales. Ver sección 4.4. Pendiente: posts futuros sobre DeFi en práctica.
 3. **Audio pendiente para posts #2–#9** — flujo documentado en sección 9.3 de `BLOG_GUIA.md`. Scripts de ElevenLabs pendientes de generar para cada post.
 3b. ⚠️ *Posiblemente obsoleto tras el pivote del 13 jul — confirmar con Alejandro antes de ejecutar:* generar HTML completo de `carta.html` e `infografia.html` para el sistema de builders (templates con variables).
 4. ⚠️ *Posiblemente obsoleto tras el pivote:* terminar de personalizar y publicar el builder de prueba `carlos` — ver 1b, depende de la decisión sobre Builder Edition.
