@@ -99,17 +99,16 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
 @media(max-width:899px){.shell{padding:0;}.card{border-radius:0;}}
 @media(min-width:1400px){.shell{padding:40px;}.card{max-width:var(--site-max-width);}}
 
-/* ── NAV (compartida en todo el sitio) ── */
-.blog-nav{padding:clamp(18px,2.5vw,26px) var(--pad);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:14px;}
-.ifx-lockup-sm{display:flex;align-items:center;gap:clamp(10px,1.5vw,16px);text-decoration:none;}
+/* ── NAV (compartida en todo el sitio — usa _includes/nav.html) ── */
+.site-nav{padding:clamp(18px,2.5vw,26px) var(--pad);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:14px;}
+.ifx-lockup-sm{display:flex;align-items:center;gap:clamp(10px,1.5vw,14px);text-decoration:none;flex-shrink:0;}
 .ifx-lockup-sm svg{flex-shrink:0;}
 .ifx-wm-sm{display:flex;flex-direction:column;gap:3px;}
 .ifx-name-sm{font-size:clamp(15px,1.6vw,18px);font-weight:300;color:var(--plata-cl);letter-spacing:clamp(4px,.8vw,8px);}
 .ifx-tag-sm{font-size:clamp(9px,.8vw,10px);font-weight:300;color:var(--plata-cl);letter-spacing:2.5px;opacity:.5;}
-.blog-nav-links{display:flex;align-items:center;gap:clamp(14px,1.8vw,24px);flex-wrap:wrap;}
-.blog-nav-links a{font-size:clamp(13px,1.1vw,14px);font-weight:500;color:var(--plata-cl);text-decoration:none;opacity:.75;letter-spacing:.3px;white-space:nowrap;}
-.blog-nav-links a:hover{opacity:1;color:var(--cobre);}
-.blog-nav-links a.active{opacity:1;color:var(--cobre);}
+.nav-links{display:flex;align-items:center;gap:clamp(12px,1.6vw,20px);flex-wrap:wrap;}
+.nav-links a{font-size:clamp(13px,1.1vw,14px);font-weight:500;color:var(--plata-cl);text-decoration:none;opacity:.75;letter-spacing:.3px;white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{opacity:1;color:var(--cobre);}
 .nav-cta{display:inline-flex;align-items:center;gap:6px;background:var(--cobre);color:#fff !important;font-weight:700 !important;opacity:1 !important;padding:8px 16px;border-radius:100px;font-size:clamp(12px,1vw,13px) !important;}
 .nav-cta:hover{background:#b05a26;color:#fff !important;}
 
@@ -127,30 +126,7 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
 <div class="shell">
 <div class="card">
 
-  <div class="blog-nav">
-    <a href="/" class="ifx-lockup-sm">
-      <svg width="64" height="32" viewBox="95 52 215 80" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 210 100 C 202 78,172 58,146 60 C 116 62,102 82,104 98 C 106 116,124 126,148 124 C 170 122,196 106,210 100 C 224 94,240 74,260 68 C 282 62,298 76,298 92 C 298 110,282 122,260 122 C 238 122,222 108,210 100" fill="none" stroke="#BDC8CC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 202 93 Q 210 100 202 108" fill="none" stroke="#C8682E" stroke-width="2.2" stroke-linecap="round"/>
-        <path d="M 218 93 Q 210 100 218 108" fill="none" stroke="#C8682E" stroke-width="2.2" stroke-linecap="round"/>
-        <circle cx="210" cy="100" r="2.4" fill="#C8682E"/>
-      </svg>
-      <div class="ifx-wm-sm">
-        <div class="ifx-name-sm">infinexa</div>
-        <div class="ifx-tag-sm">connecting value with purpose</div>
-      </div>
-    </a>
-    <div class="blog-nav-links">
-      <a href="/">Inicio</a>
-      <a href="/blog/" class="active">Aprender</a>
-      <a href="/diagnostico/">Diagnóstico</a>
-      <a href="/talleres/">Talleres</a>
-      <a href="/servicios/">Servicios</a>
-      <a href="/nosotros/">Nosotros</a>
-    <a href="/contacto/">Contacto</a>
-      <a class="nav-cta" href="https://wa.me/526461173209?text=Hola%2C%20vi%20infinexa.app%2Fblog%20y%20me%20gustar%C3%ADa%20platicar." target="_blank" rel="noopener">Hablemos</a>
-    </div>
-  </div>
+  {% include nav.html active="aprender" wa_text="Hola, vi infinexa.app/blog y me gustaría platicar." %}
 
   <main id="main">
   {{ content }}
