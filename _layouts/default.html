@@ -15,6 +15,7 @@
 
 <title>{% if page.title %}{{ page.title }} · Infinexa{% else %}Infinexa{% endif %}</title>
 <meta name="description" content="{{ page.description | default: site.description }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
 
 <!-- Open Graph / Facebook / WhatsApp -->
 <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
@@ -30,6 +31,49 @@
 <meta name="twitter:title" content="{{ page.title | default: site.title }} · Infinexa">
 <meta name="twitter:description" content="{{ page.description | default: site.description }}">
 <meta name="twitter:image" content="{{ page.image | default: '/assets/og-image.png' | absolute_url }}">
+
+{% if page.layout == 'post' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"Inicio","item":"https://infinexa.app/"},
+        {"@type":"ListItem","position":2,"name":"Aprender","item":"https://infinexa.app/blog/"},
+        {"@type":"ListItem","position":3,"name":"{{ page.title | escape }}","item":"{{ page.url | absolute_url }}"}
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "{{ page.title | escape }}",
+      "description": "{{ page.description | default: site.description | escape }}",
+      "url": "{{ page.url | absolute_url }}",
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+      "image": "{{ page.image | default: '/assets/og-image.png' | absolute_url }}",
+      "author": {
+        "@type": "Person",
+        "name": "{{ page.author | default: 'Alejandro García' }}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Infinexa",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://infinexa.app/assets/favicon.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ page.url | absolute_url }}"
+      }
+    }
+  ]
+}
+</script>
+{% endif %}
 
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
@@ -75,8 +119,10 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
 .firma-tag{font-size:clamp(12px,1vw,13px);color:var(--cobre);letter-spacing:1.2px;opacity:.85;text-transform:uppercase;}
 .edu-disclaimer{font-size:clamp(12px,1vw,13px);color:rgba(200,210,214,.6);text-align:center;padding:clamp(14px,2vw,20px) var(--pad);line-height:1.65;border-top:1px solid var(--border-s);}
 </style>
+{% include reduced-motion.html %}
 </head>
 <body>
+<a href="#main" class="skip-link">Saltar al contenido principal</a>
 <div class="shell">
 <div class="card">
 
@@ -105,7 +151,9 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
     </div>
   </div>
 
+  <main id="main">
   {{ content }}
+  </main>
 
   <div class="cierre">
     <div class="firma">
@@ -123,8 +171,8 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
   </div>
 
   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;padding-top:clamp(14px,2vw,20px);">
-    <a href="/transparencia/" style="font-size:12px;color:var(--plata-cl);text-decoration:none;opacity:.6;">Transparencia</a>
-    <a href="/riesgos/" style="font-size:12px;color:var(--plata-cl);text-decoration:none;opacity:.6;">Riesgos</a>
+    <a href="/transparencia/" id="footer-link-transparencia" style="font-size:12px;color:var(--plata-cl);text-decoration:none;opacity:.6;">Transparencia</a>
+    <a href="/riesgos/" id="footer-link-riesgos" style="font-size:12px;color:var(--plata-cl);text-decoration:none;opacity:.6;">Riesgos</a>
     <a href="/privacidad/" style="font-size:12px;color:var(--plata-cl);text-decoration:none;opacity:.6;">Privacidad</a>
     <a href="/terminos/" style="font-size:12px;color:var(--plata-cl);text-decoration:none;opacity:.6;">Términos</a>
   </div>
@@ -133,5 +181,30 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
 
 </div>
 </div>
+{% include analytics.html %}
+<script>
+(function(){
+  var t = document.getElementById('footer-link-transparencia');
+  var r = document.getElementById('footer-link-riesgos');
+  if (t) t.addEventListener('click', function(){ if (window.trackEvent) trackEvent('transparency_page_opened', {fuente: window.location.pathname}); });
+  if (r) r.addEventListener('click', function(){ if (window.trackEvent) trackEvent('risk_page_opened', {fuente: window.location.pathname}); });
+
+  {% if page.layout == 'post' %}
+  // article_opened: se dispara una vez al cargar un artículo del blog
+  if (window.trackEvent) trackEvent('article_opened', {articulo: window.location.pathname, categoria: '{{ page.category | default: "" }}'});
+
+  // article_completed: metodología documentada = 80% de scroll depth, se dispara una sola vez
+  var articleCompletedFired = false;
+  window.addEventListener('scroll', function(){
+    if (articleCompletedFired) return;
+    var scrollDepth = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
+    if (scrollDepth >= 0.8) {
+      articleCompletedFired = true;
+      if (window.trackEvent) trackEvent('article_completed', {articulo: window.location.pathname, metodo: 'scroll_80pct'});
+    }
+  }, { passive: true });
+  {% endif %}
+})();
+</script>
 </body>
 </html>

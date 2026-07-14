@@ -27,6 +27,29 @@ layout: default
   <a href="{{ '/donativo/' | relative_url }}">¿Te sirvió este contenido? Puedes invitarme un café →</a>
 </div>
 
+{% if page.next or page.previous %}
+<div class="next-article-nav">
+  {% if page.next %}
+  <a class="next-article-card" id="next-article-link" href="{{ page.next.url | relative_url }}">
+    <div class="next-article-label">Siguiente artículo</div>
+    <div class="next-article-title">{{ page.next.title }} →</div>
+  </a>
+  {% endif %}
+  {% if page.previous %}
+  <a class="next-article-card muted" id="prev-article-link" href="{{ page.previous.url | relative_url }}">
+    <div class="next-article-label">Artículo anterior</div>
+    <div class="next-article-title">← {{ page.previous.title }}</div>
+  </a>
+  {% endif %}
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var n = document.getElementById('next-article-link');
+  if (n) n.addEventListener('click', function(){ if (window.trackEvent) trackEvent('next_article_clicked', {desde: window.location.pathname, hacia: n.getAttribute('href')}); });
+});
+</script>
+{% endif %}
+
 <div class="share-qr">
   <div class="share-qr-label">Compartir este artículo</div>
   <div class="share-qr-hint">Escanea con tu teléfono para abrir o compartir esta página</div>
@@ -134,5 +157,14 @@ document.addEventListener('DOMContentLoaded', function() {
 .share-qr-hint{font-size:13px;color:var(--plata);opacity:.6;margin-bottom:16px;line-height:1.5;}
 .share-qr-canvas{background:#EDF1F2;border-radius:12px;padding:12px;display:inline-block;}
 .share-qr-url{font-size:11px;color:#C9D2D6 !important;opacity:.75;margin-top:10px;word-break:break-all;font-family:'SF Mono','Courier New',monospace;text-decoration:none !important;}
+
+/* ── NAVEGACIÓN SIGUIENTE/ANTERIOR ARTÍCULO ── */
+.next-article-nav{display:flex;gap:clamp(12px,1.8vw,18px);margin:0 var(--pad) clamp(28px,4vw,44px);}
+@media(max-width:700px){.next-article-nav{flex-direction:column;}}
+.next-article-card{flex:1;display:block;background:rgba(255,255,255,0.03);border:1px solid var(--border-s);border-radius:var(--r);padding:clamp(16px,2vw,22px);text-decoration:none;transition:border-color .15s;}
+.next-article-card:hover{border-color:rgba(200,104,46,0.45);}
+.next-article-label{font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--cobre);margin-bottom:8px;}
+.next-article-title{font-size:clamp(15px,1.3vw,17px);font-weight:600;color:var(--plata-cl);line-height:1.4;}
+.next-article-card.muted .next-article-label{opacity:.7;}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
