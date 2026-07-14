@@ -6,6 +6,15 @@
 
 ---
 
+## 2026-07-13 (sesión Fase 1.5D — integración de /infografia/ y /diversifica/)
+
+- Última de las páginas "preexistentes" (junto con `/servicios/`, ya normalizada en 1.5A) que seguían fuera del sistema unificado de shell/nav/tokens. Auditoría previa confirmó: sin front matter de Jekyll, nav hardcodeada con el mismo bug de "Aprender" → `/blog/` ya corregido en 1.5B para otras páginas, y un tercer valor de ancho de shell (1100/1200px) distinto al resto del sitio (1200/1320px).
+- Ejecutado sobre ambas páginas: front matter vacío + `{% include design-tokens.html %}`; ancho del shell migrado a los tokens compartidos; nav reemplazada por `{% include nav.html wa_text="..." %}`; `.nav-links` gap normalizado; tipografía del hero (`.hero-h1`) migrada a `var(--text-hero)`; anchos de lectura migrados a `var(--reading-max-width)`; agregado JSON-LD `BreadcrumbList` (único elemento SEO nuevo). Commit `1f8537c`.
+- Decisión de alcance explícita: se dejó GA4/analytics/QR/reduced-motion/footer inline (sin migrar a includes) y el botón CTA verde de WhatsApp sin tocar, siguiendo el precedente de `/servicios/` (1.5A) y la instrucción explícita del prompt de conservar el carácter de "recurso educativo especial" de estas páginas.
+- Revisión editorial: sin lenguaje absolutista o promocional encontrado; disclaimer específico de Bitcoin en `/infografia/` conservado intacto.
+- Verificado balance de `<div>`/Liquid/`<script>`, JSON-LD válido, y contenido en vivo post-deploy (nav con "Aprender" → `/aprender/`, todo el contenido/CTAs intactos).
+- Dictamen: **GO**.
+
 ## 2026-07-13 (sesión Fase 1.5B — corrección de navegación y unificación del shell exterior)
 
 - Ejecutados, en la misma sesión continua, tres prompts sucesivos sobre Fase 1.5: (1) integración estratégica del perfil de MBA Alejandro García como narrativa de liderazgo en todo el sitio — dictamen GO; (2) Fase 1.5A, normalización visual/estructural de 7 páginas con tokens de diseño compartidos (`_includes/design-tokens.html`) — dictamen GO; (3) Fase 1.5B, corrección de dos bugs confirmados tras 1.5A. Ver `ESTADO.md` §1.12–1.14 para el detalle completo de los tres.
