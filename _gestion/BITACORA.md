@@ -6,6 +6,14 @@
 
 ---
 
+## 2026-07-14 (continuación) — `AGENTS.md` creado: contexto estándar para múltiples herramientas de IA
+
+- **Contexto:** Alejandro empezó a usar varias herramientas de IA con acceso en vivo al mismo repo (Claude Code en terminal, Antigravity IDE de Google, ChatGPT/Codex, y esta sesión de Cowork), cada una sin memoria de las conversaciones de las demás. Se identificó el riesgo real de colisión (dos agentes escribiendo el mismo archivo a la vez) y la necesidad de que cualquier herramienta nueva reconstruya contexto desde evidencia (git + documentación), no desde una conversación previa.
+- **Solución aplicada:** se creó `AGENTS.md` en la raíz del repo — convención abierta que ya leen automáticamente 30+ herramientas de agentes (Codex, Claude Code, Antigravity, Cursor, Gemini CLI, entre otras) antes de modificar código. Contiene: qué es el proyecto, orden de lectura obligatorio (`ESTADO.md` → `BITACORA.md` → `RECETAS.md`), pasos a correr antes de empezar (`git status`/`log`/`branch`), la regla de "un solo agente escribe a la vez", la advertencia crítica de infraestructura (DNS/Worker, incidente 12 jul 2026), convenciones técnicas ya establecidas (includes compartidos, tokens de diseño), y el recordatorio de actualizar `ESTADO.md`/`BITACORA.md` al cerrar cualquier sesión.
+- **Verificado antes de crear el archivo:** `git status` limpio (solo `.DS_Store` sin trackear), rama `main` al día con `origin`, últimos commits confirmados como los de la sesión de blog (post #17, auditoría SEO) — sin trabajo a medias de otra herramienta, momento seguro para escribir sin colisión.
+- **Resultado:** con este archivo, ninguna herramienta nueva necesita que Alejandro le pegue un prompt largo de contexto a mano — lo lee sola al abrir el repo. Commit `04f8c9f`, verificado con push a `main`.
+- **Archivos actualizados:** `AGENTS.md` (nuevo), `BITACORA.md` (esta entrada).
+
 ## 2026-07-14 (continuación) — Post #17 publicado: Remesas con USDT
 
 - **Post #17 escrito y publicado:** "Remesas con USDT: lo que cambió en 2026 y por qué cada vez más familias lo están probando" (pilar Infinexa/`/`, categoría economía descentralizada). Era el último pendiente identificado en `ESTADO.md` sección 8 junto con inflación (ya resuelta como post #16). Verificación de unicidad hecha contra los 16 posts existentes (H2 y ganchos), y contra el post #6 (stablecoin vs. Bitcoin) en particular, que ya menciona remesas de pasada — el post nuevo no repite qué es USDT (enlaza a ese post para eso) y en cambio profundiza en tres ángulos que no estaban cubiertos: el proceso paso a paso, la ley nueva, y la comparación de costo actualizada.
