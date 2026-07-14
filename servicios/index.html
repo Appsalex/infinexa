@@ -37,18 +37,14 @@
   --tbody:#C9D2D6;--tmuted:#8AA5BF;--pad:clamp(24px,5vw,60px);--r:clamp(10px,1.2vw,16px);
 }
 html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter','Helvetica Neue',Arial,sans-serif;}
-
-/* HEADER */
-.hdr{padding:clamp(28px,4vw,52px) var(--pad) clamp(24px,3.5vw,40px);border-bottom:1px solid var(--border);}
-.ifx-lockup{display:flex;align-items:center;gap:clamp(14px,2vw,22px);}
-.ifx-sep-v{width:.6px;height:clamp(36px,5vw,52px);background:var(--petroleo);opacity:.7;flex-shrink:0;}
-.ifx-wm{display:flex;flex-direction:column;gap:4px;}
-.ifx-name{font-size:clamp(18px,2.2vw,26px);font-weight:300;color:var(--plata-cl);letter-spacing:clamp(6px,1.2vw,14px);}
-.ifx-line{width:44px;height:.8px;background:var(--cobre);opacity:.85;margin:3px 0;}
-.ifx-tag{font-size:clamp(10px,.9vw,12px);font-weight:300;color:var(--plata);letter-spacing:clamp(3px,.5vw,5.5px);opacity:.5;}
+.shell{width:100%;min-height:100vh;background:linear-gradient(150deg,#0c1219 0%,#14202c 100%);display:flex;justify-content:center;padding:0;}
+.card{background:var(--bg);width:100%;}
+@media(min-width:900px){.shell{padding:32px;}.card{max-width:var(--content-max-width);border-radius:20px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.5);}}
+@media(max-width:899px){.shell{padding:0;}.card{border-radius:0;}}
+@media(min-width:1400px){.shell{padding:40px;}.card{max-width:calc(var(--content-max-width) + 60px);}}
 
 /* HERO */
-.hero{padding:clamp(48px,7vw,96px) var(--pad) clamp(40px,6vw,80px);max-width:860px;}
+.hero{padding:clamp(48px,7vw,96px) var(--pad) clamp(40px,6vw,80px);max-width:var(--reading-max-width);}
 .story-label{display:inline-flex;align-items:center;gap:8px;font-size:clamp(10px,.9vw,12px);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--plata-cl);background:rgba(27,77,92,0.35);border:1px solid rgba(46,110,128,0.5);border-radius:20px;padding:5px clamp(12px,1.5vw,16px);margin-bottom:clamp(14px,2vw,20px);}
 .story-label::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--cobre);}
 .story-h1{font-size:clamp(32px,4.5vw,64px);font-weight:800;color:var(--plata-cl);line-height:1.1;margin-bottom:clamp(16px,2vw,24px);}
@@ -64,12 +60,12 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
 
 /* CARDS INCLUYE */
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(12px,1.5vw,20px);margin-bottom:clamp(40px,5vw,64px);}
-.card{background:rgba(255,255,255,0.025);border:1px solid var(--border-s);border-radius:var(--r);padding:clamp(20px,2.5vw,32px);}
-.card-num{font-size:11px;font-weight:600;letter-spacing:2px;color:var(--cobre);opacity:.7;margin-bottom:12px;}
-.card-title{font-size:clamp(16px,1.4vw,20px);font-weight:700;color:var(--plata-cl);margin-bottom:10px;}
-.card-items{list-style:none;margin-top:14px;}
-.card-items li{font-size:clamp(13px,1.1vw,14px);color:var(--tbody);line-height:1.7;padding-left:16px;position:relative;margin-bottom:2px;}
-.card-items li::before{content:'→';position:absolute;left:0;color:var(--cobre);font-size:11px;}
+.feature-card{background:rgba(255,255,255,0.025);border:1px solid var(--border-s);border-radius:var(--r);padding:clamp(20px,2.5vw,32px);}
+.feature-card-num{font-size:11px;font-weight:600;letter-spacing:2px;color:var(--cobre);opacity:.7;margin-bottom:12px;}
+.feature-card-title{font-size:clamp(16px,1.4vw,20px);font-weight:700;color:var(--plata-cl);margin-bottom:10px;}
+.feature-card-items{list-style:none;margin-top:14px;}
+.feature-card-items li{font-size:clamp(13px,1.1vw,14px);color:var(--tbody);line-height:1.7;padding-left:16px;position:relative;margin-bottom:2px;}
+.feature-card-items li::before{content:'→';position:absolute;left:0;color:var(--cobre);font-size:11px;}
 
 /* PRECIOS */
 .precios-sec{padding:clamp(40px,5vw,72px) var(--pad);background:rgba(255,255,255,0.01);border-top:1px solid var(--border-s);}
@@ -155,7 +151,7 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
 .ifx-wm-sm{display:flex;flex-direction:column;gap:3px;}
 .ifx-name-sm{font-size:clamp(15px,1.6vw,18px);font-weight:300;color:var(--plata-cl);letter-spacing:clamp(4px,.8vw,8px);}
 .ifx-tag-sm{font-size:clamp(9px,.8vw,10px);font-weight:300;color:var(--plata-cl);letter-spacing:2.5px;opacity:.5;}
-.nav-links{display:flex;align-items:center;gap:clamp(14px,1.8vw,24px);flex-wrap:wrap;}
+.nav-links{display:flex;align-items:center;gap:clamp(12px,1.6vw,20px);flex-wrap:wrap;}
 .nav-links a{font-size:clamp(13px,1.1vw,14px);font-weight:500;color:var(--plata-cl);text-decoration:none;opacity:.75;letter-spacing:.3px;white-space:nowrap;}
 .nav-links a:hover,.nav-links a.active{opacity:1;color:var(--cobre);}
 .nav-cta{display:inline-flex;align-items:center;gap:6px;background:var(--cobre);color:#fff !important;font-weight:700 !important;opacity:1 !important;padding:8px 16px;border-radius:100px;font-size:clamp(12px,1vw,13px) !important;}
@@ -164,55 +160,12 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
 </head>
 <body>
 <a href="#main" class="skip-link">Saltar al contenido principal</a>
+<div class="shell">
+<div class="card">
 
-<!-- ══ NAV ══ -->
-<div class="site-nav">
-  <a href="/" class="ifx-lockup-sm">
-    <svg width="64" height="32" viewBox="95 52 215 80" xmlns="http://www.w3.org/2000/svg">
-      <path d="M 210 100 C 202 78,172 58,146 60 C 116 62,102 82,104 98 C 106 116,124 126,148 124 C 170 122,196 106,210 100 C 224 94,240 74,260 68 C 282 62,298 76,298 92 C 298 110,282 122,260 122 C 238 122,222 108,210 100" fill="none" stroke="#BDC8CC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M 202 93 Q 210 100 202 108" fill="none" stroke="#C8682E" stroke-width="2.2" stroke-linecap="round"/>
-      <path d="M 218 93 Q 210 100 218 108" fill="none" stroke="#C8682E" stroke-width="2.2" stroke-linecap="round"/>
-      <circle cx="210" cy="100" r="2.4" fill="#C8682E"/>
-    </svg>
-    <div class="ifx-wm-sm">
-      <div class="ifx-name-sm">infinexa</div>
-      <div class="ifx-tag-sm">connecting value with purpose</div>
-    </div>
-  </a>
-  <div class="nav-links">
-    <a href="/">Inicio</a>
-    <a href="/blog/">Aprender</a>
-    <a href="/diagnostico/">Diagnóstico</a>
-    <a href="/talleres/">Talleres</a>
-    <a href="/servicios/" class="active">Servicios</a>
-    <a href="/nosotros/">Nosotros</a>
-    <a href="/contacto/">Contacto</a>
-    <a class="nav-cta" href="https://wa.me/526461173209?text=Hola%2C%20vi%20infinexa.app%2Fservicios%20y%20me%20gustar%C3%ADa%20platicar." target="_blank" rel="noopener">Hablemos</a>
-  </div>
-</div>
-<span id="main" tabindex="-1"></span>
+{% include nav.html active="servicios" wa_text="Hola, vi infinexa.app/servicios y me gustaría platicar." %}
 
-<!-- HEADER -->
-<header class="hdr">
-  <div class="ifx-lockup">
-    <a href="/">
-      <svg width="44" height="44" viewBox="0 0 200 192" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M100 96C94 78 70 60 50 62C28 64 18 82 20 96C22 112 38 120 58 118C76 116 92 102 100 96Z" stroke="#BDC8CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M100 96C108 90 120 72 138 68C158 64 172 78 172 94C172 112 158 122 138 120C118 118 106 104 100 96Z" stroke="#BDC8CC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M92 88Q100 96 92 104" stroke="#C8682E" stroke-width="2.6" stroke-linecap="round"/>
-        <path d="M108 88Q100 96 108 104" stroke="#C8682E" stroke-width="2.6" stroke-linecap="round"/>
-        <circle cx="100" cy="96" r="2.8" fill="#C8682E"/>
-      </svg>
-    </a>
-    <div class="ifx-sep-v"></div>
-    <div class="ifx-wm">
-      <div class="ifx-name">infinexa</div>
-      <div class="ifx-line"></div>
-      <div class="ifx-tag">connecting value with purpose</div>
-    </div>
-  </div>
-</header>
-
+<main id="main">
 <!-- HERO -->
 <section class="hero">
   <div class="story-label">Infinexa Digital</div>
@@ -227,40 +180,40 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
   <h2 class="sec-h">Todo lo que necesitas<br><em>para tener presencia real.</em></h2>
   <p class="sec-sub">Un paquete completo que normalmente tarda 4-6 semanas con una agencia. Nosotros lo entregamos en 48 horas, con el método: analizar → definir → construir → publicar → medir → mejorar.</p>
   <div class="cards">
-    <div class="card">
-      <div class="card-num">01</div>
-      <div class="card-title">Identidad de marca</div>
-      <ul class="card-items">
+    <div class="feature-card">
+      <div class="feature-card-num">01</div>
+      <div class="feature-card-title">Identidad de marca</div>
+      <ul class="feature-card-items">
         <li>Logo en SVG con símbolo único</li>
         <li>Paleta de color con significado</li>
         <li>Tipografía y sistema visual</li>
         <li>Brand brief con guía de uso</li>
       </ul>
     </div>
-    <div class="card">
-      <div class="card-num">02</div>
-      <div class="card-title">Presencia digital</div>
-      <ul class="card-items">
+    <div class="feature-card">
+      <div class="feature-card-num">02</div>
+      <div class="feature-card-title">Presencia digital</div>
+      <ul class="feature-card-items">
         <li>Dominio propio (.app, .com, .io)</li>
         <li>Hosting y SSL gratuito</li>
         <li>Deploy automático con GitHub</li>
         <li>Favicon y Open Graph para WhatsApp</li>
       </ul>
     </div>
-    <div class="card">
-      <div class="card-num">03</div>
-      <div class="card-title">Materiales comerciales</div>
-      <ul class="card-items">
+    <div class="feature-card">
+      <div class="feature-card-num">03</div>
+      <div class="feature-card-title">Materiales comerciales</div>
+      <ul class="feature-card-items">
         <li>Imagen para estado de WhatsApp</li>
         <li>Imagen para mensaje directo</li>
         <li>Textos comerciales a la medida</li>
         <li>Guía de seguimiento conversacional</li>
       </ul>
     </div>
-    <div class="card">
-      <div class="card-num">04</div>
-      <div class="card-title">Capacitación incluida</div>
-      <ul class="card-items">
+    <div class="feature-card">
+      <div class="feature-card-num">04</div>
+      <div class="feature-card-title">Capacitación incluida</div>
+      <ul class="feature-card-items">
         <li>Sesión de entrega en vivo</li>
         <li>Herramientas de IA configuradas para que puedas actualizar contenido tú mismo</li>
         <li>Flujo de actualización simplificado</li>
@@ -529,6 +482,10 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
   </div>
   <p style="width:100%;text-align:center;font-size:12px;color:var(--tmuted,var(--plata));opacity:.85;line-height:1.65;margin-top:14px;">Infinexa Digital es un servicio de desarrollo y consultoría digital. No es asesoría financiera ni garantiza resultados de negocio específicos — los términos completos aplican según <a href="/terminos/" style="color:inherit;text-decoration:underline;">Términos y condiciones</a>.</p>
 </footer>
+
+</main>
+</div>
+</div>
 
 <script>
 function copyW(){
