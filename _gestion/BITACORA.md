@@ -6,6 +6,15 @@
 
 ---
 
+## 2026-07-13 (sesión — retrofit final a includes compartidos)
+
+- Migradas las últimas 4 páginas con código duplicado en línea (`/`, `/servicios/`, `/infografia/`, `/diversifica/`) a los includes compartidos `_includes/ga4.html`, `_includes/analytics.html`, `_includes/qr-share.html` y `_includes/reduced-motion.html` — el mismo conjunto que ya usaban las 5 páginas nuevas de Fase 1.5 y el layout del blog. Commit `0650ff8`.
+- Cuidado especial: en home, servicios, infografia y diversifica, la función `trackEvent()` vivía mezclada dentro de un `<script>` más grande con lógica propia de cada página (auto-wiring de CTAs, FAQ, lead-form, disparo automático de eventos). Se extrajo solo la definición de `trackEvent()` hacia el include, partiendo el `<script>` original en dos donde fue necesario, sin tocar el resto de la lógica.
+- Se detectó y corrigió, antes de hacer commit, una duplicación propia introducida al migrar el QR de `/infografia/`: quedó un bloque de inicialización de QR duplicado (el que ya trae `qr-share.html` más un remanente del original) — corregido eliminando el remanente.
+- Verificado en vivo (Claude in Chrome) en las 4 páginas tras el deploy: `window.gtag` y `window.trackEvent` definidos correctamente, el QR se renderiza una sola vez (2 hijos esperados: canvas + texto de URL, no duplicado), el logo de infografia sigue apareciendo una sola vez, y la clave de Web3Forms de servicios se mantiene intacta (`window.INFINEXA_WEB3FORMS_KEY`).
+- Se conservó intencionalmente el footer con firma embebida en las 4 páginas (no se migró a `footer.html`, para no duplicar la firma — mismo criterio de Home en fases anteriores).
+- Con esto, todos los pendientes reales listados al inicio de esta sesión quedan resueltos: Web3Forms, responsive (salvo el extremo grande de pantalla), verificación de eventos GA4, y retrofit de includes.
+
 ## 2026-07-13 (sesión — verificación real de eventos GA4 en producción)
 
 - Alejandro abrió el reporte "Resumen en tiempo real" de Google Analytics (infinexa.app) mientras Claude navegaba el sitio en vivo con la extensión de Claude in Chrome.
