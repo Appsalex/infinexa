@@ -191,6 +191,9 @@ CONFIGS = [
     dict(out="inflacion-en-profundidad", category="DIVERSIFICACIÓN",
          titulo=["Cuando el dinero", "pierde el control"], subtitulo=None,
          icon="diversifica", seed=113),
+    dict(out="remesas-usdt", category="ECONOMÍA DESCENTRALIZADA",
+         titulo=["Enviar dinero sin", "la comisión de siempre"], subtitulo=None,
+         icon="carta", seed=127),
 ]
 
 with sync_playwright() as p:
