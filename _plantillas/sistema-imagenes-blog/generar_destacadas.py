@@ -188,6 +188,9 @@ CONFIGS = [
     dict(out="infraestructura-del-dinero-hoy", category="DIVERSIFICACIÓN",
          titulo=["Quince años", "después"], subtitulo=None,
          icon="diversifica", seed=109),
+    dict(out="inflacion-en-profundidad", category="DIVERSIFICACIÓN",
+         titulo=["Cuando el dinero", "pierde el control"], subtitulo=None,
+         icon="diversifica", seed=113),
 ]
 
 with sync_playwright() as p:
