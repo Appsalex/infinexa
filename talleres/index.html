@@ -168,6 +168,7 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
           <option value="En línea">En línea</option>
           <option value="Presencial">Presencial</option>
           <option value="Para mi empresa/equipo">Para mi empresa/equipo</option>
+          <option value="Conferencia para mi empresa/evento">Conferencia para mi empresa/evento</option>
         </select>
 
         <input type="hidden" name="asunto" value="Nuevo registro de interés en taller — infinexa.app/talleres">
@@ -201,6 +202,11 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
 ifxHandleForm('taller-form-full', {
   event: 'workshop_interest_submitted',
   eventData: {},
+  onSuccess: function(fd){
+    if (fd.get('modalidad') === 'Conferencia para mi empresa/evento' && window.trackEvent) {
+      trackEvent('conference_interest_submitted', { tema: fd.get('tema') });
+    }
+  }
 });
 </script>
 

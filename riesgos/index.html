@@ -165,8 +165,8 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
     </div>
   </div>
   <div class="legal-links">
-    <a href="/transparencia/">Transparencia</a>
-    <a href="/riesgos/">Riesgos</a>
+    <a href="/transparencia/" id="footer-link-transparencia">Transparencia</a>
+    <a href="/riesgos/" id="footer-link-riesgos">Riesgos</a>
     <a href="/privacidad/">Privacidad</a>
     <a href="/terminos/">Términos</a>
   </div>
@@ -217,5 +217,18 @@ document.addEventListener("DOMContentLoaded",function(){
 });
 </script>
 
+
+<script>
+function trackEvent(name, data){
+  if (window.dataLayer) { window.dataLayer.push(Object.assign({event:name}, data||{})); }
+  if (window.gtag) { window.gtag('event', name, data||{}); }
+}
+(function(){
+  var t = document.getElementById('footer-link-transparencia');
+  var r = document.getElementById('footer-link-riesgos');
+  if (t) t.addEventListener('click', function(){ if (window.trackEvent) trackEvent('transparency_page_opened', {fuente: window.location.pathname}); });
+  if (r) r.addEventListener('click', function(){ if (window.trackEvent) trackEvent('risk_page_opened', {fuente: window.location.pathname}); });
+})();
+</script>
 </body>
 </html>

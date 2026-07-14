@@ -522,8 +522,8 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
   </div>
 
   <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:20px;">
-    <a href="/transparencia/" style="font-size:12px;color:var(--tmuted);text-decoration:none;opacity:.8;">Transparencia</a>
-    <a href="/riesgos/" style="font-size:12px;color:var(--tmuted);text-decoration:none;opacity:.8;">Riesgos</a>
+    <a href="/transparencia/" id="footer-link-transparencia" style="font-size:12px;color:var(--tmuted);text-decoration:none;opacity:.8;">Transparencia</a>
+    <a href="/riesgos/" id="footer-link-riesgos" style="font-size:12px;color:var(--tmuted);text-decoration:none;opacity:.8;">Riesgos</a>
     <a href="/privacidad/" style="font-size:12px;color:var(--tmuted);text-decoration:none;opacity:.8;">Privacidad</a>
     <a href="/terminos/" style="font-size:12px;color:var(--tmuted);text-decoration:none;opacity:.8;">Términos</a>
   </div>
@@ -631,5 +631,14 @@ document.addEventListener("DOMContentLoaded",function(){
 });
 </script>
 
+
+<script>
+(function(){
+  var t = document.getElementById('footer-link-transparencia');
+  var r = document.getElementById('footer-link-riesgos');
+  if (t) t.addEventListener('click', function(){ if (window.trackEvent) trackEvent('transparency_page_opened', {fuente: window.location.pathname}); });
+  if (r) r.addEventListener('click', function(){ if (window.trackEvent) trackEvent('risk_page_opened', {fuente: window.location.pathname}); });
+})();
+</script>
 </body>
 </html>

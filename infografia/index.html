@@ -547,8 +547,8 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
 </div>
 
 <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;padding-top:clamp(14px,2vw,20px);">
-  <a href="/transparencia/" style="font-size:12px;color:var(--plata);text-decoration:none;opacity:.7;">Transparencia</a>
-  <a href="/riesgos/" style="font-size:12px;color:var(--plata);text-decoration:none;opacity:.7;">Riesgos</a>
+  <a href="/transparencia/" id="footer-link-transparencia" style="font-size:12px;color:var(--plata);text-decoration:none;opacity:.7;">Transparencia</a>
+  <a href="/riesgos/" id="footer-link-riesgos" style="font-size:12px;color:var(--plata);text-decoration:none;opacity:.7;">Riesgos</a>
   <a href="/privacidad/" style="font-size:12px;color:var(--plata);text-decoration:none;opacity:.7;">Privacidad</a>
   <a href="/terminos/" style="font-size:12px;color:var(--plata);text-decoration:none;opacity:.7;">Términos</a>
 </div>
@@ -564,6 +564,13 @@ function toggle(id){
   s.classList.toggle('open',!open);
   s.querySelector('.acord-trigger').setAttribute('aria-expanded',!open);
 }
+
+/* Analítica — no envía datos personales, solo contexto no identificable. Ver /privacidad/. */
+function trackEvent(name, data){
+  if (window.dataLayer) { window.dataLayer.push(Object.assign({event:name}, data||{})); }
+  if (window.gtag) { window.gtag('event', name, data||{}); }
+}
+trackEvent('innovation_guide_opened', {fuente: '/infografia/'});
 </script>
 
 <!-- ── QR COMPARTIBLE ── -->
@@ -606,5 +613,14 @@ document.addEventListener("DOMContentLoaded",function(){
 });
 </script>
 
+
+<script>
+(function(){
+  var t = document.getElementById('footer-link-transparencia');
+  var r = document.getElementById('footer-link-riesgos');
+  if (t) t.addEventListener('click', function(){ if (window.trackEvent) trackEvent('transparency_page_opened', {fuente: window.location.pathname}); });
+  if (r) r.addEventListener('click', function(){ if (window.trackEvent) trackEvent('risk_page_opened', {fuente: window.location.pathname}); });
+})();
+</script>
 </body>
 </html>
