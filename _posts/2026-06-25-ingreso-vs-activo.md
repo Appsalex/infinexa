@@ -1,6 +1,6 @@
 ---
 title: "Ingreso vs. activo: la diferencia que cambia cómo ves tu dinero"
-author: "Alejandro García, MBA"
+author: "MBA Alejandro García"
 category: "diversificación"
 pillar: "/diversifica"
 pillar_label: "Ver Diversifica"

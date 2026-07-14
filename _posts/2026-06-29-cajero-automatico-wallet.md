@@ -1,6 +1,6 @@
 ---
 title: "El cajero automático: la misma desconfianza que hoy sienten algunos por las wallets"
-author: "Alejandro García, MBA"
+author: "MBA Alejandro García"
 category: "historia y tecnología"
 pillar: "/infografia"
 pillar_label: "Ver El Patrón"

@@ -1,7 +1,7 @@
 ---
 title: "Del trueque al dólar digital: la historia del dinero contada en 10 minutos"
 date: 2026-07-01 09:00:00 -0700
-author: "Alejandro García, MBA"
+author: "MBA Alejandro García"
 category: "historia económica"
 pillar: "/infografia"
 pillar_label: "Ver El Patrón"

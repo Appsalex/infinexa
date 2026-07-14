@@ -1,7 +1,7 @@
 ---
 title: "El mensaje escondido en el primer bloque de la historia: lo que Satoshi dejó grabado para siempre"
 date: 2026-07-12 10:00:00 -0700
-author: "Alejandro García, MBA"
+author: "MBA Alejandro García"
 category: "economía descentralizada"
 pillar: "/"
 pillar_label: "Ver Infinexa"

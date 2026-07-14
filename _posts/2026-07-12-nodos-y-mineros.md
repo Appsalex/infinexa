@@ -1,7 +1,7 @@
 ---
 title: "Quién guarda la verdad cuando nadie está a cargo: nodos, mineros y el reparto real del poder en Bitcoin"
 date: 2026-07-12 11:00:00 -0700
-author: "Alejandro García, MBA"
+author: "MBA Alejandro García"
 category: "historia y tecnología"
 pillar: "/infografia"
 pillar_label: "Ver El Patrón"

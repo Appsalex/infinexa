@@ -1,7 +1,7 @@
 ---
 title: "El impuesto silencioso: cómo la inflación le cobra a tu dinero sin pedirte permiso"
 date: 2026-07-01 13:00:00 -0700
-author: "Alejandro García, MBA"
+author: "MBA Alejandro García"
 category: "diversificación"
 pillar: "/diversifica"
 pillar_label: "Ver Diversifica"

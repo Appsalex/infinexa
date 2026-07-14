@@ -1,7 +1,7 @@
 ---
 title: "Qué es el ingreso pasivo en realidad, y por qué casi nadie tiene más de uno"
 date: 2026-07-01 17:00:00 -0700
-author: "Alejandro García, MBA"
+author: "MBA Alejandro García"
 category: "diversificación"
 pillar: "/diversifica"
 pillar_label: "Ver Diversifica"

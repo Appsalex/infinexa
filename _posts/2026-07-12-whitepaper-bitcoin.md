@@ -1,7 +1,7 @@
 ---
 title: "El documento de nueve páginas que cambió todo: qué dice realmente el whitepaper de Bitcoin"
 date: 2026-07-12 09:00:00 -0700
-author: "Alejandro García, MBA"
+author: "MBA Alejandro García"
 category: "economía descentralizada"
 pillar: "/"
 pillar_label: "Ver Infinexa"

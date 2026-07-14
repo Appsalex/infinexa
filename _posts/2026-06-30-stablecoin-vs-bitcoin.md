@@ -1,6 +1,6 @@
 ---
 title: "Qué es una stablecoin, y por qué no es lo mismo que Bitcoin"
-author: "Alejandro García, MBA"
+author: "MBA Alejandro García"
 category: "economía descentralizada"
 pillar: "/"
 pillar_label: "Ver Infinexa"

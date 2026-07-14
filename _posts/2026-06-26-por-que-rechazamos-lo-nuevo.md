@@ -1,7 +1,7 @@
 ---
 title: "¿Por qué rechazamos lo nuevo antes de entenderlo?"
 date: 2026-06-26 13:00:00 -0700
-author: "Alejandro García, MBA"
+author: "MBA Alejandro García"
 category: "historia y tecnología"
 pillar: "/infografia"
 pillar_label: "Ver El Patrón"
