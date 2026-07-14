@@ -228,6 +228,16 @@ Agregar antes de `</urlset>` en `sitemap.xml`:
 </url>
 ```
 
+### Paso 4b — Actualizar `/aprender/` (obligatorio, se olvidó una vez — 14 jul 2026)
+`/aprender/` (`aprender/index.html`) es HTML escrito a mano, **sin conexión con Jekyll/`site.posts`** — no se actualiza solo. Cada post nuevo requiere dos ediciones manuales ahí:
+1. Agregar una tarjeta `<a class="post-card" href="/blog/slug-del-post/">...` dentro de la ruta temática que le corresponda editorialmente (las 4 rutas — "Dinero, inflación y diversificación" / "Economía descentralizada" / "Historia y tecnología" / la de diagnóstico — **no son 1:1 con el campo `category` del front matter**; decidir a mano en cuál encaja mejor por tema, igual que se hizo con `historia-del-dinero` que es categoría "historia económica" pero vive en la ruta de diversificación).
+2. Actualizar el conteo "N artículos agrupados en 4 rutas temáticas" en el párrafo `.page-sub` del `<h1>`.
+
+Verificar con:
+```bash
+grep -n "artículos agrupados\|slug-del-post" aprender/index.html
+```
+
 ### Paso 5 — Mover los archivos al repo
 ```bash
 cd ~/Downloads/infinexa-repo
@@ -247,7 +257,7 @@ find ~/Downloads -maxdepth 2 -iname "nombre-aproximado*"
 ```bash
 ls -la _posts/YYYY-MM-DD-slug.md assets/blog/slug.webp
 git --no-pager diff --stat
-git status   # el .md y el .webp deben aparecer como "Untracked files"
+git status   # el .md y el .webp deben aparecer como "Untracked files"; aprender/index.html debe aparecer como "modified"
 ```
 
 Verificación adicional obligatoria (reglas 6 y 7):
