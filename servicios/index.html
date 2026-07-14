@@ -438,6 +438,63 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
   </div>
 </section>
 
+<!-- FORMULARIO DE CONTACTO -->
+<section class="sec" id="lead-form-sec" style="background:rgba(255,255,255,0.01);border-top:1px solid var(--border-s);">
+  <div class="sec-label">Cuéntanos de tu proyecto</div>
+  <h2 class="sec-h">Recibe una propuesta<br><em>a la medida.</em></h2>
+  <p class="sec-sub">Completa este formulario y te contactamos en menos de 24 horas con los siguientes pasos. Sin compromiso.</p>
+
+  <form id="digital-lead-form" class="ifx-form" style="max-width:640px;margin-top:clamp(20px,2.6vw,28px);display:flex;flex-direction:column;gap:16px;">
+    <div>
+      <label for="dl-nombre" style="display:block;font-size:13px;font-weight:600;color:var(--plata-cl);margin-bottom:6px;">Nombre</label>
+      <input type="text" id="dl-nombre" name="nombre" required style="width:100%;padding:12px 14px;border-radius:8px;border:1px solid var(--border-s);background:rgba(255,255,255,0.03);color:var(--plata-cl);font-size:15px;">
+    </div>
+    <div>
+      <label for="dl-correo" style="display:block;font-size:13px;font-weight:600;color:var(--plata-cl);margin-bottom:6px;">Correo electrónico</label>
+      <input type="email" id="dl-correo" name="correo" required style="width:100%;padding:12px 14px;border-radius:8px;border:1px solid var(--border-s);background:rgba(255,255,255,0.03);color:var(--plata-cl);font-size:15px;">
+    </div>
+    <div>
+      <label for="dl-empresa" style="display:block;font-size:13px;font-weight:600;color:var(--plata-cl);margin-bottom:6px;">Empresa o marca personal (opcional)</label>
+      <input type="text" id="dl-empresa" name="empresa" style="width:100%;padding:12px 14px;border-radius:8px;border:1px solid var(--border-s);background:rgba(255,255,255,0.03);color:var(--plata-cl);font-size:15px;">
+    </div>
+    <div>
+      <label for="dl-tipo" style="display:block;font-size:13px;font-weight:600;color:var(--plata-cl);margin-bottom:6px;">Tipo de proyecto</label>
+      <select id="dl-tipo" name="tipo_proyecto" required style="width:100%;padding:12px 14px;border-radius:8px;border:1px solid var(--border-s);background:rgba(255,255,255,0.03);color:var(--plata-cl);font-size:15px;">
+        <option value="">Selecciona una opción</option>
+        <option value="marca_sitio">Marca + sitio web completo</option>
+        <option value="solo_sitio">Solo sitio web</option>
+        <option value="materiales">Materiales comerciales</option>
+        <option value="automatizacion">Automatización / estrategia digital</option>
+        <option value="otro">Otro</option>
+      </select>
+    </div>
+    <div>
+      <label for="dl-presupuesto" style="display:block;font-size:13px;font-weight:600;color:var(--plata-cl);margin-bottom:6px;">Presupuesto aproximado</label>
+      <select id="dl-presupuesto" name="presupuesto" required style="width:100%;padding:12px 14px;border-radius:8px;border:1px solid var(--border-s);background:rgba(255,255,255,0.03);color:var(--plata-cl);font-size:15px;">
+        <option value="">Selecciona una opción</option>
+        <option value="menos_1000">Menos de $1,000 USD</option>
+        <option value="1000_2500">$1,000 – $2,500 USD</option>
+        <option value="2500_5000">$2,500 – $5,000 USD</option>
+        <option value="mas_5000">Más de $5,000 USD</option>
+        <option value="no_seguro">Aún no lo sé</option>
+      </select>
+    </div>
+    <div>
+      <label for="dl-objetivo" style="display:block;font-size:13px;font-weight:600;color:var(--plata-cl);margin-bottom:6px;">¿Cuál es tu objetivo principal?</label>
+      <textarea id="dl-objetivo" name="objetivo" rows="4" style="width:100%;padding:12px 14px;border-radius:8px;border:1px solid var(--border-s);background:rgba(255,255,255,0.03);color:var(--plata-cl);font-size:15px;font-family:inherit;resize:vertical;"></textarea>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:10px;">
+      <input type="checkbox" id="dl-consent" name="consentimiento" required style="margin-top:4px;">
+      <label for="dl-consent" style="font-size:13px;color:var(--plata);opacity:.85;line-height:1.5;">Acepto que Infinexa me contacte sobre este proyecto, conforme al <a href="/privacidad/" style="color:var(--cobre);">Aviso de Privacidad</a>.</label>
+    </div>
+    <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Enviar información</button>
+    <div id="digital-lead-form-status" style="font-size:14px;"></div>
+    <div id="digital-lead-form-whatsapp" style="display:none;">
+      <a href="#" id="digital-lead-form-wa-link" target="_blank" class="btn btn-outline" style="display:inline-flex;">Confirmar también por WhatsApp →</a>
+    </div>
+  </form>
+</section>
+
 <!-- CTA -->
 <section class="cta-sec">
   <div class="cta-inner">
@@ -489,6 +546,63 @@ function toggleFaq(btn) {
     panel.style.maxHeight = null;
   }
 }
+
+/* Analítica — no envía datos personales (nombre, correo, mensajes), solo contexto no identificable. Ver /privacidad/. */
+function trackEvent(name, data){
+  if (window.dataLayer) { window.dataLayer.push(Object.assign({event:name}, data||{})); }
+  if (window.gtag) { window.gtag('event', name, data||{}); }
+}
+
+window.INFINEXA_WEB3FORMS_KEY = window.INFINEXA_WEB3FORMS_KEY || "WEB3FORMS_ACCESS_KEY_PENDIENTE";
+(function(){
+  var form = document.getElementById('digital-lead-form');
+  if (!form) return;
+  var statusEl = document.getElementById('digital-lead-form-status');
+  var followupEl = document.getElementById('digital-lead-form-whatsapp');
+  var waLink = document.getElementById('digital-lead-form-wa-link');
+  var submitBtn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    var fd = new FormData(form);
+    fd.append('access_key', window.INFINEXA_WEB3FORMS_KEY);
+    fd.append('formulario', 'Infinexa Digital — servicios/');
+    var params = new URLSearchParams(window.location.search);
+    ['utm_source','utm_medium','utm_campaign'].forEach(function(k){ if (params.get(k)) fd.append(k, params.get(k)); });
+    fd.append('fuente_pagina', window.location.pathname);
+    fd.append('fecha', new Date().toISOString());
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando…';
+    statusEl.textContent = '';
+
+    fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd, headers: {'Accept':'application/json'} })
+      .then(function(r){ return r.json(); })
+      .then(function(data){
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enviar información';
+        if (data.success) {
+          statusEl.style.color = '#4CAF7D';
+          statusEl.textContent = '¡Gracias! Recibimos tu información y te contactaremos pronto.';
+          form.reset();
+          trackEvent('digital_services_lead_submitted', { tipo_proyecto: fd.get('tipo_proyecto'), presupuesto: fd.get('presupuesto') });
+          if (waLink) waLink.href = 'https://wa.me/526461173209?text=' + encodeURIComponent('Hola, acabo de enviar el formulario de Infinexa Digital y me gustaría platicar sobre mi proyecto.');
+          if (followupEl) followupEl.style.display = 'block';
+        } else {
+          statusEl.style.color = '#E06C4F';
+          statusEl.textContent = 'Hubo un problema al enviar. Intenta de nuevo o escríbenos por WhatsApp.';
+        }
+      })
+      .catch(function(){
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enviar información';
+        statusEl.style.color = '#E06C4F';
+        statusEl.textContent = 'Error de conexión. Intenta de nuevo o escríbenos por WhatsApp.';
+      });
+  });
+})();
 </script>
 
 <!-- ── QR COMPARTIBLE ── -->
