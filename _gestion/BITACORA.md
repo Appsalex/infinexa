@@ -6,6 +6,13 @@
 
 ---
 
+## 2026-07-13 (sesión — verificación real de eventos GA4 en producción)
+
+- Alejandro abrió el reporte "Resumen en tiempo real" de Google Analytics (infinexa.app) mientras Claude navegaba el sitio en vivo con la extensión de Claude in Chrome.
+- Confirmado en pantalla, con nombre exacto de evento y conteo: `contact_form_submitted` (1, del envío de prueba de Web3Forms hecho minutos antes), `diversification_assessment_started` (1, clic en el botón "Evaluar mi nivel de diversificación" de `/diversifica/`), `innovation_guide_opened` (1, disparo automático al cargar `/infografia/`), `transparency_page_opened` y `risk_page_opened` (1 cada uno, clics en los links del footer "Transparencia"/"Riesgos" desde Inicio).
+- Esto confirma 5 de los 21 eventos personalizados llegando correctamente a GA4 en producción, cubriendo los tres mecanismos de disparo que usa el sitio: envío de formulario, clic en CTA, y carga automática de página. No se verificó cada uno de los 21 individualmente, pero el patrón queda validado de punta a punta — ya no es solo una confirmación de que el código dispara `trackEvent()`, sino de que Google Analytics efectivamente lo recibe y clasifica.
+- Con esto, los 4 pendientes marcados como prioritarios en la sección 8 de `ESTADO.md` (Web3Forms, responsive, retrofit de includes aún abierto, y verificación de GA4) quedan resueltos salvo el retrofit de includes (que no era bloqueante) y la verificación visual del extremo grande de pantalla (1440–2048px).
+
 ## 2026-07-13 (sesión — clave real de Web3Forms conectada y verificada)
 
 - Alejandro compartió la access key real de Web3Forms (creada en web3forms.com). Se reemplazó el placeholder `WEB3FORMS_ACCESS_KEY_PENDIENTE` en los dos únicos lugares donde vivía: `_includes/form-handler.html` (usado por `/diagnostico/`, `/talleres/`, `/contacto/`) y la copia inline de `servicios/index.html` (nunca migrada al include compartido). Commit `dda4a53`.
