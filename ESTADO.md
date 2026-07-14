@@ -2,7 +2,9 @@
 
 > Este archivo es la fuente única de verdad del proyecto. Se actualiza después de cada sesión de trabajo, sin importar en qué conversación de Claude se realizó. No se crean archivos nuevos por conversación — siempre se edita este mismo documento.
 
-**Última actualización:** 13 de julio, 2026 — 🟢 **Fase 1.5E ejecutada: eliminación de logo duplicado + regla global de prevención.** Tras integrar `/infografia/` y `/diversifica/` al sistema en Fase 1.5D, se detectó que ambas seguían mostrando el logo de Infinexa dos veces (una vez pequeño en el nav compartido, otra vez grande en su propio header) — el mismo bug ya corregido en `/servicios/` durante Fase 1.5A. Corregido, y documentada una regla de prevención permanente en `_gestion/RECETAS.md` §1.2 para que no se repita en futuras migraciones. Ver sección 1.16 para el detalle completo y el dictamen final.
+**Última actualización:** 14 de julio, 2026 — 🟢 **Post #16 del blog publicado: "El día que el dinero dejó de alcanzar" (inflación en profundidad, pilar Diversifica).** Amplía el post #8 sin repetirlo (origen monetario, medición real vía INPC/subyacente, 4 casos históricos de hiperinflación). Verificación de unicidad, checklist de imagen (4 puntos) y verificación en GitHub completas. Ver sección 4.4 para el detalle y sección 3.7 para una limitación de sandbox documentada (pipeline de imágenes Playwright no disponible en este entorno, resuelto con alternativa `cairosvg`). Commit `6b9f284`.
+
+**Anterior:** 13 de julio, 2026 — 🟢 **Fase 1.5E ejecutada: eliminación de logo duplicado + regla global de prevención.** Tras integrar `/infografia/` y `/diversifica/` al sistema en Fase 1.5D, se detectó que ambas seguían mostrando el logo de Infinexa dos veces (una vez pequeño en el nav compartido, otra vez grande en su propio header) — el mismo bug ya corregido en `/servicios/` durante Fase 1.5A. Corregido, y documentada una regla de prevención permanente en `_gestion/RECETAS.md` §1.2 para que no se repita en futuras migraciones. Ver sección 1.16 para el detalle completo y el dictamen final.
 
 **Histórico inmediato:** Fase 1.5 (1.11, consolidación/medición/captación) → integración del perfil de MBA Alejandro García (1.12) → Fase 1.5A, normalización visual/estructural de 7 páginas (1.13) → Fase 1.5B, corrección de nav + unificación de ancho exterior (1.14) → Fase 1.5D, integración de `/infografia/` y `/diversifica/` (1.15) → Fase 1.5E, eliminación de logo duplicado + regla de prevención (1.16, esta actualización).
 
@@ -323,6 +325,8 @@ Ambos documentos quedaron optimizados como un sistema de dos capas con referenci
 
 **Lección para futuras piezas:** siempre usar el path SVG real de los archivos de marca entregados (sección 3.6), nunca redibujar el símbolo a mano — y usar Chromium/Playwright como motor de render por defecto para cualquier infografía o pieza visual nueva.
 
+**Limitación conocida — Playwright/Chromium no siempre disponible (descubierto 14 jul 2026):** en algunos entornos de sandbox de Claude (sin acceso `sudo`/root), Chromium no logra instalar sus dependencias de sistema (`libxdamage1` y otras) y el pipeline estándar falla por completo. Alternativa de respaldo usada para el post #16: `cairosvg` renderizando directamente el mismo SVG que genera `build_svg()` en `generar_destacadas.py` (mismo path del logo, sin redibujar), con `Lato` como sustituto de `Inter` (no disponible en el sandbox). El resultado pasa el checklist de 4 puntos pero no es pixel-perfect al pipeline documentado. Si se detecta este mismo error (`Host system is missing dependencies to run browsers` + `sudo` bloqueado), usar este método de respaldo para no bloquear la sesión, y dejarlo anotado como pendiente si se quiere el render exacto con Chromium/Inter más adelante.
+
 ---
 
 ## 4. Páginas publicadas
@@ -473,7 +477,7 @@ Diversifica apuntaba a la carpeta huérfana, que tenía una versión vieja del `
 
 ### 4.4 Blog de Infinexa
 
-**Estado:** ✅ Publicado en `infinexa.app/blog`, **15 posts activos** con
+**Estado:** ✅ Publicado en `infinexa.app/blog`, **16 posts activos** con
 sistema de principios visuales numerados, QR compartible dinámico,
 enlace discreto a `/donativo/`, y audio en el post #1. Cada post tiene
 campo `date:` explícito con hora (ver regla de orden en `_gestion/PROMPT_BLOG.md`).
@@ -500,7 +504,7 @@ Detalle completo en `_gestion/PROMPT_BLOG.md`.
 | 13 | El mensaje escondido en el primer bloque de la historia (bloque génesis) | La carta | 2 |
 | 14 | Quién guarda la verdad cuando nadie está a cargo (nodos/mineros) | El Patrón | 2 |
 | 15 | De un experimento de nueve páginas a la infraestructura del dinero de hoy (cierre) | Diversifica | 2 |
-| 13 | El mensaje escondido en el primer bloque de la historia (bloque génesis) | La carta | 2 |
+| 16 | El día que el dinero dejó de alcanzar (inflación en profundidad) | Diversifica | 3 |
 
 **Sistemas activos en todos los posts:**
 - Bloque `.principio` — tarjeta con círculo numerado cobre, línea lateral,
@@ -597,7 +601,7 @@ en `_gestion/BITACORA.md`.
 1. ~~🔴 Prioritario — Ejecutar la eliminación de la mecánica de Ciclos 2×2 del Escalón 4 de la carta~~ — ✅ **Resuelto el 13 jul 2026**, ver sección 1.1. Superado además por la decisión de eliminar Hand4Hand por completo, no solo la mecánica de ciclos.
 1b. ~~Decidir qué pasa con `builders/carlos/`, `builders/_template/` y `carlos/`~~ — ✅ **Resuelto el 13 jul 2026**, `builders/carlos` y el stub huérfano `carlos/` eliminados por completo (ver 1.10). Condición documentada para el futuro: cualquier landing dedicada nueva para Carlos debe vivir fuera de la identidad de Infinexa, y requiere comunicación previa con él (ver adenda en 1.10).
 1c. ~~Continuar las fases del reposicionamiento de Infinexa (auditoría de claims del blog)~~ — ✅ **Resuelto el 13 jul 2026**, ver sección 1.5. SEO técnico, analítica y accesibilidad ampliada ✅ resueltos en Fase 1.5 (ver 1.11).
-2. **Blog — próximos posts identificados (no escritos todavía):** Remesas y USDT (cómo enviar dinero sin banco, datos reales de comisiones, pilar la carta) · El dinero y la inflación en profundidad (tema escrito como post #8, puede ampliarse con más datos) · Posts futuros sobre DeFi en práctica.
+2. **Blog — próximos posts identificados:** ~~El dinero y la inflación en profundidad~~ — ✅ **Resuelto el 14 jul 2026**, post #16 publicado (commit `6b9f284`), ver sección 4.4. Pendientes: Remesas y USDT (cómo enviar dinero sin banco, datos reales de comisiones, pilar la carta) · Posts futuros sobre DeFi en práctica.
 3. **Audio pendiente para posts #2–#9** — flujo documentado en sección 9.3 de `BLOG_GUIA.md`. Scripts de ElevenLabs pendientes de generar para cada post.
 3b. ⚠️ *Posiblemente obsoleto tras el pivote del 13 jul — confirmar con Alejandro antes de ejecutar:* generar HTML completo de `carta.html` e `infografia.html` para el sistema de builders (templates con variables).
 4. ⚠️ *Posiblemente obsoleto tras el pivote:* terminar de personalizar y publicar el builder de prueba `carlos` — ver 1b, depende de la decisión sobre Builder Edition.
