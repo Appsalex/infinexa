@@ -33,6 +33,40 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://infinexa.app/assets/og-image.png">
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Infinexa",
+        "url": "https://infinexa.app/",
+        "description": "Connecting value with purpose. Educación y criterio sobre dinero, blockchain, Web3 e IA."
+      },
+      {
+        "@type": "Organization",
+        "name": "Infinexa",
+        "url": "https://infinexa.app/",
+        "logo": "https://infinexa.app/assets/favicon.png",
+        "founder": {
+          "@type": "Person",
+          "name": "Alejandro García",
+          "additionalName": "MBA Alejandro García"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Alejandro García",
+        "additionalName": "MBA Alejandro García",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Infinexa"
+        }
+      }
+    ]
+  }
+  </script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,700&display=swap" rel="stylesheet">
 <style>
@@ -206,6 +240,7 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
 </style>
 </head>
 <body>
+<a href="#main" class="skip-link">Saltar al contenido principal</a>
 <div class="shell">
 <div class="card">
 
@@ -234,6 +269,7 @@ html,body{width:100%;min-height:100vh;background:var(--bg-dk);font-family:'Inter
     <a class="nav-cta" href="https://wa.me/526461173209?text=Hola%2C%20vi%20infinexa.app%20y%20me%20gustar%C3%ADa%20platicar." target="_blank" rel="noopener" id="nav-cta-wa">Hablemos</a>
   </div>
 </div>
+<span id="main" tabindex="-1"></span>
 
 <!-- ══ HERO ══ -->
 <div class="hdr">
@@ -562,6 +598,23 @@ document.getElementById('taller-form').addEventListener('submit', function(e){
 .share-qr-hint{font-size:13px;color:#C9D2D6;opacity:.6;margin-bottom:16px;line-height:1.5;font-family:Inter,Arial,sans-serif;}
 .share-qr-canvas{background:#EDF1F2;border-radius:12px;padding:12px;display:inline-block;}
 .share-qr-url{font-size:11px;color:#C9D2D6 !important;opacity:.75;margin-top:10px;word-break:break-all;font-family:"SF Mono","Courier New",monospace;text-decoration:none !important;}
+
+/* Accesibilidad — respeta la preferencia del sistema operativo/navegador de reducir animaciones */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* Skip link — visible solo al recibir foco por teclado */
+.skip-link{position:absolute;left:-9999px;top:0;background:#C8682E;color:#fff;padding:10px 18px;border-radius:0 0 8px 0;font-family:'Inter',Arial,sans-serif;font-size:14px;font-weight:600;text-decoration:none;z-index:1000;}
+.skip-link:focus{left:0;}
+/* Focus visible consistente en toda la página */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline:2px solid #C8682E; outline-offset:2px;
+}
 </style>
 <div class="share-qr-wrap">
   <div class="share-qr-label">Compartir esta página</div>
