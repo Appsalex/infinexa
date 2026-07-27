@@ -483,35 +483,42 @@ Diversifica apuntaba a la carpeta huérfana, que tenía una versión vieja del `
 
 ### 4.4 Blog de Infinexa
 
-**Estado:** ✅ Publicado en `infinexa.app/blog`, **17 posts activos** con
+**Estado:** ✅ Publicado en `infinexa.app/blog`, **19 posts activos** con
 sistema de principios visuales numerados, QR compartible dinámico,
 enlace discreto a `/donativo/`, y audio en el post #1. Cada post tiene
 campo `date:` explícito con hora (ver regla de orden en `_gestion/PROMPT_BLOG.md`).
+Autor estandarizado en los 19 posts: `"Alejandro García, MBA"`.
 
 **Arco Bitcoin (6 posts, historia de blockchain): completo ✅ (#10–#15).**
-Detalle completo en `_gestion/PROMPT_BLOG.md`.
+
+**Nota tras el rediseño del 13 jul:** el pilar "La carta" ya no existe —
+la home se reconstruyó por completo (ver sección 1 de este documento).
+Los posts que antes apuntaban ahí ahora usan `pillar_label: "Ver Infinexa"`
+genérico. Detalle completo en `_gestion/PROMPT_BLOG.md`.
 
 **Posts publicados:**
 
-| # | Título | Pilar | Principios |
+| # | Título | Pilar/Categoría | Principios |
 |---|---|---|---|
 | 1 | Ingreso vs. activo | Diversifica | 2 |
 | 2 | Por qué la misma crisis se repite | Historia económica | 1 |
 | 3 | ¿Por qué rechazamos lo nuevo? | El Patrón | 1 |
-| 4 | Wallet no custodial | La carta | 1 |
+| 4 | Wallet no custodial | Economía descentralizada | 1 |
 | 5 | El cajero automático y la desconfianza | El Patrón | 1 |
-| 6 | Stablecoin vs. Bitcoin | La carta | 3 |
+| 6 | Stablecoin vs. Bitcoin | Economía descentralizada | 3 |
 | 7 | Historia del dinero: del trueque al dólar digital | Historia económica | 3 |
 | 8 | El impuesto silencioso (inflación) | Diversifica | 3 |
 | 9 | Ingreso pasivo: lo que sí es | Diversifica | 3 |
 | 10 | Las piezas sueltas de un rompecabezas de 30 años | El Patrón | 3 |
 | 11 | Una idea que fracasó antes de tener éxito (eCash/DigiCash) | El Patrón | 3 |
-| 12 | El documento de nueve páginas que cambió todo (whitepaper) | La carta | 2 |
-| 13 | El mensaje escondido en el primer bloque de la historia (bloque génesis) | La carta | 2 |
+| 12 | El documento de nueve páginas que cambió todo (whitepaper) | Economía descentralizada | 2 |
+| 13 | El mensaje escondido en el primer bloque de la historia (bloque génesis) | Economía descentralizada | 2 |
 | 14 | Quién guarda la verdad cuando nadie está a cargo (nodos/mineros) | El Patrón | 2 |
 | 15 | De un experimento de nueve páginas a la infraestructura del dinero de hoy (cierre) | Diversifica | 2 |
 | 16 | El día que el dinero dejó de alcanzar (inflación en profundidad) | Diversifica | 3 |
-| 17 | Remesas con USDT: lo que cambió en 2026 | La carta / Infinexa | 3 |
+| 17 | Remesas con USDT: lo que cambió en 2026 | Economía descentralizada | 3 |
+| 18 | DeFi en la práctica | Economía descentralizada | 2 |
+| 19 | Seguridad digital: proteger tus llaves | Economía descentralizada | 2 |
 
 **Sistemas activos en todos los posts:**
 - Bloque `.principio` — tarjeta con círculo numerado cobre, línea lateral,
@@ -521,7 +528,7 @@ Detalle completo en `_gestion/PROMPT_BLOG.md`.
 - Audio en post #1 (ElevenLabs, Narración, español mexicano).
 
 **QR compartible también instalado en todas las páginas standalone:**
-carta, servicios, diversifica, infografía, donativo.
+servicios, diversifica, infografía, donativo.
 
 La guía completa vive en `_gestion/BLOG_GUIA.md`. El detalle por sesión
 en `_gestion/BITACORA.md`.
