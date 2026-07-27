@@ -1,6 +1,14 @@
 # PROMPT · BLOG INFINEXA
-**Versión:** 1.1 · **Fecha:** 12 jul 2026
+**Versión:** 1.2 · **Fecha:** 14 jul 2026
 **Instrucción de evolución:** al cerrar la sesión, pedir "actualiza el prompt de blog" si se descubrió alguna regla nueva. Este archivo vive en `_gestion/PROMPT_BLOG.md`.
+
+---
+
+## ⚠️ CAMBIO IMPORTANTE (13-14 jul 2026): rediseño completo de Infinexa
+
+Infinexa dejó de ser un funnel hacia Hand4Hand y pasó a ser una plataforma educativa independiente. La home se reconstruyó por completo (13 secciones) y **el concepto de pilar "La carta" ya no existe** — ninguna página tiene esa narrativa. Los posts que antes usaban `pillar_label: "Ver la carta"` ahora dicen genéricamente `"Ver Infinexa"`, apuntando a `/` (la nueva home). Detalle completo en `ESTADO.md` y en `BITACORA.md`, entradas del 13 jul 2026. Lee `AGENTS.md` (raíz del repo) antes de cualquier sesión nueva — es el punto de entrada para cualquier herramienta de IA que trabaje en este repo.
+
+**Estándar de autor confirmado (14 jul 2026):** `"Alejandro García, MBA"` — no `"MBA Alejandro García"` (dos posts quedaron con el formato distinto por un desliz de otra sesión; ya corregidos).
 
 ---
 
@@ -12,42 +20,41 @@ Antes de hacer cualquier cosa, lee la guía completa del blog:
 ```bash
 cat ~/Downloads/infinexa-repo/_gestion/BLOG_GUIA.md
 ```
-Esa guía es la fuente de verdad. Este prompt es el contexto de arranque — la guía es el detalle.
+Esa guía es la fuente de verdad. Este prompt es el contexto de arranque — la guía es el detalle. **Nota:** la sección 11 de `BLOG_GUIA.md` (contexto técnico del sitio) todavía describe la estructura vieja de 4 páginas — desactualizada tras el rediseño, pendiente de corrección.
 
 ---
 
-## ESTADO DEL BLOG (12 jul 2026)
+## ESTADO DEL BLOG (14 jul 2026)
 
-**13 posts publicados · 28 principios visuales · último commit: `393e5d0`**
+**18 posts publicados · último commit por confirmar tras este push**
 
-| # | Título | Pilar | Principios |
+| # | Título | Pilar/Categoría | Principios |
 |---|---|---|---|
 | 1 | Ingreso vs. activo | Diversifica | 2 |
 | 2 | Por qué la misma crisis se repite | Historia económica | 1 |
 | 3 | ¿Por qué rechazamos lo nuevo? | El Patrón | 1 |
-| 4 | Wallet no custodial | La carta | 1 |
+| 4 | Wallet no custodial | Economía descentralizada | 1 |
 | 5 | El cajero automático y la desconfianza | El Patrón | 1 |
-| 6 | Stablecoin vs. Bitcoin | La carta | 3 |
+| 6 | Stablecoin vs. Bitcoin | Economía descentralizada | 3 |
 | 7 | Historia del dinero: del trueque al dólar digital | Historia económica | 3 |
 | 8 | El impuesto silencioso (inflación) | Diversifica | 3 |
 | 9 | Ingreso pasivo: lo que sí es | Diversifica | 3 |
 | 10 | Las piezas sueltas de un rompecabezas de 30 años | El Patrón | 3 |
 | 11 | Una idea que fracasó antes de tener éxito (eCash/DigiCash) | El Patrón | 3 |
-| 12 | El documento de nueve páginas que cambió todo (whitepaper) | La carta | 2 |
-| 13 | El mensaje escondido en el primer bloque de la historia (bloque génesis) | La carta | 2 |
+| 12 | El documento de nueve páginas que cambió todo (whitepaper) | Economía descentralizada | 2 |
+| 13 | El mensaje escondido en el primer bloque de la historia (bloque génesis) | Economía descentralizada | 2 |
+| 14 | Quién guarda la verdad cuando nadie está a cargo (nodos/mineros) | El Patrón | 2 |
+| 15 | De un experimento de nueve páginas a la infraestructura del dinero de hoy | Diversifica | 2 |
+| 16 | El día que el dinero dejó de alcanzar (inflación en profundidad) | Diversifica | 3 |
+| 17 | Remesas con USDT: lo que cambió en 2026 | Economía descentralizada | 3 |
+| 18 | DeFi en la práctica | Economía descentralizada | 2 |
 
 **Subtítulo del blog:** "porque quien entiende el patrón, ve la puerta antes que los demás"
 
-**Serie en progreso — Arco Bitcoin (6 posts):**
-- ✅ #10 Las piezas sueltas de un rompecabezas de 30 años (1976–1998)
-- ✅ #11 Una idea que fracasó antes de tener éxito (eCash/DigiCash)
-- ✅ #12 El documento de nueve páginas que cambió todo (whitepaper, 31 oct 2008)
-- ✅ #13 El mensaje escondido en el primer bloque de la historia (bloque génesis)
-- ⬜ #14 Quién guarda la verdad cuando nadie está a cargo (nodos, PoW vs PoS)
-- ⬜ #15 De un experimento de nueve páginas a la infraestructura del dinero de hoy
+**Arco Bitcoin (6 posts): completo ✅ (#10–#15).**
 
-**Otros posts identificados (no escritos):**
-- Remesas y USDT — cómo enviar dinero sin banco (pilar la carta)
+**Posts identificados sin escribir (backlog abierto):**
+- Ninguno en cola actualmente — las 3 ideas sugeridas el 14 jul fueron: DeFi en la práctica (✅ escrito), seguridad digital/proteger tus llaves, IA y nuevos modelos de ingreso.
 
 ---
 

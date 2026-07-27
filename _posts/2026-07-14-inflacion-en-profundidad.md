@@ -1,7 +1,7 @@
 ---
 title: "El día que el dinero dejó de alcanzar: lo que pasa cuando la inflación deja de ser silenciosa"
 date: 2026-07-14 11:00:00 -0700
-author: "MBA Alejandro García"
+author: "Alejandro García, MBA"
 category: "diversificación"
 pillar: "/diversifica"
 pillar_label: "Ver Diversifica"

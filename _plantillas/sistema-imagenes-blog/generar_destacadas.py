@@ -194,6 +194,9 @@ CONFIGS = [
     dict(out="remesas-usdt", category="ECONOMÍA DESCENTRALIZADA",
          titulo=["Enviar dinero sin", "la comisión de siempre"], subtitulo=None,
          icon="carta", seed=127),
+    dict(out="defi-en-la-practica", category="ECONOMÍA DESCENTRALIZADA",
+         titulo=["Prestar y pedir", "prestado sin bancos"], subtitulo=None,
+         icon="carta", seed=131),
 ]
 
 with sync_playwright() as p:

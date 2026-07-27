@@ -1,7 +1,7 @@
 ---
 title: "Remesas con USDT: lo que cambió en 2026 y por qué cada vez más familias lo están probando"
 date: 2026-07-14 16:00:00 -0700
-author: "MBA Alejandro García"
+author: "Alejandro García, MBA"
 category: "economía descentralizada"
 pillar: "/"
 pillar_label: "Ver Infinexa"
