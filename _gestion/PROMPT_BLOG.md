@@ -26,7 +26,7 @@ Esa guía es la fuente de verdad. Este prompt es el contexto de arranque — la 
 
 ## ESTADO DEL BLOG (14 jul 2026)
 
-**18 posts publicados · último commit por confirmar tras este push**
+**19 posts publicados · último commit por confirmar tras este push**
 
 | # | Título | Pilar/Categoría | Principios |
 |---|---|---|---|
@@ -48,13 +48,14 @@ Esa guía es la fuente de verdad. Este prompt es el contexto de arranque — la 
 | 16 | El día que el dinero dejó de alcanzar (inflación en profundidad) | Diversifica | 3 |
 | 17 | Remesas con USDT: lo que cambió en 2026 | Economía descentralizada | 3 |
 | 18 | DeFi en la práctica | Economía descentralizada | 2 |
+| 19 | Seguridad digital: proteger tus llaves | Economía descentralizada | 2 |
 
 **Subtítulo del blog:** "porque quien entiende el patrón, ve la puerta antes que los demás"
 
 **Arco Bitcoin (6 posts): completo ✅ (#10–#15).**
 
 **Posts identificados sin escribir (backlog abierto):**
-- Ninguno en cola actualmente — las 3 ideas sugeridas el 14 jul fueron: DeFi en la práctica (✅ escrito), seguridad digital/proteger tus llaves, IA y nuevos modelos de ingreso.
+- IA y nuevos modelos de ingreso (única idea restante de las 3 sugeridas el 14 jul)
 
 ---
 

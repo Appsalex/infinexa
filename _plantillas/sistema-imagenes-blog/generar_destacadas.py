@@ -197,6 +197,9 @@ CONFIGS = [
     dict(out="defi-en-la-practica", category="ECONOMÍA DESCENTRALIZADA",
          titulo=["Prestar y pedir", "prestado sin bancos"], subtitulo=None,
          icon="carta", seed=131),
+    dict(out="seguridad-digital-llaves", category="ECONOMÍA DESCENTRALIZADA",
+         titulo=["Proteger tus llaves", "antes de que sea tarde"], subtitulo=None,
+         icon="carta", seed=137),
 ]
 
 with sync_playwright() as p:
